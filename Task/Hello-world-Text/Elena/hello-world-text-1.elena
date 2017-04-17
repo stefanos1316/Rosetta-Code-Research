@@ -1,0 +1,4 @@
+#symbol program =
+[
+    system'console writeLine:"Hello world!".
+].
