@@ -1,5 +1,5 @@
-public class Doors
-{
+public class 100-doors-6 {
+
  public static void main(final String[] args)
  {
   StringBuilder sb = new StringBuilder();
