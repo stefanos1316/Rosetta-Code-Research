@@ -1,2 +1,0 @@
-local str="live"
-put "code" after str

@@ -1,3 +1,0 @@
-cx = Xtra("Crypto").new()
-put cx.cx_crc32_string("The quick brown fox jumps over the lazy dog")
--- "414fa339"

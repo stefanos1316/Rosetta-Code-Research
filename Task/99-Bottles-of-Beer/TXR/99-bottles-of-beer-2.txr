@@ -1,1 +1,0 @@
-@(next :list @(mapcar* (fun tostring) (repeat (range 99 0 -1))))

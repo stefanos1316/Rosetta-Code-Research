@@ -1,1 +1,0 @@
-(ccl:getenv "USER")

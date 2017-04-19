@@ -1,1 +1,0 @@
-variable y:=1;for(x;1;x<101)"Door "~sprint(x)~" is "~(x==y*y?{++y;return"open";}:"closed")!;

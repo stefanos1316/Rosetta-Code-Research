@@ -1,4 +1,0 @@
-var s = openin ("input.txt")
-foreach line s {
-    print (line)
-}

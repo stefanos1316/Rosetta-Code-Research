@@ -1,2 +1,0 @@
-var i = 0;
-loop { say i++.as_oct }

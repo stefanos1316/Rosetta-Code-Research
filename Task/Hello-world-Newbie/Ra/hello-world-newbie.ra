@@ -1,6 +1,0 @@
-class HelloWorld
-	**Prints "Goodbye, World!"**
-	
-	on start
-		
-		print "Goodbye, World!"

@@ -1,3 +1,0 @@
-#include "harbour.ch"
-Function fibb(a,b,n)
-return(if(--n>0,fibb(b,a+b,n),a))

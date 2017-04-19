@@ -1,3 +1,0 @@
-code ReadPix=44;
-int  Color, X, Y;
-Color:= ReadPix(X, Y);

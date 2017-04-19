@@ -1,5 +1,0 @@
-eval(A+B)
-eval(A-B)
-eval(A*B)
-eval(A/B)
-eval(A%B)

@@ -1,2 +1,0 @@
-    #var s_byte_length := s toByteArray length. // Number of bytes
-    #var ws_byte_length := ws toByteArray length.  // Number of bytes

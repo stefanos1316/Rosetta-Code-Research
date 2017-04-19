@@ -1,3 +1,0 @@
-foo = script("MyClass").new()
-foo.doubleAndPrint()
--- 46

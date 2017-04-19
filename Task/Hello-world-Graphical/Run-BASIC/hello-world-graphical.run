@@ -1,2 +1,0 @@
-' do it with javascript
-html "<script>alert('Goodbye, World!');</script>"

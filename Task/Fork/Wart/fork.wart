@@ -1,3 +1,0 @@
-do (fork sleep.1
-         prn.1)
-   prn.2

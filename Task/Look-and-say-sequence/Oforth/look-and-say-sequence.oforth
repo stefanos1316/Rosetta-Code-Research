@@ -1,1 +1,0 @@
-: lookAndSay(n)  [ 1 ] n #[ dup .cr group map([#size, #first]) ] times ;

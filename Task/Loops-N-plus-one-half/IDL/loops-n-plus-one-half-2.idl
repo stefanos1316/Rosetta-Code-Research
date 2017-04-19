@@ -1,4 +1,0 @@
-for i=1,10 do begin
- print,i,format='($,i)'
- if i lt 10 then print,",",format='($,a)'
-endfor

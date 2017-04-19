@@ -1,6 +1,0 @@
-      ..............
-      INPUT("Enter the time to sleep in seconds: ";sleep)
-      PRINT("Sleeping...")
-      PAUSE(sleep)
-      PRINT("Awake!")
-      ..............

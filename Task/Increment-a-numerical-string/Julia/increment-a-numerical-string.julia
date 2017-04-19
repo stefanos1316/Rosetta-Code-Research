@@ -1,3 +1,0 @@
-import Base.+
-
-+(s::String, n::Integer) = string(parse(Int, s) + n)

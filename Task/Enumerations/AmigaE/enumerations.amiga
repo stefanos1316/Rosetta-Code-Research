@@ -1,7 +1,0 @@
-ENUM APPLE, BANANA, CHERRY
-
-PROC main()
-  DEF x
-  ForAll({x}, [APPLE, BANANA, CHERRY],
-         `WriteF('\d\n', x))
-ENDPROC

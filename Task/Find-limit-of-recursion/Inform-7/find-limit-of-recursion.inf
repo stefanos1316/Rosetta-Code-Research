@@ -1,7 +1,0 @@
-Home is a room.
-
-When play begins: recurse 0.
-
-To recurse (N - number):
-	say "[N].";
-	recurse N + 1.

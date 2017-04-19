@@ -1,5 +1,0 @@
-sleep := proc(secs)
-           print("Sleeping...");
-           Threads:-Sleep(secs);
-           print("Awake!");
-         end proc:

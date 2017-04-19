@@ -1,5 +1,0 @@
-(main
-  (decl int a)
-  (decl int b)
-  (>> std::cin a b)
-  (prn (+ a b)))

@@ -1,4 +1,0 @@
-keys   = <'foo','bar','baz'>
-values = <12354,145430,76748>
-
-hash_function = keys-$values

@@ -1,5 +1,0 @@
-s == "";
-s.length == 0;
-s.is_empty;
-s ~~ /^\z/;
-s ~~ /\A\z/;

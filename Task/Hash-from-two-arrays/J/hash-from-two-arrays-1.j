@@ -1,1 +1,0 @@
-hash=: vals {~ keys&i.

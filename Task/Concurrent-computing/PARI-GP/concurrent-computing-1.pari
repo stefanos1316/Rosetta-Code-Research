@@ -1,3 +1,0 @@
-inline(func);
-func(n)=print(["Enjoy","Rosetta","Code"][n]);
-parapply(func,[1..3]);

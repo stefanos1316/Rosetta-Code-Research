@@ -1,1 +1,0 @@
-$ awk 'BEGIN{print "HOME:"ENVIRON["HOME"],"USER:"ENVIRON["USER"]}'

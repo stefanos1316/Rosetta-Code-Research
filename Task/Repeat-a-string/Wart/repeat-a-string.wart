@@ -1,7 +1,0 @@
-def (s * n) :case (string? s)
-  with outstring
-    repeat n
-      pr s
-
-("ha" * 5)
-=> "hahahahaha"

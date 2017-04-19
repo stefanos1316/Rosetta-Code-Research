@@ -1,4 +1,0 @@
-sys_file_exists('input.txt') =>
-sys_file_exists('/input.txt') =>
-sys_file_exists('docs') =>
-sys_file_exists('/docs') =>

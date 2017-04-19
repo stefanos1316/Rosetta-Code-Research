@@ -1,1 +1,0 @@
-sortbyname(x, decreasing=TRUE)

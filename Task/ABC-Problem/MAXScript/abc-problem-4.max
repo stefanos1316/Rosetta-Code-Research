@@ -1,4 +1,0 @@
-iswordpossible "water"
-true
-iswordpossible2 "water"
-false

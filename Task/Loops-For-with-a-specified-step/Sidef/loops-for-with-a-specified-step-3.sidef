@@ -1,3 +1,0 @@
-2.to(8).by(2).each { |i|
-    say i
-}

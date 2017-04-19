@@ -1,2 +1,0 @@
-iterate (x; ["Red", "Green", "Blue"])
-    x!;

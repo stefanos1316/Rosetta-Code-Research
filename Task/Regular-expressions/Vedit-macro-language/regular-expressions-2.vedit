@@ -1,3 +1,0 @@
-if (Search("string$", REGEXP+NOERR)) {
-    Statline_Message("'string' at and of line found")
-}

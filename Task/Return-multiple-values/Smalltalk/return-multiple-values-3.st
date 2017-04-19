@@ -1,3 +1,0 @@
-multipleValuesInto: aTwoArgBlock
-   ...
-   aTwoArgBlock value:<value1> value:<value2>

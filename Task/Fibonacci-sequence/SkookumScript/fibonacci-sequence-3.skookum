@@ -1,5 +1,0 @@
-// Assuming in fibonacci(n) procedure
-(Integer n) Integer
-  [
-  if n < 2 [n] else [fibonacci(n - 1) + fibonacci(n - 2)]
-  ]

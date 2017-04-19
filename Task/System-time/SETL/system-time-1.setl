@@ -1,5 +1,0 @@
-$ Unix time
-print(tod);
-
-$ Human readable time and date
-print(date);

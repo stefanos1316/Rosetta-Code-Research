@@ -1,2 +1,0 @@
-:- func addsub(int, int) = {int, int}.
-addsub(X, Y) = { X + Y, X - Y }.

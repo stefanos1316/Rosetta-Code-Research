@@ -1,2 +1,0 @@
-MyFile := DATASET(100,TRANSFORM({UNSIGNED1 RecID},SELF.RecID := COUNTER));
-RemoveLines(MyFile,3,10);

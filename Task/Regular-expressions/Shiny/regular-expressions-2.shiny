@@ -1,3 +1,0 @@
-if str.match ~string$~
-    say "Ends with 'string'"
-end

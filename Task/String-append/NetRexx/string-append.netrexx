@@ -1,3 +1,0 @@
-s_ = 'Hello'
-s_ = s_', world!'
-say s_

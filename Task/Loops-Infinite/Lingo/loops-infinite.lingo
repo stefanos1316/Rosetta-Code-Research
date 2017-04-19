@@ -1,3 +1,0 @@
-repeat while TRUE
-  put "SPAM"
-end repeat

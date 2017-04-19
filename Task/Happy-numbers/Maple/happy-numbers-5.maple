@@ -1,3 +1,0 @@
-> H, S := selectremove( Happy?, [seq]( 1 .. N ) ):
-> nops( H ), nops( S );
-                             143071, 856929

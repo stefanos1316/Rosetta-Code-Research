@@ -1,8 +1,0 @@
-Prgm
-  Dialog
-    Title "Rosetta Code"
-    Request "A string", s
-    DropDown "An integer", {"75000"}, n
-  EndDlog
-  74999 + n → n
-EndPrgm

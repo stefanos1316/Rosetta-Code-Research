@@ -1,3 +1,0 @@
-(define gcd
-  A 0 -> A
-  A B -> (gcd B (MOD A B)))

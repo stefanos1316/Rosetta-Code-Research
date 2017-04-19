@@ -1,1 +1,0 @@
-record Node (value, successor)

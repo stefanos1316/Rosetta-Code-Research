@@ -1,5 +1,0 @@
-to max :a :b
-output ifelse :a > :b [:a] [:b]
-end
-
-print reduce "max [...]

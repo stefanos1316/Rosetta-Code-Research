@@ -1,3 +1,0 @@
-var array integer: nums is [] (2, 4, 3, 1, 2);
-
-nums := sort(nums);

@@ -1,2 +1,0 @@
-(foo> MyClass)
-(foo> MyObject)

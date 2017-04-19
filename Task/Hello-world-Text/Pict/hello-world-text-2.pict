@@ -1,3 +1,0 @@
-new done: ^[]
-run ( prNL!["Hello World!" (rchan done)]
-    | done?_ = () )

@@ -1,2 +1,0 @@
-$ txr -p '(regex-parse "a.*b")'
-(compound #\a (0+ wild) #\b)

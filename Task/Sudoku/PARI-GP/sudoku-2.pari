@@ -1,1 +1,0 @@
-install("plug_sudoku", "G", "sudoku", "~/libsudoku.so")

@@ -1,1 +1,0 @@
-println sievePrimes(100)

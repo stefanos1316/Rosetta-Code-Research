@@ -1,3 +1,0 @@
-protocol Eatable {
-    func eat()
-}

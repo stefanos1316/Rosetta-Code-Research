@@ -1,2 +1,0 @@
-'Input a string: '   print expect as str
-'Input an integer: ' print expect 0 prefer as num

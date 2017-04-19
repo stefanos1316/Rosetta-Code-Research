@@ -1,2 +1,0 @@
-def seg = array[1, 2, 3, 5, 8, 13];
-def squares = seq.Map(x => x*x);

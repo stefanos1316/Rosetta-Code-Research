@@ -1,6 +1,0 @@
-include "ConsoleWindow"
-
-dim as Str15 s, c
-s = "Hello!"
-c = s
-print c

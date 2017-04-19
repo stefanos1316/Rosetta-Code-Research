@@ -1,4 +1,0 @@
-while   a = trim(input)     :f(stop)
-        max = gt(a,max) a   :(while)
-stop    output = max
-end

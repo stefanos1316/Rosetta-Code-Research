@@ -1,2 +1,0 @@
-var adder = 1.method(:add);
-say adder(3);                #=> 4

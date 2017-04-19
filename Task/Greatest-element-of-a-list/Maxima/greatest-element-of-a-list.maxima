@@ -1,8 +1,0 @@
-u : makelist(random(1000), 50)$
-
-/* Three solutions */
-lreduce(max, u);
-
-apply(max, u);
-
-lmax(u);

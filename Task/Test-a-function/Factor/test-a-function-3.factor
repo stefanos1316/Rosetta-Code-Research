@@ -1,1 +1,0 @@
-( scratchpad ) "palindrome" test

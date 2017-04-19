@@ -1,3 +1,0 @@
-df(s)=concat(vecextract(Vec(s),1<<#s-2));
-dl(s)=concat(vecextract(Vec(s),1<<(#s-1)-1));
-db(s)=concat(vecextract(Vec(s),1<<(#s-1)-2));

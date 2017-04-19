@@ -1,4 +1,0 @@
-procedure main()
-write(map(&date,"/","-"))
-write(&dateline ? tab(find(&date[1:5])+4))
-end

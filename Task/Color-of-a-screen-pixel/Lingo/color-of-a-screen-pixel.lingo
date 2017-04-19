@@ -1,5 +1,0 @@
-on getScreenPixelColor (x, y)
-  sx = xtra("ScrnXtra3").new()
-  img = sx.ScreenToImage(rect(x, y, x+1, y+1))
-  return img.getPixel(0, 0)
-end

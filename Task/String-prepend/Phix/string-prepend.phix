@@ -1,2 +1,0 @@
-string s = "World"
-s = "Hello "&s

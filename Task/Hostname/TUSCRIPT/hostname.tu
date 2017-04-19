@@ -1,2 +1,0 @@
-$$ MODE TUSCRIPT
-host=HOST ()

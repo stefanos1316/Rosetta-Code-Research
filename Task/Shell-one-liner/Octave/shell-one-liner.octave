@@ -1,2 +1,0 @@
-$ octave --eval 'printf("Hello World, it is %s!\n",datestr(now));'
-Hello World, it is 28-Aug-2013 17:53:47!

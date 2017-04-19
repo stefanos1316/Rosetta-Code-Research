@@ -1,5 +1,0 @@
-x < y if_false: {
-  "x >= y!"
-} else: {
-  "x < y!" println
-}

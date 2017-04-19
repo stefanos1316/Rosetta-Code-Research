@@ -1,2 +1,0 @@
-if(obj isnt null and obj.foo())
-   doSomething();

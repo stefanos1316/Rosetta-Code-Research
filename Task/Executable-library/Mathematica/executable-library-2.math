@@ -1,3 +1,0 @@
-<< hailstone.m;
-Print["The most common hailstone length is ",
-  Commonest[Length@*hailstone /@ Range[99999]][[1]], "."];

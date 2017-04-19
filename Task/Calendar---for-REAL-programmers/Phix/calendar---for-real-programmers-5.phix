@@ -1,4 +1,0 @@
-procedure tt_stringA(sequence text, integer alias)
-    tt_string(text,-2)
-    tt[pcurr] = alias
-end procedure

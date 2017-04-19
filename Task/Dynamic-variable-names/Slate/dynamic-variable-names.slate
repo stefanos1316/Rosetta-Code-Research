@@ -1,3 +1,0 @@
-define: #name -> (query: 'Enter a variable name: ') intern. "X"
-define: name -> 42.
-X print.

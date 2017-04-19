@@ -1,7 +1,0 @@
-(defun fac (n)
-   (if (zp n)
-       1
-       (* n (fac (1- n)))))
-
-(defun binom (n k)
-   (/ (fac n) (* (fac (- n k)) (fac k)))

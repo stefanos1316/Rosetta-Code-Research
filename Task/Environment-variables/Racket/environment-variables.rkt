@@ -1,2 +1,0 @@
-#lang racket
-(getenv "HOME")

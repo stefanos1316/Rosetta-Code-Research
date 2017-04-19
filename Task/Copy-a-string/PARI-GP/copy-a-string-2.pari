@@ -1,2 +1,0 @@
-GEN string_copy = gcopy(string);
-GEN string_ref = string;

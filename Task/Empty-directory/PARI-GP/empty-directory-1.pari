@@ -1,1 +1,0 @@
-chkdir(d)=extern(concat(["[ -d '",d,"' ]&&ls -A '",d,"'|wc -l||echo -1"]))

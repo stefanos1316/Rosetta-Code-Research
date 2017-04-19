@@ -1,1 +1,0 @@
-(Syntax Parser newOn: '4 + 5') upToEnd do: [| :each | print: each evaluate]

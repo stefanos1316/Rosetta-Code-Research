@@ -1,3 +1,0 @@
-\.toString 2
-; the following function also casts the string to a number
-^(@+ \.toString 2)

@@ -1,7 +1,0 @@
-MODULE Assertions;
-VAR
-	a: INTEGER;
-BEGIN
-	a := 40;
-	ASSERT(a = 42);
-END Assertions.

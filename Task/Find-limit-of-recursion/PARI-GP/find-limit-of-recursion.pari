@@ -1,2 +1,0 @@
-dive(n) = dive(n+1)
-dive(0)

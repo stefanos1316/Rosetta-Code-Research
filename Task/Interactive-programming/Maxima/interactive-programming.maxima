@@ -1,3 +1,0 @@
-(%i1) f(a, b, c) := sconcat(a, c, c, b)$
-(%i2) f("Rosetta", "Code", ":");
-(%o2) "Rosetta::Code"

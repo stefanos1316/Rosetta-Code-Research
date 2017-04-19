@@ -1,1 +1,0 @@
--- Single line commment in VHDL

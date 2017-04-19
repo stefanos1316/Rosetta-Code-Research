@@ -1,2 +1,0 @@
-      MOUSE xmouse%, ymouse%, buttons%
-      PRINT xmouse%, ymouse%

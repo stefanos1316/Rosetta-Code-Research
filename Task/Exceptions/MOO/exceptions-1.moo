@@ -1,1 +1,0 @@
-raise(E_PERM);

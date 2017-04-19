@@ -1,8 +1,0 @@
-@(output)
-@  (repeat)
-Department: @dept
-@    (repeat)
-  @{name 15} (@id)  $@{salary -6}
-@    (end)
-@  (end)
-@(end)

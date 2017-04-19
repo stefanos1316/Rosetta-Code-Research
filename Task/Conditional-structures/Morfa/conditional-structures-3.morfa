@@ -1,1 +1,0 @@
-var t = if(s == "Hello World") foo() else bar();

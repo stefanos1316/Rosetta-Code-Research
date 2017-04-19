@@ -1,2 +1,0 @@
-PIE=APPLE
-readonly PIE

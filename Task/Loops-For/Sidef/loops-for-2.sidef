@@ -1,4 +1,0 @@
-for (1..5) { |i|
-    for (1..i) { print '*' }
-    print "\n"
-}

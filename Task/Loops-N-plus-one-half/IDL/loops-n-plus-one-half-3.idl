@@ -1,5 +1,0 @@
-for i=1,10 do begin
- print,i,format='($,i)'
- if i eq 10 then break
- print,",",format='($,a)'
-end

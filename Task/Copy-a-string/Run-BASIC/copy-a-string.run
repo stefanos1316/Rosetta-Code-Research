@@ -1,2 +1,0 @@
-origString$ = "Hello!"     ' create original string
-newString$  = origString$  ' make new strig from original

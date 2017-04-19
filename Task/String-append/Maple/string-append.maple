@@ -1,3 +1,0 @@
-a := "Hello";
-b := cat(a, " World");
-c := `||`(a, " World");

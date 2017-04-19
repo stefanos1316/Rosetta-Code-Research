@@ -1,2 +1,0 @@
-EXCEPTION EndOfFile;
-EXCEPTION Error(TEXT);

@@ -1,4 +1,0 @@
-b = 'hello'
-a = b+' world
-print,a
-;==>  hello world

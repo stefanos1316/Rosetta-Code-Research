@@ -1,3 +1,0 @@
-const
-  INT_VALUE = 256;
-  HEX_VALUE = $100;

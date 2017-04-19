@@ -1,1 +1,0 @@
-fun main(n: int): [n]int = iota n

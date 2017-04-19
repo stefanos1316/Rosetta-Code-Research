@@ -1,5 +1,0 @@
-var i = 1024;
-while (i > 0) {
-	printf("%i\n", i);
-	i = i/2;
-}

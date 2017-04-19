@@ -1,1 +1,0 @@
-system("hostname", intern = TRUE)

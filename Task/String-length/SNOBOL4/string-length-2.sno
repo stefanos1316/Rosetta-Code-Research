@@ -1,3 +1,0 @@
--include "utf.sno"
-	output = "Char length: " utfsize(trim(input))
-end

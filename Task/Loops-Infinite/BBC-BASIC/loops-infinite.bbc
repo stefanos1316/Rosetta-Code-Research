@@ -1,3 +1,0 @@
-      REPEAT
-        PRINT "SPAM"
-      UNTIL FALSE

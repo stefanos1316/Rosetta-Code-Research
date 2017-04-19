@@ -1,5 +1,0 @@
-rec-fun n:
-	!. n
-	rec-fun ++ n
-
-rec-fun 0

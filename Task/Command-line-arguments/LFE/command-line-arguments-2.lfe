@@ -1,8 +1,0 @@
-> (: init get_arguments)
-(#(root ("/opt/erlang/r15b03"))
- #(progname ("erl"))
- #(home ("/Users/oubiwann"))
- #(user ("lfe_boot"))
- #(pa ("ebin/"))
- #(c ("alpha beta"))
- #(h ("gamma")))

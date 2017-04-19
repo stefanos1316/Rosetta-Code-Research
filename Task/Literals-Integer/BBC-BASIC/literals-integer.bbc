@@ -1,3 +1,0 @@
-      PRINT 1234 : REM Decimal
-      PRINT &4D2 : REM Hexadecimal
-      PRINT %10011010010 : REM Binary

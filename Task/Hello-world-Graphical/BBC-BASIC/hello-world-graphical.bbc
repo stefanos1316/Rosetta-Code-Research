@@ -1,1 +1,0 @@
-      SYS "MessageBox", @hwnd%, "Goodbye, World!", "", 0

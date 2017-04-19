@@ -1,5 +1,0 @@
-real
-multiply(real a, real b)
-{
-    return a * b;
-}

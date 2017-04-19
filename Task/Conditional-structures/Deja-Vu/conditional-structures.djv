@@ -1,6 +1,0 @@
-if a:
-    pass
-elseif b:
-    pass
-else: # c, maybe?
-    pass

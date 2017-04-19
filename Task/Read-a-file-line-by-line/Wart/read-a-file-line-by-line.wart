@@ -1,2 +1,0 @@
-with infile "x"
-  drain (read_line)

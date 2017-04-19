@@ -1,5 +1,0 @@
-#\a
-#\A
-#\?
-#\space
-#\newline

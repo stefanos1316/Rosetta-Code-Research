@@ -1,9 +1,0 @@
-#import system.
-
-#symbol program =
-[
-    #loop true?
-    [
-        console writeLine:"span".
-    ].
-].

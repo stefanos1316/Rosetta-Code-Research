@@ -1,8 +1,0 @@
-#class $Singleton
-{
-    #field theField.
-
-    // ...
-}
-
-#static singleton = $Singleton new.

@@ -1,1 +1,0 @@
-{Show {Length "Hello World"}}

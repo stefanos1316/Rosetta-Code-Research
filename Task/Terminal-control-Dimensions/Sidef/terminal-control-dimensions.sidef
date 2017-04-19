@@ -1,4 +1,0 @@
-var stty = `stty -a`;
-var lines = stty.match(/\brows\h+(\d+)/);
-var cols  = stty.match(/\bcolumns\h+(\d+)/);
-say "#{lines} #{cols}";

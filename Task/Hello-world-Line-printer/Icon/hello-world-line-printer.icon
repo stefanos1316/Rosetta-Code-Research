@@ -1,3 +1,0 @@
-procedure main()
-    write(open("/dev/lp0","w"),"Hello, world!")
-end

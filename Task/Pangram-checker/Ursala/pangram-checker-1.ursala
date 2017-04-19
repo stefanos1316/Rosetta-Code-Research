@@ -1,3 +1,0 @@
-#import std
-
-is_pangram = ^jZ^(!@l,*+ @rlp -:~&) ~=`A-~ letters

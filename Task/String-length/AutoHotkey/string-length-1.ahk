@@ -1,1 +1,0 @@
-Msgbox % StrLen("Hello World")

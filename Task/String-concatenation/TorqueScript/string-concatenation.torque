@@ -1,5 +1,0 @@
-%string = "Hello";
-echo(%string);
-%other = " world!";
-echo(%other);
-echo(%string @ %other);

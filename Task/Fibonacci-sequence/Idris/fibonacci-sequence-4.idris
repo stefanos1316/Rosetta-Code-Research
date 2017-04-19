@@ -1,5 +1,0 @@
-fibLazy : Lazy (List Nat)
-fibLazy = 0 :: 1 :: zipWith (+) fibLazy (
-              case fibLazy of
-                (x::xs) => xs
-                [] => [])

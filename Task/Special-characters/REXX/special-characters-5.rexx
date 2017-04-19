@@ -1,1 +1,0 @@
-  a = 'ready, set, go!'

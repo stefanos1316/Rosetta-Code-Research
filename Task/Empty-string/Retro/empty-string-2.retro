@@ -1,4 +1,0 @@
-: emtpy? ( $-f )  getLength 0 = ;
-
-"" empty? putn
-"hello" empty? putn

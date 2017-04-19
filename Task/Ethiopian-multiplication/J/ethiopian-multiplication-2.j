@@ -1,1 +1,0 @@
-ethio=: *@] * (ethiop |)

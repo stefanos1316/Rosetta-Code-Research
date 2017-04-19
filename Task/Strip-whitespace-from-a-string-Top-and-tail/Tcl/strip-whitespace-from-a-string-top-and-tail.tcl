@@ -1,5 +1,0 @@
-set str "      hello world      "
-puts "original: >$str<"
-puts "trimmed head: >[string trimleft $str]<"
-puts "trimmed tail: >[string trimright $str]<"
-puts "trimmed both: >[string trim $str]<"

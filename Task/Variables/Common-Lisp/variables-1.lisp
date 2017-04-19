@@ -1,1 +1,0 @@
-(defparameter *x* nil "nothing")

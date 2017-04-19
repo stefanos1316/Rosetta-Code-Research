@@ -1,1 +1,0 @@
-VAR e <- ALL a:values \ $ % 2 = 0;

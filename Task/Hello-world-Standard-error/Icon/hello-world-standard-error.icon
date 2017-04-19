@@ -1,3 +1,0 @@
-procedure main()
-  write(&errout, "Goodbye World" )
-end

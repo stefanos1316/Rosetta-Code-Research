@@ -1,3 +1,0 @@
-Var p = Cast(Integer Ptr, 1375832)
-*p = 42
-Print p, *p

@@ -1,5 +1,0 @@
-#import cli
-
-#cast %s
-
-main = now 0

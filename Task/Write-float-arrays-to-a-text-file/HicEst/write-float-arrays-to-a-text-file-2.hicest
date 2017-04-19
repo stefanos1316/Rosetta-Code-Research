@@ -1,1 +1,0 @@
-DLG(Text=x, Format='i12', Edit=y, Format='F10.2', Y=0)

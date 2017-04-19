@@ -1,6 +1,0 @@
-function main() {
-  Screen:PrintString("Goodbye, World!")
-  while (B1 == false) {
-    Screen:Render()
-  }
-}

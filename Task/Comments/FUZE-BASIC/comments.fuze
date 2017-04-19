@@ -1,5 +1,0 @@
-//Comment (No space required)
-# Comment (Space required)
-REM Comment (Space require)
-PRINT "This is an inline comment."//Comment (No space required)
-END

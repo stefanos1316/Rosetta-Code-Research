@@ -1,2 +1,0 @@
-input, n$
-print  eval(word$(n$,1);" + ";word$(n$,2))

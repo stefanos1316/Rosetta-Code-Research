@@ -1,3 +1,0 @@
-use std
-printf "%f\n" atof "infinity" (: this prints "inf" :)
-#extern :atof<text>: -> real

@@ -1,2 +1,0 @@
-	output = reverse(reverse("reverse"))
-end

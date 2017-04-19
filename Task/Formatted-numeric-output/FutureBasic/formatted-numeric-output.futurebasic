@@ -1,3 +1,0 @@
-include "ConsoleWindow"
-
-print using "0000#.###"; 7.125

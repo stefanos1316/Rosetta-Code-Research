@@ -1,2 +1,0 @@
-IsEvenInt(n);
-IsOddInt(n);

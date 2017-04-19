@@ -1,3 +1,0 @@
-_@lobby printAll [| *rest | rest do: [| :arg | inform: arg printString]].
-lobby printAll, 4, 3, 5, 6, 4, 3.
-lobby printAll, 'Rosetta', 'Code', 'Is', 'Awesome!'.

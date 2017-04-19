@@ -1,5 +1,0 @@
-(de gcd (A B)
-   (until (=0 B)
-      (let M (% A B)
-         (setq A B B M) ) )
-   (abs A) )

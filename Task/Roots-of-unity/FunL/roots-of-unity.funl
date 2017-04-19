@@ -1,5 +1,0 @@
-import math.{exp, Pi}
-
-def rootsOfUnity( n ) = {exp( 2Pi i k/n ) | k <- 0:n}
-
-println( rootsOfUnity(3) )

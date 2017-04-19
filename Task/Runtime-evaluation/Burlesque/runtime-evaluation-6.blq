@@ -1,8 +1,0 @@
-blsq ) ?+
-ERROR: Burlesque: (.+) Invalid arguments!
-blsq ) ?+to
-"Error"
-blsq ) (?+)
-?+
-blsq ) (?+)to
-"Ident"

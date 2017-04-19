@@ -1,9 +1,0 @@
-> s := "some string":
-> s[2..-1];
-                              "ome string"
-
-> s[1..-2];
-                              "some strin"
-
-> s[2..-2];
-                              "ome strin"

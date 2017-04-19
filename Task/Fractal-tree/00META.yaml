@@ -1,7 +1,0 @@
----
-category:
-- Raster graphics operations
-- Recursion
-note: Fractals
-requires:
-- Graphics

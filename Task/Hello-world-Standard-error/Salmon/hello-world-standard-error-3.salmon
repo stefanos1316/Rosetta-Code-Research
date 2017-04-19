@@ -1,2 +1,0 @@
-include "shorter.salm";
-err.print("Goodbye, World!\n");

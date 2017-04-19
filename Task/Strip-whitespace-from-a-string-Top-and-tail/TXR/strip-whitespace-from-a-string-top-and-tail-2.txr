@@ -1,2 +1,0 @@
-$ txr -p '(trim-str " a b ")'
-"a b"

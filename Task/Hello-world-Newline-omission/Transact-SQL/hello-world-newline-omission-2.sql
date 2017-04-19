@@ -1,1 +1,0 @@
- select 'Goodby, World!'

@@ -1,3 +1,0 @@
-f := (a,b,c)->cat(a,c,c,b):
-
-f("Rosetta","Code",":");

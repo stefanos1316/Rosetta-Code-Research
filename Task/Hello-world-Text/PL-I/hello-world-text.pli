@@ -1,3 +1,0 @@
-goodbye:proc options(main);
-     put list('Hello world!');
-end goodbye;

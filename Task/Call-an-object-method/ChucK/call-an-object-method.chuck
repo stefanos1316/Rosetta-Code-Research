@@ -1,2 +1,0 @@
-MyClass myClassObject;
-myClassObject.myFunction(some parameter);

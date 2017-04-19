@@ -1,2 +1,0 @@
-curriedPlus(x)=y->x+y;
-curriedPlus(1)(2)

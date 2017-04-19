@@ -1,7 +1,0 @@
-HAI 1.3
-
-I HAS A foo ITZ "1234"
-foo R SUM OF foo AN 1
-VISIBLE foo BTW, prints 1235
-
-KTHXBYE

@@ -1,4 +1,0 @@
-CHARACTER string*255
-
-string = "PATH="
-SYSTEM(GEteNV = string)

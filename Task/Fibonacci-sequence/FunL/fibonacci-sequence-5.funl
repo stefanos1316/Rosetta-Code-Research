@@ -1,5 +1,0 @@
-import math.sqrt
-
-def fib( n ) =
-  phi = (1 + sqrt( 5 ))/2
-  int( (phi^n - (-phi)^-n)/sqrt(5) + .5 )

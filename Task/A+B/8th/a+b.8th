@@ -1,1 +1,0 @@
-gets dup . space eval n:+ . cr

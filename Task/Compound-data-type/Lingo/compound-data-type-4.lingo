@@ -1,3 +1,0 @@
-p = MyPoint(23, 42)
-put p.x, p.y
--- 23 42

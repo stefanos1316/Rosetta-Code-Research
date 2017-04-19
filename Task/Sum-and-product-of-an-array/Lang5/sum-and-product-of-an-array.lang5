@@ -1,4 +1,0 @@
-4 iota 1 + dup
-
-'+ reduce
-'* reduce

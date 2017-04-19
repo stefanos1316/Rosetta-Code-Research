@@ -1,3 +1,0 @@
-(new point)         ;; -> #S(point x 0 y 0)
-(new point x 1)     ;; -> #S(point x 1 y 0)
-(new point x 1 y 1) ;; -> #S(point x 1 y 1)

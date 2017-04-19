@@ -1,1 +1,0 @@
-stderr.println("Goodbye, World!")

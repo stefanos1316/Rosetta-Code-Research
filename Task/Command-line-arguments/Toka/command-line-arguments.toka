@@ -1,3 +1,0 @@
-[ arglist array.get type cr ] is show-arg
-[ dup . char: = emit space ] is #=
-1 #args [ i #= show-arg ] countedLoop

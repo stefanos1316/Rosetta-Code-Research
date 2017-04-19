@@ -1,4 +1,0 @@
-vardef enum(expr first)(text t) =
-save ?; ? := first;
-forsuffixes e := t: e := ?; ?:=?+1; endfor
-enddef;

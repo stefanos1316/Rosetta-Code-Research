@@ -1,1 +1,0 @@
-System.write("Goodbye, World!")

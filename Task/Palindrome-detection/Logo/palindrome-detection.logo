@@ -1,3 +1,0 @@
-to palindrome? :w
-  output equal? :w reverse :w
-end

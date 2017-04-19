@@ -1,3 +1,0 @@
-show max(4,5,20,1);
-show max((12,3), (10,10), (25,5));
-show max("hello", "world", "Hello World");

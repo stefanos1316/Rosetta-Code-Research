@@ -1,3 +1,0 @@
-on nthRoot (x, root)
-  return power(x, 1.0/root)
-end

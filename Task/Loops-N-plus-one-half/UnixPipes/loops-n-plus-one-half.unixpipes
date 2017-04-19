@@ -1,1 +1,0 @@
-yes \ | cat -n | head -n 10 | paste -d\  - <(yes , | head -n 9) | xargs echo

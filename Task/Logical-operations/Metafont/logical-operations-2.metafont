@@ -1,5 +1,0 @@
-test(true, true);
-test(false, false);
-test(true, false);
-test(false, true);
-end

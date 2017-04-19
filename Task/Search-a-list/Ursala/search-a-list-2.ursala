@@ -1,3 +1,0 @@
-#cast %nW
-
-test = indices/'bar' <'foo','bar','baz','bar'>

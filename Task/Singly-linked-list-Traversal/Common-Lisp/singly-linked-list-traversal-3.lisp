@@ -1,1 +1,0 @@
-(mapc #'print list)

@@ -1,1 +1,0 @@
- function [varargout] = emptyprogram(varargin)

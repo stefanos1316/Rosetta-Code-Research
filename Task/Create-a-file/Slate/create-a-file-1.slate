@@ -1,2 +1,0 @@
-(File newNamed: 'output.txt') touch.
-(Directory current / 'output.txt') touch.

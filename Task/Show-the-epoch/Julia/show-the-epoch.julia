@@ -1,1 +1,0 @@
-println("Time zero (the epoch) is ", strftime("%c", 0), ".")

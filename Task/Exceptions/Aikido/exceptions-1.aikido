@@ -1,6 +1,0 @@
-try {
-    var lines = readfile ("input.txt")
-    process (lines)
-} catch (e) {
-   do_somthing(e)
-}

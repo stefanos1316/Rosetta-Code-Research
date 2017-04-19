@@ -1,3 +1,0 @@
-if equal? 0 ln 1 [print "zero]
-if empty? [] [print "empty]    ; empty list
-if empty? "|| [print "empty]   ; empty word

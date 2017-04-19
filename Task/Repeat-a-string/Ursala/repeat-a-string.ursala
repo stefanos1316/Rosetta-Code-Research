@@ -1,7 +1,0 @@
-#import nat
-
-repeat = ^|DlSL/~& iota
-
-#cast %s
-
-example = repeat('ha',5)

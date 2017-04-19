@@ -1,7 +1,0 @@
-If 1=0
- NOPE()
-ElseIf 1=1
- YEP()
-Else
- NOPE()
-End

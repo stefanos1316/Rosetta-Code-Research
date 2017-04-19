@@ -1,3 +1,0 @@
-SUB stepup
-    IF NOT step1 THEN stepup: stepup
-END SUB

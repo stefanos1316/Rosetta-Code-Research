@@ -1,4 +1,0 @@
-define structure
-  1 point,
-     2 x float,
-     2 y float;

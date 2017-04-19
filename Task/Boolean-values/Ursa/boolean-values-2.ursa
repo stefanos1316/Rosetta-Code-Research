@@ -1,3 +1,0 @@
-set bool true
-# same as
-set bool (= 2 2)

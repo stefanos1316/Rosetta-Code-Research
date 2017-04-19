@@ -1,2 +1,0 @@
-	output = "Byte length: " size(trim(input))
-end

@@ -1,3 +1,0 @@
-( condition ) [ ( true statements  ) ] ifTrue
-( condition ) [ ( false statements ) ] ifFalse
-( condition ) [ ( true statements  ) ] [ ( false statements ) ] if

@@ -1,1 +1,0 @@
-Benchmark.measure { whatever }.total

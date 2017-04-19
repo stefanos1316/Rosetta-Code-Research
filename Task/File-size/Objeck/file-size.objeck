@@ -1,4 +1,0 @@
-use IO;
-...
-File("input.txt")->Size()->PrintLine();
-File("c:\input.txt")->Size()->PrintLine();

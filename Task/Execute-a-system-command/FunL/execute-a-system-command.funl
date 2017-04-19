@@ -1,3 +1,0 @@
-import sys.execute
-
-execute( if $os.startsWith('Windows') then 'dir' else 'ls' )

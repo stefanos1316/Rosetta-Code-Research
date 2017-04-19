@@ -1,1 +1,0 @@
-(file->string "foo.txt")

@@ -1,4 +1,0 @@
-var line;
-while (line = getline()) != nil {
-    print(line);
-}

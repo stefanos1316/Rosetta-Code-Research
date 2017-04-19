@@ -1,1 +1,0 @@
-(@^5).combinations(3, {|c| say c })

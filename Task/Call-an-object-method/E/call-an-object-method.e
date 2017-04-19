@@ -1,1 +1,0 @@
-someObject.someMethod(someParameter)

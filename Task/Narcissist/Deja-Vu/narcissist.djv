@@ -1,1 +1,0 @@
-!. = !prompt "Enter my code: " concat( swap !decode!utf-8 !encode!quoted dup swap ) "!. = !prompt \qEnter my code: \q concat( swap !decode!utf-8 !encode!quoted dup swap ) "

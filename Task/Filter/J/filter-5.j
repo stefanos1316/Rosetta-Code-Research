@@ -1,1 +1,0 @@
-   v=: isEven select v

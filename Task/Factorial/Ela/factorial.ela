@@ -1,3 +1,0 @@
-fact = fact' 1L
-       where fact' acc 0 = acc
-             fact' acc n = fact' (n * acc) (n - 1)

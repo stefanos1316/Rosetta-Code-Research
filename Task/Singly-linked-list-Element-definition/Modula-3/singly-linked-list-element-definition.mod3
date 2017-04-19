@@ -1,6 +1,0 @@
-TYPE
-  Link = REF LinkRcd;
-  LinkRcd = RECORD
-    Next: Link;
-    Data: INTEGER
-  END;

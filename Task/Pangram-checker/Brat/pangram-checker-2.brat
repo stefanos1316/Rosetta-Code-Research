@@ -1,3 +1,0 @@
-pangram? = { sentence |
-  sentence.downcase.dice.unique.select(:alpha?).length == 26
-}

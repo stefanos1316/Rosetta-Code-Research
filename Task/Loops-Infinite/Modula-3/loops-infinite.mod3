@@ -1,3 +1,0 @@
-LOOP
-  IO.Put("SPAM\n");
-END;

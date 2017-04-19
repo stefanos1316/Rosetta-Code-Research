@@ -1,1 +1,0 @@
-prime? := n -> n > 1 and {op}( map( modp, polc( n ), n ) ) = {0}

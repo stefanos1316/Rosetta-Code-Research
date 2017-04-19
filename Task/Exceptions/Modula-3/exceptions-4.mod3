@@ -1,5 +1,0 @@
-TRY
-  Foo();
-FINALLY
-  CleanupFoo(); (* always executed *)
-END;

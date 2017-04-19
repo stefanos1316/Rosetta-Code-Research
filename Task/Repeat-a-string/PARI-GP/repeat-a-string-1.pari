@@ -1,3 +1,0 @@
-repeat(s,n)={
-  if(n, Str(repeat(s, n-1), s), "")
-};

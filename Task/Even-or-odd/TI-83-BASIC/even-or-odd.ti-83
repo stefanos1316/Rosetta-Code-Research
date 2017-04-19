@@ -1,6 +1,0 @@
-If fPart(.5Ans
-Then
-Disp "ODD
-Else
-Disp "EVEN
-End

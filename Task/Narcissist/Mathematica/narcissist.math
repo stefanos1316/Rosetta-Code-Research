@@ -1,3 +1,0 @@
-prog = "prog = ``;\nPrint[InputString[] == \n   ToString[StringForm[prog, ToString[prog, InputForm]]]];";
-Print[InputString[] ==
-   ToString[StringForm[prog, ToString[prog, InputForm]]]];

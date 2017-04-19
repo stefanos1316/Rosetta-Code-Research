@@ -1,5 +1,0 @@
-if keypressed(KEYBOARD) then
-  writeln("A key was pressed");
-else
-  writeln("No key was pressed");
-end if;

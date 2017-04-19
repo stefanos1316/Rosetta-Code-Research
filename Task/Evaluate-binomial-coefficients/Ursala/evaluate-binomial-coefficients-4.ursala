@@ -1,3 +1,0 @@
-#cast %nL
-
-main = choose* <(5,3),(60,30)>

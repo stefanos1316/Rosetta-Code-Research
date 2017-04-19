@@ -1,5 +1,0 @@
-on mouseUp
-    put field "Field1" into x
-    subtract 1 from x
-    enableButtons x
-end mouseUp

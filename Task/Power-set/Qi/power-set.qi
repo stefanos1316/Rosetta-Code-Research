@@ -1,4 +1,0 @@
-(define powerset
-  [] -> [[]]
-  [A|As] -> (append (map (cons A) (powerset As))
-                    (powerset As)))

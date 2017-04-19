@@ -1,5 +1,0 @@
-(define image (make-image 3 2))
-(image-fill! image *black*)
-(image-set! image 2 1 *blue*)
-(display image)
-(newline)

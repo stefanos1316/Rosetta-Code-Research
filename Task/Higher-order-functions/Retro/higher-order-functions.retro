@@ -1,4 +1,0 @@
-: disp ( nq- )
-  do putn ;
-
-31 [ ( n-n )  100 * ] disp

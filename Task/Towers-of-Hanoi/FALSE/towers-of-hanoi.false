@@ -1,4 +1,0 @@
-["Move disk from "$!\" to "$!\"
-"]p:  { to from }
-[n;0>[n;1-n: @\ h;! @\ p;! \@ h;! \@ n;1+n:]?]h:  { via to from }
-4n:["right"]["middle"]["left"]h;!%%%

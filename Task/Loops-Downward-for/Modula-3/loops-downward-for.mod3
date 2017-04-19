@@ -1,3 +1,0 @@
-FOR i := 10 TO 0 BY -1 DO
-  IO.PutInt(i);
-END;

@@ -1,2 +1,0 @@
-date /t
-time /t

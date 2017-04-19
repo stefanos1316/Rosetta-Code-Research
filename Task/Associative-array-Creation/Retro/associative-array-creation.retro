@@ -1,8 +1,0 @@
-with hashTable'
-hashTable constant table
-
-table %{ first = 100 }%
-table %{ second = "hello, world!" keepString %}
-
-table @" first" putn
-table @" second" puts

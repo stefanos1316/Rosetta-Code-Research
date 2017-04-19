@@ -1,3 +1,0 @@
-a = ' that<nowiki>''</nowiki>s a string
-print,a
-;==>  that's a string

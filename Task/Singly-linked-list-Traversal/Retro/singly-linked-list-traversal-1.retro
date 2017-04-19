@@ -1,1 +1,0 @@
-: traverse ( l- ) repeat @ 0; again ;

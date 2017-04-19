@@ -1,7 +1,0 @@
- function horner(coef,x)
-     sum = coef[end]
-     for k = length(coef)-1:-1:1
-       sum = coef[k] + x*sum
-     end
-     sum
- end

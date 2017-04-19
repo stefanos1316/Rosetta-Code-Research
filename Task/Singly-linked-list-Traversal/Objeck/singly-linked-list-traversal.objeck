@@ -1,3 +1,0 @@
-for(node := head; node <> Nil; node := node->GetNext();) {
-  node->GetValue()->PrintLine();
-};

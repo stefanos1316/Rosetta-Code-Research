@@ -1,4 +1,0 @@
-mystring="WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWBWWWWWWWWWWWWWW";
-RunLengthEncode[mystring]
-RunLengthDecode[%]
-%==mystring

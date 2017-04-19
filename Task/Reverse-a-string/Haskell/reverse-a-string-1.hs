@@ -1,1 +1,0 @@
-reverse = foldl (flip (:)) []

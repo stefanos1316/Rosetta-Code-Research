@@ -1,3 +1,0 @@
-hello = "Hello"
-hello'world = hello ++ ", " ++ "world"
-(hello, hello'world)

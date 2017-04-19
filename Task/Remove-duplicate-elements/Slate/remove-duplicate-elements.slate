@@ -1,3 +1,0 @@
-[|:s| #(1 2 3 4 1 2 3 4) >> s] writingAs: Set.
-
-"==> {"Set traitsWindow" 1. 2. 3. 4}"

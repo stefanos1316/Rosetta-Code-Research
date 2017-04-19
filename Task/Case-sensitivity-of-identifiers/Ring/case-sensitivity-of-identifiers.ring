@@ -1,5 +1,0 @@
-dog = "Benjamin"
-doG = "Smokey"
-Dog = "Samba"
-DOG = "Bernie"
-see "The 4 dogs are : " + dog +  ", " + doG + ", " + Dog + " and " + DOG + "."

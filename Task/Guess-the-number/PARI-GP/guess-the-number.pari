@@ -1,1 +1,0 @@
-guess()=my(r=random(10)+1);while(input()!=r,); "Well guessed!";

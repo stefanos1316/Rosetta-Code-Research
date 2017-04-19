@@ -1,2 +1,0 @@
-for x <- [103, 316, 519, 639, 760]
-  println( 'The set of factors of ' + x + ' is ' + factors(x) )

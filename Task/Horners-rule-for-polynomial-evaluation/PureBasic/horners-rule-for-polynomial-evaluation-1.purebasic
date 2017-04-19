@@ -1,7 +1,0 @@
-Procedure Horner(List Coefficients(), b)
-  Define result
-  ForEach Coefficients()
-    result*b+Coefficients()
-  Next
-  ProcedureReturn result
-EndProcedure

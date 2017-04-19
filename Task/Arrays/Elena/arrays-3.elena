@@ -1,4 +1,0 @@
-    #var(int:3)aStackAllocatedArray.
-    aStackAllocatedArray@0 := 1.
-    aStackAllocatedArray@1 := 2.
-    aStackAllocatedArray@2 := 3.

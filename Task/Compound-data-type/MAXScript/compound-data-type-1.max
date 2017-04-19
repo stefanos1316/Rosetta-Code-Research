@@ -1,2 +1,0 @@
-struct myPoint (x, y)
-newPoint = myPoint x:3 y:4

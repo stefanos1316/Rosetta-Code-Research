@@ -1,3 +1,0 @@
-foo()
--- or alternatively:
-call(#foo, _movie)

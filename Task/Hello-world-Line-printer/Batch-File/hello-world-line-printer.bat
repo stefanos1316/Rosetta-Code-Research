@@ -1,1 +1,0 @@
-ECHO Hello world!>PRN

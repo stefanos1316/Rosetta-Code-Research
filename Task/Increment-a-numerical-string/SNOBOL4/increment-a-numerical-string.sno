@@ -1,3 +1,0 @@
-     output = trim(input) + 1
-     output = "123" + 1
-end

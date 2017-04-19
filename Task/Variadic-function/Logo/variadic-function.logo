@@ -1,6 +1,0 @@
-to varargs [:args]
- foreach :args [print ?]
-end
-
-(varargs "Mary "had "a "little "lamb)
-apply "varargs [Mary had a little lamb]

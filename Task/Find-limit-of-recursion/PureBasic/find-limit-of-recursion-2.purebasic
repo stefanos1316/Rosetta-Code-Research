@@ -1,5 +1,0 @@
-rec:
-  PrintN(str(n))
-  n+1
-  Gosub rec
-  Return

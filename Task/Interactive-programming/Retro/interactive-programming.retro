@@ -1,2 +1,0 @@
-: f ( $$$-$ ) [ ^strings'prepend ] sip ^strings'prepend ^strings'append tempString ;
-"Rosetta" "Code" ":" f

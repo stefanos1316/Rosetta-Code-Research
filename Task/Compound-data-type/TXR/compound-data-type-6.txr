@@ -1,3 +1,0 @@
-(defun displace-point-destructively (p delta)
-  (inc p.x delta.x)
-  (inc p.y delta.y))

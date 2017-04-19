@@ -1,5 +1,0 @@
-> s[ 1 .. -2 ] = s[ .. -2 ];
-"The Higher, The Fewer" = "The Higher, The Fewer"
-
-> StringTools:-Chop( s );
-             "The Higher, The Fewer"

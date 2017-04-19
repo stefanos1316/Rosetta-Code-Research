@@ -1,5 +1,0 @@
-IF Foo = TRUE THEN
-  Bar();
-ELSE
-  Baz();
-END;

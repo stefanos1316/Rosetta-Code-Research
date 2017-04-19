@@ -1,3 +1,0 @@
--> (for ([f (in-directory "/tmp")] #:when (regexp-match? "\\.rkt$" f))
-     (displayln f))
-... *.rkt files including in nested directories ...

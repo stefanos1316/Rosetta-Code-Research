@@ -1,4 +1,0 @@
-var str = "I am a string";
-if (str =~ /string$/) {
-    print "Ends with 'string'\n";
-}

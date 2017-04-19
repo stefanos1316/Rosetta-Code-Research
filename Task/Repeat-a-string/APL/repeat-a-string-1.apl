@@ -1,2 +1,0 @@
-      10⍴'ha'
-hahahahaha

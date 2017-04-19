@@ -1,1 +1,0 @@
-open(IO ->write(IO, open(readall, "file1", "r")), "file2", "w")

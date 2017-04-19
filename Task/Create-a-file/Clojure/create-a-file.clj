@@ -1,5 +1,0 @@
-(import '(java.io File))
-(.createNewFile (new File "output.txt"))
-(.mkdir (new File "docs"))
-(.createNewFile (File. (str (File/separator) "output.txt")))
-(.mkdir (File. (str (File/separator) "docs")))

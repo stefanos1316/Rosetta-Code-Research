@@ -1,2 +1,0 @@
-newlisp -e "\"Hello\"
-->"Hello"

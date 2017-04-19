@@ -1,8 +1,0 @@
-procedure main()
-     numChars := '-'++&digits
-     read() ? {
-         A := (tab(upto(numChars)), integer(tab(many(numChars))))
-         B := (tab(upto(numChars)), integer(tab(many(numChars))))
-         }
-     write((\A + \B) | "Bad input")
-end

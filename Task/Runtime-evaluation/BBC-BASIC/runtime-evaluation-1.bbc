@@ -1,2 +1,0 @@
-      expr$ = "PI^2 + 1"
-      PRINT EVAL(expr$)

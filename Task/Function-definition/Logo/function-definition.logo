@@ -1,3 +1,0 @@
-to multiply :x :y
-  output :x * :y
-end

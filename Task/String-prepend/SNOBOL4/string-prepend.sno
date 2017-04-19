@@ -1,3 +1,0 @@
-    s = ', World!'
-    OUTPUT = s = 'Hello' s
-END

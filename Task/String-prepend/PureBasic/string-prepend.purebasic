@@ -1,8 +1,0 @@
-S$ = " World!"
-S$ = "Hello" + S$
-If OpenConsole()
-  PrintN(S$)
-
-  Print(#CRLF$ + #CRLF$ + "Press ENTER to exit"): Input()
-  CloseConsole()
-EndIf

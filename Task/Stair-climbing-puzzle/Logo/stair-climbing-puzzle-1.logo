@@ -1,3 +1,0 @@
-to step.up
-  if not step [step.up step.up]
-end

@@ -1,7 +1,0 @@
-[a,b] = input["Enter numbers",["a","b"]]
-ops=["+", "-", "*", "/", "div" ,"mod" ,"^"]
-for op = ops
-{
-   str = "$a $op $b"
-   println["$str = " + eval[str]]
-}

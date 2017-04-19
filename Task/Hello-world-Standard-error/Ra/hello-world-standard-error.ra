@@ -1,6 +1,0 @@
-class HelloWorld
-	**Prints "Goodbye, World!" to standard error**
-
-	on start
-
-		print to Console.error made !, "Goodbye, World!"

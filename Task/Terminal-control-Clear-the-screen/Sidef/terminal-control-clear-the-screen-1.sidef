@@ -1,2 +1,0 @@
-func clear { print(static x = `clear`) };
-clear();

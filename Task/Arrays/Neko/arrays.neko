@@ -1,3 +1,0 @@
-var myArray = $array(1);
-
-$print(myArray[0]);

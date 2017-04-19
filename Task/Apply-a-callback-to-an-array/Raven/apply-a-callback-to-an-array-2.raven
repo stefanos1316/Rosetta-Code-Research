@@ -1,4 +1,0 @@
-# To obtain a new array
-group [1 2 3 4 5] each
-  dup *
-list

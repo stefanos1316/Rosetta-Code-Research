@@ -1,5 +1,0 @@
-DEFINE transpose == [ [null] [true] [[null] some] ifte ]
-                    [ pop [] ]
-                    [ [[first] map] [[rest] map] cleave ]
-                    [ cons ]
-                    linrec .

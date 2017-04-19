@@ -1,3 +1,0 @@
-decl int i
-set i 123
-set i -456

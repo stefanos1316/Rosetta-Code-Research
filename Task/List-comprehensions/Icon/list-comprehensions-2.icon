@@ -1,3 +1,0 @@
-   procedure main()
-      every write(|(x := seq(), x^2 > 3, x*2) \ 100
-   end

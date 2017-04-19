@@ -1,1 +1,0 @@
-URLencode("http://foo bar/")

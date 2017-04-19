@@ -1,4 +1,0 @@
-( addsub$(33.12):(?sum.?difference)
-& out$("33 + 12 = " !sum)
-& out$("33 - 12 = " !difference)
-);

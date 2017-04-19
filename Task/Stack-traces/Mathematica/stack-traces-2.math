@@ -1,2 +1,0 @@
-{f,g,CompoundExpression,Print}
-f[g[1, 2]]

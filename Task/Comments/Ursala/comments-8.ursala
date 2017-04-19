@@ -1,3 +1,0 @@
-#depend <this,expression> is (parsed)* but {
-   otherwise,
-   ignored}

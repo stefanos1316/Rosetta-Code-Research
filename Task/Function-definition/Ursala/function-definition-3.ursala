@@ -1,1 +1,0 @@
-multiply("a","b") = math..mul ("a","b")

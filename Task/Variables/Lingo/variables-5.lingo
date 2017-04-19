@@ -1,4 +1,0 @@
-global x
-on foo
-  put x
-end

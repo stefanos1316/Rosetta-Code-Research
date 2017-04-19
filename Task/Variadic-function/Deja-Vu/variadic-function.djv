@@ -1,6 +1,0 @@
-show-all(:
-    while /= ) dup:
-        !.
-    drop
-
-show-all( :foo "Hello" 42 [ true ] )

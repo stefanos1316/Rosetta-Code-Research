@@ -1,2 +1,0 @@
-read(A, B);
-print(A + B);

@@ -1,3 +1,0 @@
-Rosetta
-Code
-Enjoy

@@ -1,2 +1,0 @@
-echo "hello"
- | xargs -n1 -i echo {} literal

@@ -1,3 +1,0 @@
-fun update(as: *[]int, i: int, x: int): []int =
-  let as[i] = x
-  in x

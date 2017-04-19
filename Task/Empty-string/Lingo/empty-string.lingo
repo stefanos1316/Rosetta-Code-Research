@@ -1,5 +1,0 @@
-str = EMPTY -- same as: str = ""
-put str=EMPTY
--- 1
-put str<>EMPTY
--- 0

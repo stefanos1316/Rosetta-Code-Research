@@ -1,6 +1,0 @@
-to comma.list :n
-  repeat :n-1 [type repcount type "|, |]
-  print :n
-end
-
-comma.list 10

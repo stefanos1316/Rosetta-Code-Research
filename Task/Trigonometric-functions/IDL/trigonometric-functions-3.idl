@@ -1,5 +1,0 @@
-; the hyperbolic versions exist and behave as expected:
-print, sinh(rad)                       ; etc
-
-; outputs
-;   0.649572

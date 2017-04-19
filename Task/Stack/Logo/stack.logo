@@ -1,6 +1,0 @@
-make "stack []
-push "stack 1
-push "stack 2
-push "stack 3
-print pop "stack   ; 3
-print empty? :stack ; false
