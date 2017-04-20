@@ -1,5 +1,5 @@
-public class 100-doors-2 {
- public static void main(String[] args) {
+public class HundredDoors {
+    public static void main(String[] args) {
         boolean[] doors = new boolean[101];
         for (int i = 1; i <= 100; i++) {
             for (int j = i; j <= 100; j++) {

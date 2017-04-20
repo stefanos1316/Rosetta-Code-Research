@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#Author: Stefanos Georgiou from Athens University of Business and Economics
+#This work is done for the purpose of comparing energy consumption of different languages
+
 #This script file receives as a command-line parameter a file (that has a number of tasks) and compiles the languages given to it (again as
 #command-line arguments)
 
@@ -21,7 +24,7 @@ do
 				#respectivily
 				case "$A" in 
 				("Java") echo "Compiling Task/$p/$A using Javac"
-			
+		
 				#Some of the file names are different compare to the public class
 				#Here we will perform an action to change them
 				declare -i loopIt=1
@@ -29,38 +32,60 @@ do
 				FILES="Task/$p/$A/*"
 				for f in $FILES;
 				do
-					changeName=$(sed -i "1s/.*/public class $p-$loopIt {/" Task/$p/$A/$p"-"$loopIt".java")
-					eval=$changeName
+					#To change the name we will grap the third word from the file (since the first is public 
+					#the second is class, and the third is the name) and we will use it as the current file's name
+					fileName="$(awk 'NR==1{print $3}' Task/$p/$A/$p-$loopIt.java)"
+					className=$fileName					
 
-					#Also of the authros did not add '{' in the first line propably we will have duplicates
-					#that will cause failed compilation
-					removeSecondLineCurryBracketIfExist=$(sed -i "2s/^\(.\)//" Task/$p/$A/$p"-"$loopIt".java")
-					eval=$removeSecondLineCurryBracketIfExist
+					#Some of the third word in the fileName variable may contain '{' at the end that we have to remove
+					if [[ $fileName == *"{" ]];
+					then
+						echo "This var contains $fileName"
+						echo "Removing it..."
+						fileName=$(echo "$fileName" | sed 's/{//g')
+						echo "Changed to $fileName"
+					fi
+			
+					#Sometimes the thrid work maybe a special character, if it is then do not change 
+					if [[ $fileName == *['!'@#\$%^\&*()_+-]* ]]
+					then
+  						echo "File name contains a special charaacter"
+						fileName=$p-$loopIt.java
+						echo "Leaving the same name as: $fileName"
+					fi
+	
+					#At this point we change the files name to be the same as the class'.
+					newName=Task/$p/$A/$fileName"_"$loopIt".java"
+					echo "Changing from $p-$loopIt.java to $newName"
+					eval=$(mv Task/$p/$A/$p-$loopIt.java $newName)
+				                                                        
+					#Some of the file may have the same name and as an outcome the scrip will override them
+					changeClassName=$fileName"_"$loopIt
+					echo "Changing $className to $changeClassName in $newName"
+					if [ $className == *"{" ];
+					then
+							
+					fi
+					eval=$(sed -i "1s/$className/$changeClassName/" $newName)	
 					let loopIt=loopIt+1
-				done				
 				
+				done				
+
 
 				#Here we added a while statement in order to compile
 				#Some of the files may not compile and an error may occur
-				declare -i interator=1
-				while [ ! $(javac Task/$p/$A/$p-"$interator".java) ];
+				for f in `ls Task/$p/$A`;
 				do
-					echo "javac Task/$p/$A/$p-"$iterator".java finished with errors"
-					let iterator=iterator+1
+					echo "javac Task/$p/$A/$f "
+					if [ ! $(javac Task/$p/$A/$f) ];
+					then
+						echo "Compiled with Errors"
+					else
+						echo "Succussfully compiled"
+					fi	
+					echo "#########################################################################################"
 				done
-
-				echo "javac Task/$p/$A/$p-"$iterator".java compiled"
-				exit
-				
-				if "$(javac Task/$p/$A/$p-1.java)"; then
-				echo "Compiled with no errors"
-				else
-				echo "Compiled with errors"
-				echo "Trying the next number"
-				
-				fi
-				echo "Compiling javac /Task/$p/$A/$p-1.java"
-				exit
+				exit				
 				;;
 				(C) echo "Compile using gcc";;
 				(C++) echo "Compile using g++";;			

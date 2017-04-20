@@ -1,5 +1,5 @@
-public class 100-doors-3 {
-
+public class Doors
+{
 	public static void main(String[] args)
 	{
 		boolean[] doors=new boolean[100];
