@@ -26,33 +26,29 @@ do
 				#respectivily
 				case "$A" in 
 				("Java") echo "Compiling Task/$p/$A using Javac"
-					
-				At this point we will change all existing files in directory from Upper to Lower case if exist
-				searchFile="Task/$p/$A/*"
-				for loopFiles in $searchFile;
-				do
-					#Initially we change from upper to lower case letters all the files, for consistency reasons
-					toUpperCase=$(echo "$loopFiles" | awk -F "/" '{print $4}' | awk -F "-" '{print $1}' | tr '[a-z]' '[A-Z]')
-					toLowerCase=$toLowerCase1".java"
-					extension=$(echo "$loopFiles" | awk -F "/" '{print $4}' | awk -F "-" '{print $2}')
-					echo "From $loopFiles to $toUpperCase-$extension changed"
-					newFileName=Task/$p/$A/$p"-"$extension
-					eval=$(mv $loopFiles $newFileName)
-				done
 				
 				#Some of the file names are different compare to the public class
 				#Here we will perform an action to change them
 				declare -i loopIt=1
 				var="public class $p-"$loopIt" {"
 				FILES="Task/$p/$A/*"
+
+				#########################################################################################################
+				#Before proceeding check if there is only a single file located in our dataset.
+
 				for f in $FILES;
 				do
 					#To change the name we will grap the third word from the file (since the first is public 
 					#the second is class, and the third is the name) and we will use it as the current file's name
-					fileName="$(awk 'NR==1{print $3}' Task/$p/$A/$p-$loopIt.java)"
+					fileName=$(grep "public class" Task/$p/$A/$p-$loopIt.java | awk '{print $3}')
 					className=$fileName
 					echo $className " and " $fileName
-					exit					
+
+					if [ -z "$fileName" ];
+					then
+						echo "String empty, applying new pattern"
+						fileName=$(awk 'NR==1{print $3}' Task/$p/$A/$p-$loopIt.java)				
+					fi				
 
 					#Some of the third word in the fileName variable may contain '{' at the end that we have to remove
 					if [[ $fileName == *"{" ]];
@@ -67,25 +63,29 @@ do
 					if [[ $fileName == *['!'@#\$%^\&*()_+-]* ]]
 					then
   						echo "File name contains a special charaacter"
-						fileName=$p"-"$loopIt".java"
 						echo "Leaving the same name as: $fileName"
-					fi
-	
+						changedName=$(echo "Task/$p/$A/$p-$loopIt.java" | awk -F "/" '{print $4}'| tr '-' '_')
+						eval=$(mv Task/$p/$A/$p-$loopIt.java Task/$p/$A/$changedName)
+						echo "Changed to Task/$p/$A/$changedName.java from Task/$p/$A/$p-$loopIt.java"
+						
+					else
+
 					#At this point we change the files name to be the same as the class'.
 					newName=Task/$p/$A/$fileName"_"$loopIt".java"
 					echo "Changing from $p-$loopIt.java to $newName"
 					eval=$(mv Task/$p/$A/$p-$loopIt.java $newName)
-				                                                        
+				                                                    
 					#Some of the file may have the same name and as an outcome the scrip will override them
 					changeClassName=$fileName"_"$loopIt
 					echo "Changing $className to $changeClassName in $newName"
-					exit
+					
 					#if [ $className == *"{" ];
 					#then
 					   		
 					#fi
 					eval=$(sed -i "1s/$className/$changeClassName/" $newName)	
 					let loopIt=loopIt+1
+					fi
 				
 				done				
 
@@ -95,15 +95,14 @@ do
 				for f in `ls Task/$p/$A`;
 				do
 					echo "javac Task/$p/$A/$f "
-					if [ ! $(javac Task/$p/$A/$f) ];
+					if [ $(javac Task/$p/$A/$f) ];
 					then
-						echo "Compiled with Errors"
-					else
 						echo "Succussfully compiled"
+					else
+						echo "Compilied with errors"
 					fi	
 					echo "#########################################################################################"
-				done
-				exit				
+				done					
 				;;
 				(C) echo "Compile using gcc";;
 				(C++) echo "Compile using g++";;			

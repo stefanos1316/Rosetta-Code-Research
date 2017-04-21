@@ -1,0 +1,9 @@
+#The sequence of the whole procedure has as follows.
+
+#Author: Stefanos Georgiou from Athens University of Business and Economics
+#Note: Most of the scripts mentioned below receive a number of command line arguments, in order to view them navigate in each script.
+
+1) Execute the removeProgrammingLanguagesNotIncludedInTop15.sh to have a filtered dataset with all the programming languages that we will examine for this research.
+2) Execute the findCommonLanguages.sh in order to received a file "Common_Tasks_to_Test.txt" that includes a number of tasks that we will examine for this research.
+3) Execute the fromUpperToLowerCaseAll.sh in order to make all tasks' filenames to lower case (to have more consistenscy further on with our scripts)
+4) Execute the compileTasks.sh in order to compile all tasks 
