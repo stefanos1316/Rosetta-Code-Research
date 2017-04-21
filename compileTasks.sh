@@ -9,22 +9,37 @@
 # $1 -> file that has the name of the tasks found under the Task directory
 # $2, $3, ..., $n number of languages to be compiled with (for the moment we will add only the seven we will use for our experiment)
 
-for var in ${@:2};
+for language in ${@:2};
 do 
+	
 	#At this point we can iterate a number of languages given be the user to compile	
 	while read p; 
 	do
 		#At this point we opened the Common_Tasks_to_Test.txt file where all the tasks to be tested are located
 		#the argument $p has line-by-line the tasks		
+		echo "Analyzing task $p"
 		for A in `ls -l Task/$p`; 
 		do
-			if [ $A == $var ]; 
+			if [ $A == $language ]; 
 			then
 				#At this point we have a match for the var, afterwards we have to compile each case
 				#respectivily
 				case "$A" in 
 				("Java") echo "Compiling Task/$p/$A using Javac"
-		
+					
+				At this point we will change all existing files in directory from Upper to Lower case if exist
+				searchFile="Task/$p/$A/*"
+				for loopFiles in $searchFile;
+				do
+					#Initially we change from upper to lower case letters all the files, for consistency reasons
+					toUpperCase=$(echo "$loopFiles" | awk -F "/" '{print $4}' | awk -F "-" '{print $1}' | tr '[a-z]' '[A-Z]')
+					toLowerCase=$toLowerCase1".java"
+					extension=$(echo "$loopFiles" | awk -F "/" '{print $4}' | awk -F "-" '{print $2}')
+					echo "From $loopFiles to $toUpperCase-$extension changed"
+					newFileName=Task/$p/$A/$p"-"$extension
+					eval=$(mv $loopFiles $newFileName)
+				done
+				
 				#Some of the file names are different compare to the public class
 				#Here we will perform an action to change them
 				declare -i loopIt=1
@@ -35,7 +50,9 @@ do
 					#To change the name we will grap the third word from the file (since the first is public 
 					#the second is class, and the third is the name) and we will use it as the current file's name
 					fileName="$(awk 'NR==1{print $3}' Task/$p/$A/$p-$loopIt.java)"
-					className=$fileName					
+					className=$fileName
+					echo $className " and " $fileName
+					exit					
 
 					#Some of the third word in the fileName variable may contain '{' at the end that we have to remove
 					if [[ $fileName == *"{" ]];
@@ -45,12 +62,12 @@ do
 						fileName=$(echo "$fileName" | sed 's/{//g')
 						echo "Changed to $fileName"
 					fi
-			
+		
 					#Sometimes the thrid work maybe a special character, if it is then do not change 
 					if [[ $fileName == *['!'@#\$%^\&*()_+-]* ]]
 					then
   						echo "File name contains a special charaacter"
-						fileName=$p-$loopIt.java
+						fileName=$p"-"$loopIt".java"
 						echo "Leaving the same name as: $fileName"
 					fi
 	
@@ -62,10 +79,11 @@ do
 					#Some of the file may have the same name and as an outcome the scrip will override them
 					changeClassName=$fileName"_"$loopIt
 					echo "Changing $className to $changeClassName in $newName"
-					if [ $className == *"{" ];
-					then
-							
-					fi
+					exit
+					#if [ $className == *"{" ];
+					#then
+					   		
+					#fi
 					eval=$(sed -i "1s/$className/$changeClassName/" $newName)	
 					let loopIt=loopIt+1
 				
