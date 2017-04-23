@@ -42,7 +42,7 @@ done
 
 #Also chaning tasks from Common_Tasks_to_Test.txt
 eval=$(tr '[A-Z]' '[a-z]' < Common_Tasks_to_Test.txt > Common_for_Testing.txt)
-eval=$(Common_for_Testing.txt Commong_Tasks_to_Test.txt)
+eval=$(mv Common_for_Testing.txt Common_Tasks_to_Test.txt)
 echo "Changed also Common_Tasks_to_test.txt from upper to lower case letters"  
-
+eval=$(rm -rf Common_for_Testing.txt)
 exit

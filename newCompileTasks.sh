@@ -32,7 +32,7 @@ do
 				declare -i loopIt=1
 				var="public class $p-"$loopIt" {"
 				FILES="Task/$p/$A/*"
-
+				createNewDir=1
 				#########################################################################################################
 				#Before proceeding check if there is only a single file located in our dataset.
 
@@ -58,6 +58,7 @@ do
 						echo "Removing it..."
 						fileName=$(echo "$fileName" | sed 's/{//g')
 						echo "Changed to $fileName"
+						className=$fileName
 					fi
 		
 					#Sometimes the thrid work maybe a special character, if it is then do not change 
@@ -66,33 +67,32 @@ do
   						echo "File name contains a special charaacter"
 						echo "Leaving the same name as: $fileName"
 						changedName=$(echo "$f" | awk -F "/" '{print $4}'| tr -d '-' )
-						eval=$(mv $f Task/$p/$A/$changedName)
-						echo "Changed to Task/$p/$A/$changedName from $f"
+						eval=$(mkdir -p Task/$p/$A/$createNewDir)
+						eval=$(mv $f Task/$p/$A/$createNewDir/$changedName)
+						echo "Changed to Task/$p/$A/$createNewDir/$changedName from $f"
+						createNewDir=$((createNewDir + 1))
 						
 					else
 
 					#At this point we change the files name to be the same as the class'.
-					newName=$(echo "$f" | awk -F "/" '{print $4}'| tr -d '-' )
-					changeNameBasedOnClass=Task/$p/$A/$newName
+					newName=$(echo "$f" | grep "public class" | awk '{print $3}')
+					eval=$(mkdir -p Task/$p/$A/$createNewDir)
+					changeNameBasedOnClass=Task/$p/$A/$createNewDir/$className.java
 					echo "$changeNameBasedOnClass"
-					echo "HERE: Changing from $f to $changeNameBasedOnClass"
 					eval=$(mv $f $changeNameBasedOnClass)
+					echo "Moving $className from $f to $changeNameBasedOnClass"
 				        #sleep 10;                                   
 					#Some of the file may have the same name and as an outcome the scrip will override them
-					changeClassName=$(echo "$newName" | awk -F "." '{print $1}')
-					echo "Changing $className to $changeClassName in $changeNameBasedOnClass"
-					eval=$(sed -i "s/$className/$changeClassName/" $changeNameBasedOnClass)
-					#sleep 10;
-					#if [ $className == *"{" ];
-					#then
-					   		
-					#fi
+					#changeClassName=$(echo "$newName" | awk -F "." '{print $1}')
+					#echo "Changing $className to $changeClassName in $changeNameBasedOnClass"
+					#eval=$(sed -i "s/$className/$changeClassName/" $changeNameBasedOnClass)
+					createNewDir=$((createNewDir + 1))
 						
 					
 					fi
 					echo "#########################################################################################"
 				done				
-
+				
 
 				#Here we added a while statement in order to compile
 				#Some of the files may not compile and an error may occur
@@ -101,33 +101,57 @@ do
 				echo "#########################################################################################"
 				for f in `ls Task/$p/$A`;
 				do
-					echo "javac Task/$p/$A/$f "
-					if [ $(javac Task/$p/$A/$f) ];
-					then
-						echo "Succussfully compiled"
-					else
-						echo "Compilied with errors"
-					fi	
+					for deeper in `ls Task/$p/$A/$f`;
+					do
+						echo "javac Task/$p/$A/$f/$deeper "
+						if [ $(javac Task/$p/$A/$f/$deeper) ];
+						then
+							echo "Compiled with errors"
+						else
+							echo "Succussfully compiled Task/$p/$A/$f/$deeper" >> Java_Compiled_Report.txt
+						fi
+					done	
 					echo "#########################################################################################"
-				done
-				exit					
+				done				
 				;;
-				(C) echo "Compiling Task/$p/$A using gcc"
+				(C) echo "Compile using gcc"
 				echo "#########################################################################################"
 				echo "## 					COMPILING				     ##"
 				echo "#########################################################################################"
 				FILES="Task/$p/$A/*"
 				for f in $FILES;
 				do
-					fileNameToCompile=$(echo "$f")
-					echo $f
-					
-					echo "gcc -o "
-					exit
+					#We use the '.' to separete our string here
+					fileNameToCompile=$(echo "$f" | awk -F "." '{print $1}')
+				
+					echo "gcc -o $fileNameToCompile  $f"
+					if [ $(gcc -o $fileNameToCompile $f) ];
+					then
+						echo "Successfully compiled $f" >> C_Compiled_Report.txt
+					else
+						echo "Failed to compile $f" >> C_Compiled_Error_Report.txt
+					fi
 				done
-				exit
 				;;
-				(C++) echo "Compile using g++";;			
+				(C++) echo "Compile using g++"
+				echo "#########################################################################################"
+				echo "## 					COMPILING				     ##"
+				echo "#########################################################################################"
+				FILES="Task/$p/$A/*"
+				for f in $FILES;
+				do
+					#We use the '.' to separete our string here
+					fileNameToCompile=$(echo "$f" | awk -F "." '{print $1}')
+				
+					echo "g++ -o $fileNameToCompile  $f"
+					if [ $(g++ -o $fileNameToCompile $f) ];
+					then
+						echo "Successfully compiled $f" >> C_Compiled_Report.txt
+					else
+						echo "Failed to compile $f" >> C_Compiled_Error_Report.txt
+					fi
+				done
+				;;			
 				esac
 			fi
 		done
