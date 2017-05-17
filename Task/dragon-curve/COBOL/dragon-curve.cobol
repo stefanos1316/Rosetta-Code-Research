@@ -165,7 +165,6 @@ start-dragon.
 
          *> get the next window move or terminate
          display 'hjkl?' with no advancing
-         accept direction
     end-perform
 
     stop run

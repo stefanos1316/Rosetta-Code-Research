@@ -107,9 +107,9 @@ do
 						eval=$(javac Task/$p/$A/$f/$deeper)
 						if [ $? -eq 0 ];
 						then
-							echo "Compiled:Tash/$p/$A/$f/$deeper" >> Java_Compiled_Report
+							echo "Task/$p/$A/$f/$deeper:Java" >> Reports/Compiled_Report.txt
 						else
-							echo "Failed:Task/$p/$A/$f/$deeper" >> Java_Failed_Report.txt
+							echo "Failed:Task/$p/$A/$f/$deeper" >> Reports/Java_Failed_Report.txt
 						fi
 					done
 					echo "#########################################################################################"
@@ -129,9 +129,9 @@ do
 					eval=$(gcc -o $fileNameToCompile $f)
 					if [ $? -eq 0 ];
 					then
-						echo "Compiled:$f" >> C_Compiled_Report.txt
+						echo "$f:C" >> Reports/Compiled_Report.txt
 					else
-						echo "Failed:$f" >> C_Compiled_Error_Report.txt
+						echo "Failed:$f" >> Reports/C_Compiled_Error_Report.txt
 					fi
 				done
 				;;
@@ -149,9 +149,9 @@ do
 					eval=$(g++ -o $fileNameToCompile $f)
 					if [ $? -eq 0 ];
 					then
-						echo "Compiled:$f" >> C++_Compiled_Report.txt
+						echo "$f:C++" >> Reports/Compiled_Report.txt
 					else
-						echo "Failed:$f" >> C++_Compiled_Error_Report.txt
+						echo "Failed:$f" >> Reports/C++_Compiled_Error_Report.txt
 					fi
 				done
 				;;	
@@ -166,9 +166,9 @@ do
 					eval=$(fpc $f)
 					if [ $? -eq 0 ];
 					then
-						echo "Compiled:$f" >> Pascal_Compiled_Report.txt
+						echo "$f:Pascal" >> Reports/Compiled_Report.txt
 					else
-						echo "Failed:$f" >> Pascal_Compiled_Error_Report.txt
+						echo "Failed:$f" >> Reports/Pascal_Compiled_Error_Report.txt
 					fi
 				done
 				;;	
@@ -186,9 +186,9 @@ do
 					eval=$(cobc -free -x -o $fileNameToCompile $f)
 					if [ $? -eq 0 ];
 					then
-						echo "Compiled:$f" >> COBOL_Compiled_Report.txt
+						echo "$f:COBOL" >> Reports/Compiled_Report.txt
 					else
-						echo "Failed:$f" >> COBOL_Compiled_Error_Report.txt
+						echo "Failed:$f" >> Reports/COBOL_Compiled_Error_Report.txt
 					fi
 				done
 				;;		

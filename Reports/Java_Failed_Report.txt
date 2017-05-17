@@ -1,0 +1,7 @@
+Failed:Task/100-doors/Java/1/100doors1.java
+Failed:Task/collections/Java/5/Collections.java
+Failed:Task/determine-if-a-string-is-numeric/Java/1/determineifastringisnumeric1.java
+Failed:Task/fizzbuzz/Java/4/fizzbuzz4.java
+Failed:Task/fizzbuzz/Java/5/fizzbuzz5.java
+Failed:Task/http/Java/2/Main.java
+Failed:Task/towers-of-hanoi/Java/1/towersofhanoi.java
