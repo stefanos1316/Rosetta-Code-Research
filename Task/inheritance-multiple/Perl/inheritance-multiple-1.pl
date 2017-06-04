@@ -1,3 +1,0 @@
-package Camera;
-#functions go here...
-1;

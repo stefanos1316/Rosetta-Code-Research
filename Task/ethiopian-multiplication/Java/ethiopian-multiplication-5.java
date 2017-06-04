@@ -1,1 +1,0 @@
-ethMult('Ethiopian', 34)

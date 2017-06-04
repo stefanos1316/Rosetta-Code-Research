@@ -1,1 +1,0 @@
-if (typeof bloop !== "undefined") { ... }

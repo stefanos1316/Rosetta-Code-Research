@@ -1,1 +1,0 @@
-if ("abs" in Math) { ... }

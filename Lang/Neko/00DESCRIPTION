@@ -1,9 +1,0 @@
-{{stub}}
-{{language
-|exec=bytecode
-|gc=yes
-|checking=dynamic
-|site=http://nekovm.org/
-}}
-
-'''Neko''' is a high-level [[Dynamic_programming|dynamically typed]] programming language developed by Nicolas Cannasse at [http://motion-twin.com/ Motion-Twin] as part of a R&D effort for better languages.

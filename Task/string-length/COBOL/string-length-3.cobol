@@ -1,1 +1,0 @@
-FUNCTION LENGTH-AN(str)

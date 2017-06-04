@@ -1,1 +1,0 @@
-isOdd := odd(someIntegerNumber);
