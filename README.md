@@ -11,12 +11,16 @@ We found all the collected tasks implemented in different langauges from this li
 Since Rosetta Code contains the amount of 655 programming languages we decicde to limit our scope and include only the most used 
 ones.  
 For this puropose we collected the 20 most used ones found from tiobe index June 2017: https://www.tiobe.com/tiobe-index/
-Thus we implemented a number of shell scripts in order to manage and limit our dataset. 
+Thus we implemented a number of shell scripts in order to manage and limit our dataset.
 
-#The sequence of the whole procedure has as follows.
 
-1) Execute the removeProgrammingLanguagesNotIncludedInTop15.sh to have a filtered dataset with all the programming languages that we will examine for this research.
-2) Execute the findCommonLanguages.sh in order to received a file "Common_Tasks_to_Test.txt" that includes a number of tasks that we will examine for this research.
-3) Execute the fromUpperToLowerCaseAll.sh in order to make all tasks' filenames to lower case (to have more consistenscy further on with our scripts)
-4) Execute the compileTasks.sh in order to compile all tasks
-
+# How to Execute
+1) Execute the removeTasks.sh to have a filtered dataset with all the programming languages that we will examine for this research.
+2) Execute the fromUpperToLowerCaseAll.sh in order to make all tasks' filenames to lower case (to have more consistenscy further on with our scripts)
+3) Some of the Tasks cotains more that one implementation of the same languages, thus we had to manually drive through the directories and remove some of the 
+   executables. In the case of Java we also had to change the .java files name since it had more than one file of a selected task.
+4) Afterwards, we had to add additional code inside each file in order to force a task to run around a million of times (some tasks  are so small and are 
+   finishing faster than 1 second, thus our power analyzer cannot capture those results).
+5) Execute the compileTasks.sh in order to compile all tasks.
+6) Execute the runTasks.sh to collect the results.
+7) Execute the plotGrpahs to plot graphs.
