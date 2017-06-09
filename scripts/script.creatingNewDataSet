@@ -74,7 +74,8 @@ IFS=" " read -a arrayOfTasks <<< "$tasks"
 
 #Since that Task directory is by default sorted we are also sorting our input 
 #in order to remove the tasks with the appropriate sequence. 
-sorted=$(for j in "${arrayOfTasks[@]}"; do echo $j; done | sort)
+IFS=$'\n' sorted=($(for j in "${arrayOfTasks[@]}"; do echo $j; done | sort))
+unset IFS
 fi
 
 arrayOfLanguages=0
@@ -85,48 +86,34 @@ then
 IFS=" " read -a arrayOfLanguages <<< "$languages"
 
 #Sorting them
-sortedLang=$(for a in "${arrayOfLanguages[@]}"; do echo $a; done | sort)
+IFS=$'\n' sortedLang=($(for a in "${arrayOfLanguages[@]}"; do echo $a; done | sort))
+unset IFS
 fi
 
 #At this point of the script we will loop the task directory to remove the tasks not included in our query
-for i in "${sorted[@]}"; 
+
+mkdir TaskNew
+
+for i in `ls Task`;
 do
-	for containedInTask in `ls Task`;
+	for taskArray in "${sorted[@]}";
 	do
-		taskName=$( echo $containedInTask | awk -F "/" '{print $NF}')
-		echo "Tasks $containedInTask and $i"
-		sleep 1
-	
-		if [ "$i" == "$taskName" ]; 
+		if [[ "$i" == "$taskArray" ]]; 
 		then
-			echo "SAME: $containedInTask and $i"
-			#Before beaking from the loop remove the programming languages not defined from the Command Line 
-			for a in "${sortedLang[@]}"; 
-			do	
-				for containedInLang in `ls Task/$taskName`;
+			mkdir TaskNew/$i
+			#Here we will remove the programming languages not added in our "--languages" query
+			for j in `ls Task/$i`;
+			do
+				for languagesArray in "${sortedLang[@]}";
 				do
-					langName=$(echo "$containedInLang" | awk -F "/" '{print $NF}')
-					echo "Programming language is $containedInLang and $a"
-					sleep 1
-					if [ "$a" == "$langName" ];
+					if [[ "$j" == "$languagesArray" ]];
 					then
-						break
-					else
-						echo "Removing $containedInLang"
-						rm -rf $containedInLang
+						echo "Copying Task/$i/$j to TaskNew/$i"
+						cp -r Task/$i/$j TaskNew/$i
 					fi
-
-				done	
+				done
+				
 			done
-			echo "Breaking point"
-			break;
-		fi
-
-		#Compare and remove those who are not equal
-		if [ "$i" != "$taskName" ]; 
-		then
-			echo "Removing $containedInTask"
-			rm -rf Task/$containedInTask
 		fi
 	done
 done
