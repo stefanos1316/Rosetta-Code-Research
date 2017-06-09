@@ -1,6 +1,8 @@
 # Authors and their information
 Name: Stefanos Georgiou
+
 Affiliation: Athens University of Business and Economics
+
 Contact details: sgeorgiou@aueb.gr, sgeorgiou@singularlogic.eu, and stefanos1316@gmai.com
 
 # Description
