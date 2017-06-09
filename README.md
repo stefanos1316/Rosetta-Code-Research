@@ -1,5 +1,5 @@
 # Authors information
-Name: Stefanos Georgiou
+Name: [Stefanos Georgiou](https://istlab.dmst.aueb.gr/content/members/sgeorgiou.html)
 
 Affiliation: Athens University of Business and Economics
 
