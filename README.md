@@ -12,7 +12,7 @@ In order to achieve our aim we used a dataset publicly available from [Rosetta C
 We found all the collected tasks implemented in different langauges from a [Git repo](https://github.com/acmeism/RosettaCodeData) 
 Since Rosetta Code contains the amount of 655 programming languages we decicde to limit our scope and include only the most used 
 ones.  
-For this puropose we collected the 20 most used ones found from tiobe index June 2017: https://www.tiobe.com/tiobe-index/
+For this puropose we collected the 20 most used ones found from [tiobe](https://www.tiobe.com/tiobe-index/) index June 2017. 
 Thus we implemented a number of shell scripts in order to manage and limit our dataset.
 
 
