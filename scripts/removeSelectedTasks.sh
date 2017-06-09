@@ -65,48 +65,32 @@ then
         exit
 fi
 
-
-###############################################################################################################################
-#						ALL FUNCTIONS HERE						              # 		 		
-###############################################################################################################################
-
-#This function is executed only when the user gives the command line parameters as --tasks and --languages
-function fromCLI {
-#At this point of the script we will loop the task directory to remove the tasks not included in our query
-
 arrayOfTasks=0
 sorted=0
 
 if [[ $tasks != "0" ]]; 
 then
-	IFS=" " read -a arrayOfTasks <<< "$tasks"
+IFS=" " read -a arrayOfTasks <<< "$tasks"
 
-	#Since that Task directory is by default sorted we are also sorting our input 
-	#in order to remove the tasks with the appropriate sequence. 
-	IFS=$'\n' sorted=($(for j in "${arrayOfTasks[@]}"; do echo $j; done | sort))
-	unset IFS
-else
-	echo "Error: No command line arguments where given from the user."
-	echo "Please try again or see --help option"
-	exit
+#Since that Task directory is by default sorted we are also sorting our input 
+#in order to remove the tasks with the appropriate sequence. 
+IFS=$'\n' sorted=($(for j in "${arrayOfTasks[@]}"; do echo $j; done | sort))
+unset IFS
 fi
 
 arrayOfLanguages=0
 sortedLang=0
 
 if [[ $languages != "0" ]];
-	then
-	IFS=" " read -a arrayOfLanguages <<< "$languages"
+then
+IFS=" " read -a arrayOfLanguages <<< "$languages"
 
-	#Sorting them
-	IFS=$'\n' sortedLang=($(for a in "${arrayOfLanguages[@]}"; do echo $a; done | sort))
-	unset IFS
-else
-	echo "Error: No command line arguments where given from the user."
-	echo "Please try again or see --help option"
-	exit
+#Sorting them
+IFS=$'\n' sortedLang=($(for a in "${arrayOfLanguages[@]}"; do echo $a; done | sort))
+unset IFS
 fi
 
+#At this point of the script we will loop the task directory to remove the tasks not included in our query
 
 mkdir TaskNew
 
@@ -134,59 +118,8 @@ do
 	done
 done
 
-#At this point we remove the Task directory and we name the TaskNew as Task
-#rm -rf Task
-#mv TaskNew Task
-}
-
-#This function is executed only when the user gives the commnad line parameters as --tasksFile and --languagesFile
-function fromFiles {
-	
-	IFS=$'\n' read -d '' -r -a tasksArray < $tasksFile
-	IFS=$'\n' read -d '' -r -a languagesArray < $languagesFile
-
-	IFS=$'\n' sortedTasks=($(for j in "${tasksArray[@]}"; do echo $j; done | sort))
-	IFS=$'\n' sortedLanguages=($(for i in "${languagesArray[@]}"; do echo $i; done | sort))
-
-	mkdir TaskNew
-
-	for i in `ls Task`;
-	do
-		for taskArray in "${sortedTasks[@]}";
-		do
-			if [[ "$i" == "$taskArray" ]]; 
-			then
-				mkdir TaskNew/$i
-				#Here we will remove the programming languages not added in our "--languages" query
-				for j in `ls Task/$i`;
-				do
-					for languagesArray in "${sortedLanguages[@]}";
-					do
-						if [[ "$j" == "$languagesArray" ]];
-						then
-							echo "Copying Task/$i/$j to TaskNew/$i"
-							cp -r Task/$i/$j TaskNew/$i
-						fi
-					done
-				
-				done
-			fi
-		done
-	done
-
-#Removing and renaming
-#rm -rf Task
-#mv TaskNew Task
-}
-###############################################################################################################################
-
-
-#Checking which function to call
-if [[ "$tasks" != 0 && "$tasksFile" == 0 ]];
-then 
-	fromCLI 
-else
-	fromFiles
-fi
+#When done remove Task and name the TaskNew to Task
+rm -rf Task
+mv TaskNew Task
 
 exit
