@@ -1,4 +1,4 @@
-# Authors and their information
+# Authors information
 Name: Stefanos Georgiou
 
 Affiliation: Athens University of Business and Economics
