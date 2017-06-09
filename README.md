@@ -17,6 +17,8 @@ Thus we implemented a number of shell scripts in order to manage and limit our d
 
 
 # How to Execute
+First drive to scripts directory and proceed as follows:
+
 1) Execute the removeTasks.sh to have a filtered dataset with all the programming languages that we will examine for this research.
 2) Execute the fromUpperToLowerCaseAll.sh in order to make all tasks' filenames to lower case (to have more consistenscy further on with our scripts)
 3) Some of the Tasks cotains more that one implementation of the same languages, thus we had to manually drive through the directories and remove some of the 
