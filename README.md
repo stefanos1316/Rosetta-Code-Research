@@ -19,8 +19,8 @@ Thus we implemented a number of shell scripts in order to manage and limit our d
 # How to Execute
 First drive to scripts directory and proceed as follows:
 
-1) Execute the removeTasks.sh to have a filtered dataset with all the programming languages that we will examine for this research.
-2) Execute the fromUpperToLowerCaseAll.sh in order to make all tasks' filenames to lower case (to have more consistenscy further on with our scripts)
+1) Execute the script.cleanAll in order to prepare the existing dataset and make it case insensitive by chaning all files from upper to lower case.
+2) Execute the script.createNewDataSet to have a filtered dataset with all the selected tasks and programming languages that we will examine for this research.
 3) Some of the Tasks cotains more that one implementation of the same languages, thus we had to manually drive through the directories and remove some of the 
    executables. In the case of Java we also had to change the .java files name since it had more than one file of a selected task.
 4) Afterwards, we had to add additional code inside each file in order to force a task to run around a million of times (some tasks  are so small and are 
@@ -28,3 +28,5 @@ First drive to scripts directory and proceed as follows:
 5) Execute the compileTasks.sh in order to compile all tasks.
 6) Execute the runTasks.sh to collect the results.
 7) Execute the plotGrpahs to plot graphs.
+
+Note: For more information for executing scripts add the --help command line argument.
