@@ -15,6 +15,10 @@ ones.
 For this puropose we collected the 20 most used ones found from [tiobe](https://www.tiobe.com/tiobe-index/) index June 2017. 
 Thus we implemented a number of shell scripts in order to manage and limit our dataset.
 
+# Downloading
+Since we are using a submodule in this repository we suggest the use of the following command:
+
+$ git clone --recursive https://github.com/stefanos1316/Rosetta-Code-Research.git
 
 # How to Execute
 First drive to [scripts](https://github.com/stefanos1316/Rosetta-Code-Research/tree/master/scripts) directory and proceed as follows:
