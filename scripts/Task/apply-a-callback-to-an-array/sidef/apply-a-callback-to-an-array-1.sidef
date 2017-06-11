@@ -1,1 +1,0 @@
-func callback(i) { say i**2 };

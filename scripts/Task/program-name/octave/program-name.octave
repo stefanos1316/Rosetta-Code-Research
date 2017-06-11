@@ -1,6 +1,0 @@
-function main()
-	program = program_name();
-	printf("Program: %s", program);
-endfunction
-
-main();

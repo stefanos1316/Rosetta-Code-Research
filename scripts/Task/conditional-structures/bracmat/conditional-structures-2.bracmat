@@ -1,8 +1,0 @@
-  2+2
-: (   (<3|>5)
-    & put$"Not quite, must check that Bracmat interpreter."
-  |   (3|5)
-    & put$"Not far off, but must check that Bracmat interpreter some day."
-  |   ?
-    & put$"That's what I thought."
-  )

@@ -1,2 +1,0 @@
-native function strdup(s)
-println (strdup ("Hello World!"))

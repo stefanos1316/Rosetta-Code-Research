@@ -1,1 +1,0 @@
-var isOdd := (i mod 2)=1;

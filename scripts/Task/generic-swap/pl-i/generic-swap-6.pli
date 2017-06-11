@@ -1,6 +1,0 @@
-Begin;
- declare t like this;
-  t = this;
-  this = that;
-  that = t;
-End;

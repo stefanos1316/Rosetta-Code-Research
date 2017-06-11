@@ -1,3 +1,0 @@
-`This is a variable` := 1:
-print(`This is a variable`);
-                               1

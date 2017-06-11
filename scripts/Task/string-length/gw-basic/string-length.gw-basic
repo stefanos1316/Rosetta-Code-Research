@@ -1,2 +1,0 @@
-10 INPUT A$
-20 PRINT LEN(A$)

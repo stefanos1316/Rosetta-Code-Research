@@ -1,2 +1,0 @@
-octave:14> md5('Rosetta Code')
-ans = CCA1BF66B09554E10F837838C3D3EFB1

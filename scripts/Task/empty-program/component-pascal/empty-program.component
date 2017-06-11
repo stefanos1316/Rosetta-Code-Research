@@ -1,2 +1,0 @@
-MODULE Main;
-END Main.

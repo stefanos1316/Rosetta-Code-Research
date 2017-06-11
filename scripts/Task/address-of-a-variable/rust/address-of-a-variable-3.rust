@@ -1,3 +1,0 @@
-unsafe {
-    *(0x7ffc8f303130 as *mut usize) = 1;
-}

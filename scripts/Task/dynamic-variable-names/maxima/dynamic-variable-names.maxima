@@ -1,2 +1,0 @@
-/* Use :: for indirect assignment */
-block([name: read("name?"), x: read("value?")], name :: x);

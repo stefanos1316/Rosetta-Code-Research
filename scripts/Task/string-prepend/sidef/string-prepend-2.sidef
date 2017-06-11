@@ -1,3 +1,0 @@
-var str = 'llo!';
-str.prepend!('He');
-say str;

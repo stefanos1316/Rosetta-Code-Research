@@ -1,3 +1,0 @@
-SIGNAL FINISH; /* terminates the entire program.   */
-               /* PL/I does any required cleanup,  */
-               /* such as closing files.           */

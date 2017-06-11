@@ -1,3 +1,0 @@
-if error_code!=NO_ERROR then
-    abort(0)
-end if

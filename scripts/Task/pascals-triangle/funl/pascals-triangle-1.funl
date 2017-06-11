@@ -1,5 +1,0 @@
-import lists.zip
-
-def
-  pascal( 1 ) = [1]
-  pascal( n ) = [1] + map( (a, b) -> a + b, zip(pascal(n-1), pascal(n-1).tail()) ) + [1]

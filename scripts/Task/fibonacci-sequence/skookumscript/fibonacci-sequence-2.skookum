@@ -1,5 +1,0 @@
-// Assuming code is in Integer.fibonacci() method
-() Integer
-  [
-  if this < 2 [this] else [[this - 1].fibonacci + [this - 2].fibonacci]
-  ]

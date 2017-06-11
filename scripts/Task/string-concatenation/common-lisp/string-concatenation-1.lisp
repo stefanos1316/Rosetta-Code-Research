@@ -1,5 +1,0 @@
-(let ((s "hello"))
-    (format t "~a there!~%" s)
-    (let* ((s2 " there!")
-           (s (concatenate 'string s s2)))
-        (format t "~a~%" s)))

@@ -1,7 +1,0 @@
-MODULE HostName;
-IMPORT
-  OS:ProcessParameters,
-  Out;
-BEGIN
-  Out.Object("Host: " + ProcessParameters.GetEnv("HOSTNAME"));Out.Ln
-END HostName.

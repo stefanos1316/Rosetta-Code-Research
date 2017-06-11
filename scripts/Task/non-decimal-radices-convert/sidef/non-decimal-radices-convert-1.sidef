@@ -1,2 +1,0 @@
-say 60272032366.base(36)    # convert number to string
-say Number("rosetta", 36)   # convert string to number

@@ -1,1 +1,0 @@
-.say for sort ~«dir

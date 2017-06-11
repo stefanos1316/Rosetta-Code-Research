@@ -1,4 +1,0 @@
-@# old-style comment to end of line
-@; new-style comment to end of line
-@(bind a ; comment within expression
-       "foo")

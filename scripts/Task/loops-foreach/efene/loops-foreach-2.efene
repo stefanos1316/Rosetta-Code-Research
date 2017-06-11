@@ -1,1 +1,0 @@
-lists.foreach(fn (X) { io.format("~p~n", [X]) }, Collection)

@@ -1,2 +1,0 @@
-loop
-  console.log 'SPAM'

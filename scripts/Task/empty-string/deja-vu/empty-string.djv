@@ -1,7 +1,0 @@
-local :e ""
-
-if not e:
-    !print "an empty string"
-
-if e:
-    !print "not an empty string"

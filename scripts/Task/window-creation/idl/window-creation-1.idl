@@ -1,7 +1,0 @@
-link graphics
-
-procedure main(arglist)
-
-WOpen("size=300, 300", "fg=blue", "bg=light gray")
-WDone()
-end

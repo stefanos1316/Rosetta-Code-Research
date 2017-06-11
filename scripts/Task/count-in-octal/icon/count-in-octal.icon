@@ -1,6 +1,0 @@
-link convert   # To get exbase10 method
-
-procedure main()
-    limit := 8r37777777777
-    every write(exbase10(seq(0)\limit, 8))
-end

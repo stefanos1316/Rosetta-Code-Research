@@ -1,2 +1,0 @@
-data = getBytes("input.txt")
-putBytes("output.txt", data)

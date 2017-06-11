@@ -1,3 +1,0 @@
-	input break(" ") . a " " rem . b
-	output = a + b
-end

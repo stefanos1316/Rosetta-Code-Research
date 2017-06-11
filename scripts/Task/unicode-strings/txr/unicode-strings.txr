@@ -1,3 +1,0 @@
-@{TITLE /[あ-ん一-耙]+/} (@ROMAJI/@ENGLISH)
-@(freeform)
-@(coll)@{STANZA /[^\n\x3000 ]+/}@(end)@/.*/

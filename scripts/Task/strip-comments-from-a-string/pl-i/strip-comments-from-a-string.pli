@@ -1,3 +1,0 @@
-k = search(text, '#;');
-if k = 0 then put skip list (text);
-         else put skip list (substr(text, 1, k-1));

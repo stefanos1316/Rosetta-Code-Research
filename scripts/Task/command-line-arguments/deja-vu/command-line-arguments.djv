@@ -1,9 +1,0 @@
-for i range 0 -- len !args:
-	print\( "Argument #" i " is " )
-	. get-from !args i
-
-if has !opts :c:
-	!print "Ah, the -c option."
-
-if has !opts :four:
-	!. get-from !opts :four

@@ -1,4 +1,0 @@
->> isdir("docs")
-  0
->> isfile("input.txt")
-  0

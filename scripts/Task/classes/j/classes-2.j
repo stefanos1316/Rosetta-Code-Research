@@ -1,1 +1,0 @@
-   exampleObject=: conew 'exampleClass'

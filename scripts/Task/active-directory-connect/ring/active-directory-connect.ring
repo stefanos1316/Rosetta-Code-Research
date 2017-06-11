@@ -1,1 +1,0 @@
-see system("dir") + nl

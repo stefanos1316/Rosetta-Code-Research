@@ -1,6 +1,0 @@
-GET "libhdr"
-
-LET start() = VALOF
-{ writef("Hello world!")
-  RESULTIS 0
-}

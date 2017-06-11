@@ -1,3 +1,0 @@
-#cast %s
-
-example = shuffle 'abcdefghijkl'

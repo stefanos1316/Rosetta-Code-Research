@@ -1,4 +1,0 @@
-/*
-this is a multiline
-comment
-*/

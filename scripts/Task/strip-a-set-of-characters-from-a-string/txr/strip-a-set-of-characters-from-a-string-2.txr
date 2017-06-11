@@ -1,2 +1,0 @@
-(defun strip-chars (str set)
-   (mappend (do if (memq @1 set) (list @1)) str))

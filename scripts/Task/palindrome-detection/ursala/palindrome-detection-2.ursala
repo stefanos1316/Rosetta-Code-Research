@@ -1,3 +1,0 @@
-#cast %bL
-
-examples = palindrome* <'abccba','foo ba rra bo of','notone'>

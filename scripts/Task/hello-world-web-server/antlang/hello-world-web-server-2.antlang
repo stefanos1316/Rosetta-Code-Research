@@ -1,2 +1,0 @@
-load["handlers.ant"]
-serv: httprun[8080; {httpwrap["Goodbye, World!"]}]

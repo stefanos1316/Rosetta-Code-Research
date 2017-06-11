@@ -1,4 +1,0 @@
-command testGuessNumber
-    guessTheNumber  --defaults to 1-10
-    guessTheNumber 9,12
-end testGuessNumber

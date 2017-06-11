@@ -1,1 +1,0 @@
-mapM_ print collect

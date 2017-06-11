@@ -1,4 +1,0 @@
-Local varName,value
-InputStr "Variable name", varName
-Prompt value
-value → #varName

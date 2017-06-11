@@ -1,1 +1,0 @@
-"HOME" os-env print

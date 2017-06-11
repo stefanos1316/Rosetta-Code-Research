@@ -1,3 +1,0 @@
-f:=n->seq(print(seq(binomial(i,k),k=0..i)),i=0..n-1);
-
-f(3);

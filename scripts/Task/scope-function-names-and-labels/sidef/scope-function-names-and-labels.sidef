@@ -1,9 +1,0 @@
-# Nested functions
-func outer {
-    func inner {};   # not visible outside
-}
-
-# Nested classes
-class Outer {
-    class Inner {};  # not visisble outside
-}

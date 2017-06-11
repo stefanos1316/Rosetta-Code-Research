@@ -1,2 +1,0 @@
-as -o ab.o ab.S
-ld -o a.out ab.o

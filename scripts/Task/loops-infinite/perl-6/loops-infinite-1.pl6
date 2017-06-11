@@ -1,3 +1,0 @@
-loop {
-    say 'SPAM';
-}

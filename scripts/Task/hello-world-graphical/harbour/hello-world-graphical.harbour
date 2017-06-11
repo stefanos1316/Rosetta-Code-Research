@@ -1,2 +1,0 @@
-PROCEDURE Main()
-   RETURN wapi_MessageBox(,"Goodbye, World!","")

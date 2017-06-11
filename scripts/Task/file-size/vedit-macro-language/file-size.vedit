@@ -1,2 +1,0 @@
-Num_Type(File_Size("input.txt"))
-Num_Type(File_Size("/input.txt"))

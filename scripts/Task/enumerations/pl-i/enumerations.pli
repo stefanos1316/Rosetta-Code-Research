@@ -1,3 +1,0 @@
-define ordinal animal (frog, gnu, elephant, snake);
-
-define ordinal color (red value (1), green value (3), blue value (5));

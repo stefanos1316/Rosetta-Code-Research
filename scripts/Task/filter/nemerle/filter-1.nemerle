@@ -1,3 +1,0 @@
-def original = $[1 .. 100];
-def filtered = original.Filter(fun(n) {n % 2 == 0});
-WriteLine($"$filtered");

@@ -1,1 +1,0 @@
-sprintf("%02x", SHA1(+"Rosetta Code"(:)))

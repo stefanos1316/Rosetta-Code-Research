@@ -1,8 +1,0 @@
-(defun consolidate (ss)
-  (labels ((comb (cs s)
-             (cond ((null s) cs)
-                   ((null cs) (list s))
-                   ((null (intersection s (first cs)))
-                    (cons (first cs) (comb (rest cs) s)))
-                   ((consolidate (cons (union s (first cs)) (rest cs)))))))
-    (reduce #'comb ss :initial-value nil)))

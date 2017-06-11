@@ -1,4 +1,0 @@
-to fib :n [:a 0] [:b 1]
-  if :n < 1 [output :a]
-  output (fib :n-1 :b :a+:b)
-end

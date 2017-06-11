@@ -1,3 +1,0 @@
-utf8Str = "Hello world äöü"
-put utf8Str.length
--- 15

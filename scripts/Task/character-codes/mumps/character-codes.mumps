@@ -1,2 +1,0 @@
-WRITE $ASCII("M")
-WRITE $CHAR(77)

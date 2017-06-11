@@ -1,2 +1,0 @@
-src  =: 'hello'
-dest =: src

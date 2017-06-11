@@ -1,3 +1,0 @@
-local str="live"
-put str & "code" into str2
-put str && str2

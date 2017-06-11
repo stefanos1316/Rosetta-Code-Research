@@ -1,4 +1,0 @@
-f:stdin f:getline
-"Sleeping..." . cr
-eval sleep
-"Awake!" . cr bye

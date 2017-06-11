@@ -1,5 +1,0 @@
-        COUNT = 10
-LOOP    OUTPUT = COUNT
-        COUNT = COUNT - 1
-        GE(COUNT, 0)     :S(LOOP)
-END

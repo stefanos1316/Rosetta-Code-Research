@@ -1,2 +1,0 @@
-const func float: multiply (in float: a, in float: b) is
-  return a * b;

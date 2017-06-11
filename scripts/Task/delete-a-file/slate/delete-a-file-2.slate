@@ -1,2 +1,0 @@
-(Directory current / 'input.txt') delete.
-(Directory root / 'input.txt') delete.

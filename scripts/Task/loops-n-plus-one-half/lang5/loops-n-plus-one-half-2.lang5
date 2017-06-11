@@ -1,3 +1,0 @@
-: 2string  2 compress "" join ;
-: ,  dup 10 != if ", " 2string then ;
-1 10 "dup , . 1+" times

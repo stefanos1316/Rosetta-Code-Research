@@ -1,1 +1,0 @@
-class APPLICATION ... end

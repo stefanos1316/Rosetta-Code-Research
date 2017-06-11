@@ -1,1 +1,0 @@
-FOR I=1:1:5 FOR J=1:1:I WRITE "*" IF J=I W !

@@ -1,7 +1,0 @@
-class SWAP{T} is
-  swap(inout a, inout b:T) is
-    t ::= a;
-    a := b;
-    b := t;
-  end;
-end;

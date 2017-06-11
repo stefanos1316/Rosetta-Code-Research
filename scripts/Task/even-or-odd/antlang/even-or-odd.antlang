@@ -1,2 +1,0 @@
-odd: {x mod 2}
-even: {1 - x mod 2}

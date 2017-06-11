@@ -1,1 +1,0 @@
-(system:call-system "ls")

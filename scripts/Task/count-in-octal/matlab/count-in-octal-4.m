@@ -1,1 +1,0 @@
-    printf('%o\n',seq);

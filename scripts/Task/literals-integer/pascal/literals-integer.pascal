@@ -1,4 +1,0 @@
-const
-  INT_VALUE = 15;
-  OCTAL_VALUE = &017;
-  BINARY_VALUE = %1111;

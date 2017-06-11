@@ -1,2 +1,0 @@
-      dx% = @vdu.tr%-@vdu.tl% : REM Width of text viewport in pixels
-      dy% = @vdu.tb%-@vdu.tt% : REM Height of text viewport in pixels

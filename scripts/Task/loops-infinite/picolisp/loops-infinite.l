@@ -1,1 +1,0 @@
-(loop (prinl "SPAM"))

@@ -1,3 +1,0 @@
-for(i=1,#keys,
-  print(keys[i]," ",mapget(M,keys[i]))
-)

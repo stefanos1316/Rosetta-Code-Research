@@ -1,3 +1,0 @@
-a_list 1 get         # get second item
-a_hash 'b' get       # get item with key 'b'
-a_hash.b             # shorthand

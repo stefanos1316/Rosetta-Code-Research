@@ -1,7 +1,0 @@
-(ByteLength=
-  length
-.   @(!arg:? [?length)
-  & !length
-);
-
-out$ByteLength$𝔘𝔫𝔦𝔠𝔬𝔡𝔢

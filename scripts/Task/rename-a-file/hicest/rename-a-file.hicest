@@ -1,7 +1,0 @@
-WRITE(FIle='input.txt', REName='.\output.txt')
-SYSTEM(DIR='E:\HicEst\Rosetta')
-WRITE(FIle='.\docs', REName='.\mydocs')
-
-WRITE(FIle='\input.txt', REName='\output.txt')
-SYSTEM(DIR='\')
-WRITE(FIle='\docs', REName='\mydocs')

@@ -1,8 +1,0 @@
-SELECT var
-  CASE n1
-    -> code
-  CASE n2
-    -> code
-  DEFAULT
-    -> no one of the previous case...
-ENDSELECT

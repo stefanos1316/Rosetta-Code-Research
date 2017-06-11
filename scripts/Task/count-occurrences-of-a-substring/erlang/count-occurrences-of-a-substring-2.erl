@@ -1,1 +1,0 @@
-substrings:main("ababababab","abab").

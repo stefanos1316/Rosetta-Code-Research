@@ -1,2 +1,0 @@
-ORD(Fruit.Apple); (* Returns 0 *)
-VAL(0, Fruit); (* Returns Fruit.Apple *)

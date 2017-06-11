@@ -1,1 +1,0 @@
-[ | :s | s == s copy] applyTo: {'hello'}. "returns False"

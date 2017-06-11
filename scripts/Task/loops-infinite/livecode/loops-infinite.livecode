@@ -1,3 +1,0 @@
-repeat forever
-  put "SPAM" & return
-end repeat

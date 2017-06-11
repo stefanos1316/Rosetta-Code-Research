@@ -1,2 +1,0 @@
-x = WindowMouseX(#MyWindow)
-y = WindowMouseY(#MyWindow)

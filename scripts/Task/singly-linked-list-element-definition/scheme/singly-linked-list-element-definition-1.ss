@@ -1,1 +1,0 @@
-(cons value next)

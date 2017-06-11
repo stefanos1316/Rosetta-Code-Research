@@ -1,2 +1,0 @@
-define: #p -> 'ingirumimusnocteetconsumimurigni'.
-inform: 'sequence ' ; p ; ' is ' ; (p isPalindrome ifTrue: [''] ifFalse: ['not ']) ; 'a palindrome.'.

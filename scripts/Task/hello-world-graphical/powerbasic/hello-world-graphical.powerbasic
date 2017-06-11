@@ -1,3 +1,0 @@
-FUNCTION PBMAIN() AS LONG
-    MSGBOX "Goodbye, World!"
-END FUNCTION

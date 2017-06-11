@@ -1,5 +1,0 @@
-REM get a variable's address:
-y% = ^x%
-
-REM can't set a variable's address, but can access a given memory location (4 bytes):
-x% = !y%

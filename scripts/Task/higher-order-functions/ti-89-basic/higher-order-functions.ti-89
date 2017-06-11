@@ -1,5 +1,0 @@
-Local map
-Define map(f,l)=Func
-  Return seq(#f(l[i]),i,1,dim(l))
-EndFunc
-Disp map("sin", {0, π/6, π/4, π/3, π/2})

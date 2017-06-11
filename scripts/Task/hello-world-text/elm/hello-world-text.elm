@@ -1,1 +1,0 @@
-main = text "Goodbye World!"

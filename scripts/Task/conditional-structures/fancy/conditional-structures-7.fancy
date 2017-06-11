@@ -1,1 +1,0 @@
-{ "x < y!" println } if: (x < y)   # analog, but postfix

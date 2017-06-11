@@ -1,3 +1,0 @@
-GoodBad[i_List]:=Not[MatchQ[Differences[i],{1..}|{}]]
-n=5
-Select[Subsets[Range[n]],GoodBad]

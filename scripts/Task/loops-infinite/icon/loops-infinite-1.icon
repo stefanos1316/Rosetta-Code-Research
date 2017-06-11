@@ -1,3 +1,0 @@
-procedure main()
-   repeat write("SPAM")
-end

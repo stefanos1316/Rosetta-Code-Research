@@ -1,1 +1,0 @@
-(insert "Goodbye, World!")

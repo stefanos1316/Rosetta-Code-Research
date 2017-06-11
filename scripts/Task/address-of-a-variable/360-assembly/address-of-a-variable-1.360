@@ -1,3 +1,0 @@
-         LA    R3,I                load address of I
-...
-I        DS    F

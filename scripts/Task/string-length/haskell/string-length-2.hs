@@ -1,1 +1,0 @@
-strlen = length "Hello, world!"

@@ -1,4 +1,0 @@
-var odd = 13;
-if odd % 2 != 0 {
-    print("odd");
-}

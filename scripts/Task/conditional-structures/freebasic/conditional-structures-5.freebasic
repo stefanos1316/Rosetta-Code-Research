@@ -1,2 +1,0 @@
-Dim b As Boolean = True
-If b Goto label

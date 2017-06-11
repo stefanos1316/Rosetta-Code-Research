@@ -1,4 +1,0 @@
-d:new
-"%Y-%M-%D" over d:format . cr
-"%W, %N %D, %Y" over d:format . cr
-bye

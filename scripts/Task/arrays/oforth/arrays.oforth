@@ -1,3 +1,0 @@
-[ "abd", "def", "ghi" ] at(3) println
-
-ListBuffer new dup addAll([1, 2, 3]) dup put(2, 8.1) println

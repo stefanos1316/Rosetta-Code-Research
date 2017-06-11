@@ -1,7 +1,0 @@
-#import std
-
-#cast %s
-
-example = ~&x 'asdf'
-
-verbose_example = reverse 'asdf'

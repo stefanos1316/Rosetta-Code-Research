@@ -1,5 +1,0 @@
-var Δ : Integer;
-
-Δ := 1;
-Inc(Δ);
-PrintLn(Δ);

@@ -1,2 +1,0 @@
-.PR QUOTE .PR
-[]'CHAR' CHARXYZ = "XYZ";

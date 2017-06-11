@@ -1,5 +1,0 @@
-(list-ec (:range x 1 21)
-         (:range y x 21)
-         (:range z y 21)
-         (if (= (* z z) (+ (* x x) (* y y))))
-         (list x y z))

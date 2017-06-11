@@ -1,3 +1,0 @@
-with files'
-"input.txt" :R open &size sip close drop putn
-"/input.txt" :R open &size sip close drop putn

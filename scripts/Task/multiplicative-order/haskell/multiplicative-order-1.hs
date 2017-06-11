@@ -1,1 +1,0 @@
-primeFacsExp :: Integer -> [(Integer, Int)]

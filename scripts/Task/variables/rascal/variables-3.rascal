@@ -1,4 +1,0 @@
-rascal>int max = 100;
-int: 100
-rascal>min = 0;
-int: 0

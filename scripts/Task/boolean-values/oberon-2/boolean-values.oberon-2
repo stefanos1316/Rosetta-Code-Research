@@ -1,6 +1,0 @@
-VAR
-  a,b,c: BOOLEAN;
-...
-  a := TRUE;
-  b := FALSE;
-  c := 1 > 2;

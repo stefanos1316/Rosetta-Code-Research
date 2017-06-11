@@ -1,7 +1,0 @@
-SinOsc s => dac;
-
-for (0 => int i; i < 2000; 5 +=> i )
-{
-    i => s.freq;
-    100::ms => now;
-}

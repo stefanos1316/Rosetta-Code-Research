@@ -1,1 +1,0 @@
-ARGS list " " join "%s\n" print

@@ -1,5 +1,0 @@
-(defun power-set (list)
-    (let ((pow-set (list nil)))
-      (dolist (element (reverse list) pow-set)
-        (dolist (set pow-set)
-          (push (cons element set) pow-set)))))

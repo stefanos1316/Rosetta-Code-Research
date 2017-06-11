@@ -1,1 +1,0 @@
-echon "Goodbye, World!"

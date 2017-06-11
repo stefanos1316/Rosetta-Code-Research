@@ -1,4 +1,0 @@
-var arr = %w(a b c)
-for i in (0 .. arr.len) {
-    say arr.combinations(i)
-}

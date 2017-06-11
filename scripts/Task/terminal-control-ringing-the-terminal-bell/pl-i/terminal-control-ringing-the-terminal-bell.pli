@@ -1,3 +1,0 @@
-   declare bell character (1);
-   unspec (bell) = '00000111'b;
-   put edit (bell) (a);

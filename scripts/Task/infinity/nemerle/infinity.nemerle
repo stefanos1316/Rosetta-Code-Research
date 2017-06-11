@@ -1,4 +1,0 @@
-def posinf = double.PositiveInfinity;
-def a = IsInfinity(posinf);         // a = true
-def b = IsNegativeInfinity(posinf); // b = false
-def c = IsPositiveInfinity(posinf); // c = true

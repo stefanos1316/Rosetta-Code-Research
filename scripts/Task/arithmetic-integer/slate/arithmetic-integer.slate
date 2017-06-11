@@ -1,9 +1,0 @@
-[| :a :b |
-inform: (a + b) printString.
-inform: (a - b) printString.
-inform: (a * b) printString.
-inform: (a / b) printString.
-inform: (a // b) printString.
-inform: (a \\ b) printString.
-
-] applyTo: {Integer readFrom: (query: 'Enter a: '). Integer readFrom: (query: 'Enter b: ')}.

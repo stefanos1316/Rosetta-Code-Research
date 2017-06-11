@@ -1,3 +1,0 @@
-S$ = " World!"
-S$ = "Hello" + S$
-PRINT S$

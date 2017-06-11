@@ -1,6 +1,0 @@
-var i := 0;
-
-repeat
-   Inc(i);
-   PrintLn(i);
-until i mod 6 = 0;

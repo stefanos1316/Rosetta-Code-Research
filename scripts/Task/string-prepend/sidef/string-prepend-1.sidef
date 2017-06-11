@@ -1,3 +1,0 @@
-var str = 'llo!';
-str.sub!(/^/, 'He');
-say str;

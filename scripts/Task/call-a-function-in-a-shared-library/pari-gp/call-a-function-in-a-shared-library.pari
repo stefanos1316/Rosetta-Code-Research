@@ -1,1 +1,0 @@
-install("function_name","G","gp_name","./test.gp.so");

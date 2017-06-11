@@ -1,2 +1,0 @@
-var l = frequire('Lingua::EN::Numbers');
-say l.num2en(123456789);

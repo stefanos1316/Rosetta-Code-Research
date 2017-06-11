@@ -1,3 +1,0 @@
-cmp i, 1
-jg _DoSomething
-FailedSoContinueCodeExecution

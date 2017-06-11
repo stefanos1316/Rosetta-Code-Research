@@ -1,2 +1,0 @@
-      OSCLI "DELETE " + file$
-      OSCLI "RMDIR " + dir$

@@ -1,2 +1,0 @@
-b = array[1 to 100]
-c = select[b, {|x| x mod 2  == 0}]

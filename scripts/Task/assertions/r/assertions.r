@@ -1,1 +1,0 @@
-stopifnot(a==42)

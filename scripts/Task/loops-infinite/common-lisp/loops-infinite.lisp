@@ -1,1 +1,0 @@
-(loop (write-line "SPAM"))

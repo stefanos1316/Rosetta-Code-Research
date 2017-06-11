@@ -1,3 +1,0 @@
-with files'
-"output.txt" :w open close drop
-"/output.txt" :w open close drop

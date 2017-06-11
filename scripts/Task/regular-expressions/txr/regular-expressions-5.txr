@@ -1,2 +1,0 @@
-$ txr -p '(regsub #/a+/ "-" "baaaaaad")'
-"b-d"

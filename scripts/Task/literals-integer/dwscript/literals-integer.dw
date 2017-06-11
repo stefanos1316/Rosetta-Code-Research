@@ -1,2 +1,0 @@
-var a : Integer := 42;
-var b : Integer := $2a;

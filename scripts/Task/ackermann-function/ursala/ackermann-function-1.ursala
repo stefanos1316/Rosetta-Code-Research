@@ -1,8 +1,0 @@
-#import std
-#import nat
-
-ackermann =
-
-~&al^?\successor@ar ~&ar?(
-   ^R/~&f ^/predecessor@al ^|R/~& ^|/~& predecessor,
-   ^|R/~& ~&\1+ predecessor@l)

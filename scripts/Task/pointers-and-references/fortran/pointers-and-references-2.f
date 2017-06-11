@@ -1,1 +1,0 @@
-nullify(pointertoreal)

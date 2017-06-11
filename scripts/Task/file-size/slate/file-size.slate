@@ -1,2 +1,0 @@
-(File newNamed: 'input.txt') fileInfo fileSize.
-(File newNamed: '/input.txt') fileInfo fileSize.

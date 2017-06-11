@@ -1,2 +1,0 @@
-Reversed("abcdef");
-# "fedcba"

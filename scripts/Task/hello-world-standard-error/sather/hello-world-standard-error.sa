@@ -1,5 +1,0 @@
-class MAIN is
-  main is
-    #ERR + "Hello World!\n";
-  end;
-end;

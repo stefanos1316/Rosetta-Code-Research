@@ -1,1 +1,0 @@
-   setattr(e, name, value)

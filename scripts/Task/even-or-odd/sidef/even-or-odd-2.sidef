@@ -1,2 +1,0 @@
-func is_odd(n)  { n&1 == 1 };
-func is_even(n) { n&1 == 0 };

@@ -1,2 +1,0 @@
-a = read["file:yourfile.txt"]
-b = read["file:yourfile.txt", "UTF-8"]

@@ -1,4 +1,0 @@
-$$ MODE TUSCRIPT
-LOOP/999999999
-print "spam"
-ENDLOOP

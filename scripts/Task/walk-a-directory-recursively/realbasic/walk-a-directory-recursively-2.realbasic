@@ -1,3 +1,0 @@
-  Dim f As FolderItem = GetFolderItem("C:\Windows\system32")
-  Dim pattern As String = "((?:[a-z][a-z]+))(\.)(dll)"  //all file names ending in .dll
-  printFiles(f, pattern)

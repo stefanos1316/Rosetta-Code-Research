@@ -1,1 +1,0 @@
-require 'myfile.p6';

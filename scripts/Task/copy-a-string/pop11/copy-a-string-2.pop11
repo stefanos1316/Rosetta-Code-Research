@@ -1,2 +1,0 @@
-vars src='Hello';
-vars dst=copy(src);

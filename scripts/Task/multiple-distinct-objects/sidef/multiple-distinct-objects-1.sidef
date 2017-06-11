@@ -1,1 +1,0 @@
-[Foo.new] * n;      # incorrect (only one distinct object is created)

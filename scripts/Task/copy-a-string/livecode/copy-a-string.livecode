@@ -1,3 +1,0 @@
-put "foo" into bar
-put bar into baz
-answer bar && baz

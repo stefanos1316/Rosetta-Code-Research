@@ -1,7 +1,0 @@
-#![feature(non_ascii_idents)]
-
-fn main() {
-    let mut Δ: i32 = 1;
-    Δ += 1;
-    println!("{}", Δ);
-}

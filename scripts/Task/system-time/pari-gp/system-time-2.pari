@@ -1,3 +1,0 @@
-install(time, "lf");
-t = time();
-print(t);    \\ integer seconds since the epoch (usually 1 Jan 1970)

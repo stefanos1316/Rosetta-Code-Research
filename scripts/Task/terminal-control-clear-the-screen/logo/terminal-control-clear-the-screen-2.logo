@@ -1,3 +1,0 @@
-clearscreen
-cs      ; abbreviation for clearscreen
-clean   ; like cs, but doesn't reset turtle position

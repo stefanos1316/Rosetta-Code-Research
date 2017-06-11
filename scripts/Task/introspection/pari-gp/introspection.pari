@@ -1,3 +1,0 @@
-if(lex(version(), [2,4,3]) < 0, quit()); \\ Compare the version to 2.4.3 lexicographically
-
-if(bloop!='bloop && type(abs) == "t_CLOSURE", abs(bloop))

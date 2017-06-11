@@ -1,2 +1,0 @@
-[ 2 4 6 8 ] each "%d, " print
-"who do we appreciate?\n" print

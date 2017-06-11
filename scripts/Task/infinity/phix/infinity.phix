@@ -1,2 +1,0 @@
-constant infinity = 1e300*1e300
-? infinity

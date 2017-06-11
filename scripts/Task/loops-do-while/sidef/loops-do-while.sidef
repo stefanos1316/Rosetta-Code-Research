@@ -1,4 +1,0 @@
-var value = 0;
-do {
-    say ++value;
-} while (value % 6);

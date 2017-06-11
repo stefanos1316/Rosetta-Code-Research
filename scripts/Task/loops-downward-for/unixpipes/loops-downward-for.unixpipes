@@ -1,3 +1,0 @@
-yes '' | cat -n | head -n 11 | while read n; do
-	expr $n - 1
-done | tail -r

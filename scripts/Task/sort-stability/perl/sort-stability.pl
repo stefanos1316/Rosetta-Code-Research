@@ -1,1 +1,0 @@
-use sort 'stable';

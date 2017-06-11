@@ -1,3 +1,0 @@
-procedure flushKB()
-    while kbhit() do getch()   # flush input
-end

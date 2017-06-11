@@ -1,1 +1,0 @@
-missingPerms=: -.~ (A.~ i.@!@#) @ {.

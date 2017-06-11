@@ -1,5 +1,0 @@
-uses objectclass;
-define :class Point;
-   slot x = 0;
-   slot y = 0;
-enddefine;

@@ -1,1 +1,0 @@
-eye(int(readline(STDIN)))

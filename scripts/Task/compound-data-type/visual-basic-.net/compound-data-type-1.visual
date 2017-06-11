@@ -1,3 +1,0 @@
-Structure Simple_Point
-   Public X, Y As Integer
-End Structure

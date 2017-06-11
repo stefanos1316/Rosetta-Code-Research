@@ -1,2 +1,0 @@
-print ascii "a    ; 97
-print char 97     ; a

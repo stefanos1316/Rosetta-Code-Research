@@ -1,2 +1,0 @@
-uniformData = RandomInteger[10, 100];
-nonUniformData = Total@RandomInteger[10, {5, 100}];

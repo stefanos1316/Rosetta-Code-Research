@@ -1,1 +1,0 @@
-for (i = 10; i >= 0; i--) {WriteLine($"$i")}

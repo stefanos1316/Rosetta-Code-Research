@@ -1,5 +1,0 @@
-if condition then
-    ;;; Action1
-else
-    ;;; Alternative action
-endif;

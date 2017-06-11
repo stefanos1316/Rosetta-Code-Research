@@ -1,5 +1,0 @@
-put toUpper("alphaBETA")
--- "ALPHABETA"
-
-put toLower("alphaBETA")
--- "alphabeta"

@@ -1,8 +1,0 @@
-interface Camera {
-}
-
-interface Mobile_Phone {
-}
-
-class Camera_Phone implements Camera, Mobile_Phone {
-}

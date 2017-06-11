@@ -1,7 +1,0 @@
-> pos := searchtext( ",", s ):
-> s[ pos .. pos + m - 1 ];
-                     ", The"
-
-> pos := searchtext( "Higher", s ):
-> s[ pos .. pos + m - 1 ];
-                     "Highe"

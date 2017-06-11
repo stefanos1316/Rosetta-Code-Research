@@ -1,1 +1,0 @@
-LenB(string|varname)

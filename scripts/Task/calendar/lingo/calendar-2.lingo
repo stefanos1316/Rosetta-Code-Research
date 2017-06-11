@@ -1,3 +1,0 @@
-calObj = script("Calendar").new()
-calStr = calObj.make(1969)
-put calStr

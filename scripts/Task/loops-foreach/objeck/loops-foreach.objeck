@@ -1,4 +1,0 @@
-fruits := ["Apple", "Banana", "Coconut"];
-each(i : fruits) {
-  fruits[i]->PrintLine();
-};

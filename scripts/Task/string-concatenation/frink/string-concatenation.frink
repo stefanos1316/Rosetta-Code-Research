@@ -1,3 +1,0 @@
-a = "Frink"
-b = a + " rules!"
-println[b]

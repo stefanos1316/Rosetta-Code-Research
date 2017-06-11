@@ -1,4 +1,0 @@
-: foo(n)
-| ch |
-   Channel new dup ->ch send(n) drop
-   #[ ch receive swap + dup ch send drop ] ;

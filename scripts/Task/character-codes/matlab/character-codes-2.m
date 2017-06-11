@@ -1,1 +1,0 @@
-asciiNumber = double(character)

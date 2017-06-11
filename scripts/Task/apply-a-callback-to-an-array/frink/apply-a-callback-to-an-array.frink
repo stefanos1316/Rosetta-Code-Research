@@ -1,3 +1,0 @@
-f = {|x| x^2}   // Anonymous function to square input
-a = [1,2,3,5,7]
-println[map[f, a]]

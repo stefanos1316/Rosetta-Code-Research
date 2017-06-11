@@ -1,2 +1,0 @@
-Get_Environment(10,"PATH")
-Message(@10)

@@ -1,3 +1,0 @@
-InverseFourierTransform( v, normalization=full, inplace ):
-
-v;

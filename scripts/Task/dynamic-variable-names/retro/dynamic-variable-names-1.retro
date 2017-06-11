@@ -1,4 +1,0 @@
-: newVariable: ( "- )
-  getToken header 0 , ;
-
-newVariable: foo

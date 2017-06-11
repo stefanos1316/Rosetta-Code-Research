@@ -1,3 +1,0 @@
-procedure main()
-write(&progname)    # obtain and write out the program name from the keyword &progname
-end

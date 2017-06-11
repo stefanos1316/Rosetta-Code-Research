@@ -1,1 +1,0 @@
-initialSymEntry("integer",   S_Type,"TI",opInt,  E_none)     -- #01 / 0b0001 integer

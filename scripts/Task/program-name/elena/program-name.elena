@@ -1,8 +1,0 @@
-#import system.
-
-#symbol program =
-[
-    console writeLine:system'commandLine.  // the whole command line
-
-    console writeLine:('program'arguments@0). // the program name
-].

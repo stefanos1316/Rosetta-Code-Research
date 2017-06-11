@@ -1,4 +1,0 @@
-def mult(expr a, b) = (a * b) enddef;
-t := mult(2,3);
-show t;
-end

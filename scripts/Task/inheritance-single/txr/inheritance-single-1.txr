@@ -1,3 +1,0 @@
-@(defex cat animal)
-@(defex lab dog animal)
-@(defex collie dog)

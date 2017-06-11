@@ -1,4 +1,0 @@
-x =.;
-ValueQ[x]
-x = 3;
-ValueQ[x]

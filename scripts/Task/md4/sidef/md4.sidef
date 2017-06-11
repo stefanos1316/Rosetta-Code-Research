@@ -1,2 +1,0 @@
-var digest = frequire('Digest::MD4');
-say digest.md4_hex('Rosetta Code');

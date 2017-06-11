@@ -1,4 +1,0 @@
-remove, "input.txt";
-remove, "/input.txt";
-rmdir, "docs";
-rmdir, "/docs";

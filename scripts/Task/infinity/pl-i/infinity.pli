@@ -1,3 +1,0 @@
-declare x float, y float (15), z float (18);
-
-put skip list (huge(x), huge(y), huge(z));

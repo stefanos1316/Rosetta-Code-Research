@@ -1,1 +1,0 @@
-puts -nonewline "Goodbye, World!"

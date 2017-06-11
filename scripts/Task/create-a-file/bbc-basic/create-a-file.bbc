@@ -1,4 +1,0 @@
-      CLOSE #OPENOUT("output.txt")
-      CLOSE #OPENOUT("\output.txt")
-      *MKDIR docs
-      *MKDIR \docs

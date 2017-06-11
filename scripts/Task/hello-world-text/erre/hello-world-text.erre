@@ -1,5 +1,0 @@
-! Hello World in ERRE language
-PROGRAM HELLO
-BEGIN
-  PRINT("Hello world!")
-END PROGRAM

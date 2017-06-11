@@ -1,2 +1,0 @@
-require 'pp'
-pp root

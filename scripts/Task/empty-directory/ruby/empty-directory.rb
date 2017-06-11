@@ -1,1 +1,0 @@
-Dir.entries("testdir").empty?

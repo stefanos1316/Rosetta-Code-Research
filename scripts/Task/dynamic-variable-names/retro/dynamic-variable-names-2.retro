@@ -1,4 +1,0 @@
-: newVariable: ( "- )
-  create 0 , ;
-
-newVariable: foo

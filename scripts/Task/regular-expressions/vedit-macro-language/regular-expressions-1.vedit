@@ -1,3 +1,0 @@
-if (Match(".* string$", REGEXP)==0) {
-    Statline_Message("This line ends with 'string'")
-}

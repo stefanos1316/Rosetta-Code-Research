@@ -1,6 +1,0 @@
-(* this is a comment *)
-(*
-   and this is a
-   multiline comment
-   (* with a nested comment *)
-*)

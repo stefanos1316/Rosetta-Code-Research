@@ -1,3 +1,0 @@
-fib = fib' 0 1
-      where fib' a b 0 = a
-            fib' a b n = fib' b (a + b) (n - 1)

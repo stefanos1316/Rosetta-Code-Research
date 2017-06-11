@@ -1,3 +1,0 @@
-function multiply returns dec (a as dec , b as dec ):
-  return a * b .
-end.

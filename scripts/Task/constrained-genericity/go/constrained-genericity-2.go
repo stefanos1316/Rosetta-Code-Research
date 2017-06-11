@@ -1,1 +1,0 @@
-type foodbox []eatable

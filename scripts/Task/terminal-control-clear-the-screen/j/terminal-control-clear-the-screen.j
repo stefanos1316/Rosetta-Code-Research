@@ -1,1 +1,0 @@
-smwrite_jijs_ ''

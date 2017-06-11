@@ -1,1 +1,0 @@
-println InetAddress.localHost.hostName

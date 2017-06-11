@@ -1,1 +1,0 @@
-PixelGetColor, color, %X%, %Y%

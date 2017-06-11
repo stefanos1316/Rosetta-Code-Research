@@ -1,1 +1,0 @@
-IsNumeric(Expr)

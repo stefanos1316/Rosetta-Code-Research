@@ -1,1 +1,0 @@
-len(intStack) == 0

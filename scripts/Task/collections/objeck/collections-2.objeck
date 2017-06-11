@@ -1,4 +1,0 @@
-values := IntList->New();
-values->AddBack(7);
-values->AddBack(3);
-values->AddBack(10);

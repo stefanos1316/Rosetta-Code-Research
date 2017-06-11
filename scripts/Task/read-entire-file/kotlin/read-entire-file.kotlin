@@ -1,3 +1,0 @@
-fun readText() {
-    val string = File("unixdict.txt").readText(charset = Charsets.UTF_8)
-}

@@ -1,1 +1,0 @@
-jq -r -R . FILENAME

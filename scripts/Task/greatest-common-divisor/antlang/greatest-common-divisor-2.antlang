@@ -1,2 +1,0 @@
-/Unoptimized version
-gcd':{a:x;b:y;last[{(0 eq a mod x) min (0 eq b mod x)} hfilter {1 + x} map range[a max b]]}

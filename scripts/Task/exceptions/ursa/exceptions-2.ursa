@@ -1,1 +1,0 @@
-throw (new ursa.exceptions.exception)

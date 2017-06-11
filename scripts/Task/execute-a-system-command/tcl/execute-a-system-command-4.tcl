@@ -1,1 +1,0 @@
-set lsoutput [read $io]

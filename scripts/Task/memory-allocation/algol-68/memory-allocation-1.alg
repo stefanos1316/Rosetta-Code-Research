@@ -1,1 +1,0 @@
-MODE MYSTRUCT = STRUCT(INT i, j, k, REAL r, COMPL c);

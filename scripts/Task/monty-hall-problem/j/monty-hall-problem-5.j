@@ -1,1 +1,0 @@
-switchWin=: pick@(DOORS -. }:) = {:

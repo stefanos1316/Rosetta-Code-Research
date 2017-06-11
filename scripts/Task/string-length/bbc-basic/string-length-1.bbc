@@ -1,2 +1,0 @@
-      INPUT text$
-      PRINT LEN(text$)

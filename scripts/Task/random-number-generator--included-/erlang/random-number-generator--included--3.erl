@@ -1,1 +1,0 @@
-Rfloat = random:uniform(),

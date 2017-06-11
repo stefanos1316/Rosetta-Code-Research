@@ -1,5 +1,0 @@
-(let* ((ver (lisp-implementation-version))
-       (major (parse-integer ver :start 0 :end (position #\. ver))))
-  #+lispworks (assert (>= 5 major) () "Requires Lispworks version 5 or above")
-  #+clisp (assert (>= 2 major) () "Requires CLISP 2.n")
-  )

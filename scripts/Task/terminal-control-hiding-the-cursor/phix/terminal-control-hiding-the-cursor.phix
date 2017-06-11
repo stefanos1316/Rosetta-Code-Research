@@ -1,3 +1,0 @@
-cursor(NO_CURSOR)
-sleep(1)
-cursor(UNDERLINE_CURSOR)

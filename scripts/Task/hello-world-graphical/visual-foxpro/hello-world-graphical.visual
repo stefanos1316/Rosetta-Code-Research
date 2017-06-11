@@ -1,5 +1,0 @@
-* Version 1:
-MESSAGEBOX("Goodbye, World!")
-
-* Version 2:
-? "Goodbye, World!"

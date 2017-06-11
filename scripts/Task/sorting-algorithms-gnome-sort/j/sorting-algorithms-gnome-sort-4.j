@@ -1,1 +1,0 @@
-gnomeps=: gnome^:a:

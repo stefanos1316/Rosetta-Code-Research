@@ -1,7 +1,0 @@
-stuff-going-wrong:
-	raise :value-error
-
-try:
-	stuff-going-wrong
-catch value-error:
-	!print "Whoops!"

@@ -1,3 +1,0 @@
-amean=: +/ % #
-gmean=: # %: */
-hmean=: amean&.:%

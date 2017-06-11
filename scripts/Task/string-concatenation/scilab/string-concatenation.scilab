@@ -1,4 +1,0 @@
-s1="Hello"
-s1+" world!"
-s2=s1+" world"
-s2

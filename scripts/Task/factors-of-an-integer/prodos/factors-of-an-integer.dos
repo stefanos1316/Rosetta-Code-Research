@@ -1,3 +1,0 @@
-editvar /newvar /value=a /userinput=1 /title=Enter an integer:
-do /delimspaces %% -a- >b
-printline Factors of -a-: -b-

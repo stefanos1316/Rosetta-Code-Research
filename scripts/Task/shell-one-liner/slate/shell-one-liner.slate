@@ -1,1 +1,0 @@
-./slate --eval "[inform: 'hello'] ensure: [exit: 0].".

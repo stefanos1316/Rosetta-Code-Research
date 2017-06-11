@@ -1,5 +1,0 @@
-trap(/* specific error can be given here, or leave blank to catch all */,
-  "caught"
-,
-  error("bad stuff")
-)

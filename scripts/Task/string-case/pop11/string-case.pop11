@@ -1,3 +1,0 @@
-lvars str = 'alphaBETA';
-lowertoupper(str) =>
-uppertolower(str) =>

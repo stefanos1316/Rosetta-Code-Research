@@ -1,1 +1,0 @@
-Number constants inf

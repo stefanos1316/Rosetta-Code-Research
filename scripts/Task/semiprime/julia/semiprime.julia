@@ -1,1 +1,0 @@
-semiprime(n) = sum(values(factor(n))) == 2

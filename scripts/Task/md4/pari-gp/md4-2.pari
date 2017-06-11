@@ -1,3 +1,0 @@
-install("plug_md4", "s", "MD4", "~/libmd4.so");
-
-MD4("Rosetta Code")

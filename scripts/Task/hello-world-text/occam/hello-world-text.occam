@@ -1,4 +1,0 @@
-#USE "course.lib"
-PROC main (CHAN BYTE screen!)
-  out.string("Hello world!*c*n", 0, screen)
-:

@@ -1,9 +1,0 @@
-define fib(x);
-lvars a , b;
-    1 -> a;
-    1 -> b;
-    repeat x - 1 times
-         (a + b, b) -> (b, a);
-    endrepeat;
-    a;
-enddefine;

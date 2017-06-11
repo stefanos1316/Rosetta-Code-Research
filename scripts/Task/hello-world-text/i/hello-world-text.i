@@ -1,3 +1,0 @@
-software {
-    print("Hello World!")
-}

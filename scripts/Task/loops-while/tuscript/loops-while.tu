@@ -1,7 +1,0 @@
-$$ MODE TUSCRIPT
-i=1024
-LOOP
-   PRINT i
-   i=i/2
-   IF (i==0) EXIT
-ENDLOOP

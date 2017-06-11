@@ -1,5 +1,0 @@
-constant s = "\ttest\n"
-?s
-?trim_head(s)
-?trim_tail(s)
-?trim(s)

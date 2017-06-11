@@ -1,9 +1,0 @@
-void
-read_stream(file f)
-{
-    text s;
-
-    while (f_line(f, s) != -1) {
-        # the read line available as -s-
-    }
-}

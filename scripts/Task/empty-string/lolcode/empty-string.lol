@@ -1,9 +1,0 @@
-HAI 1.3
-
-I HAS A string ITZ ""
-string, O RLY?
-    YA RLY, VISIBLE "STRING HAZ CONTENZ"
-    NO WAI, VISIBLE "Y U NO HAS CHARZ?!"
-OIC
-
-KTHXBYE

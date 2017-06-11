@@ -1,1 +1,0 @@
-MODULE RealMax = Maximum(Real) END RealMax.

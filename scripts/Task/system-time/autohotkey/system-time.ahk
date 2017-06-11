@@ -1,2 +1,0 @@
-FormatTime, t
-MsgBox,% t

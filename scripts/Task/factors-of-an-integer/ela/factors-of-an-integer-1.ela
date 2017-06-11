@@ -1,3 +1,0 @@
-open list
-
-factors m = filter (\x -> m % x == 0) [1..m]

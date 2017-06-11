@@ -1,3 +1,0 @@
-local :s1 "hello"
-local :s2 concat( s1 ", world" )
-!print s2

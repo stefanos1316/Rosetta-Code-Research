@@ -1,3 +1,0 @@
-if :x < 0 [make "x 0 - :x]
-
-ifelse emptyp :list [print [empty]] [print :list]

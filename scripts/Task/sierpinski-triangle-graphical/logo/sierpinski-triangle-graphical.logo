@@ -1,5 +1,0 @@
-to sierpinski :n :length
-  if :n = 0 [stop]
-  repeat 3 [sierpinski :n-1 :length/2  fd :length rt 120]
-end
-seth 30 sierpinski 5 200

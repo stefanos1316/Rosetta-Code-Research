@@ -1,4 +1,0 @@
-VAR    point   : Point;
-...
-point.x := 12;
-point.y := 7;

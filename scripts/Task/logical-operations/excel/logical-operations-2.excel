@@ -1,1 +1,0 @@
-=CONCATENATE($A1, " OR ", $B1, " is ", OR($A1,$B1))

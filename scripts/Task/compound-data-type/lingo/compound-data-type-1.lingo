@@ -1,8 +1,0 @@
--- parent script "MyPoint"
-property x
-property y
-on new (me, px, py)
-  me.x = px
-  me.y = py
-  return me
-end

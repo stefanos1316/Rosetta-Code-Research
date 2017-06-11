@@ -1,3 +1,0 @@
-procedure main()
-    every write("Door ", i := 1 to 100, " is ", if integer(sqrt(i)) = sqrt(i) then "open" else "closed")
-end

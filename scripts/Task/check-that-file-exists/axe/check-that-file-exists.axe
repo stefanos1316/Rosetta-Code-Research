@@ -1,5 +1,0 @@
-If GetCalc("appvINPUT")
- Disp "EXISTS",i
-Else
- Disp "DOES NOT EXIST",i
-End

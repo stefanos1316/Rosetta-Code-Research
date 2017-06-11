@@ -1,5 +1,0 @@
-invoke multiply, 6, 16
-;or..
-push 16
-push 6
-call multiply

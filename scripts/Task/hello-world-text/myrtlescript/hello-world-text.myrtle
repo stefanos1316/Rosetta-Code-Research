@@ -1,5 +1,0 @@
-script HelloWorld {
-    func main returns: int {
-        print("Hello World!")
-    }
-}

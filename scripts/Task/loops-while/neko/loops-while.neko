@@ -1,6 +1,0 @@
-var i = 1024
-
-while(i > 0) {
-    $print(i + "\n");
-    i = $idiv(i, 2)
-}

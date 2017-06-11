@@ -1,3 +1,0 @@
->> x = rand(10,1); y = rand(10,1);
->> s = text( [x,y], "%10.8f" );
->> writem("mytextfile.txt", s);

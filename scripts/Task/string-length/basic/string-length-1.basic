@@ -1,2 +1,0 @@
- INPUT a$
- PRINT LEN(a$)

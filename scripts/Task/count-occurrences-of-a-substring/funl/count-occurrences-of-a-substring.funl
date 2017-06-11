@@ -1,6 +1,0 @@
-import util.Regex
-
-def countSubstring( str, substr ) = Regex( substr ).findAllMatchIn( str ).length()
-
-println( countSubstring("the three truths", "th") )
-println( countSubstring("ababababab", "abab") )

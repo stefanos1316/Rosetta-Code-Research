@@ -1,4 +1,0 @@
-const proc: foo is func
-  begin
-    raise RANGE_ERROR;
-  end func;

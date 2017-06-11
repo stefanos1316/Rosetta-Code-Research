@@ -1,5 +1,0 @@
-	greet1 = "Hello, "
-	output = greet1
-	greet2 = greet1 "World!"
-	output = greet2
-end

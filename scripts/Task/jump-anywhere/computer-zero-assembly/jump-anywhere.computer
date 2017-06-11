@@ -1,5 +1,0 @@
-        LDA  goto
-        SUB  somewhere
-        ADD  somewhereElse
-        STA  goto
-goto:   JMP  somewhere

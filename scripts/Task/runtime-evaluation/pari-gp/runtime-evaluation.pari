@@ -1,5 +1,0 @@
-runme(f)={
-  f()
-};
-
-runme( ()->print("Hello world!") )

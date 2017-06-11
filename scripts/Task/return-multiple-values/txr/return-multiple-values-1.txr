@@ -1,4 +1,0 @@
-@(define func (x y z))
-@  (bind w "discarded")
-@  (bind (x y z) ("a" "b" "c"))
-@(end)

@@ -1,2 +1,0 @@
-$ awk 'BEGIN{print ENVIRON["HOST"]}'
-E51A08ZD

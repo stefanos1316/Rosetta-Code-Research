@@ -1,2 +1,0 @@
-(length "hello")
-=> 5

@@ -1,2 +1,0 @@
-with files'
-"Goodbye, World!" tempString dup getLength "/dev/stderr" spew

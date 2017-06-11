@@ -1,9 +1,0 @@
-include c:\cxpl\codes;
-int N;
-loop    [N:= Ran(20);
-        IntOut(0, N);
-        if N=10 then quit;
-        ChOut(0, 9\tab\);
-        IntOut(0, Ran(20));
-        CrLf(0);
-        ]

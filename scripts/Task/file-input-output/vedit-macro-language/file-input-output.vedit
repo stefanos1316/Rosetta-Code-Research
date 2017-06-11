@@ -1,3 +1,0 @@
-File_Open("input.txt")
-File_Save_As("output.txt", NOMSG)
-Buf_Close(NOMSG)

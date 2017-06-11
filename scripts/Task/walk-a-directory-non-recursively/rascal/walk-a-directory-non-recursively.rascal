@@ -1,5 +1,0 @@
-import IO;
-public void Walk(loc a, str pattern){
-	for (entry <- listEntries(a))
-		endsWith(entry, pattern) ? println(entry);
-}

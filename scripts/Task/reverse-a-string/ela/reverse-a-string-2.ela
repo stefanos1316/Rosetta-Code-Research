@@ -1,2 +1,0 @@
-open string
-fromList <| reverse <| toList "Hello" ::: String

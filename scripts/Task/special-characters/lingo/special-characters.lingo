@@ -1,3 +1,0 @@
-str = "Hello " & QUOTE & "world!" & QUOTE
-put str
--- "Hello "world!""

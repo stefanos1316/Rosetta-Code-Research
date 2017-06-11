@@ -1,1 +1,0 @@
-Table[Last /@ Reverse@Tally[First /@ IntegerPartitions[n]], {n, 10}] // Grid

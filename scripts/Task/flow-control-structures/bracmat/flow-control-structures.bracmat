@@ -1,6 +1,0 @@
-  ( LOOP
-  =   out$"Hi again!"
-    & !LOOP
-  )
-& out$Hi!
-& !LOOP

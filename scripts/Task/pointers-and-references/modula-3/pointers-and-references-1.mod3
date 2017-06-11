@@ -1,5 +1,0 @@
-TYPE IntRef = REF INTEGER;
-
-VAR intref := NEW(IntRef);
-
-intref^ := 10

@@ -1,6 +1,0 @@
-declare i fixed binary initial (1024);
-
-do while (i>0);
-   put skip list (i);
-   i = i / 2;
-end;

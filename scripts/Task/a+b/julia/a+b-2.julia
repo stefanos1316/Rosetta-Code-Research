@@ -1,3 +1,0 @@
-julia> int(readuntil(STDIN, ' ')) + int(readuntil(STDIN, '\n'))
-1 2
-3

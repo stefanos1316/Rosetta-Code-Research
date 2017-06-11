@@ -1,6 +1,0 @@
-mutable x = 0;
-do
-{
-    x++;
-    WriteLine($"$x");
-} while (x % 6 != 0)

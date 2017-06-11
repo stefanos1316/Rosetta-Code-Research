@@ -1,2 +1,0 @@
-print chr$(97) 'prints a
-print asc("a") 'prints 97

@@ -1,5 +1,0 @@
-isPalindrome(string(1)) :=
-	let
-		compares[i] := string[i] = string[size(string) - (i - 1)] foreach i within 1 ... (size(string) / 2);
-	in
-		all(compares);

@@ -1,1 +1,0 @@
-vector copySize: 100

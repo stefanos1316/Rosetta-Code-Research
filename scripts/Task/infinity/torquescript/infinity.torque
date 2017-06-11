@@ -1,4 +1,0 @@
-function infinity()
-{
-    return 1/0;
-}

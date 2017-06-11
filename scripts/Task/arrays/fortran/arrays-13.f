@@ -1,1 +1,0 @@
-allocate (a (10))

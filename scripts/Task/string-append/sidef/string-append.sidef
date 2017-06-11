@@ -1,3 +1,0 @@
-var str = 'Foo';
-str += 'bar';
-say str;

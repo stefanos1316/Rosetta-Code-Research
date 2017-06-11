@@ -1,5 +1,0 @@
-(defun accum (m)
-    (lambda (n)
-      (let ((sum (+ m n)))
-        `(#(func ,(accum sum))
-          #(sum ,sum)))))

@@ -1,8 +1,0 @@
-#import std
-#import nat
-
-look_and_say "n" = ~&H\'1' next"n" rlc~&E; *= ^lhPrT\~&hNC %nP+ length
-
-#show+
-
-main = look_and_say 10

@@ -1,4 +1,0 @@
-@let {
-  hash ^(@obj @zip)
-  !!hash ["a" "b" "c"] [1 2 3]
-}

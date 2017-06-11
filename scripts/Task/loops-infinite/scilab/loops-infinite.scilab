@@ -1,3 +1,0 @@
-while %T
-    printf("SPAM\n")
-end

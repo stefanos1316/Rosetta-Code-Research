@@ -1,3 +1,0 @@
-var undefined;         # initialized with an implicit nil
-say undefined==nil;    # true
-say defined(nil)       # false

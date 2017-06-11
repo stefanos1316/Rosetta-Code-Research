@@ -1,1 +1,0 @@
-rem Single-line comment.
