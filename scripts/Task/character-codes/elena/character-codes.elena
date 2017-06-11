@@ -1,0 +1,9 @@
+#define system.
+
+#symbol program =>
+[
+    #var ch := #97.
+
+    console writeLine:ch.
+    console writeLine:(ch int).
+].

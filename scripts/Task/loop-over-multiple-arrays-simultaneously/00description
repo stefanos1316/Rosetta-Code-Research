@@ -1,0 +1,20 @@
+;Task:
+Loop over multiple arrays &nbsp; (or lists or tuples or whatever they're called in
+your language) &nbsp; and display the &nbsp; <big><big> ''i'' <sup>th</sup> </big></big> &nbsp; element of each.
+
+Use your language's &nbsp; "for each" &nbsp; loop if it has one, otherwise iterate
+through the collection in order with some other loop.
+
+
+For this example, loop over the arrays:
+     (a,b,c)
+     (A,B,C)
+     (1,2,3)
+to produce the output:
+     aA1
+     bB2
+     cC3
+
+<br>
+If possible, also describe what happens when the arrays are of different lengths.
+<br><br>

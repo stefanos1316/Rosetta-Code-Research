@@ -83,7 +83,7 @@ then
 
 	#Since that Task directory is by default sorted we are also sorting our input 
 	#in order to remove the tasks with the appropriate sequence. 
-	IFS=$'\n' sorted=($(for j in "${arrayOfTasks[@]}"; do echo $j; done | sort))
+	IFS=$'\n' sorted=($(for j in "${arrayOfTasks[@]}"; do echo $j; done | tr '[A-Z]' [a-z] | sort))
 	unset IFS
 else
 	echo "Error: No command line arguments where given from the user."
@@ -99,7 +99,7 @@ if [[ $languages != "0" ]];
 	IFS=" " read -a arrayOfLanguages <<< "$languages"
 
 	#Sorting them
-	IFS=$'\n' sortedLang=($(for a in "${arrayOfLanguages[@]}"; do echo $a; done | sort))
+	IFS=$'\n' sortedLang=($(for a in "${arrayOfLanguages[@]}"; do echo $a; done | tr '[A-Z]' [a-z] | sort))
 	unset IFS
 else
 	echo "Error: No command line arguments where given from the user."
@@ -145,8 +145,8 @@ function fromFiles {
 	IFS=$'\n' read -d '' -r -a tasksArray < $tasksFile
 	IFS=$'\n' read -d '' -r -a languagesArray < $languagesFile
 
-	IFS=$'\n' sortedTasks=($(for j in "${tasksArray[@]}"; do echo $j; done | sort))
-	IFS=$'\n' sortedLanguages=($(for i in "${languagesArray[@]}"; do echo $i; done | sort))
+	IFS=$'\n' sortedTasks=($(for j in "${tasksArray[@]}"; do echo $j; done | tr '[A-Z]' '[a-z]' | sort))
+	IFS=$'\n' sortedLanguages=($(for i in "${languagesArray[@]}"; do echo $i; done | tr '[A-Z]' '[a-z]' | sort))
 
 	mkdir TaskNew
 

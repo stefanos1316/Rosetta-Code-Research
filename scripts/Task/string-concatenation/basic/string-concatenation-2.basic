@@ -1,0 +1,4 @@
+S$ = "HELLO"
+PRINT S$;" LITERAL" :REM OR S$ + " LITERAL"
+S2$ = S$ + " LITERAL"
+PRINT S2$
