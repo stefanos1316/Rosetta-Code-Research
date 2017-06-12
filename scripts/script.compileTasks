@@ -2,6 +2,12 @@
 
 #Necessary command line argument is the path of the Task's directory
 
+if [ $1 -ne 1 ]; 
+then
+	echo "Illegal number of command line arguments!"
+	echo "Try giving the full path of the Tasks directory."
+do
+
 for containesTasks in `ls $1`;
 do
         #For all the programming languages enter and compile the content
@@ -96,9 +102,91 @@ do
                                                 echo "$1/$containesTasks/$containesLanguages/$tasksImplementation:Perl" >> Reports/Java_Failed_Report.txt
                                 fi
                         ;;
+                        ("ruby")
+                                eval=$(ruby $1/$containesTasks/$containesLanguages/$tasksImplementation)
+                                if [ $? -eq 0 ];
+                                then
+                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation successfully compiled"
+                                        else
+                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation:Ruby" >> Reports/Java_Failed_Report.txt
+                                fi
+                        ;;
+                        ("switf")
+				if [ $tasksImplementation == *.swift ];
+				then 
+                                	eval=$(swift $1/$containesTasks/$containesLanguages/$tasksImplementation)
+                                fi
+
+				if [ $? -eq 0 ];
+                                then
+                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation successfully compiled"
+                                        else
+                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation:Swift" >> Reports/Java_Failed_Report.txt
+                                fi
+                        ;;
+                        ("r")
+				#R doesn't needs a compilation since it's a scripting language
+                              	#eval=$(ruby $1/$containesTasks/$containesLanguages/$tasksImplementation)
+                                if [ $? -eq 0 ];
+                                then
+                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation successfully compiled"
+                                        else
+                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation:Ruby" >> Reports/Java_Failed_Report.txt
+                                fi
+                        ;;
+                        ("go")
+				#Offers a variety of option (must check on-line in order to take such a decission)
+                                #eval=$(ruby $1/$containesTasks/$containesLanguages/$tasksImplementation)
+                                if [ $? -eq 0 ];
+                                then
+                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation successfully compiled"
+                                        else
+                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation:Go" >> Reports/Java_Failed_Report.txt
+                                fi
+                        ;;
+                        ("objective-c")
+				#Offers a variety of option (must check on-line in order to take such a decission)
+                                #eval=$(ruby $1/$containesTasks/$containesLanguages/$tasksImplementation)
+                                if [ $? -eq 0 ];
+                                then
+                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation successfully compiled"
+                                        else
+                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation:Objective-C" >> Reports/Java_Failed_Report.txt
+                                fi
+                        ;;
+                        ("matlab")
+				#Offers a variety of option (must check on-line in order to take such a decission)
+                                #eval=$(ruby $1/$containesTasks/$containesLanguages/$tasksImplementation)
+                                if [ $? -eq 0 ];
+                                then
+                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation successfully compiled"
+                                        else
+                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation:Matlab" >> Reports/Java_Failed_Report.txt
+                                fi
+                        ;;
+                        ("assembly-360")
+				#Offers a variety of option (must check on-line in order to take such a decission)
+                                #eval=$(ruby $1/$containesTasks/$containesLanguages/$tasksImplementation)
+                                if [ $? -eq 0 ];
+                                then
+                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation successfully compiled"
+                                        else
+                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation:Assembly-360" >> Reports/Java_Failed_Report.txt
+                                fi
+                        ;;
+                        ("delphi")
+				#Offers a variety of option (must check on-line in order to take such a decission)
+                                #eval=$(ruby $1/$containesTasks/$containesLanguages/$tasksImplementation)
+                                if [ $? -eq 0 ];
+                                then
+                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation successfully compiled"
+                                        else
+                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation:Delphu" >> Reports/Java_Failed_Report.txt
+                                fi
+                        ;;
                         esac
                 done
         done
 done
 
-exit
+exit	

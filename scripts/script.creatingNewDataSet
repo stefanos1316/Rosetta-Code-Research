@@ -135,8 +135,8 @@ do
 done
 
 #At this point we remove the Task directory and we name the TaskNew as Task
-#rm -rf Task
-#mv TaskNew Task
+rm -rf Task
+mv TaskNew Task
 }
 
 #This function is executed only when the user gives the commnad line parameters as --tasksFile and --languagesFile
@@ -175,8 +175,8 @@ function fromFiles {
 	done
 
 #Removing and renaming
-#rm -rf Task
-#mv TaskNew Task
+rm -rf Task
+mv TaskNew Task
 }
 ###############################################################################################################################
 
