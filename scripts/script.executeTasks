@@ -1,0 +1,72 @@
+#!/bin/bash
+
+#Author: Stefanos Georgiou from Athens University of Business and Economics
+#This work is done for the purpose of comparing power consumption of different languages
+
+#This script file receives as a command-line parameter a file (that has a number of tasks which is an output of compileTasks and shows the successfully compiled files) and executes the languages given to it (again as command-line arguments)
+
+#Command Line Arguments
+#$1 -> full path of the file where all the tasks (tasks paths) that successfully compiled are located
+
+#At this point we have a file that includes all the Tasks we successfully compiled
+
+if [ $1 -ne 1 ]; 
+then
+	echo "Illegal number of command line arguments!"
+	echo "Try giving the full path of the Tasks directory."
+do
+
+for containesTasks in `ls $1`;
+do
+        #For all the programming languages enter and compile the content
+        for containesLanguages in `ls $1/$containesTasks`;
+        do
+                #For all the tasks compile them based on the language
+		for tasksImplementation in `ls $1/$containesTasks/$containesLanguages`;
+                do
+			case "containesLanguages" in
+				("c") 
+					if [ $tasksImplementation != *.c ];
+					then
+						executable=$1/$containesTasks/$containesLanguages/$tasksImplementation
+						eval=$(./$executable)
+						if [ $? -eq 0 ];
+						then
+							timeStamp=$(date -u)
+							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:C" >> Reports/Java_Failed_Report.txt
+						fi
+					fi
+				;;
+				("c++")
+					if [ $tasksImplementation != *.cpp ];
+					then
+						executable=$1/$containesTasks/$containesLanguages/$tasksImplementation
+						eval=$(./$executable)
+						if [ $? -eq 0 ];
+						then
+							timeStamp=$(date -u)
+							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:C++" >> Reports/Java_Failed_Report.txt
+						fi
+					fi
+				;;
+				("java")
+					if [ $tasksImplementation != *.java ] && [ $tasksImplementaiton != *.class];
+					then
+						path=$1/$containesTasks/$containesLanguages/
+						executable=$(echo "$1/$containesTasks/$containesLanguages/$tasksImplementation" | awk -F "/" 'print {$NF}') 
+						eval=$(java -classpath $path $executable)
+						if [ $? -eq 0 ];
+						then
+							timeStamp=$(date -u)
+							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:Java" >> Reports/Java_Failed_Report.txt
+						fi
+					fi
+				;;
+					
+			
+			esac
+		done
+	done
+done
+
+exit
