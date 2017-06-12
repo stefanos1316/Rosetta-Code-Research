@@ -62,8 +62,91 @@ do
 						fi
 					fi
 				;;
+				("python")
+						eval=$(python -f $1/$containesTasks/$containesLanguages/$tasksImplementation)
+						if [ $? -eq 0 ];
+						then
+							timeStamp=$(date -u)
+							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:Python" >> Reports/Java_Failed_Report.txt
+						fi
+				;;
+				("c-sharp")
+					if [ $tasksImplementation == *.exe ];
+					then
+						eval=$(mono $1/$containesTasks/$containesLanguages/$tasksImplementation)
+						if [ $? -eq 0 ];
+						then
+							timeStamp=$(date -u)
+							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:C-Sharp" >> Reports/Java_Failed_Report.txt
+						fi
+					fi
+				;;
+				("javascript")
+						eval=$(node $1/$containesTasks/$containesLanguages/$tasksImplementation)
+						if [ $? -eq 0 ];
+						then
+							timeStamp=$(date -u)
+							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:JavaScript" >> Reports/Java_Failed_Report.txt
+						fi
+				;;
+				("php")
+						eval=$(php $1/$containesTasks/$containesLanguages/$tasksImplementation)
+						if [ $? -eq 0 ];
+						then
+							timeStamp=$(date -u)
+							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:PHP" >> Reports/Java_Failed_Report.txt
+						fi
+				;;
+				("perl")
+						eval=$(perl $1/$containesTasks/$containesLanguages/$tasksImplementation)
+						if [ $? -eq 0 ];
+						then
+							timeStamp=$(date -u)
+							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:Perl" >> Reports/Java_Failed_Report.txt
+						fi
+				;;
+				("ruby")
+					eval=$(ruby $1/$containesTasks/$containesLanguages/$tasksImplementation)
+					if [ $? -eq 0 ];
+					then
+						timeStamp=$(date -u)
+						echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:Ruby" >> Reports/Java_Failed_Report.txt
+					fi
+				;;
+				("swift") 
+					if [ $tasksImplementation != *.swift ];
+					then
+						executable=$1/$containesTasks/$containesLanguages/$tasksImplementation
+						eval=$(./$executable)
+						if [ $? -eq 0 ];
+						then
+							timeStamp=$(date -u)
+							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:Swift" >> Reports/Java_Failed_Report.txt
+						fi
+					fi
+				;;
+				("delphi")
 					
-			
+				;;
+				("r")
+					eval=$(r -f $1/$containesTasks/$containesLanguages/$tasksImplementation)
+                                                if [ $? -eq 0 ];
+                                                then
+                                                        timeStamp=$(date -u)
+                                                        echo "Execution         $timeStamp      $1/$containesTasks/$containesLanguages/$tasksImplementation:R" >> Reports/Java_Failed_Report.txt
+                                                fi
+				;;
+				("go")
+					 eval=$(go run $1/$containesTasks/$containesLanguages/$tasksImplementation)
+                                                if [ $? -eq 0 ];
+                                                then
+                                                        timeStamp=$(date -u)
+                                                        echo "Execution         $timeStamp      $1/$containesTasks/$containesLanguages/$tasksImplementation:Perl" >> Reports/Java_Failed_Report.txt
+                                                fi
+				;;
+				("matlab") ;;
+				("objective-c") ;;
+				("assembly-360") ;;
 			esac
 		done
 	done
