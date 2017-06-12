@@ -1,14 +1,18 @@
 Selected Categories from RosettaCode 
 
--3D
--Arithmetic -> (Integer, Rational, Exponential Operations, Factorial, Numerical Integration)
+-3D -> (Draw a [cuboid, sphere])
+-Arithmetic -> (Integer, Rational, Exponential Operations, Numerical Integration)
 -Compression -> (Huffman Coding, LZW compression)
 -Concurrency -> (Concurrent Computing, Handle a signal, Events, Synchronous Concurrency, Checkpoint Synchronization)
--Data Structures -> (Pattern Matching, Linke List, )
--Mathematic Operations -> ()
--Recursion
--Regular Expressions
--Sorting
--String manipulaton
--Testing
--XML
+-Data Structures -> (Pattern Matching, Linked List, JSON)
+-Encryption ? ? ? ? ?
+-Mathematic Operations -> (Polynomil regression)
+-Recursion -> (Factorial, Ackemann function, Palidrome detection)
+-Regular Expressions -> (1 task written for this section)
+-Sorting -> (comparing different sorting algorithms)
+-String manipulaton -> (URL [parser|encoding|decoding], Tokenize String)
+-XML -> (creating XML data)
+
+
+Maria also suggested to investigate object creation and garbage collection, 
+apart from that, the use of exception and error handling.

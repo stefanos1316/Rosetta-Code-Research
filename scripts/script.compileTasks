@@ -53,15 +53,15 @@ do
                                                 echo "$1/$containesTasks/$containesLanguages/$tasksImplementation:Java" >> Reports/Java_Failed_Report.txt
                                 fi
                         ;;
-                        ("python")
-                                eval=$(python $1/$containesTasks/$containesLanguages/$tasksImplementation)
-                                if [ $? -eq 0 ];
-                                then
-                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation successfully compiled"
-                                        else
-                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation:Python" >> Reports/Java_Failed_Report.txt
-                                fi
-                        ;;
+                       # ("python")
+                        #        eval=$(python $1/$containesTasks/$containesLanguages/$tasksImplementation)
+                         #       if [ $? -eq 0 ];
+                          #      then
+                           #                     echo "$1/$containesTasks/$containesLanguages/$tasksImplementation successfully compiled"
+                            #            else
+                             #                   echo "$1/$containesTasks/$containesLanguages/$tasksImplementation:Python" >> Reports/Java_Failed_Report.txt
+                              #  fi
+                       # ;;
 			("c-sharp")
 				if [ $tasksImplementation == *.cs  ];
 				then
@@ -75,42 +75,42 @@ do
                                                 echo "$1/$containesTasks/$containesLanguages/$tasksImplementation:C-Sharp" >> Reports/Java_Failed_Report.txt
                                 fi
                         ;;
-                        ("javascript")
-                                eval=$(node $1/$containesTasks/$containesLanguages/$tasksImplementation)
-                                if [ $? -eq 0 ];
-                                then
-                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation successfully compiled"
-                                        else
-                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation:JavaScript" >> Reports/Java_Failed_Report.txt
-                                fi
-                        ;;	
-                        ("php")
-                                eval=$(php -f $1/$containesTasks/$containesLanguages/$tasksImplementation)
-                                if [ $? -eq 0 ];
-                                then
-                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation successfully compiled"
-                                        else
-                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation:PHP" >> Reports/Java_Failed_Report.txt
-                                fi
-                        ;;
-                        ("perl")
-                                eval=$(perl $1/$containesTasks/$containesLanguages/$tasksImplementation)
-                                if [ $? -eq 0 ];
-                                then
-                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation successfully compiled"
-                                        else
-                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation:Perl" >> Reports/Java_Failed_Report.txt
-                                fi
-                        ;;
-                        ("ruby")
-                                eval=$(ruby $1/$containesTasks/$containesLanguages/$tasksImplementation)
-                                if [ $? -eq 0 ];
-                                then
-                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation successfully compiled"
-                                        else
-                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation:Ruby" >> Reports/Java_Failed_Report.txt
-                                fi
-                        ;;
+                       # ("javascript")
+                        #        eval=$(node $1/$containesTasks/$containesLanguages/$tasksImplementation)
+                         #       if [ $? -eq 0 ];
+                          #      then
+                           #                     echo "$1/$containesTasks/$containesLanguages/$tasksImplementation successfully compiled"
+                            #            else
+                             #                   echo "$1/$containesTasks/$containesLanguages/$tasksImplementation:JavaScript" >> Reports/Java_Failed_Report.txt
+                              #  fi
+                       # ;;	
+                       # ("php")
+                        #        eval=$(php -f $1/$containesTasks/$containesLanguages/$tasksImplementation)
+                         #       if [ $? -eq 0 ];
+                          #      then
+                           #                     echo "$1/$containesTasks/$containesLanguages/$tasksImplementation successfully compiled"
+                            #            else
+                             #                   echo "$1/$containesTasks/$containesLanguages/$tasksImplementation:PHP" >> Reports/Java_Failed_Report.txt
+                             #   fi
+                       # ;;
+                       # ("perl")
+                        #        eval=$(perl $1/$containesTasks/$containesLanguages/$tasksImplementation)
+                         #       if [ $? -eq 0 ];
+                          #      then
+                           #                     echo "$1/$containesTasks/$containesLanguages/$tasksImplementation successfully compiled"
+                            #            else
+                             #                   echo "$1/$containesTasks/$containesLanguages/$tasksImplementation:Perl" >> Reports/Java_Failed_Report.txt
+                              #  fi
+                       # ;;
+                       # ("ruby")
+                        #        eval=$(ruby $1/$containesTasks/$containesLanguages/$tasksImplementation)
+                         #       if [ $? -eq 0 ];
+                          #      then
+                           #                     echo "$1/$containesTasks/$containesLanguages/$tasksImplementation successfully compiled"
+                            #            else
+                             #                   echo "$1/$containesTasks/$containesLanguages/$tasksImplementation:Ruby" >> Reports/Java_Failed_Report.txt
+                              #  fi
+                       # ;;
                         ("switf")
 				if [ $tasksImplementation == *.swift ];
 				then 
@@ -124,16 +124,16 @@ do
                                                 echo "$1/$containesTasks/$containesLanguages/$tasksImplementation:Swift" >> Reports/Java_Failed_Report.txt
                                 fi
                         ;;
-                        ("r")
-				#R doesn't needs a compilation since it's a scripting language
-                              	#eval=$(ruby $1/$containesTasks/$containesLanguages/$tasksImplementation)
-                                if [ $? -eq 0 ];
-                                then
-                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation successfully compiled"
-                                        else
-                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation:Ruby" >> Reports/Java_Failed_Report.txt
-                                fi
-                        ;;
+                       # ("r")
+			#	#R doesn't needs a compilation since it's a scripting language
+                         #     	#eval=$(ruby $1/$containesTasks/$containesLanguages/$tasksImplementation)
+                          #      if [ $? -eq 0 ];
+                           #     then
+                            #                    echo "$1/$containesTasks/$containesLanguages/$tasksImplementation successfully compiled"
+                             #           else
+                              #                  echo "$1/$containesTasks/$containesLanguages/$tasksImplementation:Ruby" >> Reports/Java_Failed_Report.txt
+                               # fi
+                       # ;;
                         ("go")
 				#Offers a variety of option (must check on-line in order to take such a decission)
                                 #eval=$(ruby $1/$containesTasks/$containesLanguages/$tasksImplementation)
