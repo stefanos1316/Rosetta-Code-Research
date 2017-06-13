@@ -75,6 +75,20 @@ do
                                                 echo "$1/$containesTasks/$containesLanguages/$tasksImplementation:C-Sharp" >> Reports/Java_Failed_Report.txt
                                 fi
                         ;;
+			("visual-basic-.net")
+				if [ $tasksImplementation == *.visual ];
+				then
+                                	eval=$(vbnc $1/$containesTasks/$containesLanguages/$tasksImplementation)
+                                fi
+
+				if [ $? -eq 0 ];
+                                then
+                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation successfully compiled"
+                                        else
+                                                echo "$1/$containesTasks/$containesLanguages/$tasksImplementation:C-Sharp" >> Reports/Java_Failed_Report.txt
+                                fi
+                        ;;
+
                        # ("javascript")
                         #        eval=$(node $1/$containesTasks/$containesLanguages/$tasksImplementation)
                          #       if [ $? -eq 0 ];

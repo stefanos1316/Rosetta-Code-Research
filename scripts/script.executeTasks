@@ -81,6 +81,18 @@ do
 						fi
 					fi
 				;;
+				("visual-basic-.net")
+					if [ $tasksImplementation == *.exe ];
+					then
+						eval=$(mono $1/$containesTasks/$containesLanguages/$tasksImplementation)
+						if [ $? -eq 0 ];
+						then
+							timeStamp=$(date -u)
+							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:Visual-Basic-.Net" >> Reports/Java_Failed_Report.txt
+						fi
+					fi
+				;;
+
 				("javascript")
 						eval=$(node $1/$containesTasks/$containesLanguages/$tasksImplementation)
 						if [ $? -eq 0 ];
