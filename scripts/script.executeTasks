@@ -125,21 +125,6 @@ do
 						echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:Ruby" >> Reports/Java_Failed_Report.txt
 					fi
 				;;
-				("swift") 
-					if [ $tasksImplementation != *.swift ];
-					then
-						executable=$1/$containesTasks/$containesLanguages/$tasksImplementation
-						eval=$(./$executable)
-						if [ $? -eq 0 ];
-						then
-							timeStamp=$(date -u)
-							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:Swift" >> Reports/Java_Failed_Report.txt
-						fi
-					fi
-				;;
-				("delphi")
-						
-				;;
 				("r")
 					eval=$(r -f $1/$containesTasks/$containesLanguages/$tasksImplementation)
                                                 if [ $? -eq 0 ];
@@ -156,14 +141,10 @@ do
                                                         echo "Execution         $timeStamp      $1/$containesTasks/$containesLanguages/$tasksImplementation:Perl" >> Reports/Java_Failed_Report.txt
                                                 fi
 				;;
-				("matlab") ;;
-				("objective-c")
-					
-				;;
 				("assembly-360") ;;
 			esac
 		done
 	done
-done
+	done
 
 exit

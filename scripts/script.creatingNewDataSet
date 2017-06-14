@@ -24,7 +24,7 @@ if [ "$1" == "--help" ]; then
 	echo "			to have in your newly create dataset, e.g., write the programming languages"
 	echo "			and add a new line after each one."
 	echo "	"
-	echo "Note: All the arguments are case insensitive, thus, adding the in capitals or smalls does not" 
+	echo "Note: All the arguments are case insensitive, thus, adding them in capitals or smalls does not" 
 	echo "      any difference."
 	exit
 fi

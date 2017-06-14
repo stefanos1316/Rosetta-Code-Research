@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Add $1 as the query of languages separated with space and enclosed in double quotes.
+
+
+for getTasks in `ls Task`;
+do
+	for getLanguages in `ls Task\$getTasks`;
+	do
+		
+	done
+done
