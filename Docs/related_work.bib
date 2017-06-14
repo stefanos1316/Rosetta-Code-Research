@@ -1,0 +1,43 @@
+@inproceedings{abdulsalam_program_2014,
+	title = {Program energy efficiency: {The} impact of language, compiler and implementation choices},
+	shorttitle = {Program energy efficiency},
+	doi = {10.1109/IGCC.2014.7039169},
+	abstract = {Today reducing the energy usage of computing systems becomes a paramount task, no matter they are lightweight mobile devices, complex cloud computing platforms or large-scale supercomputers. Many existing studies in green computing focus on making the hardware more energy efficient. This is understandable because software running on low-power hardware will automatically consume less energy. Little work has been done to explore how software developers can play a more proactive role in saving energy by writing greener code. In fact, very few programmers consider energy-efficiency when writing code and even fewer know how to evaluate and improve the energy-efficiency of their code. In this paper, we quantitatively study the impact of languages (C/C++/Java/Python), compiler optimization (GNU C/C++ compiler with O1, O2, and O3 flags) and implementation choices (e.g. using malloc instead of new to create dynamic arrays and using vector vs. array for Quicksort) on the energy-efficiency of three well-known programs: Fast Fourier Transform, Linked List Insertion/Deletion and Quicksort. Our experiments show that by carefully selecting an appropriate language, optimization flag and data structure, significant energy can be conserved for solving the same problem with identical input size.},
+	booktitle = {Green {Computing} {Conference} ({IGCC}), 2014 {International}},
+	author = {Abdulsalam, S. and Lakomski, D. and Gu, Q. and Jin, T. and Zong, Z.},
+	month = nov,
+	year = {2014},
+	keywords = {Arrays, code energy-efficiency, compiler choices, compiler optimization, complex cloud computing platforms, computing system energy usage reduction, data structure, data structures, dynamic arrays, energy-efficient programming, fast Fourier transform, fast Fourier transforms, green computing, greener code writing, implementation choices, Java, language choices, large-scale supercomputers, Libraries, light-weight mobile devices, linked list insertion-deletion, Optimization, optimization flag, power aware computing, program compilers, program energy efficiency, programming languages, Quicksort, Resource management, Software, software developers, software optimization, sorting, Vectors},
+	pages = {1--6},
+	file = {2016-11-10.txt:/home/sgeorgiou/.zotero/zotero/ut65aj2m.default/zotero/storage/84C2DUIK/2016-11-10.txt:text/plain;IEEE Xplore Abstract Record:/home/sgeorgiou/.zotero/zotero/ut65aj2m.default/zotero/storage/GWD92KNM/7039169.html:text/html;IEEE Xplore Full Text PDF:/home/sgeorgiou/.zotero/zotero/ut65aj2m.default/zotero/storage/867HFR99/Abdulsalam et al. - 2014 - Program energy efficiency The impact of language,.pdf:application/pdf}
+
+
+@inproceedings{chen_android_2016,
+	title = {Android {App} {Energy} {Efficiency}: {The} {Impact} of {Language}, {Runtime}, {Compiler}, and {Implementation}},
+	shorttitle = {Android {App} {Energy} {Efficiency}},
+	doi = {10.1109/BDCloud-SocialCom-SustainCom.2016.77},
+	abstract = {With millions of smart phones being purchased every year, the number of mobile applications that have been developed and installed keeps growing substantially. In 2016, Android-based phones dominate the market with 80.7\% of market share and there are over 1.6 million apps in Google Play. The battery power limitation requires each app to reduce its impact on the battery life. Existing research and practices focus on how to optimize battery life by reducing network battery drain, judiciously turning off or dimming screens, dynamically adjusting CPU frequency of inactive apps, and changing app behaviors based on different battery states. These studies have greatly helped to improve the energy efficiency of Android apps. However, very few work has been conducted to analyze the impact of programming languages, compilers, runtime, and implementation choices on power consumption of Android apps, which is equally important for Android app developers to write more energy efficient code. This paper addresses the aforementioned problems by making the following contributions: 1) we develop the Android Energy Profiler (AEP) to measure the detailed power consumption of various Android apps, 2) we analyze the impact of different languages (C/C++/Java) and compiler optimization on energy consumption, 3) we study the impact of different Android system runtimes (ART vs. Dalvik) on energy efficiency, 4) we evaluate the impact of implementation choices (recursion vs. iteration and serial vs. parallel) on energy efficiency, and 5) we verify if thin client design can always lead to better energy efficiency.},
+	booktitle = {2016 {IEEE} {International} {Conferences} on {Big} {Data} and {Cloud} {Computing} ({BDCloud}), {Social} {Computing} and {Networking} ({SocialCom}), {Sustainable} {Computing} and {Communications} ({SustainCom}) ({BDCloud}-{SocialCom}-{SustainCom})},
+	author = {Chen, X. and Zong, Z.},
+	month = oct,
+	year = {2016},
+	keywords = {Batteries, Energy consumption, Google, Power demand, Power measurement, Runtime, smart phones},
+	pages = {485--492},
+	file = {2016-11-11.txt:/home/sgeorgiou/.zotero/zotero/ut65aj2m.default/zotero/storage/94VVHZX4/2016-11-11.txt:text/plain;IEEE Xplore Abstract Record:/home/sgeorgiou/.zotero/zotero/ut65aj2m.default/zotero/storage/R2UJIGX7/7723731.html:text/html}
+
+
+@inproceedings{oliveira_study_2017,
+	address = {Piscataway, NJ, USA},
+	series = {{MSR} '17},
+	title = {A {Study} on the {Energy} {Consumption} of {Android} {App} {Development} {Approaches}},
+	isbn = {978-1-5386-1544-7},
+	url = {https://doi.org/10.1109/MSR.2017.66},
+	doi = {10.1109/MSR.2017.66},
+	abstract = {Mobile devices have become ubiquitous in the recent years, but the complaints about energy consumption are almost universal. On Android, the developer can choose among several different approaches to develop an app. In this paper, we investigate the impact of some of the most popular development approaches on the energy consumption of Android apps. Our study uses a testbed of 33 different benchmarks and 3 applications on 5 different devices to compare the energy efficiency and performance of the most commonly used approaches to develop apps on Android: Java, JavaScript, and C/C++ (through the NDK tools). In our experiments, Javascript was more energy-efficient in 75\% of all benchmarks, while their Java counterparts consume up to 36.27x more energy (median of 1.97x). On the other hand, both Java and C++ outperformed JavaScript in most of the benchmarks. Based on these results, four Java applications were re-engineered to use a combination of Java and either JavaScript or C/C++ functions. For one of the apps, the hybrid solution using Java and C++ spent 10x less time and almost 100x less energy than a pure Java solution. The results were not uniform, however. For another app, when we restructured its implementation so as to minimize cross-language method invocations, the hybrid solution using Java and C++ took 8\% longer to execute and consumed 11\% more energy than a hybrid solution using Java and JavaScript. Since most Android apps are written solely in Java, the results of this study indicate that leveraging a combination of approaches may lead to non-negligible improvements in energy-efficiency and performance.},
+	booktitle = {Proceedings of the 14th {International} {Conference} on {Mining} {Software} {Repositories}},
+	publisher = {IEEE Press},
+	author = {Oliveira, Wellington and Oliveira, Renato and Castor, Fernando},
+	year = {2017},
+	pages = {42--52},
+	file = {ACM Full Text PDF:/home/sgeorgiou/.zotero/zotero/ut65aj2m.default/zotero/storage/N8JUJ955/Oliveira et al. - 2017 - A Study on the Energy Consumption of Android App D.pdf:application/pdf}
+
