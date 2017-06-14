@@ -2,11 +2,55 @@
 
 # Add $1 as the query of languages separated with space and enclosed in double quotes.
 
+if [ "$#" -eq 0 ];
+then
+	echo "Illegal number of command line arguments. Try --help for more information"
+	exit
+fi
+
+if [ "$1" == "--help" ];
+then
+	echo "\$1 -> List of programming languages separated with spaces and eclosed in double quotes"
+	echo "\$2 -> Number of programming languages found for a specific task (in order to print it in file)"
+	echo " "
+	echo "Note: arguments can be case insensitive."
+	exit
+fi
+
+arrayOfLanguages=0
+IFS=" " read -a arrayOfLanguages <<< "$1"
+#Sorting them
+IFS=$'\n' sortedLang=($(for a in "${arrayOfLanguages[@]}"; do echo $a; done | tr '[A-Z]' [a-z] | sort))
+unset IFS
+
+#If exists remove it
+rm -rf CommonTasks.txt
+echo "Programming Languages: ${sortedLang[@]}" >> CommonTasks.txt
+echo "======================================================" >> CommonTasks.txt
+echo "Tasks -> Common Languages" >> CommonTasks.txt
+echo "======================================================" >> CommonTasks.txt
 
 for getTasks in `ls Task`;
 do
-	for getLanguages in `ls Task\$getTasks`;
+	commonLanguageCounter=0
+	for getLanguages in `ls Task/$getTasks`;
 	do
+		#Loop all the languages given as a command line argument for the user
 		
+		for i in "${sortedLang[@]}";
+		do 
+			if [ "$i" == "$getLanguages" ]; 
+			then
+				let "commonLanguageCounter++"
+			fi
+		done
 	done
+		#Store in file
+	
+		if [ $commonLanguageCounter -gt $2 ]; 
+		then
+		echo "$getTasks -> $commonLanguageCounter" >> CommonTasks.txt
+		fi
 done
+
+exit
