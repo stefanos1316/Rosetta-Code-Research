@@ -36,17 +36,18 @@ do
 	for getLanguages in `ls Task/$getTasks`;
 	do
 		#Loop all the languages given as a command line argument for the user
-		
+	
 		for i in "${sortedLang[@]}";
 		do 
 			if [ "$i" == "$getLanguages" ]; 
 			then
 				let "commonLanguageCounter++"
+				#echo "Task Name: $getTasks and has $getLanguages"
 			fi
 		done
+	
 	done
 		#Store in file
-	
 		if [ $commonLanguageCounter -gt $2 ]; 
 		then
 		echo "$getTasks -> $commonLanguageCounter" >> CommonTasks.txt
