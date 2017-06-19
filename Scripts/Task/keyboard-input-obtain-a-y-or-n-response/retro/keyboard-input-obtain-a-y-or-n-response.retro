@@ -1,3 +1,0 @@
-  : y|n ( -c )
-    "\nPress Y or N..." puts
-    0 [ drop getc dup [ 'Y <> ] [ 'N <> ] bi and ] while cr ;

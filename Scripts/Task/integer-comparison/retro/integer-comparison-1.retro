@@ -1,5 +1,0 @@
-: example ( ab- )
-  cons
-  [ do > [ "A > B\n" puts ] ifTrue ]
-  [ do < [ "A < B\n" puts ] ifTrue ]
-  [ do = [ "A = B\n" puts ] ifTrue ] tri ;

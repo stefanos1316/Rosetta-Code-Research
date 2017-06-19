@@ -1,2 +1,0 @@
-constant integer r_my_func = routine_id("myroutine")
-?call_func(r_my_func,{1}) -- displays {1,"default"}

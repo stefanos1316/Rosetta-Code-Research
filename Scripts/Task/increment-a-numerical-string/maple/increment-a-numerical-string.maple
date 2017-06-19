@@ -1,2 +1,0 @@
-s := "12345";
-s := convert(parse(s)+1, string);

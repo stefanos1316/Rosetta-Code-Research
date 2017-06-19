@@ -1,2 +1,0 @@
-traverse [] = []
-traverse (x::xs) = x :: traverse xs

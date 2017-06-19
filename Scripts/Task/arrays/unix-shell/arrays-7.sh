@@ -1,1 +1,0 @@
-unset alist[0]

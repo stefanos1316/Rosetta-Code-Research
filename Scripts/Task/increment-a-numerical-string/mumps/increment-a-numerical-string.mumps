@@ -1,2 +1,0 @@
- SET STR="123"
- WRITE STR+1

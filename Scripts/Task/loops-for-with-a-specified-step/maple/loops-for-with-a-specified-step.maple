@@ -1,3 +1,0 @@
-for i from 2 to 8 by 2 do
-  i;
-end do;

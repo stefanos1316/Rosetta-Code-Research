@@ -1,5 +1,0 @@
-with(FileTools):
-Exists("input.txt");
-Exists("docs") and IsDirectory("docs");
-Exists("/input.txt");
-Exists("/docs") and IsDirectory("/docs");

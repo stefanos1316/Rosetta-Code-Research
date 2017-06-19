@@ -1,1 +1,0 @@
-say $_ for @collection;

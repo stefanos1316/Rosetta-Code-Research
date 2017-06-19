@@ -1,3 +1,0 @@
-let A be {1, 2, 3};
-let B be {4, 5, 6};
-add B to A;

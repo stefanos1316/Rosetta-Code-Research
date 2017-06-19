@@ -1,1 +1,0 @@
-MYSTRUCT i;

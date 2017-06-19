@@ -1,2 +1,0 @@
-PrintLn(UpperCase('alphaBETA'));
-PrintLn(LowerCase('alphaBETA'));

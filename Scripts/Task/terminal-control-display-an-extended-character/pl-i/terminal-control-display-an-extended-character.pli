@@ -1,2 +1,0 @@
-   declare pound character (1) static initial ('9c'x);
-   put skip list (pound);

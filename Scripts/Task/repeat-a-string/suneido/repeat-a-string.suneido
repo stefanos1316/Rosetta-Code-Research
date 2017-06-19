@@ -1,2 +1,0 @@
-'ha'.Repeat(5)  -->  "hahahahaha"
-'*'.Repeat(5)  -->  "*****"

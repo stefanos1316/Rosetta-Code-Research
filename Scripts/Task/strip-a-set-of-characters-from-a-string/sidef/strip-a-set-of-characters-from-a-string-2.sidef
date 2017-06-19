@@ -1,3 +1,0 @@
-func stripchars(str, char_list) {
-    str.chars.grep {|c| !char_list.contains(c)}.join;
-}

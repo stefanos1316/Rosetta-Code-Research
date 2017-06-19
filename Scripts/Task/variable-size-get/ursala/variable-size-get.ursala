@@ -1,5 +1,0 @@
-#import std
-
-#cast %nL
-
-examples = <weight 'hello',mpfr..prec 1.0E+0>

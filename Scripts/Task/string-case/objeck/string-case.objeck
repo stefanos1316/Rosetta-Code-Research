@@ -1,3 +1,0 @@
-string := "alphaBETA";
-string->ToUpper()->PrintLine();
-string->ToLower()->PrintLine();

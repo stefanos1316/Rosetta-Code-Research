@@ -1,2 +1,0 @@
-["alphaBETA".toUpperCase(),
-"alphaBETA".toLowerCase()]

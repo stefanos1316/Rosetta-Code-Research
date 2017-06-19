@@ -1,4 +1,0 @@
-Dim Text.s(9)
-
-Text(3)="Hello"
-Text(7)="World!"

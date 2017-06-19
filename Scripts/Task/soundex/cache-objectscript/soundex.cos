@@ -1,9 +1,0 @@
-Class Utils.Phonetic [ Abstract ]
-{
-
-ClassMethod ToSoundex(String As %String) As %String [ Language = mvbasic ]
-{
-	Return Soundex(String)
-}
-
-}

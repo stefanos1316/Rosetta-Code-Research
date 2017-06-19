@@ -1,3 +1,0 @@
-   declare t(0:9) character (1) static initial
-      ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j');
-   put ( t(10*random()) );

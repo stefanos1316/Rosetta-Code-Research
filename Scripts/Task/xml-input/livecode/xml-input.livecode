@@ -1,2 +1,0 @@
-put revXMLCreateTree(fld "FieldXML",true,true,false) into currTree
-put revXMLAttributeValues(currTree,"Students","Student","Name",return,-1)

@@ -1,4 +1,0 @@
-class "foo" : inherits "bar"
-{
-
-}

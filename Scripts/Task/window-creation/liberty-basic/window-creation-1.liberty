@@ -1,3 +1,0 @@
-nomainwin
-open "GUI Window" for window as #1
-wait

@@ -1,2 +1,0 @@
-def array = [1..100];
-def evens = array[n | n mod 2 == 0];

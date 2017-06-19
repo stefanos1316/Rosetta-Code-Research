@@ -1,2 +1,0 @@
-DEF c
-c := IF condition THEN 78 ELSE 19

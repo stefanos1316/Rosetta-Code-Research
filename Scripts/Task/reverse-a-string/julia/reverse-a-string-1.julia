@@ -1,2 +1,0 @@
-julia> reverse("hey")
-"yeh"

@@ -1,2 +1,0 @@
-12 iota [3 4] reshape 1 + dup .
-1 transpose .

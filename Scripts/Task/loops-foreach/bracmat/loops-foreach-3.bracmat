@@ -1,7 +1,0 @@
-  !list:?L
-& ( loop
-  =   !L:%?language ?L
-    & out$!language
-    & !loop
-  )
-& ~!loop

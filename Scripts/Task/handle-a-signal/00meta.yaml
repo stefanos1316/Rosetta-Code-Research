@@ -1,6 +1,0 @@
----
-category:
-- Signal handling
-note: Concurrency
-requires:
-- Signal handling

@@ -1,5 +1,0 @@
-a = 0
-do
-  a =a +1
-  print a
-loop until ( a mod 6) = 0

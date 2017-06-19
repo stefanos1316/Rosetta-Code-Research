@@ -1,1 +1,0 @@
-(bytes-length #"Hello world")

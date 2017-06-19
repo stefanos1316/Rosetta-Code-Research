@@ -1,1 +1,0 @@
-set nextline [gets $io]

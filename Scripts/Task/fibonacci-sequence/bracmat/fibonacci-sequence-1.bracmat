@@ -1,1 +1,0 @@
-fib=.!arg:<2|fib$(!arg+-2)+fib$(!arg+-1)

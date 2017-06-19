@@ -1,2 +1,0 @@
-?- mortal(zeus).
-no

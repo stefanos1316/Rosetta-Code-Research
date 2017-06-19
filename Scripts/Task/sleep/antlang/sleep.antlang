@@ -1,4 +1,0 @@
-milliseconds: eval[input["How long should I sleep? "]] / eval = evil, but this is just a simple demo
-echo["Sleeping..."]
-sleep[milliseconds]
-echo["Awake!"]

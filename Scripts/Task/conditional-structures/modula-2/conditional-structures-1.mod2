@@ -1,9 +1,0 @@
-IF i = 1 THEN
-  InOut.WriteString('One')
-ELSIF i = 2 THEN
-  InOut.WriteString('Two')
-ELSIF i = 3 THEN
-  InOut.WriteString('Three')
-ELSE
-  InOut.WriteString('Other')
-END;

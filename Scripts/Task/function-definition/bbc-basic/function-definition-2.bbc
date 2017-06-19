@@ -1,4 +1,0 @@
-DEF FNmultiply(a,b)
-LOCAL c
-c = a * b
-= c

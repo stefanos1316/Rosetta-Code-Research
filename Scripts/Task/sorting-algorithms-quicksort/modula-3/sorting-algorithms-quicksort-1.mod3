@@ -1,5 +1,0 @@
-GENERIC INTERFACE ArraySort(Elem);
-
-PROCEDURE Sort(VAR a: ARRAY OF Elem.T; cmp := Elem.Compare);
-
-END ArraySort.

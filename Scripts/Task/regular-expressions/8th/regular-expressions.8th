@@ -1,2 +1,0 @@
-"haystack" /a./ r:match . cr
-"haystack" /a./ "blah" s:replace! . cr

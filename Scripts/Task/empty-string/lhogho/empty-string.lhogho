@@ -1,3 +1,0 @@
-make "str " ;make null-string word
-print empty? :str ;prints 'true'
-print not empty? :str ;prints 'false'

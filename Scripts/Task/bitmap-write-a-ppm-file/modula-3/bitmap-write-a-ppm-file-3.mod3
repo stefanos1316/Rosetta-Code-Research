@@ -1,7 +1,0 @@
-proc writePPM(img: Image, f: TFile) =
-  f.writeln "P6\n", img.w, " ", img.h, "\n255"
-
-  for x,y in img.indices:
-    f.write char(img[x,y].r)
-    f.write char(img[x,y].g)
-    f.write char(img[x,y].b)

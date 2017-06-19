@@ -1,3 +1,0 @@
-#ilASM{ jmp :local
-            ...
-       ::local }

@@ -1,2 +1,0 @@
-println[now[] -> ### yyyy-MM-dd ###]
-println[now[] -> ### EEEE, MMMM d, yyyy ###]

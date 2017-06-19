@@ -1,1 +1,0 @@
-mortal(X) :- man(Y).

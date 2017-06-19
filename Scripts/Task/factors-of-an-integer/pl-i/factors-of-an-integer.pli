@@ -1,3 +1,0 @@
-do i = 1 to n;
-   if mod(n, i) = 0 then put skip list (i);
-end;

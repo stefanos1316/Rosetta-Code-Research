@@ -1,3 +1,0 @@
-load(distrib)$
-
-random_normal(1.0, 0.5, 1000);

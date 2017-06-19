@@ -1,5 +1,0 @@
-    2+2:5
-  & put$"Strange, must check that Bracmat interpreter."
-  & 0
-|   put$"That's what I thought."
-  & Right

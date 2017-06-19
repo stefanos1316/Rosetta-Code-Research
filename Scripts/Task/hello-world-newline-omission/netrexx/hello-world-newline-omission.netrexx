@@ -1,4 +1,0 @@
-/* NetRexx */
-options replace format comments java crossref symbols binary
-
-say 'Goodbye, World!\-'

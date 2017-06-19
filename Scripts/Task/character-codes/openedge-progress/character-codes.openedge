@@ -1,4 +1,0 @@
-MESSAGE
-   CHR(97) SKIP
-   ASC("a")
-VIEW-AS ALERT-BOX.

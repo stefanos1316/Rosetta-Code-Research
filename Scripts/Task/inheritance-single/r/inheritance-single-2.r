@@ -1,5 +1,0 @@
-setClass("Animal", representation(), prototype())
-setClass("Dog", representation(), prototype(), contains="Animal")
-setClass("Cat", representation(), prototype(), contains="Animal")
-setClass("Collie", representation(), prototype(), contains="Dog")
-setClass("Lab", representation(), prototype(), contains="Dog")

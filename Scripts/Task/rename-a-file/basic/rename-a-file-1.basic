@@ -1,4 +1,0 @@
-NAME "input.txt" AS "output.txt"
-NAME "\input.txt" AS "\output.txt"
-NAME "docs" AS "mydocs"
-NAME "\docs" AS "\mydocs"

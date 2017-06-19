@@ -1,3 +1,0 @@
-with(StringTools):
-
-Remove(c->Has("aei",c), "She was a soul stripper. She took my heart!");

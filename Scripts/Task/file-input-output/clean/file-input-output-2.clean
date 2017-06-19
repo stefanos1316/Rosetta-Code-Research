@@ -1,1 +1,0 @@
-Start world = copyFile "input.txt" "output.txt" world

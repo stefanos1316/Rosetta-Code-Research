@@ -1,3 +1,0 @@
-procedure main(args)
-    write(repl(integer(!args) | 5))
-end

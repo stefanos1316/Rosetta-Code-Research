@@ -1,6 +1,0 @@
-: pass-me
-  "I was passed\n" . ;
-: passer
-  w:exec ;
-\ pass 'pass-me' to 'passer'
-' pass-me passer

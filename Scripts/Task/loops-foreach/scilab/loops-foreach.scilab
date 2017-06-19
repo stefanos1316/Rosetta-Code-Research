@@ -1,3 +1,0 @@
-for e=["a","b","c"]
-    printf("%s\n",e)
-end

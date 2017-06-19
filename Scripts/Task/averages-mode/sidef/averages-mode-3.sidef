@@ -1,3 +1,0 @@
-func one_mode(arr) {
-    arr.max_by{|i| arr.count(i)};
-}

@@ -1,2 +1,0 @@
-Reap[Scan[VampireQ,Range[126027]]][[2,1]]//Grid
-Reap[VampireQ[#]] & /@ {16758243290880, 24959017348650, 14593825548650} // Grid

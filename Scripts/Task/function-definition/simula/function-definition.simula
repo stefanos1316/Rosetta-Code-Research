@@ -1,9 +1,0 @@
-BEGIN
-    INTEGER PROCEDURE multiply(x, y);
-    INTEGER x, y;
-    BEGIN
-        multiply := x * y
-    END;
-    Outint(multiply(7,8), 2);
-    Outimage
-END

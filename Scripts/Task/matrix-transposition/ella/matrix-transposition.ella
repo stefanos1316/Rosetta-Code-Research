@@ -1,2 +1,0 @@
-MAC TRANSPOSE = ([INT n][INT m]TYPE t: matrix) -> [m][n]t:
-  [INT i = 1..m] [INT j = 1..n] matrix[j][i].

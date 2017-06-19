@@ -1,4 +1,0 @@
-Bin = 0b010101,
-Octal = 0o666,
-Hex = 0x1fa,
-CharCode = 0'a.

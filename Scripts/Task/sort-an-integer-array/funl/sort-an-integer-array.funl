@@ -1,3 +1,0 @@
-nums = [5, 2, 78, 2, 578, -42]
-println( sort(nums) )           // sort in ascending order
-println( nums.sortWith((>)) )   // sort in descending order

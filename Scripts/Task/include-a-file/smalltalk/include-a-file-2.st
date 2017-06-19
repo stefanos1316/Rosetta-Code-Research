@@ -1,1 +1,0 @@
-Smalltalk fileIn: aFilename

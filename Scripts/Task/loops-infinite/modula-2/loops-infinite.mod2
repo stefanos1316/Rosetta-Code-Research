@@ -1,4 +1,0 @@
-LOOP
-  InOut.WriteString ("SPAM");
-  InOut.WriteLn
-END;

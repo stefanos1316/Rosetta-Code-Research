@@ -1,3 +1,0 @@
-infinity
-'<br />'
-infinity -> type

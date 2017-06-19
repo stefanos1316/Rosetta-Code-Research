@@ -1,3 +1,0 @@
-Sort(0, File_Size, NOCOLLATE+NORESTORE)
-EOF Goto_Line(Cur_Line/2)
-Reg_Copy(10, 1)

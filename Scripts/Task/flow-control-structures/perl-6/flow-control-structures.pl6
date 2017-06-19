@@ -1,1 +1,0 @@
-TOWN: goto TOWN;

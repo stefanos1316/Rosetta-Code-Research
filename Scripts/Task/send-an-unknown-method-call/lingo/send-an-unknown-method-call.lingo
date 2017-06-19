@@ -1,5 +1,0 @@
-obj = script("MyClass").new()
--- ...
-method = #foo
-arg1 = 23
-res = call(method, obj, arg1)

@@ -1,2 +1,0 @@
-str = "12345"
-str = ((str as integer) + 1) as string

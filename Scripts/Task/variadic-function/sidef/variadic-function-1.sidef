@@ -1,3 +1,0 @@
-func print_all(*things) {
-    things.each { |x| say x };
-}

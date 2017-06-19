@@ -1,3 +1,0 @@
-/* NetRexx */
--- sample arguments: -c "alpha beta" -h "gamma"
-say "program arguments:" arg

@@ -1,5 +1,0 @@
-println("Add to typemax")
-for t in s
-    over = typemax(t) + 1
-    println(t, " => ", over, " (", typeof(over), ")")
-end

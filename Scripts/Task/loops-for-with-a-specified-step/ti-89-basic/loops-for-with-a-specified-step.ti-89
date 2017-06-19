@@ -1,4 +1,0 @@
-Local i
-For i, 0, 100, 5
-    Disp i
-EndFor

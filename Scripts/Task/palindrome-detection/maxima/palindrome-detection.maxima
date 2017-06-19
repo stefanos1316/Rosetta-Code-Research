@@ -1,3 +1,0 @@
-palindromep(s) := block([t], t: sremove(" ", sdowncase(s)), sequal(t, sreverse(t)))$
-
-palindromep("Sator arepo tenet opera rotas");  /* true */

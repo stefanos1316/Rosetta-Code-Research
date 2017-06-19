@@ -1,2 +1,0 @@
-def \Fruit\ Apple, Banana, Cherry;      \Apple=0, Banana=1, Cherry=2
-def     Apple=1, Banana=2, Cherry=4;

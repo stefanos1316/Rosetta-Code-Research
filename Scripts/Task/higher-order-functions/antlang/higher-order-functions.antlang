@@ -1,2 +1,0 @@
-twice:{x[x[y]]}
-echo twice "Hello!"

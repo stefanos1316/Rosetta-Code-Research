@@ -1,1 +1,0 @@
-s" HOME" getenv type

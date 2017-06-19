@@ -1,2 +1,0 @@
-even(x) := x mod 2 = 0;
-odd(x) := x mod 2 = 1;

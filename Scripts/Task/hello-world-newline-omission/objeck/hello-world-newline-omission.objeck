@@ -1,7 +1,0 @@
-bundle Default {
-  class SayGoodbye {
-    function : Main(args : String[]) ~ Nil {
-      "Goodbye, World!"->Print();
-    }
-  }
-}

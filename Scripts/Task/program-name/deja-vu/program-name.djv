@@ -1,1 +1,0 @@
-!print( "Name of this file: " get-from !args 0 )

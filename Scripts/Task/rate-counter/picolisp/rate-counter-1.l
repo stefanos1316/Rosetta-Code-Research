@@ -1,8 +1,0 @@
-(prin "Hit a key ... ")
-(key)
-(prinl)
-(let Usec (usec)
-   (prin "Hit another key ... ")
-   (key)
-   (prinl)
-   (prinl "This took " (format (- (usec) Usec) 6) " seconds") )

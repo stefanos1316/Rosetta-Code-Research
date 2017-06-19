@@ -1,6 +1,0 @@
-@(maybe)@# perhaps this subclause suceeds or not
-@  (block foo)
-@  (bind a "a")
-@  (fail foo)
-@(end)
-@(bind b "b")

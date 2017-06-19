@@ -1,1 +1,0 @@
-(time (some-function))

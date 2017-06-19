@@ -1,3 +1,0 @@
-put "world" into x
-put "hello" before x
-put x // hello world

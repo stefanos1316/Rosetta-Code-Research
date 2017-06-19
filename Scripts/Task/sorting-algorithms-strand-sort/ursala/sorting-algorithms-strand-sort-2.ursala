@@ -1,3 +1,0 @@
-#cast %nL
-
-x = (strand_sort nat-nleq) <3,1,5,4,2>

@@ -1,3 +1,0 @@
-if (io.line 'stdin').match ~(\d+)\s+(\d+)~
-    say "$a $b %(a+b)d"
-end

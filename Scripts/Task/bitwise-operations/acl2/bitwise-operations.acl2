@@ -1,7 +1,0 @@
-(defun bitwise (a b)
-   (list (logand a b)
-         (logior a b)
-         (logxor a b)
-         (lognot a)
-         (ash a b)
-         (ash a (- b))))

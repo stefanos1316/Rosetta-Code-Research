@@ -1,7 +1,0 @@
-a = 0
-do
-(
-    print a
-    a += 1
-)
-while mod a 6 != 0

@@ -1,3 +1,0 @@
-END {
-     print "Hello world!"
-    }

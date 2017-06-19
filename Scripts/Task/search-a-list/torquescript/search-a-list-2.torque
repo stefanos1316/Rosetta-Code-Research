@@ -1,1 +1,0 @@
-echo(findIn("Hello world, you are quite sunny today.","quite hello somethingelse"));

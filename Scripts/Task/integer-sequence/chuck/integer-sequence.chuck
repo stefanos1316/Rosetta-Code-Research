@@ -1,4 +1,0 @@
-for(1 => int i; i < Math.INT_MAX; i ++)
-{
-    <<< i >>>;
-}

@@ -1,2 +1,0 @@
-If (problem)
-  ExitApp

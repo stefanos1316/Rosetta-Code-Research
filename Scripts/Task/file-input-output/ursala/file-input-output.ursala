@@ -1,5 +1,0 @@
-#import std
-
-#executable ('parameterized','')
-
-fileio = ~command.files; &h.path.&h:= 'output.txt'!

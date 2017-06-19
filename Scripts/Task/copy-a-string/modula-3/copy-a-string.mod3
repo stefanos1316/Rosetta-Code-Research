@@ -1,2 +1,0 @@
-VAR src: TEXT := "Foo";
-VAR dst: TEXT := src;

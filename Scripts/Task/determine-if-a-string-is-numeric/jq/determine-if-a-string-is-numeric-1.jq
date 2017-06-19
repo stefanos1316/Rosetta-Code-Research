@@ -1,1 +1,0 @@
-try tonumber catch false

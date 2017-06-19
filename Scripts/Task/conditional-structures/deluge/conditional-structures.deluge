@@ -1,7 +1,0 @@
-if (input.Field == "Hello World") {
-    sVar = "good";
-} else if (input.Field == "Bye World") {
-    sVar = "bad";
-} else {
-    sVar = "neutral";
-}

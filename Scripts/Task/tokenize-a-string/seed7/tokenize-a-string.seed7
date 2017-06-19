@@ -1,3 +1,0 @@
-var array string: tokens is 0 times "";
-
-tokens := split("Hello,How,Are,You,Today", ",");

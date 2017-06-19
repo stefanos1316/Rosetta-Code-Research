@@ -1,1 +1,0 @@
-load "-"         # read standard input

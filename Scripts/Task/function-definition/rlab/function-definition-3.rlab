@@ -1,6 +1,0 @@
-somelist = <<>>;
-somelist.f = function(x, y)
-{
-  rval = x + y;
-  return rval;
-};

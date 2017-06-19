@@ -1,5 +1,0 @@
-#APPTYPE CONSOLE
-
-print FileLen("sync.log")
-print FileLen("\sync.log")
-PAUSE

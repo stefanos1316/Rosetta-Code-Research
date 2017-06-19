@@ -1,3 +1,0 @@
-func stripchars(str, char_list) {
-    str.tr(char_list, "", "d");
-}

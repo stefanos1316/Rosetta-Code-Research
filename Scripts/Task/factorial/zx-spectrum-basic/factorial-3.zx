@@ -1,1 +1,0 @@
-DEF FN f(n) = VAL (("1" AND n<=0) + ("FN f(n-1)*n" AND n>0))

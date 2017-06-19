@@ -1,3 +1,0 @@
-import ArgEnv
-
-Start = getCommandLine

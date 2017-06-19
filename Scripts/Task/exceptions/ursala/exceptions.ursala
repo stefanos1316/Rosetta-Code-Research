@@ -1,5 +1,0 @@
-#import std
-
-thrower = ~&?/'success'! -[epic fail]-!%
-
-catcher = guard(thrower,---[someone failed]-)

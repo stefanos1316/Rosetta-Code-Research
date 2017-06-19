@@ -1,3 +1,0 @@
-trap(,"does not exist",read("input.txt");"exists")
-trap(,"does not exist",read("c:\\input.txt");"exists")
-trap(,"does not exist",read("c:\\dirname\\nul");"exists")

@@ -1,2 +1,0 @@
-list=Import["http://www.puzzlers.org/pub/wordlists/unixdict.txt","Lines"];
-MaximalBy[GatherBy[list, Sort@*Characters], Length]

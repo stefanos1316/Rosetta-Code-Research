@@ -1,1 +1,0 @@
-var isOdd := (i and 1)<>0;

@@ -1,1 +1,0 @@
-println strings[-1]

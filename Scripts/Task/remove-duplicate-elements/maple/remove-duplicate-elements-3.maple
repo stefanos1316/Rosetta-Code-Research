@@ -1,3 +1,0 @@
-> A := Array( L ):
-> for u in A do T[u] := 1 end: Array( [indices]( T, 'nolist' ) );
-                        [1, 2, 3, "c", "a", "b"]

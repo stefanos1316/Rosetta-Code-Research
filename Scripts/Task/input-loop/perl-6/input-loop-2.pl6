@@ -1,3 +1,0 @@
-for $*IN.lines -> $line {
-    ...
-}

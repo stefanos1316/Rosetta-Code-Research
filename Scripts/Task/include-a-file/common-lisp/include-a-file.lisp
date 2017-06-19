@@ -1,1 +1,0 @@
-(load "path/to/file")

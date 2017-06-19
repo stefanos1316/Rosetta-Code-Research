@@ -1,3 +1,0 @@
-> if type( bloop, complex( extended_numeric ) ) and type( abs, mathfunc ) then print( abs( bloop ) ) end:
-                                   1/2
-                                 13

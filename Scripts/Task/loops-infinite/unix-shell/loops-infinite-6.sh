@@ -1,1 +1,0 @@
-forever {echo SPAM}

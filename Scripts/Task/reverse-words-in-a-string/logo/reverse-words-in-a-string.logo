@@ -1,5 +1,0 @@
-do.until [
-  make "line readlist
-  print reverse :line
-] [word? :line]
-bye

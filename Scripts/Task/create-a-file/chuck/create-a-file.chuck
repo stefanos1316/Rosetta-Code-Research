@@ -1,2 +1,0 @@
-FileIO text;
-text.open("output.txt", FileIO.WRITE);

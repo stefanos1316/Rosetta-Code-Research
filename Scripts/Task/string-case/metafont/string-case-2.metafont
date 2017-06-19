@@ -1,4 +1,0 @@
-message toupper("alphaBETA");
-message tolower("alphaBETA");
-
-end

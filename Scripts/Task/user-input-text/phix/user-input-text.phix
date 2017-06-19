@@ -1,2 +1,0 @@
-?prompt_string("Enter any string:")
-?prompt_number("Enter the number 75000:",{75000,75000})

@@ -1,1 +1,0 @@
-def q = new LinkedList()

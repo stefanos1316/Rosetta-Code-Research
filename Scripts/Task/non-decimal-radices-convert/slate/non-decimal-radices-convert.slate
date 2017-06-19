@@ -1,2 +1,0 @@
-26 printString &radix: 16
-Integer readFrom: '1A' &radix: 16.

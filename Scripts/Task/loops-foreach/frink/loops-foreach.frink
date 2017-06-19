@@ -1,3 +1,0 @@
-array = [1, 2, 3, 5, 7]
-for n = array
-   println[n]

@@ -1,3 +1,0 @@
-RootsOfUnity := proc( n )
-    solve(z^n = 1, z);
-end proc:

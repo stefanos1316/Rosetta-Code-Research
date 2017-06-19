@@ -1,1 +1,0 @@
-NSLog(@"%@", [[NSProcessInfo processInfo] hostName]);

@@ -1,5 +1,0 @@
-(defun eval-with-x (program a b)
-  (let* ((f (compile nil `(lambda (x) ,program)))
-         (at-a (funcall f a))
-         (at-b (funcall f b)))
-    (- at-b at-a)))

@@ -1,8 +1,0 @@
-for(%i = 0; %i < 5; %i++)
-{
-    for(%x = %i; %x < 5; %x++)
-    {
-        %string = %string @ "*";
-        echo(%string);
-    }
-}

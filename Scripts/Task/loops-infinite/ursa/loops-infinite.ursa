@@ -1,3 +1,0 @@
-while true
-	out "SPAM" endl console
-end while

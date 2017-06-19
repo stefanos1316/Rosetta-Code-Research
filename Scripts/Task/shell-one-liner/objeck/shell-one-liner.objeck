@@ -1,1 +1,0 @@
-./obc -run '"Hello"->PrintLine();' -dest hello.obe ; ./obr hello.obe

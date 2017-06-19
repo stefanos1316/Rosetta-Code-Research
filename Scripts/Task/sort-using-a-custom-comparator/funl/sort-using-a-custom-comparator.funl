@@ -1,3 +1,0 @@
-def preceeds( a, b ) = b.length() < a.length() or b.length() == a.length() and a.compareToIgnoreCase( b ) < 0
-
-println( ["here", "are", "Some", "sample", "strings", "to", "be", "sorted"].sortWith(preceeds) )

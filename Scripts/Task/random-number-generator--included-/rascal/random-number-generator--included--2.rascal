@@ -1,4 +1,0 @@
-rascal>import List;
-ok
-rascal>getOneFrom(["zebra", "elephant", "snake", "owl"]);
-str: "owl"

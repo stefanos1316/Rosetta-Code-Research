@@ -1,2 +1,0 @@
-install("rename","iss","rename");
-rename("input.txt", "output.txt");

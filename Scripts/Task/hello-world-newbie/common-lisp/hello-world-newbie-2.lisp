@@ -1,1 +1,0 @@
-(load "hello.lisp")

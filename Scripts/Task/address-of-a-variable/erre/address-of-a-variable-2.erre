@@ -1,8 +1,0 @@
-PROGRAM POINTER
-BEGIN
-   A%=100
-   ADDR=VARPTR(A%)
-   PRINT(A%)       ! prints 100
-   POKE(ADDR,200)
-   PRINT(A%)       ! prints 200
-END PROGRAM

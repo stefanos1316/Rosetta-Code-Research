@@ -1,2 +1,0 @@
-join { {} \{ \} } something
-=> something{something}

@@ -1,7 +1,0 @@
-flatten(v)={
-  my(u=[]);
-  for(i=1,#v,
-    u=concat(u,if(type(v[i])=="t_VEC",flatten(v[i]),v[i]))
-  );
-  u
-};

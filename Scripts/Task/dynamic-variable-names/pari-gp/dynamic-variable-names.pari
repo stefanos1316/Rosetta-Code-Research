@@ -1,1 +1,0 @@
-eval(Str(input(), "=34"))

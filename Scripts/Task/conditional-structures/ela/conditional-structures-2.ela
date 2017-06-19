@@ -1,2 +1,0 @@
-getX x | x < 0 = 0
-       | else  = x

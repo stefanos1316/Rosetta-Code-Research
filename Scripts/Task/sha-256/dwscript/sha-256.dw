@@ -1,1 +1,0 @@
-PrintLn( HashSHA256.HashData('Rosetta code') );

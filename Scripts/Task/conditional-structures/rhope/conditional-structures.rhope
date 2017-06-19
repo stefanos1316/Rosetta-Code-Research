@@ -1,6 +1,0 @@
-If[cond]
-|:
-    Do Something[]
-:||:
-    Do Something Else[]
-:|

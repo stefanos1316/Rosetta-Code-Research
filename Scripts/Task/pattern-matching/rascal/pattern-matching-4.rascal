@@ -1,4 +1,0 @@
-rascal>/XX/i := "some xx";
-bool: true
-rascal>/a.c/ := "abc";
-bool: true

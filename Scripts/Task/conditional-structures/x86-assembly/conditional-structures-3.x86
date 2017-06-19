@@ -1,5 +1,0 @@
-if(i>1)
-   DoSomething
-else if(i<=1)
-   DoSomethingElse
-FailedSoContinueCodeExecution

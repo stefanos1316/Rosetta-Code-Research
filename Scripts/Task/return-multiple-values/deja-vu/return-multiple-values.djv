@@ -1,4 +1,0 @@
-function-returning-multiple-values:
-     10 20
-
-!print !print function-returning-multiple-values

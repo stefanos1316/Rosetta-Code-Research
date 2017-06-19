@@ -1,2 +1,0 @@
-say (Dir.cwd  + %f'input.txt' -> size);
-say (Dir.root + %f'input.txt' -> size);

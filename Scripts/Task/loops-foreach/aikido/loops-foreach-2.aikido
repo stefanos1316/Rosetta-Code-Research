@@ -1,4 +1,0 @@
-var vec = [1,2,3,4]
-foreach v vec {    // you can also use an optional 'in'
-    println (v)
-}

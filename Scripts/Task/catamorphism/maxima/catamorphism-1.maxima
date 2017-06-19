@@ -1,2 +1,0 @@
-lreduce(f, [a, b, c, d], x0);
-/* (%o1)                     f(f(f(f(x0, a), b), c), d) */

@@ -1,3 +1,0 @@
-function : native : PrintAverage(values : FloatVector) ~ Nil {
-  values->Average()->PrintLine();
-}

@@ -1,7 +1,0 @@
-0 => int value;
-do
-{
-    value++;
-    <<<value>>>;
-}
-while(value % 6 != 0);

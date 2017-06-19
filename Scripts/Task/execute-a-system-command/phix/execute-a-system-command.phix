@@ -1,3 +1,0 @@
-string cmd = {"dir","ls"}[platform()-1]
-system(cmd)
-integer res = system_exec("pause",4)

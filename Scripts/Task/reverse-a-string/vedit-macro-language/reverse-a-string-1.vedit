@@ -1,4 +1,0 @@
-Reg_Empty(10)
-for (BOL; !At_EOL; Char) {
-    Reg_Copy_Block(10, CP, CP+1, INSERT)
-}

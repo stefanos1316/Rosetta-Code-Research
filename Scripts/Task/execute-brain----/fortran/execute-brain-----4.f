@@ -1,2 +1,0 @@
-  4   IF (ICHAR(STORE(D)).NE.0) GO TO 3
-      IF (ICHAR(STORE(D)).NE.0) GO TO 3

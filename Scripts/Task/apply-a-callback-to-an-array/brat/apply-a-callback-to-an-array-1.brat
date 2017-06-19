@@ -1,4 +1,0 @@
-#Print out each element in array
-[:a :b :c :d :e].each { element |
-	p element
-}

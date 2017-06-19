@@ -1,3 +1,0 @@
-list$  = "a,b,c,d,e,f,g,h,i,j"
-letter = rnd(1) * 10
-print "Selected letter:"; word$(list$,letter,",")

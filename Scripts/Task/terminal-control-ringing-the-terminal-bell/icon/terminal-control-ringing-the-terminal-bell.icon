@@ -1,3 +1,0 @@
-procedure main ()
-  write ("\7") # ASCII 7 rings the bell under Bash
-end

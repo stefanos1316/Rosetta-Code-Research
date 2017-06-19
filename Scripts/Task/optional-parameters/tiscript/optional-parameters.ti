@@ -1,5 +1,0 @@
-function sorter(table, ordering = "lexicographic", column = 0, reverse = false) {
-    // ...
-}
-
-sorter(the_data,"numeric");

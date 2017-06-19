@@ -1,2 +1,0 @@
-Dim a As Integer = 1
-On a Gosub label1, label2

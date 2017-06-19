@@ -1,1 +1,0 @@
-def lower = ('a'..'z')

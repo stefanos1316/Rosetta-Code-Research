@@ -1,2 +1,0 @@
-while (line = readStdin[]) != undef
-   println[line]

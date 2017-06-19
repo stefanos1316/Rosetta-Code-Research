@@ -1,6 +1,0 @@
-   rfd 1234
-MCCXXXIV
-   rfd 567
-DLXVII
-   rfd 89
-LXXXIX

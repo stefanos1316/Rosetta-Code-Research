@@ -1,3 +1,0 @@
->load incidence;
->{u,r}=solvePotentialX(makeRectangleX(10,10),12,68); r,
- 1.60899124173

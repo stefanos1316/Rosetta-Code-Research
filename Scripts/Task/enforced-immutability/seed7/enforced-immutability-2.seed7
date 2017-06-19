@@ -1,1 +1,0 @@
-const integer: foobar is 2 * length(bar) * (foo - 35);

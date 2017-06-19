@@ -6,4 +6,5 @@ var arrayLength = c.length;
 		for (var j = 0; j < arrayLength; j++) {
 			console.log(c[j]);
 		}
+	c = a.concat(b);
 }

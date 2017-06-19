@@ -1,3 +1,0 @@
-install("truncate", "isL", "trunc")
-
-trunc("/tmp/test.file", 20)

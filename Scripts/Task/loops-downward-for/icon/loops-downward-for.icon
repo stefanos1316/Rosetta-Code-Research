@@ -1,3 +1,0 @@
-every i := 10 to 0 by -1 do {
-   # things to do within the loop
-   }

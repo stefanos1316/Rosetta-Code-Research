@@ -1,3 +1,0 @@
-include builtins\timedate.e
-?format_timedate(date(),"YYYY-MM-DD")
-?format_timedate(date(),"Dddd, Mmmm d, YYYY")

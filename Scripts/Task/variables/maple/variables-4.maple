@@ -1,5 +1,0 @@
-print ("a is "||a);
-a := 4:
-print ("a is "||a);
-                            "a is 1"
-                            "a is 4"

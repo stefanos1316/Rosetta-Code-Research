@@ -1,4 +1,0 @@
-put "pple" into x
-answer char 2 to len(x) of x // pple
-answer char 1 to -2 of x  // ppl
-answer char 2 to -2 of x // ppl

@@ -12,7 +12,8 @@ do
                 do
                         case "$containesLanguages" in 
                         ("c")
-					rm !($1"/"$containesTasks"/"$containesLanguages"/"*.c)
+				if [[ $tasksImplementation == *".c" ]];
+				then
 					sourceFile=$1"/"$containesTasks"/"$containesLanguages"/"$tasksImplementation
 					objectFile=$(echo $sourceFile | awk -F "." '{print $1}')
 					eval=$(gcc -o $objectFile $sourceFile)
@@ -22,9 +23,10 @@ do
                                 		else
                                                 	echo "$1/$containesTasks/$containesLanguages/$tasksImplementation:C" >> Reports/Java_Failed_Report.txt
   	                        	fi
+				fi
 			;;
                         ("c++")
-				if [ "$tasksImplementation" == *.cpp  ]; 
+				if [[ $tasksImplementation == *".cpp"  ]]; 
 				then
 					sourceFile=$1"/"$containesTasks"/"$containesLanguages"/"$tasksImplementation
                                 	objectFile=$(echo $sourceFile | awk -F "." '{print $1}')
@@ -38,7 +40,7 @@ do
 				fi
 			;;
 			("java")
-				if [ $tasksImplementation == *.java  ];
+				if [[ $tasksImplementation == *".java"  ]];
 				then
                                 	eval=$(javac $1/$containesTasks/$containesLanguages/$tasksImplementation)
                                 
@@ -52,7 +54,7 @@ do
 				fi
                         ;;
 			("c-sharp")
-				if [ $tasksImplementation == *.cs  ];
+				if [[ $tasksImplementation == *".cs"  ]];
 				then
                                 	eval=$(mcs $1/$containesTasks/$containesLanguages/$tasksImplementation)
                          
@@ -65,7 +67,7 @@ do
 				fi
                         ;;
 			("visual-basic-.net")
-				if [ $tasksImplementation == *.visual ];
+				if [[ $tasksImplementation == *".visual" ]];
 				then
                                 	eval=$(vbnc $1/$containesTasks/$containesLanguages/$tasksImplementation)
                               
@@ -78,7 +80,7 @@ do
 				fi
                         ;;
                         ("switf")
-				if [ $tasksImplementation == *.swift ];
+				if [[ $tasksImplementation == *".swift" ]];
 				then 
                                 	eval=$(swift $1/$containesTasks/$containesLanguages/$tasksImplementation)
                                 fi
@@ -91,7 +93,7 @@ do
                                 fi
                         ;;
                         ("rust")
-				if [ $tasksImplementation == *.rust ];
+				if [[ $tasksImplementation == *".rust" ]];
 				then 
                                 	eval=$(/home/sgeorgiou/.cargo/bin/rustc $1/$containesTasks/$containesLanguages/$tasksImplementation)
                                 

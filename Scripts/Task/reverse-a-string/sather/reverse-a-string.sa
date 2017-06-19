@@ -1,7 +1,0 @@
-class MAIN is
-  main is
-    s ::= "asdf";
-    reversed ::= s.reverse;
-    -- current implementation does not handle multibyte encodings correctly
-  end;
-end;

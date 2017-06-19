@@ -1,4 +1,0 @@
-put ( trim(text, ' ', '') );          /* trims leading blanks.       */
-put ( trim(text, '', ' ') );          /* trims trailing blanks.      */
-put ( trim(text) );                   /* trims leading and trailing  */
-                                      /* blanks.                     */

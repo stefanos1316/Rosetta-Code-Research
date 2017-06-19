@@ -1,2 +1,0 @@
-force (x::xs) = x :: force xs
-force [] = []

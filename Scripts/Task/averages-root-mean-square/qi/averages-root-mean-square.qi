@@ -1,2 +1,0 @@
-(define rms
-  R -> (sqrt (/ (APPLY + (MAPCAR * R R)) (length R))))

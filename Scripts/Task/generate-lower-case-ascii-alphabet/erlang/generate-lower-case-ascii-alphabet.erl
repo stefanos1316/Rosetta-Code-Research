@@ -1,1 +1,0 @@
-lists:seq($a,$z).

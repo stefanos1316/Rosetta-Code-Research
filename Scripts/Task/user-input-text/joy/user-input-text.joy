@@ -1,4 +1,0 @@
-"Enter a string: " putchars
-stdin fgets
-"Enter a number: " putchars
-stdin fgets 10 strtol.

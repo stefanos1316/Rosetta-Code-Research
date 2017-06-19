@@ -1,9 +1,0 @@
-> "foobar";
-                                "foobar"
-
-> "foo\nbar"; # string with a newline
-"foo
-    bar"
-
-> "c"; # a character
-                                  "c"

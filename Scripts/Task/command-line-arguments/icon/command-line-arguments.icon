@@ -1,3 +1,0 @@
-procedure main(arglist)
-every write(!arglist)
-end

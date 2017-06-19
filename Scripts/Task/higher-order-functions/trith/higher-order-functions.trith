@@ -1,3 +1,0 @@
-: twice 2 times ;
-: hello "Hello, world!" print ;
-[hello] twice

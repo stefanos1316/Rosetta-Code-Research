@@ -1,2 +1,0 @@
-module.func();
-module["func"]();

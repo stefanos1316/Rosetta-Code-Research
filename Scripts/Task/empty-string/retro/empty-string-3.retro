@@ -1,4 +1,0 @@
-: notEmpty? ( $-f ) getLength 0 > ;
-
-"" notEmpty? putn
-"hello" notEmpty? putn

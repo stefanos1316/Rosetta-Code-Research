@@ -1,7 +1,0 @@
-TYPE
-  Animal = POINTER TO AnimalDesc;
-  AnimalDec = RECORD [ABSTRACT] END;
-
-  (* Cat inherits from Animal *)
-  Cat = POINTER TO CatDesc;
-  CatDesc = RECORD (AnimalDesc) END;

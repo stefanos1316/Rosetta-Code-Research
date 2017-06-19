@@ -1,5 +1,0 @@
-#import std
-#import nat
-#import flo
-
-nth_diff "n" = rep"n" minus*typ

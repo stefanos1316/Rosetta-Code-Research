@@ -1,6 +1,0 @@
-var node = Hash.new(
-    data => 'say what',
-    next => foo_node,
-);
-
-node{:next} = bar_node;  # mutable

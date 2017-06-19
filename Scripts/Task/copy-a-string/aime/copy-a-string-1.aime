@@ -1,3 +1,0 @@
-text s, t;
-t = "Rosetta";
-s = t;

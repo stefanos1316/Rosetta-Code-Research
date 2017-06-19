@@ -1,3 +1,0 @@
-command teststripchars
-    put stripchars("She was a soul stripper. She took my heart!","aei")
-end teststripchars

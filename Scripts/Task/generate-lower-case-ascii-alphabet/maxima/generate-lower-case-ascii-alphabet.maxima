@@ -1,1 +1,0 @@
-delete([], makelist(if(alphacharp(ascii(i))) then parse_string(ascii(i)) else [], i, 96, 122));

@@ -1,3 +1,0 @@
-beatles.each {
-    println it
-}

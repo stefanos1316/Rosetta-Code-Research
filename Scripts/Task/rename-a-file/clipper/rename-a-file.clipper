@@ -1,7 +1,0 @@
-FRename( "input.txt","output.txt")
-or
-RENAME input.txt TO output.txt
-
-FRename("\input.txt","\output.txt")
-or
-RENAME \input.txt TO \output.txt

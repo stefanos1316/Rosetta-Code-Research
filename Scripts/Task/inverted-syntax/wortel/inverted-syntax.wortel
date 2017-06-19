@@ -1,8 +1,0 @@
-; a = expr
-:a expr
-; expr = a
-~:expr a
-; if cond expr
-@if cond expr
-; if expr cond
-~@if expr cond

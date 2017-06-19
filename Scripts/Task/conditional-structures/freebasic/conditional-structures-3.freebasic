@@ -1,2 +1,0 @@
-Dim b As Boolean = True
-Dim i As Integer = IIf(b, 1, 2)

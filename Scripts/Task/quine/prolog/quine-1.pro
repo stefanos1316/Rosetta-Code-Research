@@ -1,2 +1,0 @@
-quine :-
-	listing(quine).

@@ -1,1 +1,0 @@
-((Integer readFrom: '123') + 1) printString

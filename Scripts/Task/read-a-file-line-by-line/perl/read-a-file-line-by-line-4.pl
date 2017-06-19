@@ -1,4 +1,0 @@
-while (<>) {
-    chomp;
-    process($_);
-}

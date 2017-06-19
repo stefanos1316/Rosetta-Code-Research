@@ -1,5 +1,0 @@
-( )   (grouping)
-( , ) (tuple type/tuple constructor)
-{ ; } (grouping inside let, where, do, case without layout)
-[ , ] (list type/list constructor)
-[ | ] (list comprehension)

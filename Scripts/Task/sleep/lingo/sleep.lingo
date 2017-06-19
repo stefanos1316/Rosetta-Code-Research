@@ -1,5 +1,0 @@
-on doSleep (ms)
-  put "Sleeping..."
-  sleep(ms)
-  put "Awake!"
-end

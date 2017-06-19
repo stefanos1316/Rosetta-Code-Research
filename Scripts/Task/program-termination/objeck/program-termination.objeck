@@ -1,3 +1,0 @@
-if(problem) {
-  Runtime->Exit(1);
-};

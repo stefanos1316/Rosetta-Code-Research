@@ -1,2 +1,0 @@
-xPos := pointerXPos(curr_win);
-yPos := pointerYPos(curr_win);

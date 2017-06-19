@@ -1,1 +1,0 @@
-println this.class.getName()

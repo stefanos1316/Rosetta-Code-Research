@@ -1,2 +1,0 @@
-string s = "this string"        ?s
-s &= " is now longer"           ?s

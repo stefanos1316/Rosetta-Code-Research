@@ -1,4 +1,0 @@
-import rdstdin, strutils
-
-let str = readLineFromStdin "Input a string: "
-let num = parseInt(readLineFromStdin "Input a string: ")

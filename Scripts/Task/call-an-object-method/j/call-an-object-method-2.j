@@ -1,1 +1,0 @@
-objectReference=:'' conew 'className'

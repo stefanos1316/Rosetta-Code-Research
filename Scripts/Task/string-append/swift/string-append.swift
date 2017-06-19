@@ -1,5 +1,0 @@
-var s = "foo"              // "foo"
-s += "bar"                 // "foobar"
-print(s)                   // "foobar"
-s.appendContentsOf("baz")  // "foobarbaz"
-print(s)                   // "foobarbaz"

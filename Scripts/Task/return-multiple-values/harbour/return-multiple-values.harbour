@@ -1,2 +1,0 @@
-FUNCTION Addsub( x, y )
-   RETURN { x + y, x - y }

@@ -1,1 +1,0 @@
-[failed,hostname] = system('hostname')

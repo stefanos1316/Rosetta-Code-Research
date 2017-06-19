@@ -1,1 +1,0 @@
-println[messageDigest["The quick brown fox", "MD5"]]

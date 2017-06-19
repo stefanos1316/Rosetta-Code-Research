@@ -1,5 +1,0 @@
-s@(Sequence traits) mode
-[| sortedCounts |
-  sortedCounts: (s as: Bag) sortedCounts.
-  (sortedCounts mapSelect: [| :count :elem | sortedCounts last count = count]) valueSet
-].

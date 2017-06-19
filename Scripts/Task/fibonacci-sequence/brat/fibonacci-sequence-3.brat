@@ -1,7 +1,0 @@
-cache = hash.new
-
-fibonacci = { x |
-  true? cache.key?(x)
-    { cache[x] }
-    {true? x < 2, x, { cache[x] = fibonacci(x - 1) + fibonacci(x - 2) }}
-}

@@ -1,2 +1,0 @@
-every a := put([], !&lcase) # array of 1 character per element
-c := create !&lcase         # lazy generation of letters in sequence

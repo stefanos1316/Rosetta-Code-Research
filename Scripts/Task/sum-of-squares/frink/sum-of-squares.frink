@@ -1,3 +1,0 @@
-f = {|x| x^2}   // Anonymous function which squares its argument
-a = [1,2,3,5,7]
-println[sum[map[f,a], 0]]

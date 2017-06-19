@@ -1,2 +1,0 @@
-(defun mult (a b) (* a b))
-  (put-line `3 * 4 = @(mult 3 4)`)

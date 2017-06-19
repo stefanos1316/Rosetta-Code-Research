@@ -1,5 +1,0 @@
-on mouseUp
-    put field "Field1" into x
-    add 1 to x
-    enableButtons x
-end mouseUp

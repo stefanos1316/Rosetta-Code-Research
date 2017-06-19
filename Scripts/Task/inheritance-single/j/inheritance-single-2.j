@@ -1,2 +1,0 @@
-coclass 'Dog'
-coinsert 'Animal'

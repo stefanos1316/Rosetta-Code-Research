@@ -1,1 +1,0 @@
-@each ^(console.log \.toString 2) [5 50 900]

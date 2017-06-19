@@ -1,2 +1,0 @@
-with strings'
-"hello" "literal" append puts

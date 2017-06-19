@@ -1,4 +1,0 @@
-declare s character (20) varying initial ('alphaBETA');
-
-put skip list (uppercase(s));
-put skip list (lowercase(s));

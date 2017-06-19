@@ -1,2 +1,0 @@
-"123457".is_integer.println;
-// write TRUE on stdin

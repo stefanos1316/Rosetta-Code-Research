@@ -1,3 +1,0 @@
-repeat with i = 10 down to 0
-  put i
-end repeat

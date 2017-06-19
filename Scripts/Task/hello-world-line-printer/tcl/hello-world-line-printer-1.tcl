@@ -1,1 +1,0 @@
-exec lp << "Hello World!"

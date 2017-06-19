@@ -1,5 +1,0 @@
-MODULE HelloWorld;
-IMPORT Out;
-BEGIN
-  Out.String("Goodbye, world!")
-END HelloWorld.

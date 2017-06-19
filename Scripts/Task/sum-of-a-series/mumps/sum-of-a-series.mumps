@@ -1,5 +1,0 @@
-SOAS(N)
- NEW SUM,I SET SUM=0
- FOR I=1:1:N DO
- .SET SUM=SUM+(1/((I*I)))
- QUIT SUM

@@ -1,3 +1,0 @@
-#cast %nLL
-
-examples = <.iterative_fib,recursive_fib,analytical_fib>* iota20

@@ -1,3 +1,0 @@
-str = '1234'
-print, string(fix(str)+1)
-;==>   1235

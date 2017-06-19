@@ -1,3 +1,0 @@
-makedirectory docs
-changedirectory docs
-makenewfile output.txt

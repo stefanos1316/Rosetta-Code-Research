@@ -1,2 +1,0 @@
-fork \pid
-print "pid = ";print pid;nl;

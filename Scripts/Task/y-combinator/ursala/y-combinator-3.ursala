@@ -1,3 +1,0 @@
-#import nat
-
-fact = my_fix "f". ~&?\1! product^/~& "f"+ predecessor

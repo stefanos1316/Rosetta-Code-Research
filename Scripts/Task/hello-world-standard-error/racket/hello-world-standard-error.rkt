@@ -1,1 +1,0 @@
-(eprintf "Goodbye, World!\n")

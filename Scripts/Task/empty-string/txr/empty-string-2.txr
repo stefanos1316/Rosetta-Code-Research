@@ -1,9 +1,0 @@
-(defvarl a "")
-
-(if (equal a "")
-  (format t "empty string\n"))
-
-(set a "nonempty")
-
-(if (zerop (length a))
-  (format t "guess what?\n"))

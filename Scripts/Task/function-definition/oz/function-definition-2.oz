@@ -1,1 +1,0 @@
-Multiply = Number.'*'

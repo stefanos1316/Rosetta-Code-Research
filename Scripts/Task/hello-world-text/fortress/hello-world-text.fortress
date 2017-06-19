@@ -1,3 +1,0 @@
-export Executable
-
-run() = println("Hello world!")

@@ -1,9 +1,0 @@
-MODULE  SetAddress;
-
-CONST   adress  = 134664460;
-
-VAR     var [adress] : INTEGER;
-
-BEGIN
-    (*do nothing*)
-END SetAddress.

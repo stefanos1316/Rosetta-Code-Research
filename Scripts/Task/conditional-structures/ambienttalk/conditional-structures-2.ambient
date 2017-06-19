@@ -1,1 +1,0 @@
-condition.ifTrue: { /* condition is true... */ } ifFalse: { /* condition is false... */ }

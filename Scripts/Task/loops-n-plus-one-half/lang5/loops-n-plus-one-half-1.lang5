@@ -1,2 +1,0 @@
-: ,  dup ", " 2 compress "" join ;
-1 do dup 10 != if dup , . 1 + else . break then loop

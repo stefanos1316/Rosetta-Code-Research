@@ -1,3 +1,0 @@
-start%=TIME:REM centi-second timer
-REM perform processing
-lapsed%=TIME-start%

@@ -1,1 +1,0 @@
-viewRGB toColor toGray myimg

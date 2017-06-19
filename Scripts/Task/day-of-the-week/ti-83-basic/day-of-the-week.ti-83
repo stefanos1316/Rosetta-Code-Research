@@ -1,4 +1,0 @@
-:For(A,2008,2121
-:If dayofWk(A,12,25)=1
-:Disp A
-:End

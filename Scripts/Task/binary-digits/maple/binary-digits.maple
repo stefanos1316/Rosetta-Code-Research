@@ -1,4 +1,0 @@
-> convert( 50, 'binary' );
-110010
-> convert( 9000, 'binary' );
-10001100101000

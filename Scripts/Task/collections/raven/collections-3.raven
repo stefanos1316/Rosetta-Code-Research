@@ -1,3 +1,0 @@
-17 a_list 1 set      # set second item
-42 a_hash 'b' set    # set item with key 'b'
-42 a_hash:b          # shorthand

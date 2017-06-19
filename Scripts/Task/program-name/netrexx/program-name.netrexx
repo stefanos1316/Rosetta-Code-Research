@@ -1,8 +1,0 @@
-/* NetRexx */
-options replace format comments java crossref symbols nobinary
-
-package org.rosettacode.samples
-
-say 'Source: ' source
-say 'Program:' System.getProperty('sun.java.command')
-return

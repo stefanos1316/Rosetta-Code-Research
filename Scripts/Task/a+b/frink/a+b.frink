@@ -1,1 +1,0 @@
-sum[eval[split[%r/\s+/, input[""]]]]

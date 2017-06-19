@@ -1,5 +1,0 @@
-      *FLOAT 64
-      REPEAT
-        i += 1
-        PRINT TAB(0,0) i;
-      UNTIL FALSE

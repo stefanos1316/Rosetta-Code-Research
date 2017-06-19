@@ -1,1 +1,0 @@
-mkdir 'path/to/dir'

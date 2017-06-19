@@ -1,2 +1,0 @@
-semiPrimeQ[#] & /@ Range[100];
-Position[%, True] // Flatten

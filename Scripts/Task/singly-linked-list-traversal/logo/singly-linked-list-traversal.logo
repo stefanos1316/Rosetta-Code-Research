@@ -1,4 +1,0 @@
-to last :list
-  if empty? bf :list [output first :list]
-  output last bf :list
-end

@@ -1,3 +1,0 @@
-varname = input ("Enter variable name: ", "s");
-value = input ("Enter value: ", "s");
-eval([varname,"=",value]);

@@ -1,3 +1,0 @@
-case 6 * 7 of
-    42 -> "Correct"
-    _  -> "Wrong" // default, matches anything

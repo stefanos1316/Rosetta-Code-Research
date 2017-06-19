@@ -1,3 +1,0 @@
-(defrecord complex
-  real
-  img)

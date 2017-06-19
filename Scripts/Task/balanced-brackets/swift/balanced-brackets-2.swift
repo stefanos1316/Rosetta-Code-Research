@@ -1,3 +1,0 @@
-isBal("[[[]]]") // true
-
-isBal("[]][[]") // false

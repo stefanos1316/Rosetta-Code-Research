@@ -1,3 +1,0 @@
-  World!:?string
-& str$("Hello " !string):?string
-& out$!string

@@ -1,3 +1,0 @@
-while true do
-    printf('SPAM', '%p\n');
-endwhile;

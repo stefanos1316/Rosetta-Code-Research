@@ -1,8 +1,0 @@
----
-category:
-- Object oriented
-note: Concurrency
-requires:
-- Concurrency
-- Objects
-- Mutable State

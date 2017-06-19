@@ -1,7 +1,0 @@
-to bigger :a :b
-  output ifelse [greater? :a :b] [:a] [:b]
-end
-
-to max :lst
-  output reduce "bigger :lst
-end

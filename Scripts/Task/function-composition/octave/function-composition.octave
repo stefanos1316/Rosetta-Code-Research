@@ -1,6 +1,0 @@
-function r = compose(f, g)
-  r = @(x) f(g(x));
-endfunction
-
-r = compose(@exp, @sin);
-r(pi/3)

@@ -1,3 +1,0 @@
-Macro Fibonacci (n)
-	Int((Pow(((1+Sqr(5))/2),n)-Pow(((1-Sqr(5))/2),n))/Sqr(5))
-EndMacro

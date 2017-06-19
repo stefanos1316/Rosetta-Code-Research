@@ -1,1 +1,0 @@
-jq -c . data.json

@@ -1,1 +1,0 @@
-dsum(n,base)=my(s); while(n, s += n%base; n \= base); s

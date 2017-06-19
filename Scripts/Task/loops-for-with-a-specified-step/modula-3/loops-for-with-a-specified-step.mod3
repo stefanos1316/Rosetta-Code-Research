@@ -1,3 +1,0 @@
-FOR i := 1 TO 100 BY 2 DO
-  IO.Put(Fmt.Int(i) & " ");
-END;

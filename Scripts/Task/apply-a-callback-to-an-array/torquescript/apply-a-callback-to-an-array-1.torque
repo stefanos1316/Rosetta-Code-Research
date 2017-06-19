@@ -1,8 +1,0 @@
-function map(%array,%arrayCount,%function)
-{
-	for(%i=0;%i<%arrayCount;%i++)
-	{
-		eval("%a = "@%array@"["@%i@"];");
-		eval(""@%function@"("@%a@");");
-	}
-}

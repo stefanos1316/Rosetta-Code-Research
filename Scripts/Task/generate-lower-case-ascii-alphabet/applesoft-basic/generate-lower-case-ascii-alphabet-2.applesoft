@@ -1,1 +1,0 @@
-L$="":FORI=1TO26:L$=L$+CHR$(96+I):NEXT

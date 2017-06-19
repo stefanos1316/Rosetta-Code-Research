@@ -1,2 +1,0 @@
-str = member("my long text").text
-put str

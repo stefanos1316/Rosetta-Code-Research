@@ -1,3 +1,0 @@
-      INSTALL @lib$+"WINLIB2"
-      dlg% = FN_newdialog("GUI Window", 0, 0, 200, 150, 8, 1000)
-      PROC_showdialog(dlg%)

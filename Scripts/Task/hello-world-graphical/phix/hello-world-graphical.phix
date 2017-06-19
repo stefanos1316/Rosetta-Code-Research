@@ -1,4 +1,0 @@
-include pGUI.e
-IupOpen("demo/pGUI/")
-IupMessage("Bye","Goodbye, World!")
-IupClose()

@@ -1,4 +1,0 @@
-var i := 1024
-while (i > 0):
-    traceln(i)
-    i //= 2

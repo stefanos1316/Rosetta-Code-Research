@@ -1,2 +1,0 @@
-use std
-=: multiply <real a> [<real b>...] := -> real {Cgen a (@@1 (Cgen " * " b))}

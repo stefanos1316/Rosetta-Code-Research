@@ -1,7 +1,0 @@
-[a,b] = eval[input["Enter numbers",["a","b"]]]
-if a<b
-   println["$a < $b"]
-if a==b
-   println["$a == $b"]
-if a>b
-   println["$a > $b"]

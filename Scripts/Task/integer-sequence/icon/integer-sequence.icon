@@ -1,3 +1,0 @@
-procedure main()
-every write(seq(1))        # the most concise way
-end

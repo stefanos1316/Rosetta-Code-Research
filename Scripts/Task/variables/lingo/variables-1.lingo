@@ -1,3 +1,0 @@
-x = 23
-y = "Hello world!"
-z = TRUE -- same effect as z = 1

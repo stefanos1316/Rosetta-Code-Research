@@ -1,4 +1,0 @@
-use std, array
-let x = @["foo" "bar" "123"]
-print x[2]
-x[2] = "abc"

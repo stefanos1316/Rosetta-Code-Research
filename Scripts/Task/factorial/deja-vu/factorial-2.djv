@@ -1,5 +1,0 @@
-factorial:
-    if dup:
-        * factorial -- dup
-    else:
-        1 drop

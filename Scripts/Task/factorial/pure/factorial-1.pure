@@ -1,3 +1,0 @@
-fact n = n*fact (n-1) if n>0;
-       = 1 otherwise;
-let facts = map fact (1..10); facts;

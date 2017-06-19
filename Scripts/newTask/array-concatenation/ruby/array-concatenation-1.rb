@@ -3,9 +3,9 @@ arr2 = [6, 7, 8, 9, 10]
 
 for i in 0..1000000
 
-arr1.concat arr2
-for number in arr1
-	puts "#{number}"
+arr3 = arr1 + arr2
+arr3.each do |number|
+	puts number
 end
 
 end

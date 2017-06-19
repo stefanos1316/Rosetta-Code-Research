@@ -1,3 +1,0 @@
-def
-  qsort( [] )    =  []
-  qsort( p:xs )  =  qsort( xs.filter((< p)) ) + [p] + qsort( xs.filter((>= p)) )

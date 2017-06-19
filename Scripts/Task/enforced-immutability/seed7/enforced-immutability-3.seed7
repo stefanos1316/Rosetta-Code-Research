@@ -1,4 +1,0 @@
-const func float: deg2rad (in float: degree) is  # User defined function
-  return degree * PI / 180.0;
-
-const float: rightAngle is deg2rad(90.0);

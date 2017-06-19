@@ -1,3 +1,0 @@
-n=12
-
-if n mod 2 = 0 then print "even" else print "odd"

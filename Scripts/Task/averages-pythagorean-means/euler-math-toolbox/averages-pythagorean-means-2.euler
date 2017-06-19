@@ -1,1 +1,0 @@
->function G(x) := prod(x)^(1/length(x))

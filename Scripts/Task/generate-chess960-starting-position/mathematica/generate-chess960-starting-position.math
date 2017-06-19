@@ -1,9 +1,0 @@
-Print[StringJoin[
-   RandomChoice[
-    Select[Union[
-      Permutations[{"\[WhiteKing]", "\[WhiteQueen]", "\[WhiteRook]",
-        "\[WhiteRook]", "\[WhiteBishop]", "\[WhiteBishop]",
-        "\[WhiteKnight]", "\[WhiteKnight]"}]],
-     MatchQ[#, {___, "\[WhiteRook]", ___, "\[WhiteKing]", ___,
-         "\[WhiteRook]", ___}] &&
-       OddQ[Subtract @@ Flatten[Position[#, "\[WhiteBishop]"]]] &]]]];

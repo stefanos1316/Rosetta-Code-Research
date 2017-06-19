@@ -1,5 +1,0 @@
-( by creating a variable )
-"" keepString variable: foo
-
-( by setting an existing variable 'foo' )
-"" keepString !foo

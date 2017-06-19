@@ -1,4 +1,0 @@
-(let* ((server (first (getaddrinfo "localhost" 256)))
-       (sock (open-socket server.family sock-stream)))
-  (sock-connect sock server)
-  (put-string "hello socket world"))

@@ -1,7 +1,0 @@
-sleep(ms)={
-  print("Sleeping...");
-  while((ms-=gettime()) > 0,);
-  print("Awake!")
-};
-
-sleep(input())

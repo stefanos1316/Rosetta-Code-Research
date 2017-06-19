@@ -1,4 +1,0 @@
-@(collect :vars (record))
-@name,@id,@salary,@dept
-@(bind record (@(int-str salary) dept name id))
-@(end)

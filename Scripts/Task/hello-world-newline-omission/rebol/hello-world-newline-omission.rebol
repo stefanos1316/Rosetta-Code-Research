@@ -1,1 +1,0 @@
-prin "Goodbye, World!"

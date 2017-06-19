@@ -1,4 +1,0 @@
-#INCLUDE <Include\Windows.inc>
-ShowWindow(ME, SW_MAXIMIZE)
-BEGIN EVENTS
-END EVENTS

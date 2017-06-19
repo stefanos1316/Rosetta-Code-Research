@@ -1,3 +1,0 @@
-ALLOCATE heap-item RETURNING ptr
-...
-FREE ptr

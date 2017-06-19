@@ -1,3 +1,0 @@
-constant s = "alphaBETA"
-?upper(s)
-?lower(s)

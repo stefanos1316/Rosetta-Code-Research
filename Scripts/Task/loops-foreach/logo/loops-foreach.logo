@@ -1,1 +1,0 @@
-foreach [red green blue] [print ?]

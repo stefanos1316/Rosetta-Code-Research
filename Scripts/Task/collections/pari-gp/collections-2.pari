@@ -1,4 +1,0 @@
-listput(l, "hello world")
-v=concat(v, [1,2,3]);
-v=concat(v, 4);
-mapput(M, "key", "value");

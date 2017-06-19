@@ -1,5 +1,0 @@
-foreach (i in [1 .. 10])
-{
-    Write(i);
-    unless (i == 10) Write(", ");
-}

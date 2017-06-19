@@ -1,4 +1,0 @@
-fansh> c := "møøse"
-møøse
-fansh> c.size
-5

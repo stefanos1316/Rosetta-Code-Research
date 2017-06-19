@@ -1,3 +1,0 @@
-procedure main ()
-  write ("£ " || char (163)) # £
-end

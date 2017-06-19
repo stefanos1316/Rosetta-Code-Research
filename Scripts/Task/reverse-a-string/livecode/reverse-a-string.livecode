@@ -1,6 +1,0 @@
-function reverseString S
-   repeat with i = length(S) down to 1
-      put char i of S after R
-   end repeat
-   return R
-end reverseString

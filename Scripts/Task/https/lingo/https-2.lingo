@@ -1,2 +1,0 @@
-sx = xtra("Shell").new()
-put sx.shell_cmd("curl https://sourceforge.net")

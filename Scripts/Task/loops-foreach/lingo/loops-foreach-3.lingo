@@ -1,2 +1,0 @@
-days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
-forEach(days, #alert, _player)

@@ -1,3 +1,0 @@
-for i from 2 to 6 do
-    printf( "%d: %a\n", i, [ RootsOfUnity(i) ] );
-end do;

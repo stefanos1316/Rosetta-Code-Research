@@ -1,2 +1,0 @@
-open monad io
-do putStrLn "Hello world!" ::: IO

@@ -1,3 +1,0 @@
-import json.*
-
-DefaultJSONWriter.write( JSONReader({'ints', 'bigInts'}).fromString('{ "foo": 1, "bar": [10, "apples"] }') )

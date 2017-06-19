@@ -1,1 +1,0 @@
-(defprotocol Foo (foo [this]))

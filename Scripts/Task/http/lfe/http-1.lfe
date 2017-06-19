@@ -1,6 +1,0 @@
-(: inets start)
-(case (: httpc request '"http://lfe.github.io")
-  ((tuple 'ok result)
-    (: io format '"Result: ~p" (list result)))
-  ((tuple 'error reason)
-    (: io format '"Error: ~p~n" (list reason))))

@@ -1,1 +1,0 @@
-main = putStr "Goodbye, world"

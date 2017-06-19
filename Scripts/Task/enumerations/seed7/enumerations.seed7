@@ -1,3 +1,0 @@
-const type: fruits is new enum
-    apple, banana, cherry
-  end enum;

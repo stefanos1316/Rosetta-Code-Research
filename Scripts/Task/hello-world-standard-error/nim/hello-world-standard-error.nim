@@ -1,1 +1,0 @@
-stderr.writeln "Hello World"

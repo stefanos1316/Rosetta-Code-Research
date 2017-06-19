@@ -1,3 +1,0 @@
-var null_obj = null;        # initialize with a null value
-say null_obj.is_a(null);    # true
-say defined(null_obj);      # true

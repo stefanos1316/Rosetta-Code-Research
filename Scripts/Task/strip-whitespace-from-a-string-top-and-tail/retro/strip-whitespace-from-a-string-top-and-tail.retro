@@ -1,3 +1,0 @@
-"  this is a test   "  ^strings'trimLeft
-"  this is a test   "  ^strings'trimRight
-"  this is a test   "  ^strings'trimLeft ^strings'trimRight

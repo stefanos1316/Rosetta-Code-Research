@@ -1,2 +1,0 @@
-Var:String str1 = "Hello";
-Var:String str2 = str1;

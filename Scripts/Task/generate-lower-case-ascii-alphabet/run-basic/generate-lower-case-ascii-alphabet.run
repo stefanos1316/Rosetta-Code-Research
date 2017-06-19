@@ -1,3 +1,0 @@
-for i = asc("a") to asc("z")
- print chr$(i);
-next i

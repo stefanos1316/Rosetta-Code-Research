@@ -1,1 +1,0 @@
-datatype bool = false | true

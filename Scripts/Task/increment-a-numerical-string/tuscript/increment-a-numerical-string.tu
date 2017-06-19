@@ -1,6 +1,0 @@
-$$ MODE TUSCRIPT
-teststring="0'1'-1'12345'10000000'-10000000"
-LOOP/CLEAR n=teststring
-n=n+1
-PRINT n
-ENDLOOP

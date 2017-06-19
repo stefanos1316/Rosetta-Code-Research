@@ -1,8 +1,0 @@
-fileCopy("Input.txt", "Output.txt");
-fileDelete("Input.txt");
-
-for(%File = FindFirstFile("Path/*.*"); %File !$= ""; %File = FindNextFile("Path/*.*"))
-{
-	fileCopy(%File, "OtherPath/" @ %File);
-	fileDelete(%File);
-}

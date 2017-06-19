@@ -1,3 +1,0 @@
-# outputs time in milliseconds
-import "time"
-out (time.getcurrent) endl console

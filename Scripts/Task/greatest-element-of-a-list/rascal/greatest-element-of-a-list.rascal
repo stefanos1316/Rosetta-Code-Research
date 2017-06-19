@@ -1,5 +1,0 @@
-rascal>import List;
-ok
-
-rascal>max([1,2,3,4]);
-int: 4

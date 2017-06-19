@@ -1,9 +1,0 @@
-#import system.
-#import system'io.
-
-#symbol program =
-[
-    console writeLine:("input.txt" file_path length).
-
-    console writeLine:("\input.txt" file_path length).
-].

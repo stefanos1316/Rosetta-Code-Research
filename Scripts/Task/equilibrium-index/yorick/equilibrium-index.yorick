@@ -1,3 +1,0 @@
-func equilibrium_indices(A) {
-    return where(A(psum) == A(::-1)(psum)(::-1));
-}

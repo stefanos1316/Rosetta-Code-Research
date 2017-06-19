@@ -1,3 +1,0 @@
-chivec(residues,moduli)={
-  lift(chinese(vector(#residues,i,Mod(residues[i],moduli[i]))))
-}

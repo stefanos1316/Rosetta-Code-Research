@@ -1,1 +1,0 @@
-NSLog(@"%@", [NSCalendarDate calendarDate]);

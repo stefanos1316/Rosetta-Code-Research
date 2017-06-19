@@ -1,4 +1,0 @@
-let N be 1024;
-while N > 0:
-	say "[N][line break]";
-	let N be N / 2;

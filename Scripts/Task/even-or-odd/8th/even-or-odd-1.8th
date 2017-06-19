@@ -1,4 +1,0 @@
-: odd? \ n -- boolean
-    dup 1 n:band 1 n:= ;
-: even? \ n -- boolean
-    odd? not ;

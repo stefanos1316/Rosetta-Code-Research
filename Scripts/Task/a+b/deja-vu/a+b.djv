@@ -1,4 +1,0 @@
-0
-for k in split !prompt "" " ":
-	+ to-num k
-!print

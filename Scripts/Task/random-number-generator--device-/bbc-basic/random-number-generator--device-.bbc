@@ -1,2 +1,0 @@
-      SYS "SystemFunction036", ^random%, 4
-      PRINT ~random%

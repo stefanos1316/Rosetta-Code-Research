@@ -1,1 +1,0 @@
-io.write("Goodbye, World!")

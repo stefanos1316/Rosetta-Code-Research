@@ -1,2 +1,0 @@
-qsort[{}] = {};
-qsort[{x_, xs___}] := Join[qsort@Select[{xs}, # <= x &], {x}, qsort@Select[{xs}, # > x &]];
