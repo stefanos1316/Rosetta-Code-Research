@@ -25,11 +25,10 @@ do
 						echo "Executing C"
 						executable=$1/$containesTasks/$containesLanguages/$tasksImplementation
 						eval=$(./$executable)
-						echo "Done with C"
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
-							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:C" >> ../Reports/Java_Failed_Report.txt
+							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:C" >> ../Reports/Failed_Execution_Report.txt
 						fi
 						sleep $2
 					fi
@@ -44,7 +43,7 @@ do
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
-							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:C++" >> ../Reports/Java_Failed_Report.txt
+							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:C++" >> ../Reports/Failed_Execution_Report.txt
 						fi
 						sleep $2
 					fi
@@ -59,7 +58,7 @@ do
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
-							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:Java" >> ../Reports/Java_Failed_Report.txt
+							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:Java" >> ../Reports/Failed_Execution_Report.txt
 						fi
 						sleep $2
 					fi
@@ -70,7 +69,7 @@ do
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
-							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:Python" >> ../Reports/Java_Failed_Report.txt
+							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:Python" >> ../Reports/Failed_Execution_Report.txt
 						fi
 						sleep $2
 				;;
@@ -82,7 +81,7 @@ do
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
-							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:C-Sharp" >> ../Reports/Java_Failed_Report.txt
+							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:C-Sharp" >> ../Reports/Failed_Execution_Report.txt
 						fi
 						sleep $2
 					fi
@@ -95,7 +94,7 @@ do
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
-							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:Visual-Basic-.Net" >> ../Reports/Java_Failed_Report.txt
+							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:Visual-Basic-.Net" >> ../Reports/Failed_Execution_Report.txt
 						fi
 						sleep $2
 					fi
@@ -107,7 +106,7 @@ do
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
-							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:JavaScript" >> ../Reports/Java_Failed_Report.txt
+							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:JavaScript" >> ../Reports/Failed_Execution_Report.txt
 						fi
 						sleep $2
 				;;
@@ -117,7 +116,7 @@ do
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
-							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:PHP" >> ../Reports/Java_Failed_Report.txt
+							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:PHP" >> ../Reports/Failed_Execution_Report.txt
 						fi
 						sleep $2
 				;;
@@ -127,7 +126,7 @@ do
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
-							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:Perl" >> ../Reports/Java_Failed_Report.txt
+							echo "Execution			$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:Perl" >> ../Reports/Failed_Execution_Report.txt
 						fi
 						sleep $2
 				;;
@@ -137,7 +136,7 @@ do
 					if [ $? -eq 0 ];
 					then
 						timeStamp=$(date -u)
-						echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:Ruby" >> ../Reports/Java_Failed_Report.txt
+						echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:Ruby" >> ../Reports/Failed_Execution_Report.txt
 					fi
 					sleep $2
 				;;
@@ -147,7 +146,7 @@ do
                                                 if [ $? -eq 0 ];
                                                 then
                                                         timeStamp=$(date -u)
-                                                        echo "Execution         $timeStamp      $1/$containesTasks/$containesLanguages/$tasksImplementation:R" >> ../Reports/Java_Failed_Report.txt
+                                                        echo "Execution         	$timeStamp      $1/$containesTasks/$containesLanguages/$tasksImplementation:R" >> ../Reports/Failed_Execution_Report.txt
                                                 fi
 					sleep $2
 				;;
@@ -157,7 +156,7 @@ do
                                                 if [ $? -eq 0 ];
                                                 then
                                                         timeStamp=$(date -u)
-                                                        echo "Execution         $timeStamp      $1/$containesTasks/$containesLanguages/$tasksImplementation:Perl" >> ../Reports/Java_Failed_Report.txt
+                                                        echo "Execution         $timeStamp      $1/$containesTasks/$containesLanguages/$tasksImplementation:Perl" >> ../Reports/Failed_Execution_Report.txt
                                                 fi
 					sleep $2
 				;;
@@ -169,7 +168,7 @@ do
                                                 if [ $? -eq 0 ];
                                                 then
                                                         timeStamp=$(date -u)
-                                                        echo "Execution         $timeStamp      $1/$containesTasks/$containesLanguages/$tasksImplementation:Perl" >> ../Reports/Java_Failed_Report.txt
+                                                        echo "Execution         $timeStamp      $1/$containesTasks/$containesLanguages/$tasksImplementation:Perl" >> ../Reports/Failed_Execution_Report.txt
                                                 fi
 					sleep $2
 					fi

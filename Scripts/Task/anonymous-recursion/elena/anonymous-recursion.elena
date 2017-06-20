@@ -1,0 +1,32 @@
+#import system.
+#import extensions.
+
+#class(extension)mathOp
+{
+    #method fib
+    [
+        (self < 0)
+            ? [ #throw InvalidArgumentException new &message:"Must be non negative". ].
+
+        ^ control eval:self &for:
+            (:n)
+                [
+                    (n > 1) ? [ this eval:(n - 2) + this eval:(n - 1) ] ! [ n ]
+                ].
+    ]
+}
+
+#symbol program =
+[
+    -1 to:10 &doEach: (:i)
+    [
+        console writeLiteral:"fib(":i:")=".
+
+        console writeLine:(i fib) | if &InvalidArgumentError: e
+            [
+                console writeLine:"invalid".
+            ].
+    ].
+
+    console readChar.
+].

@@ -1,0 +1,1 @@
+flat(A) =  [[isa(x,Array)? flat(x): x for x in A]...]
