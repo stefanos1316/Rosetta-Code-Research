@@ -29,8 +29,8 @@ First drive to [scripts](https://github.com/stefanos1316/Rosetta-Code-Research/t
    executables. In the case of Java we also had to change the .java files name since it had more than one file of a selected task.
 4) Afterwards, we had to add additional code inside each file in order to force a task to run around a million of times (some tasks  are so small and are 
    finishing faster than 1 second, thus our power analyzer cannot capture those results).
-5) Execute the compileTasks.sh in order to compile all tasks.
-6) Execute the runTasks.sh to collect the results.
+5) Execute the **script.compileTasks** in order to compile all tasks.
+6) Execute the **script.executeTasks** in order to execute the tasks and collect results (in our case we used [Watts Up Pro](https://www.wattsupmeters.com/secure/products.php?pn=0)).
 7) Execute the plotGrpahs to plot graphs.
 
 **Note**: For more information for executing scripts add the --help command line argument.
