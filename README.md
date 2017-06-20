@@ -9,7 +9,7 @@ Contact details: sgeorgiou@aueb.gr, sgeorgiou@singularlogic.eu, and stefanos1316
 This reposotory was build for research purpose. 
 Our aim is to compare the energy consumption of different tasks writtern in a variety of programming languages. 
 In order to achieve our aim we used a dataset publicly available from [Rosetta Code](http://rosettacode.org/wiki/Rosetta_Code).
-We found all the collected tasks implemented in different langauges from a [Git repo](https://github.com/acmeism/RosettaCodeData) 
+We found all the collected tasks implemented in different langauges from a [Git repo](https://github.com/acmeism/RosettaCodeData). 
 Since Rosetta Code contains the amount of 655 programming languages we decicde to limit our scope and include only the most used 
 ones.  
 For this puropose we collected the 20 most used ones found from [tiobe](https://www.tiobe.com/tiobe-index/) index June 2017. 
@@ -21,7 +21,7 @@ Since we are using a submodule in this repository we suggest the use of the foll
 $ git clone --recursive https://github.com/stefanos1316/Rosetta-Code-Research.git
 
 # How to Execute
-First drive to [scripts](https://github.com/stefanos1316/Rosetta-Code-Research/tree/master/scripts) directory and proceed as follows:
+First drive to [Scripts](https://github.com/stefanos1316/Rosetta-Code-Research/tree/master/scripts) directory and proceed as follows:
 
 1) Execute the **script.cleanAll** in order to prepare the existing dataset and make it case insensitive by chaning all files from upper to lower case.
 2) Execute the **script.createNewDataSet** to have a filtered dataset with all the selected tasks and programming languages that we will examine for this research.
