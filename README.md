@@ -31,6 +31,7 @@ First drive to [scripts](https://github.com/stefanos1316/Rosetta-Code-Research/t
    finishing faster than 1 second, thus our power analyzer cannot capture those results).
 5) Execute the **script.compileTasks** in order to compile all tasks.
 6) Execute the **script.executeTasks** in order to execute the tasks and collect results (in our case we used [Watts Up Pro](https://www.wattsupmeters.com/secure/products.php?pn=0)).
-7) Execute the plotGrpahs to plot graphs.
+7) Collect results and added them in a single file.
+8) Execute the **script.plotGraphs** to plot graphs.
 
 **Note**: For more information for executing scripts add the --help command line argument.
