@@ -20,21 +20,6 @@ Since we are using a submodule in this repository we suggest the use of the foll
 
 $ git clone --recursive https://github.com/stefanos1316/Rosetta-Code-Research.git
 
-# Used Programming Languages
-* C
-* C++
-* C#
-* Go
-* Java
-* JavaScript
-* Perl
-* Php
-* Ptyhon 
-* R
-* Ruby 
-* Rust
-* Visual Basci .NET
-
 # How to Execute
 First drive to [Scripts](https://github.com/stefanos1316/Rosetta-Code-Research/tree/master/scripts) directory and proceed as follows:
 
