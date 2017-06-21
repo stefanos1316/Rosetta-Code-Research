@@ -8,6 +8,27 @@
 #Command Line Arguments
 #$1 -> full path of the file where all the tasks (tasks paths) that successfully compiled are located
 
+if [ "$#" -eq 0 ];
+then
+	echo ""
+	echo "Illegal number of command line arguments!"
+	echo "Use --help for more information."
+	echo ""
+	exit
+fi
+
+if [ "$1" == "--help" ];
+then
+	echo ""
+	echo "\$1 -> Full path of the file where all the tasks are located."
+	echo "\$2 -> The sleep time between tasks execution in different programming languages,"
+	echo "      e.g., 1s for one second 2m for two minutes 3h for three hours."
+	echo "      This parameter acts as a safe guard to reduce noise among the executions."
+	echo ""
+	exit
+fi
+
+
 #At this point we have a file that includes all the Tasks we successfully compiled
 for containesTasks in `ls $1`;
 do
@@ -156,7 +177,7 @@ do
                                                 if [ $? -eq 0 ];
                                                 then
                                                         timeStamp=$(date -u)
-                                                        echo "Execution         $timeStamp      $1/$containesTasks/$containesLanguages/$tasksImplementation:Perl" >> ../Reports/Failed_Execution_Report.txt
+                                                        echo "Execution         $timeStamp      $1/$containesTasks/$containesLanguages/$tasksImplementation:Go" >> ../Reports/Failed_Execution_Report.txt
                                                 fi
 					sleep $2
 				;;
@@ -168,10 +189,19 @@ do
                                                 if [ $? -eq 0 ];
                                                 then
                                                         timeStamp=$(date -u)
-                                                        echo "Execution         $timeStamp      $1/$containesTasks/$containesLanguages/$tasksImplementation:Perl" >> ../Reports/Failed_Execution_Report.txt
+                                                        echo "Execution         $timeStamp      $1/$containesTasks/$containesLanguages/$tasksImplementation:Rust" >> ../Reports/Failed_Execution_Report.txt
                                                 fi
 					sleep $2
 					fi
+				;;
+				("swift")		
+						echo "Executing Swift"
+						eval=$(/home/sgeorgiou/bin/swift/usr/bin/swift $1/$containesTasks/$containesLanguages/$tasksImplementation)
+                                                if [ $? -eq 0 ];
+                                                then
+                                                        timeStamp=$(date -u)
+                                                        echo "Execution         $timeStamp      $1/$containesTasks/$containesLanguages/$tasksImplementation:Swift" >> ../Reports/Failed_Execution_Report.txt
+                                                fi
 				;;
 			esac
 		done
