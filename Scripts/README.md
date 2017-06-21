@@ -29,35 +29,34 @@
 * vbnc version 0.0.0.5943 (vbnc)
 
 # Selected Tasks
-Tasks
-=====
--3D
+
+* 3D
 	+draw-a-cuboid (7/ 14)
 	+draw-a-sphere (8/14)
--Arithmetic
+* Arithmetic
 	+exponentiation-operator (9/14)
 	+numerical-integration (8/14)
--Compression
+* Compression
 	+huffman-coding (11/14)
 	+lzw-compression (11/14)
--Cocurrency
+* Cocurrency
 	+concurrent-computing (11/14)
 	+events (4/14)
 	+synchronous-concurrency (11/14)
--Data Strucutres
+* Data Strucutres
 	+pattern-matching
 	+array-concatentation (14/14)
 	+json (13/14)
--Encryption
+* Encryption
 	+rsa-code (4/14)
--Mathematic Operations
+* Mathematic Operations
 	+polynomial-regression (7/14)
--Recursion
+* Recursion
 	+factorial (12/14)
 	+ackermann-function (13/14)
 	+palidrome-detection (12/14)
--Regular-expressions (12/14)
--Sorting
+* Regular-expressions (12/14)
+* Sorting
 	+sorting-algorithms-bubble-sort (13/14)
 	+sorting-algorithms-counting-sort (10/14)
 	+sorting-algorithms-merge-sort (12/14)
@@ -65,17 +64,17 @@ Tasks
 	+sorting-algorithms-merge-sort (12/14)
 	+sorting-algorithms-quicksort (12/14)
 	+sorting-algorithms-selection-sort (11/14)
--String Manipulation
+* String Manipulation
 	+url-decoding (12/14)
 	+url-encoding (11/14)
--Object Oriented
+* Object Oriented
 	+inheritance-multiple (7/14)
 	+inheritance-single (11/14)
 	+call-an-object-method (10/14)
 	+classes (12/14)
 
--Functional Programming (Still not found in Rosetta Code)
+* Functional Programming (Still not found in Rosetta Code)
 	+Function application
 	+List Processing 	
 
--Execptions (suggested from Maria but not found in Rosetta Code)
+* Execptions (suggested from Maria but not found in Rosetta Code)
