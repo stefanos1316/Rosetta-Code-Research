@@ -17,7 +17,7 @@
 
 # Compilers and Interpreters Version
 * gcc version 6.3.1 20161221 (Red Hat 6.3.1-1) (GCC) 
-* mono version 4.4.2.0 ([mcs] (https://www.codetuts.tech/compile-c-sharp-command-line/))
+* mono version 4.4.2.0 ([mcs](https://www.codetuts.tech/compile-c-sharp-command-line/))
 * go version go1.7.5 linux/amd64
 * java version 1.8.0_131 (javac) 
 * node version 6.10.3
