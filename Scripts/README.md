@@ -27,7 +27,7 @@
 * Rscript version 3.3.3
 * ruby version 2.3.3p222
 * rustc version 1.18.0
-* [swift version 3.0.2]((https://github.com/FedoraSwift/fedora-swift2/releases/tag/v0.0.2))
+* [swift version 3.0.2](https://github.com/FedoraSwift/fedora-swift2/releases/tag/v0.0.2)
 * vbnc version 0.0.0.5943 ([vbnc](http://www.mono-project.com/docs/about-mono/languages/visualbasic/))
 
 # Selected Tasks
