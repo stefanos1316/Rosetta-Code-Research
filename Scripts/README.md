@@ -12,6 +12,7 @@
 * R
 * Ruby 
 * Rust
+* Swift
 * Visual Basci .NET
 
 # Compilers and Interpreters Version
@@ -25,7 +26,8 @@
 * python version 2.7.13
 * Rscript version 3.3.3
 * ruby version 2.3.3p222
-* rustc 1.18.0
+* rustc version 1.18.0
+* swift version 3.0.2
 * vbnc version 0.0.0.5943 (vbnc)
 
 # Selected Tasks
