@@ -41,3 +41,32 @@
 	pages = {42--52},
 	file = {ACM Full Text PDF:/home/sgeorgiou/.zotero/zotero/ut65aj2m.default/zotero/storage/N8JUJ955/Oliveira et al. - 2017 - A Study on the Energy Consumption of Android App D.pdf:application/pdf}
 
+
+@inproceedings{lima_haskell_2016,
+	title = {Haskell in {Green} {Land}: {Analyzing} the {Energy} {Behavior} of a {Purely} {Functional} {Language}},
+	volume = {1},
+	shorttitle = {Haskell in {Green} {Land}},
+	doi = {10.1109/SANER.2016.85},
+	abstract = {Recent work has studied the effect that factors such as code obfuscation, refactorings and data types have on energy efficiency. In this paper, we attempt to shed light on the energy behavior of programs written in a lazy purely functional language, Haskell. We have conducted two empirical studies to analyze the energy efficiency of Haskell programs from two different perspectives: strictness and concurrency. Our experimental space exploration comprises more than 2000 configurations and 20000 executions. We found out that small changes can make a big difference in terms of energy consumption. For example, in one of our benchmarks, under a specific configuration, choosing one data sharing primitive (MVar) over another (TMVar) can yield 60\% energy savings. In another benchmark, the latter primitive can yield up to 30\% energy savings over the former. Thus, tools that support developers in quickly refactoring a program to switch between different primitives can be of great help if energy is a concern. In addition, the relationship between energy consumption and performance is not always clear. In sequential benchmarks, high performance is an accurate proxy for low energy consumption. However, for one of our concurrent benchmarks, the variants with the best performance also exhibited the worst energy consumption. To support developers in better understanding this complex relationship, we have extended two existing performance analysis tools to also collect and present data about energy consumption.},
+	booktitle = {2016 {IEEE} 23rd {International} {Conference} on {Software} {Analysis}, {Evolution}, and {Reengineering} ({SANER})},
+	author = {Lima, L. G. and Soares-Neto, F. and Lieuthier, P. and Castor, F. and Melfe, G. and Fernandes, J. P.},
+	month = mar,
+	year = {2016},
+	keywords = {Benchmark testing, concurrency control, concurrency property, concurrent benchmark, Concurrent computing, Current measurement, data sharing primitive, Empirical study, Energy consumption, Energy efficiency, energy efficiency analysis, Energy measurement, energy savings, functional languages, functional programming, green computing, Haskell programs, lazy-purely functional language, program energy behavior analysis, program refactoring, refactoring, Software, strictness property, Time measurement, TMVar},
+	pages = {517--528},
+	file = {07476671.pdf:files/1041/07476671.pdf:application/pdf;IEEE Xplore Abstract Record:files/1040/7476671.html:text/html}
+}
+
+
+@inproceedings{magalhaes_how_2016,
+	title = {How {Programming} {Languages} and {Paradigms} {Affect} {Performance} and {Energy} in {Multithreaded} {Applications}},
+	doi = {10.1109/SBESC.2016.019},
+	abstract = {Considering that multithreaded applications may be implemented using several programming languages and paradigms, in this work we show how they influence performance, energy consumption and energy-delay product (EDP). For that, we evaluate a subset of the NAS Parallel Benchmark, implemented in both procedural (C) and object-oriented programming languages (C++ and Java). We also investigate the overhead of Virtual Machines (VM) and the improvement that the Just-In-Time (JIT) compiler may provide. We show that the procedural language has better scalability than object-oriented ones, i.e., the improvements in performance, EDP, and energy savings are better in C than in C++ and Java as the number of threads increases; and that C can be up to 76 times faster than Java, even with the JIT mechanism enabled. We also demonstrate that the Java JIT effectiveness may vary according to the benchmark (1.16 and 23.97 times in performance and 1.19 to 19.85 times in energy consumption compared to the VM without JIT); and when it reaches good optimization levels, it can be up to 23\% faster, consuming 42\% less energy, and having an EDP 58\% lower than C++.},
+	booktitle = {2016 {VI} {Brazilian} {Symposium} on {Computing} {Systems} {Engineering} ({SBESC})},
+	author = {Magalhães, G. G. and Sartor, A. L. and Lorenzon, A. F. and Navaux, P. O. A. and Beck, A. C. S.},
+	month = nov,
+	year = {2016},
+	keywords = {Benchmark testing, C++, C++ language, C++ languages, Computer architecture, EDP, Energy consumption, energy-delay product, energy savings, Java, Java JIT, JIT compiler, just-in-time compiler, multithreaded applications, multi-threading, NAS parallel benchmark, object-oriented languages, object-oriented programming, object-oriented programming languages, performance and energy evaluation, power aware computing, program compilers, Programming, programming languages, programming paradigms, software performance evaluation, virtual machines, Virtual machining, VM},
+	pages = {71--78},
+	file = {IEEE Xplore Abstract Record:C\:\\Users\\sgeorgiou\\AppData\\Roaming\\Zotero\\Zotero\\Profiles\\b8nbhwih.default\\zotero\\storage\\IN6SMN7A\\7828287.html:text/html;Magalhães et al. - 2016 - How Programming Languages and Paradigms Affect Per.pdf:C\:\\Users\\sgeorgiou\\Dropbox\\PhD - Energy Efficiecny in Cloud Computing Systems\\Zotero Bib\\Software Engineering\\Magalhães et al. - 2016 - How Programming Languages and Paradigms Affect Per.pdf:application/pdf}
+}
