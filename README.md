@@ -21,7 +21,7 @@ Since we are using a submodule in this repository we suggest the use of the foll
 $ git clone --recursive https://github.com/stefanos1316/Rosetta-Code-Research.git
 
 # How to Execute
-First drive to [Scripts](https://github.com/stefanos1316/Rosetta-Code-Research/tree/master/scripts) directory and proceed as follows:
+First drive to [Scripts](https://github.com/stefanos1316/Rosetta-Code-Research/tree/master/Scripts) directory and proceed as follows:
 
 1) Execute the **script.cleanAll** in order to prepare the existing dataset and make it case insensitive by chaning all files from upper to lower case.
 2) Execute the **script.createNewDataSet** to have a filtered dataset with all the selected tasks and programming languages that we will examine for this research.
