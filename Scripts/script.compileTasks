@@ -95,7 +95,7 @@ do
                         ("rust")
 				if [[ $tasksImplementation == *".rust" ]];
 				then 
-                                	eval=$(/home/sgeorgiou/.cargo/bin/rustc $1/$containesTasks/$containesLanguages/$tasksImplementation)
+                                	eval=$(rustc $1/$containesTasks/$containesLanguages/$tasksImplementation)
                                 
 					if [ $? -eq 0 ];
                                 	then
