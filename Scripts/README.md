@@ -66,8 +66,8 @@
 	* sorting-algorithms-quicksort (14/14)
 	* sorting-algorithms-selection-sort (14/14)
 * String Manipulation
-	* url-decoding (12/14)
-	* url-encoding (11/14)
+	* url-decoding (14/14)
+	* url-encoding (14/14)
 * Object Oriented
 	* inheritance-multiple (7/14)
 	* inheritance-single (11/14)
