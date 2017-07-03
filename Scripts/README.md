@@ -60,11 +60,10 @@
 * Regular-expressions (12/14)
 * Sorting
         * sorting-algorithms-bubble-sort (14/14)
-	* sorting-algorithms-counting-sort (10/14)
 	* sorting-algorithms-merge-sort (14/14)
 	* sorting-algorithms-insertion-sort (14/14)
 	* sorting-algorithms-quicksort (14/14)
-	* sorting-algorithms-selection-sort (11/14) -> (Stefanos working on this)
+	* sorting-algorithms-selection-sort (14/14)
 * String Manipulation
 	* url-decoding (12/14)
 	* url-encoding (11/14)
