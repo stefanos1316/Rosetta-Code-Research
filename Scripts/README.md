@@ -55,7 +55,7 @@
 * Mathematic Operations
 	* polynomial-regression (7/14)
 * Recursion
-	* factorial (12/14)
+	* factorial (14/14)
 	* ackermann-function (13/14)
 	* palidrome-detection (12/14)
 * Regular-expressions (12/14)
