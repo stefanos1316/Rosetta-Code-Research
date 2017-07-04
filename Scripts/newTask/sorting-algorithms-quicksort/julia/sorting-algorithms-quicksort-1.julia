@@ -1,1 +1,0 @@
-sort!(A, alg=QuickSort)

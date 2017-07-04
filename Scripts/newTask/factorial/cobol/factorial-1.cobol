@@ -1,1 +1,0 @@
-MOVE FUNCTION FACTORIAL(num) TO result

@@ -1,2 +1,0 @@
-put urlencode("http://foo bar/")
--- "http%3a%2f%2ffoo+bar%2f"

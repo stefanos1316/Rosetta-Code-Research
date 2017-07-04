@@ -1,1 +1,0 @@
-put$(jsn$(get$("input.json",JSN)),"output.JSN,NEW)

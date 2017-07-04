@@ -1,0 +1,20 @@
+#!/bin/bash
+
+IFS=" " read -a doNotRemove <<< "$1"
+for k in `ls`; do	
+	for j  in `ls $k`; do
+		flag="false"
+		for i in "${doNotRemove[@]}"; do 
+			if [[ $j == $i ]]; then
+				flag="true;"
+				break;
+			fi
+		done
+
+		if [[ $flag == "false"  ]]; then
+			rm -rf $k/$j
+			echo "Deleting $j"	
+ 		fi	
+	done
+done
+exit

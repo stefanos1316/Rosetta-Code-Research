@@ -1,7 +1,0 @@
-  PROC Recursive(n) CLOSED
-    r:=1
-    IF n>1 THEN
-      r:=n*Recursive(n-1)
-    ENDIF
-    RETURN r
-  ENDPROC Recursive
