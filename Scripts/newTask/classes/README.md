@@ -1,5 +1,5 @@
 # Classes
-Explanation in this [link] (http://rosettacode.org/wiki/Classes)
+Explanation in this [link](http://rosettacode.org/wiki/Classes)
 
 In object-oriented programming class is a set (a transitive closure) of types bound by the relation of inheritance. It is said that all types derived from some base type T and the type T itself form a class T.
 
