@@ -72,7 +72,7 @@
 	* inheritance-multiple (7/14)
 	* inheritance-single (11/14)
 	* call-an-object-method (10/14)
-	* classes (12/14)
+	* classes (14/14)
 
 * Functional Programming (Still not found in Rosetta Code)
 	* Function application
