@@ -1,0 +1,84 @@
+========================================================
+Programming Language: c
+
+real	0m7.416s
+user	0m7.397s
+sys	0m0.002s
+========================================================
+Programming Language: c++
+
+real	0m16.287s
+user	0m16.256s
+sys	0m0.001s
+========================================================
+Programming Language: c-sharp
+
+real	0m10.715s
+user	0m10.689s
+sys	0m0.007s
+========================================================
+Programming Language: go
+
+real	0m2.887s
+user	0m2.883s
+sys	0m0.025s
+========================================================
+Programming Language: java
+
+real	0m1.323s
+user	0m1.322s
+sys	0m0.027s
+========================================================
+Programming Language: javascript
+
+real	0m4.493s
+user	0m4.474s
+sys	0m0.011s
+========================================================
+Programming Language: perl
+
+real	5m41.259s
+user	5m40.598s
+sys	0m0.005s
+========================================================
+Programming Language: php
+
+real	1m44.761s
+user	1m44.577s
+sys	0m0.006s
+========================================================
+Programming Language: python
+
+real	3m42.948s
+user	3m42.486s
+sys	0m0.028s
+========================================================
+Programming Language: r
+
+real	5m56.684s
+user	5m56.104s
+sys	0m0.028s
+========================================================
+Programming Language: ruby
+
+real	2m20.277s
+user	2m20.023s
+sys	0m0.007s
+========================================================
+Programming Language: rust
+
+real	0m55.617s
+user	0m55.540s
+sys	0m0.002s
+========================================================
+Programming Language: swift
+
+real	2m49.722s
+user	2m49.403s
+sys	0m0.036s
+========================================================
+Programming Language: visual-basic-.net
+
+real	0m10.265s
+user	0m10.246s
+sys	0m0.002s

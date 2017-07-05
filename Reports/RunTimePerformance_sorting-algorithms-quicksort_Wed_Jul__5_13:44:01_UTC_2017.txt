@@ -1,0 +1,96 @@
+========================================================
+Programming Language: c
+
+real	0m2.410s
+user	0m2.406s
+sys	0m0.001s
+========================================================
+Programming Language: c++
+
+real	0m3.550s
+user	0m3.539s
+sys	0m0.002s
+========================================================
+Programming Language: c-sharp
+
+real	0m1.494s
+user	0m1.484s
+sys	0m0.004s
+========================================================
+Programming Language: go
+
+real	0m1.017s
+user	0m1.012s
+sys	0m0.027s
+========================================================
+Programming Language: java
+
+real	0m1.214s
+user	0m1.221s
+sys	0m0.028s
+========================================================
+Programming Language: javascript
+
+real	0m58.007s
+user	0m57.881s
+sys	0m0.015s
+========================================================
+Programming Language: perl
+
+real	1m41.275s
+user	1m41.087s
+sys	0m0.002s
+========================================================
+Programming Language: php
+
+real	0m57.731s
+user	0m57.634s
+sys	0m0.007s
+========================================================
+Programming Language: python
+
+real	1m42.940s
+user	1m42.732s
+sys	0m0.015s
+========================================================
+Programming Language: r
+
+real	3m47.998s
+user	3m47.415s
+sys	0m0.034s
+========================================================
+Programming Language: ruby
+
+real	1m33.979s
+user	1m33.783s
+sys	0m0.006s
+========================================================
+Programming Language: ruby
+
+real	0m0.056s
+user	0m0.047s
+sys	0m0.006s
+========================================================
+Programming Language: ruby
+
+real	0m0.056s
+user	0m0.046s
+sys	0m0.006s
+========================================================
+Programming Language: ruby
+
+real	0m0.052s
+user	0m0.043s
+sys	0m0.007s
+========================================================
+Programming Language: swift
+
+real	11m53.939s
+user	11m52.838s
+sys	0m0.034s
+========================================================
+Programming Language: visual-basic-.net
+
+real	0m24.903s
+user	0m24.725s
+sys	0m0.085s

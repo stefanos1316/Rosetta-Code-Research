@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# use this command for our current data set
+# sudo ./script.Remove "c c++ c-sharp go java javascript perl php python r ruby rust swift visual-basic-.net script.Remove README.md"
+
+
 IFS=" " read -a doNotRemove <<< "$1"
 for k in `ls`; do	
 	for j  in `ls $k`; do

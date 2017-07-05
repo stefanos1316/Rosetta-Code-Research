@@ -32,6 +32,11 @@ fi
 #At this point we have a file that includes all the Tasks we successfully compiled
 for containesTasks in `ls $1`;
 do
+	
+	#Create RunTimePerformance log file
+	TimeStamp=$(date -u | sed -e 's/ /_/g')	
+	runTimePerformance="RunTimePerformance_"$containesTasks"_"$TimeStamp".txt"
+
         #For all the programming languages enter and compile the content
         for containesLanguages in `ls $1/$containesTasks`;
         do
@@ -44,8 +49,10 @@ do
 					if [[ $tasksImplementation != *".c" ]];
 					then
 						echo "Executing C"
+						echo "========================================================" >> ../Reports/$runTimePerformance
+						echo "Programming Language: $containesLanguages" >> ../Reports/$runTimePerformance
 						executable=$1/$containesTasks/$containesLanguages/$tasksImplementation
-						eval=$(./$executable)
+						(time ./$executable) 2>> ../Reports/$runTimePerformance
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
@@ -53,14 +60,16 @@ do
 						fi
 						sleep $2
 					fi
-					
+				
 				;;
 				("c++")
 					if [[ $tasksImplementation != *".cpp" ]];
 					then
 						echo "Executing C++"
+						echo "========================================================" >> ../Reports/$runTimePerformance
+						echo "Programming Language: $containesLanguages" >> ../Reports/$runTimePerformance
 						executable=$1/$containesTasks/$containesLanguages/$tasksImplementation
-						eval=$(./$executable)
+						(time ./$executable) 2>> ../Reports/$runTimePerformance
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
@@ -73,9 +82,11 @@ do
 					if [[ $tasksImplementation != *".java" ]];
 					then
 						echo "Executing Java"
+						echo "========================================================" >> ../Reports/$runTimePerformance
+						echo "Programming Language: $containesLanguages" >> ../Reports/$runTimePerformance
 						path=$1/$containesTasks/$containesLanguages/
 						executable=$(echo "$1/$containesTasks/$containesLanguages/$tasksImplementation" | awk -F "/" '{print $NF}' | awk -F "." '{print $1}') 
-						eval=$(java -classpath $path $executable)
+						(time java -classpath $path $executable) 2>> ../Reports/$runTimePerformance
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
@@ -86,7 +97,9 @@ do
 				;;
 				("python")
 						echo "Executing Python"
-						eval=$(python $1/$containesTasks/$containesLanguages/$tasksImplementation)
+						echo "========================================================" >> ../Reports/$runTimePerformance
+						echo "Programming Language: $containesLanguages" >> ../Reports/$runTimePerformance
+						(time python $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$runTimePerformance
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
@@ -98,7 +111,9 @@ do
 					if [[ $tasksImplementation == *".exe" ]]; 
 					then
 						echo "Executing C#"
-						eval=$(mono $1/$containesTasks/$containesLanguages/$tasksImplementation)
+						echo "========================================================" >> ../Reports/$runTimePerformance
+						echo "Programming Language: $containesLanguages" >> ../Reports/$runTimePerformance
+						(time mono $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$runTimePerformance
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
@@ -111,7 +126,9 @@ do
 					if [[ $tasksImplementation == *".exe" ]];
 					then
 						echo "Executing VB.NET"
-						eval=$(mono $1/$containesTasks/$containesLanguages/$tasksImplementation)
+						echo "========================================================" >> ../Reports/$runTimePerformance
+						echo "Programming Language: $containesLanguages" >> ../Reports/$runTimePerformance
+						(time mono $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$runTimePerformance
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
@@ -123,7 +140,9 @@ do
 
 				("javascript")
 						echo "Executing JavaScript"
-						eval=$(node -max_old_space_size=4096 $1/$containesTasks/$containesLanguages/$tasksImplementation)
+						echo "========================================================" >> ../Reports/$runTimePerformance
+						echo "Programming Language: $containesLanguages" >> ../Reports/$runTimePerformance
+						(time node -max_old_space_size=4096 $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$runTimePerformance
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
@@ -133,7 +152,9 @@ do
 				;;
 				("php")
 						echo "Executing Php"
-						eval=$(php $1/$containesTasks/$containesLanguages/$tasksImplementation)
+						echo "========================================================" >> ../Reports/$runTimePerformance
+						echo "Programming Language: $containesLanguages" >> ../Reports/$runTimePerformance
+						(time php $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$runTimePerformance
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
@@ -143,7 +164,9 @@ do
 				;;
 				("perl")
 						echo "Executing Perl"
-						eval=$(perl $1/$containesTasks/$containesLanguages/$tasksImplementation)
+						echo "========================================================" >> ../Reports/$runTimePerformance
+						echo "Programming Language: $containesLanguages" >> ../Reports/$runTimePerformance
+						(time perl $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$runTimePerformance
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
@@ -152,8 +175,10 @@ do
 						sleep $2
 				;;
 				("ruby")
-					echo "Executing Ruby"
-					eval=$(ruby $1/$containesTasks/$containesLanguages/$tasksImplementation)
+						echo "Executing Ruby" 
+						echo "========================================================" >> ../Reports/$runTimePerformance
+						echo "Programming Language: $containesLanguages" >> ../Reports/$runTimePerformance
+						(time ruby $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$runTimePerformance
 					if [ $? -eq 0 ];
 					then
 						timeStamp=$(date -u)
@@ -162,8 +187,10 @@ do
 					sleep $2
 				;;
 				("r")
-					echo "Executing R"
-					eval=$(Rscript $1/$containesTasks/$containesLanguages/$tasksImplementation)
+						echo "Executing R"
+						echo "========================================================" >> ../Reports/$runTimePerformance
+						echo "Programming Language: $containesLanguages" >> ../Reports/$runTimePerformance
+						(time Rscript $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$runTimePerformance
                                                 if [ $? -eq 0 ];
                                                 then
                                                         timeStamp=$(date -u)
@@ -172,8 +199,10 @@ do
 					sleep $2
 				;;
 				("go")
-					echo "Executing Go"
-					 eval=$(go run $1/$containesTasks/$containesLanguages/$tasksImplementation)
+						echo "Executing Go"
+						echo "========================================================" >> ../Reports/$runTimePerformance
+						echo "Programming Language: $containesLanguages" >> ../Reports/$runTimePerformance
+						(time go run $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$runTimePerformance
                                                 if [ $? -eq 0 ];
                                                 then
                                                         timeStamp=$(date -u)
@@ -185,7 +214,9 @@ do
 					if [[ $tasksImplementation != *".rust" ]]; 
 					then
 						echo "Executing Rust"
-						eval=$(./$1/$containesTasks/$containesLanguages/$tasksImplementation)
+						echo "========================================================" >> ../Reports/$runTimePerformance
+						echo "Programming Language: $containesLanguages" >> ../Reports/$runTimePerformance
+						(time ./$1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$runTimePerformance
                                                 if [ $? -eq 0 ];
                                                 then
                                                         timeStamp=$(date -u)
@@ -196,7 +227,9 @@ do
 				;;
 				("swift")		
 						echo "Executing Swift"
-						eval=$(/home/sgeorgiou/bin/swift/usr/bin/swift $1/$containesTasks/$containesLanguages/$tasksImplementation)
+						echo "========================================================" >> ../Reports/$runTimePerformance
+						echo "Programming Language: $containesLanguages" >> ../Reports/$runTimePerformance
+						(time swift $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$runTimePerformance
                                                 if [ $? -eq 0 ];
                                                 then
                                                         timeStamp=$(date -u)

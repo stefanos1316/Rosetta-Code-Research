@@ -1,0 +1,91 @@
+========================================================
+Programming Language: c
+./script.executeTasks: line 55: ./temp//sorting-algorithms-bubble-sort/c/numbers: Permission denied
+
+real	0m0.001s
+user	0m0.000s
+sys	0m0.000s
+========================================================
+Programming Language: c
+
+real	0m29.741s
+user	0m29.688s
+sys	0m0.001s
+========================================================
+Programming Language: c++
+
+real	1m34.906s
+user	0m59.947s
+sys	0m2.574s
+========================================================
+Programming Language: c-sharp
+
+real	0m13.740s
+user	0m13.708s
+sys	0m0.009s
+========================================================
+Programming Language: go
+
+real	0m6.165s
+user	0m6.136s
+sys	0m0.028s
+========================================================
+Programming Language: java
+
+real	0m6.394s
+user	0m6.384s
+sys	0m0.024s
+========================================================
+Programming Language: javascript
+
+real	0m21.360s
+user	0m21.324s
+sys	0m0.010s
+========================================================
+Programming Language: perl
+
+real	9m38.214s
+user	9m37.251s
+sys	0m0.005s
+========================================================
+Programming Language: php
+
+real	7m28.819s
+user	7m28.189s
+sys	0m0.009s
+========================================================
+Programming Language: python
+
+real	12m0.355s
+user	11m59.058s
+sys	0m0.018s
+========================================================
+Programming Language: r
+
+real	12m51.600s
+user	12m49.721s
+sys	0m0.030s
+========================================================
+Programming Language: ruby
+
+real	9m9.796s
+user	9m8.604s
+sys	0m0.008s
+========================================================
+Programming Language: rust
+
+real	2m42.704s
+user	2m42.436s
+sys	0m0.002s
+========================================================
+Programming Language: swift
+
+real	38m33.632s
+user	38m29.773s
+sys	0m0.034s
+========================================================
+Programming Language: visual-basic-.net
+
+real	0m17.011s
+user	0m16.970s
+sys	0m0.008s
