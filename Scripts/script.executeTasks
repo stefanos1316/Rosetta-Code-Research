@@ -235,6 +235,7 @@ do
                                                         timeStamp=$(date -u)
                                                         echo "Execution         $timeStamp      $1/$containesTasks/$containesLanguages/$tasksImplementation:Swift" >> ../Reports/Failed_Execution_Report.txt
                                                 fi
+					sleep $2
 				;;
 			esac
 		done

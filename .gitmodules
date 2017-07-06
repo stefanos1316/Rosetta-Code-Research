@@ -1,3 +1,6 @@
 [submodule "RosettaCodeData"]
 	path = RosettaCodeData
 	url = https://github.com/acmeism/RosettaCodeData.git
+[submodule "watts-up"]
+	path = watts-up
+	url = https://github.com/pyrovski/watts-up
