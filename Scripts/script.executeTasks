@@ -28,6 +28,28 @@ then
 	exit
 fi
 
+#################################################################################################################################################################################################################### 													FUNCTIONS												#################################################################################################################################################################################################################
+function killWattsUpProcess {
+
+	#While $1 (which is the executable) is still running sleep
+	while  ps -p $1 > /dev/null ;
+	do
+		sleep 1
+		echo "Still running"
+	done
+		
+	echo "Now is not"
+	#If it's outside the loop it means the $1 is not running, then kill $2
+	kill -9 $2
+}
+
+
+#Create log directories for Power Consumption Run-Time Performance measurements
+EnergyPerformanceLogDataDate=$(date -u | sed -e 's/ /_/g')
+EnergyPerformanceLogDirName="Data_Energy_Performance_"$EnergyPerformanceLogDataDate
+mkdir -p ../Reports/$EnergyPerformanceLogDirName
+mkdir -p ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls
+
 
 #At this point we have a file that includes all the Tasks we successfully compiled
 for containesTasks in `ls $1`;
@@ -36,6 +58,10 @@ do
 	#Create RunTimePerformance log file
 	TimeStamp=$(date -u | sed -e 's/ /_/g')	
 	runTimePerformance="RunTimePerformance_"$containesTasks"_"$TimeStamp".txt"
+	
+	#At this point we create a directory to store the energy results
+	mkdir -p ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks
+	
 
         #For all the programming languages enter and compile the content
         for containesLanguages in `ls $1/$containesTasks`;
@@ -49,10 +75,27 @@ do
 					if [[ $tasksImplementation != *".c" ]];
 					then
 						echo "Executing C"
-						echo "========================================================" >> ../Reports/$runTimePerformance
-						echo "Programming Language: $containesLanguages" >> ../Reports/$runTimePerformance
+						#A second of delay since the wattsup has it as a startup delay
+						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/c.txt
+						
+						#Run the wattsup in the background
+						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/c.txt & 
+							
+						#Get recent background process, that we will kill after 						
+						getWattsUpPID=$!
+						
+						sleep 2
+						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
 						executable=$1/$containesTasks/$containesLanguages/$tasksImplementation
-						(time ./$executable) 2>> ../Reports/$runTimePerformance
+						(time ./$executable) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance &
+						
+						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
+						getExecutionPID=$!
+		
+						#Call function to check if process exists
+						killWattsUpProcess $getExecutionPID $getWattsUpPID						
+							
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
@@ -66,10 +109,11 @@ do
 					if [[ $tasksImplementation != *".cpp" ]];
 					then
 						echo "Executing C++"
-						echo "========================================================" >> ../Reports/$runTimePerformance
-						echo "Programming Language: $containesLanguages" >> ../Reports/$runTimePerformance
+						echo "Energy" >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/c++.txt
+						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
 						executable=$1/$containesTasks/$containesLanguages/$tasksImplementation
-						(time ./$executable) 2>> ../Reports/$runTimePerformance
+						(time ./$executable) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
@@ -82,11 +126,11 @@ do
 					if [[ $tasksImplementation != *".java" ]];
 					then
 						echo "Executing Java"
-						echo "========================================================" >> ../Reports/$runTimePerformance
-						echo "Programming Language: $containesLanguages" >> ../Reports/$runTimePerformance
+						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
 						path=$1/$containesTasks/$containesLanguages/
 						executable=$(echo "$1/$containesTasks/$containesLanguages/$tasksImplementation" | awk -F "/" '{print $NF}' | awk -F "." '{print $1}') 
-						(time java -classpath $path $executable) 2>> ../Reports/$runTimePerformance
+						(time java -classpath $path $executable) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
@@ -97,9 +141,9 @@ do
 				;;
 				("python")
 						echo "Executing Python"
-						echo "========================================================" >> ../Reports/$runTimePerformance
-						echo "Programming Language: $containesLanguages" >> ../Reports/$runTimePerformance
-						(time python $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$runTimePerformance
+						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						(time python $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
@@ -111,9 +155,9 @@ do
 					if [[ $tasksImplementation == *".exe" ]]; 
 					then
 						echo "Executing C#"
-						echo "========================================================" >> ../Reports/$runTimePerformance
-						echo "Programming Language: $containesLanguages" >> ../Reports/$runTimePerformance
-						(time mono $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$runTimePerformance
+						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						(time mono $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
@@ -126,9 +170,9 @@ do
 					if [[ $tasksImplementation == *".exe" ]];
 					then
 						echo "Executing VB.NET"
-						echo "========================================================" >> ../Reports/$runTimePerformance
-						echo "Programming Language: $containesLanguages" >> ../Reports/$runTimePerformance
-						(time mono $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$runTimePerformance
+						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						(time mono $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
@@ -140,9 +184,9 @@ do
 
 				("javascript")
 						echo "Executing JavaScript"
-						echo "========================================================" >> ../Reports/$runTimePerformance
-						echo "Programming Language: $containesLanguages" >> ../Reports/$runTimePerformance
-						(time node -max_old_space_size=4096 $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$runTimePerformance
+						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						(time node -max_old_space_size=4096 $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
@@ -152,9 +196,9 @@ do
 				;;
 				("php")
 						echo "Executing Php"
-						echo "========================================================" >> ../Reports/$runTimePerformance
-						echo "Programming Language: $containesLanguages" >> ../Reports/$runTimePerformance
-						(time php $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$runTimePerformance
+						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						(time php $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
@@ -164,9 +208,9 @@ do
 				;;
 				("perl")
 						echo "Executing Perl"
-						echo "========================================================" >> ../Reports/$runTimePerformance
-						echo "Programming Language: $containesLanguages" >> ../Reports/$runTimePerformance
-						(time perl $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$runTimePerformance
+						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						(time perl $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
@@ -176,9 +220,9 @@ do
 				;;
 				("ruby")
 						echo "Executing Ruby" 
-						echo "========================================================" >> ../Reports/$runTimePerformance
-						echo "Programming Language: $containesLanguages" >> ../Reports/$runTimePerformance
-						(time ruby $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$runTimePerformance
+						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						(time ruby $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
 					if [ $? -eq 0 ];
 					then
 						timeStamp=$(date -u)
@@ -188,9 +232,9 @@ do
 				;;
 				("r")
 						echo "Executing R"
-						echo "========================================================" >> ../Reports/$runTimePerformance
-						echo "Programming Language: $containesLanguages" >> ../Reports/$runTimePerformance
-						(time Rscript $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$runTimePerformance
+						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						(time Rscript $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
                                                 if [ $? -eq 0 ];
                                                 then
                                                         timeStamp=$(date -u)
@@ -200,9 +244,9 @@ do
 				;;
 				("go")
 						echo "Executing Go"
-						echo "========================================================" >> ../Reports/$runTimePerformance
-						echo "Programming Language: $containesLanguages" >> ../Reports/$runTimePerformance
-						(time go run $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$runTimePerformance
+						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						(time go run $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
                                                 if [ $? -eq 0 ];
                                                 then
                                                         timeStamp=$(date -u)
@@ -214,9 +258,9 @@ do
 					if [[ $tasksImplementation != *".rust" ]]; 
 					then
 						echo "Executing Rust"
-						echo "========================================================" >> ../Reports/$runTimePerformance
-						echo "Programming Language: $containesLanguages" >> ../Reports/$runTimePerformance
-						(time ./$1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$runTimePerformance
+						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						(time ./$1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
                                                 if [ $? -eq 0 ];
                                                 then
                                                         timeStamp=$(date -u)
@@ -227,9 +271,9 @@ do
 				;;
 				("swift")		
 						echo "Executing Swift"
-						echo "========================================================" >> ../Reports/$runTimePerformance
-						echo "Programming Language: $containesLanguages" >> ../Reports/$runTimePerformance
-						(time swift $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$runTimePerformance
+						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						(time swift $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
                                                 if [ $? -eq 0 ];
                                                 then
                                                         timeStamp=$(date -u)
@@ -241,5 +285,6 @@ do
 		done
 	done
 done
+
 
 exit
