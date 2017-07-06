@@ -3,12 +3,9 @@ public class arrayconcatenation {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		for (int j = 0; j < 1000000; ++j) {
+		for (int j = 0; j < 10000000; ++j) {
 		
 		Object[] o1 = {1,2,3,4,5}, o2 = {6,7,8,9,10}, concatArray = objArrayConcat(o1, o2);
-		for (int i =0; i < concatArray.length; ++i) {
-			System.out.println(concatArray[i]);
-		}
 		}
 	}
 	

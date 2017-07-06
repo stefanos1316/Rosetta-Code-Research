@@ -1,1 +1,0 @@
-Execution		Thu Jul  6 21:35:48 UTC 2017	later//sorting-algorithms-quicksort/c/sorting-algorithms-quicksort:C

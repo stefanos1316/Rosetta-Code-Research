@@ -109,11 +109,27 @@ do
 					if [[ $tasksImplementation != *".cpp" ]];
 					then
 						echo "Executing C++"
-						echo "Energy" >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/c++.txt
+						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/c++.txt
+					
+						#Run the wattsup in the background
+						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/c++.txt & 
+							
+						#Get recent background process, that we will kill after 						
+						getWattsUpPID=$!
+						
+						#WattsUp has 2 seconds of delay before retrieving results
+						sleep 2
 						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
 						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
 						executable=$1/$containesTasks/$containesLanguages/$tasksImplementation
-						(time ./$executable) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						(time ./$executable) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance &
+						
+						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
+						getExecutionPID=$!
+		
+						#Call function to check if process exists
+						killWattsUpProcess $getExecutionPID $getWattsUpPID						
+						
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
@@ -126,12 +142,29 @@ do
 					if [[ $tasksImplementation != *".java" ]];
 					then
 						echo "Executing Java"
+						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/java.txt
+					
+						#Run the wattsup in the background
+						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/java.txt & 
+							
+						#Get recent background process, that we will kill after 						
+						getWattsUpPID=$!
+						
+						#WattsUp has 2 seconds of delay before retrieving results
+						sleep 2
 						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
 						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
 						path=$1/$containesTasks/$containesLanguages/
 						executable=$(echo "$1/$containesTasks/$containesLanguages/$tasksImplementation" | awk -F "/" '{print $NF}' | awk -F "." '{print $1}') 
-						(time java -classpath $path $executable) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						if [ $? -eq 0 ];
+						(time java -classpath $path $executable) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance &
+						
+						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
+						getExecutionPID=$!
+		
+						#Call function to check if process exists
+						killWattsUpProcess $getExecutionPID $getWattsUpPID						
+						
+						if [ $? -eq 0];
 						then
 							timeStamp=$(date -u)
 							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:Java" >> ../Reports/Failed_Execution_Report.txt
@@ -141,9 +174,26 @@ do
 				;;
 				("python")
 						echo "Executing Python"
+						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/python.txt
+					
+						#Run the wattsup in the background
+						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/python.txt & 
+							
+						#Get recent background process, that we will kill after 						
+						getWattsUpPID=$!
+						
+						#WattsUp has 2 seconds of delay before retrieving results
+						sleep 2
 						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
 						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						(time python $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						(time python $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance &
+
+						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
+						getExecutionPID=$!
+		
+						#Call function to check if process exists
+						killWattsUpProcess $getExecutionPID $getWattsUpPID						
+						
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
@@ -155,9 +205,26 @@ do
 					if [[ $tasksImplementation == *".exe" ]]; 
 					then
 						echo "Executing C#"
+						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/c-sharp.txt
+					
+						#Run the wattsup in the background
+						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/c-sharp.txt & 
+							
+						#Get recent background process, that we will kill after 						
+						getWattsUpPID=$!
+						
+						#WattsUp has 2 seconds of delay before retrieving results
+						sleep 2
 						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
 						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						(time mono $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						(time mono $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance &
+
+						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
+						getExecutionPID=$!
+	
+						#Call function to check if process exists
+						killWattsUpProcess $getExecutionPID $getWattsUpPID						
+		
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
@@ -170,9 +237,26 @@ do
 					if [[ $tasksImplementation == *".exe" ]];
 					then
 						echo "Executing VB.NET"
+						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/vb.net.txt
+					
+						#Run the wattsup in the background
+						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/vb.net.txt & 
+							
+						#Get recent background process, that we will kill after 						
+						getWattsUpPID=$!
+						
+						#WattsUp has 2 seconds of delay before retrieving results
+						sleep 2
 						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
 						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						(time mono $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						(time mono $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance &
+
+						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
+						getExecutionPID=$!
+
+						#Call function to check if process exists
+						killWattsUpProcess $getExecutionPID $getWattsUpPID						
+
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
@@ -184,9 +268,26 @@ do
 
 				("javascript")
 						echo "Executing JavaScript"
+						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/javascript.txt
+				
+						#Run the wattsup in the background
+						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/javascript.txt & 
+							
+						#Get recent background process, that we will kill after 						
+						getWattsUpPID=$!
+						
+						#WattsUp has 2 seconds of delay before retrieving results
+						sleep 2
 						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
 						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						(time node -max_old_space_size=4096 $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						(time node -max_old_space_size=4096 $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance &
+
+						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
+						getExecutionPID=$!
+
+						#Call function to check if process exists
+						killWattsUpProcess $getExecutionPID $getWattsUpPID						
+	
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
@@ -196,9 +297,26 @@ do
 				;;
 				("php")
 						echo "Executing Php"
+						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/php.txt
+				
+						#Run the wattsup in the background
+						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/php.txt & 
+							
+						#Get recent background process, that we will kill after 						
+						getWattsUpPID=$!
+						
+						#WattsUp has 2 seconds of delay before retrieving results
+						sleep 2
 						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
 						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						(time php $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						(time php $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance &
+
+						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
+						getExecutionPID=$!
+
+						#Call function to check if process exists
+						killWattsUpProcess $getExecutionPID $getWattsUpPID						
+
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
@@ -208,9 +326,26 @@ do
 				;;
 				("perl")
 						echo "Executing Perl"
+						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/perl.txt
+				
+						#Run the wattsup in the background
+						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/perl.txt & 
+							
+						#Get recent background process, that we will kill after 						
+						getWattsUpPID=$!
+						
+						#WattsUp has 2 seconds of delay before retrieving results
+						sleep 2
 						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
 						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						(time perl $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						(time perl $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance &
+
+						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
+						getExecutionPID=$!
+
+						#Call function to check if process exists
+						killWattsUpProcess $getExecutionPID $getWattsUpPID						
+	
 						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
@@ -220,21 +355,55 @@ do
 				;;
 				("ruby")
 						echo "Executing Ruby" 
+						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/ruby.txt
+				
+						#Run the wattsup in the background
+						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/ruby.txt & 
+							
+						#Get recent background process, that we will kill after 						
+						getWattsUpPID=$!
+						
+						#WattsUp has 2 seconds of delay before retrieving results
+						sleep 2
 						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
 						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						(time ruby $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-					if [ $? -eq 0 ];
-					then
-						timeStamp=$(date -u)
-						echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:Ruby" >> ../Reports/Failed_Execution_Report.txt
-					fi
-					sleep $2
+						(time ruby $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance &
+
+						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
+						getExecutionPID=$!
+
+						#Call function to check if process exists
+						killWattsUpProcess $getExecutionPID $getWattsUpPID						
+					
+						if [ $? -eq 0 ];
+						then
+							timeStamp=$(date -u)
+							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:Ruby" >> ../Reports/Failed_Execution_Report.txt
+						fi
+						sleep $2
 				;;
 				("r")
 						echo "Executing R"
+						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/r.txt
+				
+						#Run the wattsup in the background
+						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/r.txt & 
+							
+						#Get recent background process, that we will kill after 						
+						getWattsUpPID=$!
+						
+						#WattsUp has 2 seconds of delay before retrieving results
+						sleep 2
 						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
 						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						(time Rscript $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						(time Rscript $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance &
+
+						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
+						getExecutionPID=$!
+
+						#Call function to check if process exists
+						killWattsUpProcess $getExecutionPID $getWattsUpPID						
+  
                                                 if [ $? -eq 0 ];
                                                 then
                                                         timeStamp=$(date -u)
@@ -244,10 +413,27 @@ do
 				;;
 				("go")
 						echo "Executing Go"
+						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/go.txt
+				
+						#Run the wattsup in the background
+						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/go.txt & 
+							
+						#Get recent background process, that we will kill after 						
+						getWattsUpPID=$!
+						
+						#WattsUp has 2 seconds of delay before retrieving results
+						sleep 2
 						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
 						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						(time go run $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-                                                if [ $? -eq 0 ];
+						(time go run $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance &
+
+						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
+						getExecutionPID=$!
+
+						#Call function to check if process exists
+						killWattsUpProcess $getExecutionPID $getWattsUpPID						
+                         
+			                        if [ $? -eq 0 ];
                                                 then
                                                         timeStamp=$(date -u)
                                                         echo "Execution         $timeStamp      $1/$containesTasks/$containesLanguages/$tasksImplementation:Go" >> ../Reports/Failed_Execution_Report.txt
@@ -258,10 +444,27 @@ do
 					if [[ $tasksImplementation != *".rust" ]]; 
 					then
 						echo "Executing Rust"
+						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/rust.txt
+				
+						#Run the wattsup in the background
+						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/rust.txt & 
+							
+						#Get recent background process, that we will kill after 						
+						getWattsUpPID=$!
+						
+						#WattsUp has 2 seconds of delay before retrieving results
+						sleep 2
 						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
 						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						(time ./$1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-                                                if [ $? -eq 0 ];
+						(time ./$1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance &
+				
+						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
+						getExecutionPID=$!
+
+						#Call function to check if process exists
+						killWattsUpProcess $getExecutionPID $getWattsUpPID						
+                                                
+						if [ $? -eq 0 ];
                                                 then
                                                         timeStamp=$(date -u)
                                                         echo "Execution         $timeStamp      $1/$containesTasks/$containesLanguages/$tasksImplementation:Rust" >> ../Reports/Failed_Execution_Report.txt
@@ -271,10 +474,27 @@ do
 				;;
 				("swift")		
 						echo "Executing Swift"
+						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/swift.txt
+				
+						#Run the wattsup in the background
+						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/swift.txt & 
+							
+						#Get recent background process, that we will kill after 						
+						getWattsUpPID=$!
+						
+						#WattsUp has 2 seconds of delay before retrieving results
+						sleep 2
 						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
 						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						(time swift $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-                                                if [ $? -eq 0 ];
+						(time swift $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance &
+
+						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
+						getExecutionPID=$!
+
+						#Call function to check if process exists
+						killWattsUpProcess $getExecutionPID $getWattsUpPID						
+                                                
+						if [ $? -eq 0 ];
                                                 then
                                                         timeStamp=$(date -u)
                                                         echo "Execution         $timeStamp      $1/$containesTasks/$containesLanguages/$tasksImplementation:Swift" >> ../Reports/Failed_Execution_Report.txt
