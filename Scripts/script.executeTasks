@@ -35,10 +35,8 @@ function killWattsUpProcess {
 	while  ps -p $1 > /dev/null ;
 	do
 		sleep 1
-		echo "Still running"
 	done
-		
-	echo "Now is not"
+	
 	#If it's outside the loop it means the $1 is not running, then kill $2
 	kill -9 $2
 }
@@ -164,7 +162,7 @@ do
 						#Call function to check if process exists
 						killWattsUpProcess $getExecutionPID $getWattsUpPID						
 						
-						if [ $? -eq 0];
+						if [ $? -eq 0 ];
 						then
 							timeStamp=$(date -u)
 							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:Java" >> ../Reports/Failed_Execution_Report.txt

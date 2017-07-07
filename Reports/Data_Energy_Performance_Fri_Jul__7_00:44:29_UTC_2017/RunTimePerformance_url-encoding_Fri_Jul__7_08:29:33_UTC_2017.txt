@@ -1,0 +1,79 @@
+========================================================
+Programming Language: c
+
+real	0m8.514s
+user	0m4.752s
+sys	0m1.446s
+========================================================
+Programming Language: c++
+
+real	0m6.780s
+user	0m2.341s
+sys	0m1.545s
+========================================================
+Programming Language: c-sharp
+
+real	0m7.267s
+user	0m3.414s
+sys	0m1.507s
+========================================================
+Programming Language: go
+
+real	0m4.924s
+user	0m1.201s
+sys	0m1.635s
+========================================================
+Programming Language: java
+
+real	0m6.625s
+user	0m2.163s
+sys	0m2.539s
+========================================================
+Programming Language: javascript
+
+real	0m9.699s
+user	0m5.849s
+sys	0m1.690s
+========================================================
+Programming Language: perl
+
+real	0m9.411s
+user	0m5.854s
+sys	0m1.472s
+========================================================
+Programming Language: php
+
+real	0m4.129s
+user	0m0.404s
+sys	0m1.525s
+========================================================
+Programming Language: python
+
+real	1m19.681s
+user	0m48.911s
+sys	0m14.981s
+========================================================
+Programming Language: r
+
+real	1m35.422s
+user	1m29.143s
+sys	0m5.034s
+========================================================
+Programming Language: ruby
+
+real	0m16.730s
+user	0m13.437s
+sys	0m2.388s
+========================================================
+Programming Language: swift
+./script.executeTasks: line 487: swift: command not found
+
+real	0m0.001s
+user	0m0.000s
+sys	0m0.001s
+========================================================
+Programming Language: visual-basic-.net
+
+real	0m7.434s
+user	0m2.776s
+sys	0m1.577s
