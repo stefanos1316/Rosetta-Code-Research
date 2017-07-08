@@ -11,14 +11,10 @@ namespace RosettaCode
 
             int[] c = new int[a.Length + b.Length];
             
-	    for ( int i =0; i < 1000000; i++) {
+	    for ( int i =0; i < 10000000; i++) {
 	    a.CopyTo(c, 0);
             b.CopyTo(c, a.Length);
 	    
-            foreach(int n in c)
-            {
-                Console.WriteLine(n.ToString());
-            }
 	}
         }
     }

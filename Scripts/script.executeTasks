@@ -5,10 +5,10 @@
 
 #This script file receives as a command-line parameter a file (that has a number of tasks which is an output of compileTasks and shows the successfully compiled files) and executes the languages given to it (again as command-line arguments)
 
-#Command Line Arguments
-#$1 -> full path of the file where all the tasks (tasks paths) that successfully compiled are located
+#The specific script uses ssh to connect with a remote host (Raspberry Pi 3b in our case) that retrieves energy-related measurements via Watts Up Pro.
+#Watts Up pro makes use of USB interfaces and retrieves energy measurements and stores them on the remote host
 
-if [ "$#" -eq 0 ];
+if [ "$#" -eq 0 ] || [ "$#" -lt 4 ];
 then
 	echo ""
 	echo "Illegal number of command line arguments!"
@@ -24,11 +24,18 @@ then
 	echo "\$2 -> The sleep time between tasks execution in different programming languages,"
 	echo "      e.g., 1s for one second 2m for two minutes 3h for three hours."
 	echo "      This parameter acts as a safe guard to reduce noise among the executions."
-	echo ""
+	echo "\$3 -> Provide username for remote host (this parameter can be used if a wattsup power"
+	echo "      analyzer is attached to the remote host  to retrieve energy measurements)"
+	echo "\$4 -> Provide IP address for remote host."
+	echo " "
+	echo "Note: user are suggested to set up a passwordless ssh between the local and the remote"
+	echo "host"
+	echo " "
 	exit
 fi
 
 #################################################################################################################################################################################################################### 													FUNCTIONS												#################################################################################################################################################################################################################
+#Function that checks if the executable is still running, if not it terminates the wattsup process.
 function killWattsUpProcess {
 
 	#While $1 (which is the executable) is still running sleep
@@ -41,27 +48,82 @@ function killWattsUpProcess {
 	kill -9 $2
 }
 
+#Check via if the give host is running
+function checkRemoteHostSSH {
 
-#Create log directories for Power Consumption Run-Time Performance measurements
+	#Check if nmap exist on the host, otherwise recommend to install it
+	if nmap --version | grep "command not found"; then
+		echo "Nmap not found in local host."
+		echo "Please install nmap before procceding any further."
+		echo "Exiting..."
+		exit
+	fi
+
+	if nmap -p22 $2 -oG - | grep -q 22/open; then 
+    		echo "Remote Host's $2 SSH is active"
+		echo "Procceding normally..."
+		echo " "
+	else 
+    		echo "Remote Host's $2 SSH is not running..."
+		echo "Please make sure that is active and try again."
+		exit
+	fi
+}
+
+#Get files from remote server using scp
+function getTreeDirectoryFromRemoteHost {
+
+	#\$1 is the remote host's username
+	#\$2 is the remote host's IP address
+	#\$3 is the location of remote host the directory
+	#\$4 is the location of the host for storing the energy-related data
+
+	echo "Retrieving data from remote host:$2 please wait..."
+	remoteHost=$1@$2
+	# Get till Energy_Results
+	scp -r $remoteHost:$3 $4
+	echo "[Success] Transfer done!"
+
+	echo ""
+	echo "Exiting..."
+}
+
+############################################################################################################################################
+
+#Create parameters for the directory names
 EnergyPerformanceLogDataDate=$(date -u | sed -e 's/ /_/g')
-EnergyPerformanceLogDirName="Data_Energy_Performance_"$EnergyPerformanceLogDataDate
-mkdir -p ../Reports/$EnergyPerformanceLogDirName
-mkdir -p ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls
+EnergyPerformanceLogDirName="Experiment_Data_"$EnergyPerformanceLogDataDate
 
+#Before creating directories check if the remote host is acticvated and SSH is running
+	checkRemoteHostSSH $3 $4
+
+	#if the script is still running it means ssh connection is fine.
+	mkdir -p ../Reports/$EnergyPerformanceLogDirName
+	mkdir -p ../Reports/$EnergyPerformanceLogDirName/Energy_Results
+	remoteHost=$3"@"$4
+	ssh $remoteHost mkdir -p GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName
+	ssh $remoteHost mkdir -p GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results
+	if [ $? -eq 0 ];
+       	then
+		echo "Directories created normally."
+	else
+		echo "Failed to create directories."
+		echo "Please check remote host's permissions."
+		exit
+	fi
+
+#Create Performance locally since the execution is done here.
+mkdir -p ../Reports/$EnergyPerformanceLogDirName/Performance_Results
 
 #At this point we have a file that includes all the Tasks we successfully compiled
 for containesTasks in `ls $1`;
 do
-	
-	#Create RunTimePerformance log file
-	TimeStamp=$(date -u | sed -e 's/ /_/g')	
-	runTimePerformance="RunTimePerformance_"$containesTasks"_"$TimeStamp".txt"
-	
-	#At this point we create a directory to store the energy results
-	mkdir -p ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks
-	
+	#At this point we create a directory to store the energy and performance results
+	#If a remove host is given, then create the energy results there
+	ssh $remoteHost mkdir -p GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks
+	mkdir -p ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks
 
-        #For all the programming languages enter and compile the content
+	#For all the programming languages enter and compile the content
         for containesLanguages in `ls $1/$containesTasks`;
         do
                 #For all the tasks compile them based on the language
@@ -74,25 +136,30 @@ do
 					then
 						echo "Executing C"
 						#A second of delay since the wattsup has it as a startup delay
-						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/c.txt
-						
+						ssh $remoteHost touch GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/c.txt
+						touch  ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/c.txt
+
 						#Run the wattsup in the background
-						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/c.txt & 
-							
-						#Get recent background process, that we will kill after 						
-						getWattsUpPID=$!
+						ssh $remoteHost "sh -c 'sudo ./GitHub/Rosetta-Code-Research/watts-up/wattsup ttyUSB0 -r watts >> GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/c.txt' &" &
 						
+						#Watts Up utility has 2 seconds of delay before start capturing measurements, thus we delay the execution system too				
 						sleep 2
-						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+
 						executable=$1/$containesTasks/$containesLanguages/$tasksImplementation
-						(time ./$executable) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance &
+						(time ./$executable) 2>> ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/c.txt &
 						
 						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
 						getExecutionPID=$!
-		
-						#Call function to check if process exists
-						killWattsUpProcess $getExecutionPID $getWattsUpPID						
+
+						#While our tasks is still running sleep a second and start again
+						while  ps -p $getExecutionPID > /dev/null ;
+						do
+							sleep 1
+						done
+	
+						#If it's outside the loop it means the task's execution is finished, then stop remote host 
+						#from retrieving power measurements
+						ssh $remoteHost sudo pkill  wattsup						
 							
 						if [ $? -eq 0 ];
 						then
@@ -100,6 +167,10 @@ do
 							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:C" >> ../Reports/Failed_Execution_Report.txt
 						fi
 						sleep $2
+				
+						#Testing transferring
+						getTreeDirectoryFromRemoteHost $3 $4 GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results ../Reports/$EnergyPerformanceLogDirName/
+						exit
 					fi
 				
 				;;
@@ -107,26 +178,33 @@ do
 					if [[ $tasksImplementation != *".cpp" ]];
 					then
 						echo "Executing C++"
-						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/c++.txt
-					
+						ssh $remoteHost touch GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/c++.txt
+						touch  ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/c++.txt
+
 						#Run the wattsup in the background
-						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/c++.txt & 
+						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/c++.txt & 
 							
 						#Get recent background process, that we will kill after 						
 						getWattsUpPID=$!
 						
 						#WattsUp has 2 seconds of delay before retrieving results
 						sleep 2
-						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+						
 						executable=$1/$containesTasks/$containesLanguages/$tasksImplementation
-						(time ./$executable) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance &
+						(time ./$executable) 2>> ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/c++.txt &
 						
 						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
 						getExecutionPID=$!
 		
-						#Call function to check if process exists
-						killWattsUpProcess $getExecutionPID $getWattsUpPID						
+						#While our tasks is still running sleep a second and start again
+						while  ps -p $getExecutionPID > /dev/null ;
+						do
+							sleep 1
+						done
+	
+						#If it's outside the loop it means the task's execution is finished, then stop remote host 
+						#from retrieving power measurements
+						ssh $remoteHost sudo pkill  wattsup						
 						
 						if [ $? -eq 0 ];
 						then
@@ -140,27 +218,34 @@ do
 					if [[ $tasksImplementation != *".java" ]];
 					then
 						echo "Executing Java"
-						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/java.txt
-					
+						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/java.txt
+						touch  ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/java.txt
+
 						#Run the wattsup in the background
-						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/java.txt & 
+						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/java.txt & 
 							
 						#Get recent background process, that we will kill after 						
 						getWattsUpPID=$!
 						
 						#WattsUp has 2 seconds of delay before retrieving results
 						sleep 2
-						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
+
 						path=$1/$containesTasks/$containesLanguages/
 						executable=$(echo "$1/$containesTasks/$containesLanguages/$tasksImplementation" | awk -F "/" '{print $NF}' | awk -F "." '{print $1}') 
-						(time java -classpath $path $executable) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance &
+						(time java -classpath $path $executable) 2>> ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/java.txt &
 						
 						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
 						getExecutionPID=$!
 		
-						#Call function to check if process exists
-						killWattsUpProcess $getExecutionPID $getWattsUpPID						
+						#While our tasks is still running sleep a second and start again
+						while  ps -p $getExecutionPID > /dev/null ;
+						do
+							sleep 1
+						done
+	
+						#If it's outside the loop it means the task's execution is finished, then stop remote host 
+						#from retrieving power measurements
+						ssh $remoteHost sudo pkill  wattsup						
 						
 						if [ $? -eq 0 ];
 						then
@@ -172,25 +257,32 @@ do
 				;;
 				("python")
 						echo "Executing Python"
-						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/python.txt
+						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/python.txt
+						touch  ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/python.txt
 					
 						#Run the wattsup in the background
-						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/python.txt & 
+						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/python.txt & 
 							
-						#Get recent background process, that we will kill after 						
+						#Get recent background process, that we will kill after 				
 						getWattsUpPID=$!
 						
 						#WattsUp has 2 seconds of delay before retrieving results
 						sleep 2
-						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						(time python $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance &
+						
+						(time python $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/python.txt &
 
 						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
 						getExecutionPID=$!
 		
-						#Call function to check if process exists
-						killWattsUpProcess $getExecutionPID $getWattsUpPID						
+						#While our tasks is still running sleep a second and start again
+						while  ps -p $getExecutionPID > /dev/null ;
+						do
+							sleep 1
+						done
+	
+						#If it's outside the loop it means the task's execution is finished, then stop remote host 
+						#from retrieving power measurements
+						ssh $remoteHost sudo pkill  wattsup						
 						
 						if [ $? -eq 0 ];
 						then
@@ -203,25 +295,32 @@ do
 					if [[ $tasksImplementation == *".exe" ]]; 
 					then
 						echo "Executing C#"
-						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/c-sharp.txt
+						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/c-sharp.txt
+						touch  ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/c-sharp.txt
 					
 						#Run the wattsup in the background
-						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/c-sharp.txt & 
+						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/c-sharp.txt & 
 							
-						#Get recent background process, that we will kill after 						
+						#Get recent background process, that we will kill after			
 						getWattsUpPID=$!
 						
 						#WattsUp has 2 seconds of delay before retrieving results
 						sleep 2
-						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						(time mono $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance &
+						
+						(time mono $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/c-sharp.txt &
 
 						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
 						getExecutionPID=$!
 	
-						#Call function to check if process exists
-						killWattsUpProcess $getExecutionPID $getWattsUpPID						
+						#While our tasks is still running sleep a second and start again
+						while  ps -p $getExecutionPID > /dev/null ;
+						do
+							sleep 1
+						done
+	
+						#If it's outside the loop it means the task's execution is finished, then stop remote host 
+						#from retrieving power measurements
+						ssh $remoteHost sudo pkill  wattsup						
 		
 						if [ $? -eq 0 ];
 						then
@@ -235,25 +334,32 @@ do
 					if [[ $tasksImplementation == *".exe" ]];
 					then
 						echo "Executing VB.NET"
-						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/vb.net.txt
+						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/vb.net.txt
+						touch  ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/vb.net.txt
 					
 						#Run the wattsup in the background
-						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/vb.net.txt & 
+						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/vb.net.txt & 
 							
-						#Get recent background process, that we will kill after 						
+						#Get recent background process, that we will kill after 			
 						getWattsUpPID=$!
 						
 						#WattsUp has 2 seconds of delay before retrieving results
 						sleep 2
-						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						(time mono $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance &
+						
+						(time mono $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/vb.net.txt &
 
 						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
 						getExecutionPID=$!
 
-						#Call function to check if process exists
-						killWattsUpProcess $getExecutionPID $getWattsUpPID						
+						#While our tasks is still running sleep a second and start again
+						while  ps -p $getExecutionPID > /dev/null ;
+						do
+							sleep 1
+						done
+	
+						#If it's outside the loop it means the task's execution is finished, then stop remote host 
+						#from retrieving power measurements
+						ssh $remoteHost sudo pkill  wattsup						
 
 						if [ $? -eq 0 ];
 						then
@@ -266,25 +372,32 @@ do
 
 				("javascript")
 						echo "Executing JavaScript"
-						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/javascript.txt
+						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/javascript.txt
+						touch  ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/javascript.txt
 				
 						#Run the wattsup in the background
-						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/javascript.txt & 
+						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/javascript.txt & 
 							
-						#Get recent background process, that we will kill after 						
+						#Get recent background process, that we will kill after 				
 						getWattsUpPID=$!
 						
 						#WattsUp has 2 seconds of delay before retrieving results
 						sleep 2
-						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						(time node -max_old_space_size=4096 $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance &
+						
+						(time node -max_old_space_size=4096 $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/javascript.txt &
 
 						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
 						getExecutionPID=$!
 
-						#Call function to check if process exists
-						killWattsUpProcess $getExecutionPID $getWattsUpPID						
+						#While our tasks is still running sleep a second and start again
+						while  ps -p $getExecutionPID > /dev/null ;
+						do
+							sleep 1
+						done
+	
+						#If it's outside the loop it means the task's execution is finished, then stop remote host 
+						#from retrieving power measurements
+						ssh $remoteHost sudo pkill  wattsup						
 	
 						if [ $? -eq 0 ];
 						then
@@ -295,25 +408,32 @@ do
 				;;
 				("php")
 						echo "Executing Php"
-						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/php.txt
+						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/php.txt
+						touch  ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/php.txt
 				
 						#Run the wattsup in the background
-						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/php.txt & 
+						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/php.txt & 
 							
-						#Get recent background process, that we will kill after 						
+						#Get recent background process, that we will kill after
 						getWattsUpPID=$!
 						
 						#WattsUp has 2 seconds of delay before retrieving results
 						sleep 2
-						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						(time php $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance &
+						
+						(time php $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/php.txt &
 
 						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
 						getExecutionPID=$!
 
-						#Call function to check if process exists
-						killWattsUpProcess $getExecutionPID $getWattsUpPID						
+						#While our tasks is still running sleep a second and start again
+						while  ps -p $getExecutionPID > /dev/null ;
+						do
+							sleep 1
+						done
+	
+						#If it's outside the loop it means the task's execution is finished, then stop remote host 
+						#from retrieving power measurements
+						ssh $remoteHost sudo pkill  wattsup						
 
 						if [ $? -eq 0 ];
 						then
@@ -324,25 +444,32 @@ do
 				;;
 				("perl")
 						echo "Executing Perl"
-						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/perl.txt
+						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/perl.txt
+						touch  ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/perl.txt
 				
 						#Run the wattsup in the background
-						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/perl.txt & 
+						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/perl.txt & 
 							
-						#Get recent background process, that we will kill after 						
+						#Get recent background process, that we will kill after 			
 						getWattsUpPID=$!
 						
 						#WattsUp has 2 seconds of delay before retrieving results
 						sleep 2
-						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						(time perl $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance &
+						
+						(time perl $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/perl.txt &
 
 						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
 						getExecutionPID=$!
 
-						#Call function to check if process exists
-						killWattsUpProcess $getExecutionPID $getWattsUpPID						
+						#While our tasks is still running sleep a second and start again
+						while  ps -p $getExecutionPID > /dev/null ;
+						do
+							sleep 1
+						done
+	
+						#If it's outside the loop it means the task's execution is finished, then stop remote host 
+						#from retrieving power measurements
+						ssh $remoteHost sudo pkill  wattsup						
 	
 						if [ $? -eq 0 ];
 						then
@@ -353,25 +480,32 @@ do
 				;;
 				("ruby")
 						echo "Executing Ruby" 
-						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/ruby.txt
+						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/ruby.txt
+						touch  ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/ruby.txt
 				
 						#Run the wattsup in the background
-						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/ruby.txt & 
+						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/ruby.txt & 
 							
-						#Get recent background process, that we will kill after 						
+						#Get recent background process, that we will kill after 			
 						getWattsUpPID=$!
 						
 						#WattsUp has 2 seconds of delay before retrieving results
 						sleep 2
-						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						(time ruby $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance &
+						
+						(time ruby $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/ruby.txt &
 
 						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
 						getExecutionPID=$!
 
-						#Call function to check if process exists
-						killWattsUpProcess $getExecutionPID $getWattsUpPID						
+						#While our tasks is still running sleep a second and start again
+						while  ps -p $getExecutionPID > /dev/null ;
+						do
+							sleep 1
+						done
+	
+						#If it's outside the loop it means the task's execution is finished, then stop remote host 
+						#from retrieving power measurements
+						ssh $remoteHost sudo pkill  wattsup						
 					
 						if [ $? -eq 0 ];
 						then
@@ -382,25 +516,32 @@ do
 				;;
 				("r")
 						echo "Executing R"
-						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/r.txt
+						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/r.txt
+						touch  ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/r.txt
 				
 						#Run the wattsup in the background
-						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/r.txt & 
+						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/r.txt & 
 							
-						#Get recent background process, that we will kill after 						
+						#Get recent background process, that we will kill after 				
 						getWattsUpPID=$!
 						
 						#WattsUp has 2 seconds of delay before retrieving results
 						sleep 2
-						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						(time Rscript $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance &
+						
+						(time Rscript $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/r.txt &
 
 						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
 						getExecutionPID=$!
 
-						#Call function to check if process exists
-						killWattsUpProcess $getExecutionPID $getWattsUpPID						
+						#While our tasks is still running sleep a second and start again
+						while  ps -p $getExecutionPID > /dev/null ;
+						do
+							sleep 1
+						done
+	
+						#If it's outside the loop it means the task's execution is finished, then stop remote host 
+						#from retrieving power measurements
+						ssh $remoteHost sudo pkill  wattsup						
   
                                                 if [ $? -eq 0 ];
                                                 then
@@ -411,25 +552,32 @@ do
 				;;
 				("go")
 						echo "Executing Go"
-						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/go.txt
+						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/go.txt
+						touch  ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/go.txt
 				
 						#Run the wattsup in the background
-						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/go.txt & 
+						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/go.txt & 
 							
-						#Get recent background process, that we will kill after 						
+						#Get recent background process, that we will kill after 				
 						getWattsUpPID=$!
 						
 						#WattsUp has 2 seconds of delay before retrieving results
 						sleep 2
-						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						(time go run $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance &
+						
+						(time go run $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/go.txt &
 
 						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
 						getExecutionPID=$!
 
-						#Call function to check if process exists
-						killWattsUpProcess $getExecutionPID $getWattsUpPID						
+						#While our tasks is still running sleep a second and start again
+						while  ps -p $getExecutionPID > /dev/null ;
+						do
+							sleep 1
+						done
+	
+						#If it's outside the loop it means the task's execution is finished, then stop remote host 
+						#from retrieving power measurements
+						ssh $remoteHost sudo pkill  wattsup						
                          
 			                        if [ $? -eq 0 ];
                                                 then
@@ -442,25 +590,32 @@ do
 					if [[ $tasksImplementation != *".rust" ]]; 
 					then
 						echo "Executing Rust"
-						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/rust.txt
+						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/rust.txt
+						touch  ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/rust.txt
 				
 						#Run the wattsup in the background
-						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/rust.txt & 
+						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/rust.txt & 
 							
-						#Get recent background process, that we will kill after 						
+						#Get recent background process, that we will kill after 				
 						getWattsUpPID=$!
 						
 						#WattsUp has 2 seconds of delay before retrieving results
 						sleep 2
-						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						(time ./$1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance &
+						
+						(time ./$1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/rust.txt &
 				
 						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
 						getExecutionPID=$!
 
-						#Call function to check if process exists
-						killWattsUpProcess $getExecutionPID $getWattsUpPID						
+						#While our tasks is still running sleep a second and start again
+						while  ps -p $getExecutionPID > /dev/null ;
+						do
+							sleep 1
+						done
+	
+						#If it's outside the loop it means the task's execution is finished, then stop remote host 
+						#from retrieving power measurements
+						ssh $remoteHost sudo pkill  wattsup						
                                                 
 						if [ $? -eq 0 ];
                                                 then
@@ -472,25 +627,32 @@ do
 				;;
 				("swift")		
 						echo "Executing Swift"
-						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/swift.txt
+						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/swift.txt
+						touch  ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/swift.txt
 				
 						#Run the wattsup in the background
-						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Resutls/$containesTasks/swift.txt & 
+						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/swift.txt & 
 							
-						#Get recent background process, that we will kill after 						
+						#Get recent background process, that we will kill after 				
 						getWattsUpPID=$!
 						
 						#WattsUp has 2 seconds of delay before retrieving results
 						sleep 2
-						echo "========================================================" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						echo "Programming Language: $containesLanguages" >> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance
-						(time swift $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$runTimePerformance &
+						
+						(time swift $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/$Performance_Results/$containesTasks/swift.txt &
 
 						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
 						getExecutionPID=$!
 
-						#Call function to check if process exists
-						killWattsUpProcess $getExecutionPID $getWattsUpPID						
+						#While our tasks is still running sleep a second and start again
+						while  ps -p $getExecutionPID > /dev/null ;
+						do
+							sleep 1
+						done
+	
+						#If it's outside the loop it means the task's execution is finished, then stop remote host 
+						#from retrieving power measurements
+						ssh $remoteHost sudo pkill  wattsup						
                                                 
 						if [ $? -eq 0 ];
                                                 then

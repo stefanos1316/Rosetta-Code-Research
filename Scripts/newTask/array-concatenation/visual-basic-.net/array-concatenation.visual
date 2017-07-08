@@ -10,16 +10,13 @@ Namespace Rextester
             Dim array2() As Integer = {6, 7, 8, 9, 10}
 
 
-            For value As Integer = 0 To 1000000                 
+            For value As Integer = 0 To 10000000                 
                 
                 Dim array3(array1.Length + array2.Length - 1) As Integer
  
                 Array.Copy(array1, array3, array1.Length)
                 Array.Copy(array2, 0, array3, array1.Length, array2.Length)
                 
-                For Each element As Integer In array3
-                    Console.WriteLine(element)
-                Next
             Next
         End Sub
     End Module
