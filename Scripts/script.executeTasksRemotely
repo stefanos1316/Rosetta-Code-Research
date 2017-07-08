@@ -167,10 +167,7 @@ do
 							echo "Execution		$timeStamp	$1/$containesTasks/$containesLanguages/$tasksImplementation:C" >> ../Reports/Failed_Execution_Report.txt
 						fi
 						sleep $2
-				
-						#Testing transferring
-						getTreeDirectoryFromRemoteHost $3 $4 GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results ../Reports/$EnergyPerformanceLogDirName/
-						exit
+						
 					fi
 				
 				;;
@@ -182,10 +179,7 @@ do
 						touch  ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/c++.txt
 
 						#Run the wattsup in the background
-						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/c++.txt & 
-							
-						#Get recent background process, that we will kill after 						
-						getWattsUpPID=$!
+						ssh $remoteHost "sh -c 'sudo ./GitHub/Rosetta-Code-Research/watts-up/wattsup ttyUSB0 -r watts >> GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/c++.txt' &" &
 						
 						#WattsUp has 2 seconds of delay before retrieving results
 						sleep 2
@@ -218,14 +212,11 @@ do
 					if [[ $tasksImplementation != *".java" ]];
 					then
 						echo "Executing Java"
-						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/java.txt
+						ssh $remoteHost touch GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/java.txt
 						touch  ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/java.txt
 
 						#Run the wattsup in the background
-						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/java.txt & 
-							
-						#Get recent background process, that we will kill after 						
-						getWattsUpPID=$!
+						ssh $remoteHost "sh -c 'sudo ./GitHub/Rosetta-Code-Research/watts-up/wattsup ttyUSB0 -r watts >> GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/java.txt' &" &
 						
 						#WattsUp has 2 seconds of delay before retrieving results
 						sleep 2
@@ -257,14 +248,11 @@ do
 				;;
 				("python")
 						echo "Executing Python"
-						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/python.txt
+						ssh $remoteHost touch GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/python.txt
 						touch  ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/python.txt
 					
 						#Run the wattsup in the background
-						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/python.txt & 
-							
-						#Get recent background process, that we will kill after 				
-						getWattsUpPID=$!
+						ssh $remoteHost "sh -c 'sudo ./GitHub/Rosetta-Code-Research/watts-up/wattsup ttyUSB0 -r watts >> GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/python.txt' &" &
 						
 						#WattsUp has 2 seconds of delay before retrieving results
 						sleep 2
@@ -295,14 +283,11 @@ do
 					if [[ $tasksImplementation == *".exe" ]]; 
 					then
 						echo "Executing C#"
-						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/c-sharp.txt
+						ssh $remoteHost touch GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/c-sharp.txt
 						touch  ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/c-sharp.txt
 					
 						#Run the wattsup in the background
-						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/c-sharp.txt & 
-							
-						#Get recent background process, that we will kill after			
-						getWattsUpPID=$!
+						ssh $remoteHost "sh -c 'sudo ./GitHub/Rosetta-Code-Research/watts-up/wattsup ttyUSB0 -r watts >> GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/c-sharp.txt' &" &
 						
 						#WattsUp has 2 seconds of delay before retrieving results
 						sleep 2
@@ -334,14 +319,11 @@ do
 					if [[ $tasksImplementation == *".exe" ]];
 					then
 						echo "Executing VB.NET"
-						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/vb.net.txt
+						ssh $remoteHost touch GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/vb.net.txt
 						touch  ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/vb.net.txt
 					
 						#Run the wattsup in the background
-						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/vb.net.txt & 
-							
-						#Get recent background process, that we will kill after 			
-						getWattsUpPID=$!
+						ssh $remoteHost "sh -c 'sudo ./GitHub/Rosetta-Code-Research/watts-up/wattsup ttyUSB0 -r watts >> GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/vb.net.txt' &" &
 						
 						#WattsUp has 2 seconds of delay before retrieving results
 						sleep 2
@@ -372,14 +354,11 @@ do
 
 				("javascript")
 						echo "Executing JavaScript"
-						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/javascript.txt
+						ssh $remoteHost touch GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/javascript.txt
 						touch  ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/javascript.txt
 				
 						#Run the wattsup in the background
-						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/javascript.txt & 
-							
-						#Get recent background process, that we will kill after 				
-						getWattsUpPID=$!
+						ssh $remoteHost "sh -c 'sudo ./GitHub/Rosetta-Code-Research/watts-up/wattsup ttyUSB0 -r watts >> GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/javascript.txt' &" &
 						
 						#WattsUp has 2 seconds of delay before retrieving results
 						sleep 2
@@ -408,14 +387,11 @@ do
 				;;
 				("php")
 						echo "Executing Php"
-						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/php.txt
+						ssh $remoteHost touch GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/php.txt
 						touch  ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/php.txt
 				
 						#Run the wattsup in the background
-						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/php.txt & 
-							
-						#Get recent background process, that we will kill after
-						getWattsUpPID=$!
+						ssh $remoteHost "sh -c 'sudo ./GitHub/Rosetta-Code-Research/watts-up/wattsup ttyUSB0 -r watts >> GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/php.txt' &" &
 						
 						#WattsUp has 2 seconds of delay before retrieving results
 						sleep 2
@@ -444,14 +420,11 @@ do
 				;;
 				("perl")
 						echo "Executing Perl"
-						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/perl.txt
+						ssh $remoteHost touch GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/perl.txt
 						touch  ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/perl.txt
 				
 						#Run the wattsup in the background
-						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/perl.txt & 
-							
-						#Get recent background process, that we will kill after 			
-						getWattsUpPID=$!
+						ssh $remoteHost "sh -c 'sudo ./GitHub/Rosetta-Code-Research/watts-up/wattsup ttyUSB0 -r watts >> GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/perl.txt' &" &
 						
 						#WattsUp has 2 seconds of delay before retrieving results
 						sleep 2
@@ -480,14 +453,11 @@ do
 				;;
 				("ruby")
 						echo "Executing Ruby" 
-						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/ruby.txt
+						ssh $remoteHost touch GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/ruby.txt
 						touch  ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/ruby.txt
 				
 						#Run the wattsup in the background
-						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/ruby.txt & 
-							
-						#Get recent background process, that we will kill after 			
-						getWattsUpPID=$!
+						ssh $remoteHost "sh -c 'sudo ./GitHub/Rosetta-Code-Research/watts-up/wattsup ttyUSB0 -r watts >> GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/ruby.txt' &" &
 						
 						#WattsUp has 2 seconds of delay before retrieving results
 						sleep 2
@@ -516,14 +486,11 @@ do
 				;;
 				("r")
 						echo "Executing R"
-						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/r.txt
+						ssh $remoteHost touch GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/r.txt
 						touch  ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/r.txt
 				
 						#Run the wattsup in the background
-						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/r.txt & 
-							
-						#Get recent background process, that we will kill after 				
-						getWattsUpPID=$!
+						ssh $remoteHost "sh -c 'sudo ./GitHub/Rosetta-Code-Research/watts-up/wattsup ttyUSB0 -r watts >> GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/r.txt' &" &
 						
 						#WattsUp has 2 seconds of delay before retrieving results
 						sleep 2
@@ -552,14 +519,11 @@ do
 				;;
 				("go")
 						echo "Executing Go"
-						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/go.txt
+						ssh $remoteHost touch GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/go.txt
 						touch  ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/go.txt
 				
 						#Run the wattsup in the background
-						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/go.txt & 
-							
-						#Get recent background process, that we will kill after 				
-						getWattsUpPID=$!
+						ssh $remoteHost "sh -c 'sudo ./GitHub/Rosetta-Code-Research/watts-up/wattsup ttyUSB0 -r watts >> GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/go.txt' &" &
 						
 						#WattsUp has 2 seconds of delay before retrieving results
 						sleep 2
@@ -590,14 +554,11 @@ do
 					if [[ $tasksImplementation != *".rust" ]]; 
 					then
 						echo "Executing Rust"
-						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/rust.txt
+						ssh $remoteHost touch GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/rust.txt
 						touch  ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/rust.txt
 				
 						#Run the wattsup in the background
-						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/rust.txt & 
-							
-						#Get recent background process, that we will kill after 				
-						getWattsUpPID=$!
+						ssh $remoteHost "sh -c 'sudo ./GitHub/Rosetta-Code-Research/watts-up/wattsup ttyUSB0 -r watts >> GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/rust.txt' &" &
 						
 						#WattsUp has 2 seconds of delay before retrieving results
 						sleep 2
@@ -627,14 +588,11 @@ do
 				;;
 				("swift")		
 						echo "Executing Swift"
-						touch  ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/swift.txt
+						ssh $remoteHost touch GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/swift.txt
 						touch  ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/swift.txt
 				
 						#Run the wattsup in the background
-						./../watts-up/wattsup ttyUSB0 -r watts >> ../Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/swift.txt & 
-							
-						#Get recent background process, that we will kill after 				
-						getWattsUpPID=$!
+						ssh $remoteHost "sh -c 'sudo ./GitHub/Rosetta-Code-Research/watts-up/wattsup ttyUSB0 -r watts >> GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results/$containesTasks/swift.txt' &" &
 						
 						#WattsUp has 2 seconds of delay before retrieving results
 						sleep 2
@@ -665,6 +623,9 @@ do
 		done
 	done
 done
+
+#Testing transferring
+getTreeDirectoryFromRemoteHost $3 $4 GitHub/Rosetta-Code-Research/Reports/$EnergyPerformanceLogDirName/Energy_Results ../Reports/$EnergyPerformanceLogDirName/
 
 
 exit
