@@ -112,7 +112,7 @@ Initially, we decided of choosing the top 15 programming languages
 as enlisted for June 2017. 
 From the current list, we excluded programming languages such as 
 Delphi and Assembly. 
-In contrast, we included Rust in our dataset which a memory safe 
+In contrast, we included Rust in our dataset which is a memory safe 
 programming language and is gaining popularity in the web. \
 Therefore, we ended up with 14 programming languages as illustrated 
 in Table~\ref{Languages_Compilers_and_Interpreters}.
@@ -125,11 +125,6 @@ programming languages of our selection.
 To refine further our dataset we used the following steps: 
 
 \begin{enumerate}
-	\item [$\bullet$] We excluded implemented tasks that are using 
-	external libraries. 
-	Since we would like to exploit the energy dissipation of 
-	simple every day tasks, we decided to exclude form our dataset 
-	the use of tasks requiring external libraries. 
 	\item [$\bullet$] Some of the tasks offers more that one implementation 
 	for the same programming languages. 
 	Thus, we had to drive manually through each directory and remove 
@@ -173,14 +168,17 @@ Therefore, in our research we decided to retrieve our energy consumption
 measurements using direct approach such as {\sc wup} since our 
 tasks are relatively short in terms of source-code lines.
 
-
 In regards to {\sc wup}, it offers accuracy of \textpm1.5\% and 
 as maximum sampling rate of 1 second. 
 In order to retrieve power-related measurements from the {\sc wup} 
 we used a software available in a Git repository.\footnote{https://github.com/pyrovski/watts-up}
 This software helped us retrieve measurements such as timestamps, 
 watts, volts, amps, etc. through a mini {\sc usb} interface after 
-we integrated its code in our script that runs all the tasks.
+we integrated its code in our script that runs all the tasks. 
+In order to avoid additional overhead in our measurements, we 
+used a Raspberry Pi\footnote{https://www.raspberrypi.org/products/raspberry-pi-3-model-b/} 
+in order to retrieve power consumption from our test-bed.  
+
 
 \subsubsection{Software Components} \label{software_components}
 %123456789123456789123456789123456789123456789123456789123456789 
@@ -203,8 +201,11 @@ publicly available on our Git repository.\footnote{https://github.com/stefanos13
 	\item [$\bullet$] \textbf{script.compileTasks}, compiles all tasks found 
 	under the Tasks' directory and produces error reports in a task fails to 
 	compile.
-	\item [$\bullet$] \textbf{script.executeTasks}, executes all the tasks' 
-	implementations found in under Tasks directory.
+	\item [$\bullet$] \textbf{script.executeTasksRemotely}, executes all the tasks' 
+	implementations found in under Tasks directory. 
+	Moreover, it sends command to {\sc wup}, retrieves measurements and stores 
+	then on remote host, through \textit{ssh}, in order to start retrieving 
+	measurements for each test case. 
 	\item [$\bullet$] \textbf{script.plotGraphs}, after retrieving our data 
 	we use this script to plot our graphs.
 \end{enumerate}
@@ -215,6 +216,9 @@ that shows a list of available command line arguments in order
 use our scripts.
 Moreover, users are suggested not to change the folders name or 
 locations since most of our scripts are making use of them. 
+
+In addition, we used {\sc ntp}\footnote{http://www.ntp.org/} to 
+synchronize both systems' clock. 
 
 For plotting our graphs we used FeedGnuplot,\footnote{http://search.cpan.org/~dkogan/feedgnuplot-1.44/bin/feedgnuplot} 
 an open-source general purpose pipe-oriented plotting tool. 
@@ -231,10 +235,13 @@ columned file with energy related measurements.
 		\midrule
 		Hardware	& HP EliteBook 840 G3, Intel Core i7-6500U \\
 					& (2 physical cores of 2.5 GHz), 8 GB DDR4  \\
-					& memory, 256 GB {\sc ssd}  hard disk \\
-		Operating  System & Fedora 25 kernel version 4.11.5-200  \\			
+					& memory, 256 GB {\sc ssd}  hard disk, \\
+					& Raspberry Pi Model 3b, 4× ARM A53 \\
+					& 1.2GHz, 2 GB LPDDR2 memory, 64 GB SD\\
+		Operating  System & Fedora 25 kernel version 4.11.5-200,  \\
+					& Raspbian\\	
 		Software 	& {\sc wup} software (retrieving measurements \\
-					& from the device), bash script, Java, R, \\
+					& from the device), bash script, Java, \\
 					& feedGnuplot \\
 		\bottomrule
 	\end{tabular}
