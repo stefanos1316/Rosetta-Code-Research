@@ -1,0 +1,28 @@
+#!/bin/bash
+
+#this script will create the graphs for the user automatically
+
+title="Plot Graphs"
+filename="executeMePlease"
+pdf="AgainPlease.pdf"
+gnuplot<<EOF
+set size 1.0,1.0;
+set terminal postscript landscape color "Times-Roman" 14 linewidth 2
+set timestamp "%d/%m/%y %H:%M"
+set key right top Right noreverse enhanced box linetype -1 linewidth 1.000 sample 4 spacing 1 width 0 height 0 autotitles
+set grid back lt 0 lw 1
+set xlabel "Executed Tasks"
+set ylabel "Energy Consumptino (Joules)"
+set xtic rotate
+set yrange [0:100]
+set output "$filename"
+set title "$title"
+
+plot 'temp.txt' using 2:xticlabel(1) title 'C-sharp' with points, 'temp.txt' using 3:xticlabel(1) title 'C' with points, 'temp.txt' using 4:xticlabel(1) title 'C++' with points, 'temp.txt' using 5:xticlabel(1) title 'Go' with points, 'temp.txt' using 7:xticlabel(1) title 'Java' with points
+
+EOF
+
+printPlot="$(gs $filename)"
+eval=$printPlot
+createpdf="$(ps2pdf $filename $pdf)"
+eval=$createpdf

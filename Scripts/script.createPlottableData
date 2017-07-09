@@ -1,0 +1,72 @@
+#!/bin/bash
+
+#This script is responsible of creating text files from the collect results in order to plot them
+
+#Command line arguments
+
+if [ "$#" -eq 0 ]; then
+	echo "Invaled number of command line arguments."
+	echo "Using --help option for more information."
+	exit
+fi
+
+if [ "$1" == "--help" ]; then
+	echo "\$1 -> Add absolute path where the Exeperimental data is located"
+	exit
+fi
+
+fullPath=0
+if [[ $1 == *"Energy_Results"* ]]; then
+	if [[ "$1" == */ ]]; then
+		remove=$1
+		remove=$(echo ${remove::-1})
+		fullPath=$(echo $remove | awk -F "/" '{$NF=""}1' | tr " " "/")
+	else
+		fullPath=$1
+	fi
+fi
+
+#Now dive in the directories and create the necessary files
+fullPath=$fullPath"/Energy_Results/"
+
+#array where all the results are stored
+array=()
+horseLine=0
+for i in `ls $fullPath`
+do
+	horseLine=$i
+	for j in `ls $fullPath/$i`
+	do
+		counter=0
+		toDivideWith=0
+		sum=0
+		while IFS= read -r var
+		do
+			counter=$((counter+1))
+			if [ $counter -gt 2 ]; then
+				toDivideWith=$((toDivideWith+1))
+				#echo "$j -> $var"
+				sum=$(echo $sum + $var | bc)
+			fi
+		done < "$fullPath/$i/$j"
+		
+		average=0
+		if [ $toDivideWith -ne 0 ]; then
+			average=$(echo "scale=2; $sum/$toDivideWith" | bc)
+		else
+			average=0
+		fi
+		horseLine=$horseLine"--"$average	
+	done
+	#echo $horseLine
+	array+=($horseLine)
+done
+
+for each in "${array[@]}"
+do
+ 	echo "$each" >> temp.txt
+done
+
+
+
+exit
