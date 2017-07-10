@@ -1,5 +1,3 @@
-Watts Up? Header Record
-W, V, A, WH, Cost, WH/Mo, Cost/Mo, Wmax, Vmax, Amax, Wmin, Vmin, Amin, PF, DC, PC, Hz, VA
 17.0
 17.1
 17.1

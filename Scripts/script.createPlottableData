@@ -72,18 +72,15 @@ do
 		fi
 		horseLine=$horseLine"--"$average	
 	done
-	#echo $horseLine
+	echo $horseLine
 	array+=($horseLine)
 	
 done
 
 for each in "${array[@]}"
 do
- 	echo "$each" 
-	#>> temp.txt
+ 	echo "$each" >> temp.txt
 done
-
-exit
 
 #When done replace the instances of -- in file 
 sed -i 's/--/\t/g' temp.txt
@@ -95,7 +92,7 @@ mv Graph_data_$experimentName.txt $graphDataDir
 #When data is created move them run script to plot graphs
 graphDataLocation=$graphDataDir"/Graph_data_"$experimentName.txt
 
-./script.plotGraphs $graphDataLocation $experimentName $graphDataDir compiled 
+./script.plotGraphs $graphDataLocation $experimentName $graphDataDir compiled optimize
 ./script.plotGraphs $graphDataLocation $experimentName $graphDataDir interpreted
 
 exit

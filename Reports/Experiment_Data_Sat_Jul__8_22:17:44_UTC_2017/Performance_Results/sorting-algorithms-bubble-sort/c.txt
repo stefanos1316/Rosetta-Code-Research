@@ -1,9 +1,0 @@
-./script.executeTasksRemotely: line 149: ./temp//sorting-algorithms-bubble-sort/c/numbers: Permission denied
-
-real	0m0.001s
-user	0m0.001s
-sys	0m0.000s
-
-real	0m29.785s
-user	0m29.745s
-sys	0m0.001s
