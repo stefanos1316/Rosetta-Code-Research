@@ -46,17 +46,22 @@ do
 	horseLine=$i
 	for j in `ls $fullPath/$i`
 	do
+
+		#Before getting the file modify it
+		tail -n+3 $fullPath/$i/$j > $fullPath/$i/temp_$j
+		mv $fullPath/$i/temp_$j $fullPath/$i/$j
+
 		counter=0
 		toDivideWith=0
 		sum=0
 		while IFS= read -r var
 		do
 			counter=$((counter+1))
-			if [ $counter -gt 2 ]; then
+			#if [ $counter -gt 2 ]; then
 				toDivideWith=$((toDivideWith+1))
 				#echo "$j -> $var"
 				sum=$(echo $sum + $var | bc)
-			fi
+			#fi
 		done < "$fullPath/$i/$j"
 		
 		average=0
@@ -69,12 +74,16 @@ do
 	done
 	#echo $horseLine
 	array+=($horseLine)
+	
 done
 
 for each in "${array[@]}"
 do
- 	echo "$each" >> temp.txt
+ 	echo "$each" 
+	#>> temp.txt
 done
+
+exit
 
 #When done replace the instances of -- in file 
 sed -i 's/--/\t/g' temp.txt
