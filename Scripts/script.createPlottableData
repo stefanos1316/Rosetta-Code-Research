@@ -16,17 +16,26 @@ if [ "$1" == "--help" ]; then
 fi
 
 fullPath=0
+	if [[ "$1" == */ ]]; then
+		remove=$1
+		remove2=$(echo ${remove::-1})		
+		#fullPath=$(echo $remove | awk -F "/" '{$NF=""}1' | tr " " "/")
+		fullPath=$remove2
+	else
+		fullPath=$1
+	fi
+
 if [[ $1 == *"Energy_Results"* ]]; then
 	if [[ "$1" == */ ]]; then
 		remove=$1
 		remove=$(echo ${remove::-1})
-		fullPath=$(echo $remove | awk -F "/" '{$NF=""}1' | tr " " "/")
-	else
-		fullPath=$1
+		fullPath=$(echo $remove | awk -F "/" '{$NF=""}1' | tr " " "/")	
 	fi
 fi
 
 #Now dive in the directories and create the necessary files
+experimentName=$(echo $fullPath | awk -F "/" '{print $NF}')
+pathWithoutEnergyResults=$fullPath
 fullPath=$fullPath"/Energy_Results/"
 
 #array where all the results are stored
@@ -67,6 +76,17 @@ do
  	echo "$each" >> temp.txt
 done
 
+#When done replace the instances of -- in file 
+sed -i 's/--/\t/g' temp.txt
+graphDataDir=$pathWithoutEnergyResults"/GraphData"
+mkdir -p $graphDataDir
+mv temp.txt Graph_data_$experimentName.txt
+mv Graph_data_$experimentName.txt $graphDataDir
 
+#When data is created move them run script to plot graphs
+graphDataLocation=$graphDataDir"/Graph_data_"$experimentName.txt
+
+./script.plotGraphs $graphDataLocation $experimentName $graphDataDir compiled 
+./script.plotGraphs $graphDataLocation $experimentName $graphDataDir interpreted
 
 exit
