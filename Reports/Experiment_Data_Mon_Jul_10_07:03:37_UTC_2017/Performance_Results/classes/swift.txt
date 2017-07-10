@@ -1,0 +1,14 @@
+
+real	0m5.942s
+user	0m2.218s
+sys	0m1.507s
+temp/classes/swift/classes-2.swift:1:1: error: use of unresolved identifier 'MyClass'
+MyClass()
+^~~~~~~
+Swift.AnyClass:30:18: note: did you mean 'AnyClass'?
+public typealias AnyClass = AnyObject.Type
+                 ^
+
+real	0m0.058s
+user	0m0.031s
+sys	0m0.018s
