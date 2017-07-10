@@ -27,6 +27,8 @@ then
 	echo "\$3 -> Provide username for remote host (this parameter can be used if a wattsup power"
 	echo "      analyzer is attached to the remote host  to retrieve energy measurements)"
 	echo "\$4 -> Provide IP address for remote host."
+	echo "\$5 -> Type keyword 'optimize' in order to add optimization flags, if not set the script will"
+	echo "	    remove any optimization flag."
 	echo " "
 	echo "Note: user are suggested to set up a passwordless ssh between the local and the remote"
 	echo "host"
@@ -223,7 +225,12 @@ do
 
 						path=$1/$containesTasks/$containesLanguages/
 						executable=$(echo "$1/$containesTasks/$containesLanguages/$tasksImplementation" | awk -F "/" '{print $NF}' | awk -F "." '{print $1}') 
+						
+						if [ "$5" == "optmize" ]; then
 						(time java -classpath $path $executable) 2>> ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/java.txt &
+						else			
+						(time java -Xint -classpath $path $executable) 2>> ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/java.txt &
+						fi
 						
 						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
 						getExecutionPID=$!
@@ -528,8 +535,12 @@ do
 						#WattsUp has 2 seconds of delay before retrieving results
 						sleep 2
 						
+						if [ "$5" == "optimize" ]; then
 						(time go run $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/go.txt &
-
+						else
+						(time go run -gcflags -N $1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/go.txt &
+						fi
+	
 						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
 						getExecutionPID=$!
 
@@ -564,7 +575,7 @@ do
 						sleep 2
 						
 						(time ./$1/$containesTasks/$containesLanguages/$tasksImplementation) 2>> ../Reports/$EnergyPerformanceLogDirName/Performance_Results/$containesTasks/rust.txt &
-				
+
 						#Get executions PID, when this process is not runnung, kill the wattsUpPro process
 						getExecutionPID=$!
 
