@@ -17,6 +17,7 @@
 \usepackage{siunitx}
 
 
+
 % DOI
 \acmDOI{10.475/123_4}
 
@@ -52,17 +53,6 @@
 }
 \email{sgeorgiou@aueb.gr}
 
-\author{Diomidis Spinellis}
-\authornote{The secretary disavows any knowledge of this author's actions.}
-\affiliation{%
-  \institution{Athens University of Economics and Business}
-  \streetaddress{Patision 76}
-  \city{Athens} 
-  \state{Greece} 
-  \postcode{10434}
-}
-\email{dds@aueb.gr}
-
 \author{Maria Kechagia}
 \authornote{The secretary disavows any knowledge of this author's actions.}
 \affiliation{%
@@ -74,22 +64,47 @@
 }
 \email{m.kechagia@tudelft.nl}
 
+\author{Diomidis Spinellis}
+\authornote{The secretary disavows any knowledge of this author's actions.}
+\affiliation{%
+  \institution{Athens University of Economics and Business}
+  \streetaddress{Patision 76}
+  \city{Athens} 
+  \state{Greece} 
+  \postcode{10434}
+}
+\email{dds@aueb.gr}
+
+
 % The default list of authors is too long for headers}
 \renewcommand{\shortauthors}{S. Georgiou et al.}
 
 
 \begin{abstract}
 %123456789123456789123456789123456789123456789123456789123456789
-\noindent \textbf{Motivation:}
+\noindent \textbf{Motivation:} Swifting from a traditional 
+monolithic approach towards a more cutting-edge such as micro-services 
+implies new challenges in terms of energy usage.
 
 %123456789123456789123456789123456789123456789123456789123456789
-\noindent \textbf{Goal:}
+\noindent \textbf{Goal:} In the preliminary study, we aim is to 
+identify energy implications of small, independent tasks developed 
+in different programming languages, compiled, semi-compiled, and 
+interpreted ones.
 
 %123456789123456789123456789123456789123456789123456789123456789
-\noindent \textbf{Method:}
+\noindent \textbf{Method:} To achieve our purpose, we collected, 
+refined, compared, and analyzed a number of available tasks from Rosetta 
+Code, a publicly open repository for programming chrestomathy. 
 
 %123456789123456789123456789123456789123456789123456789123456789
-\noindent \textbf{Results:}
+\noindent \textbf{Results:} Our analysis shows a the majority of 
+compiled and semi-compiled programming languages achieve higher 
+energy efficiency after applying the optimization options for 
+\textit{sorting, object generation, url-encoding} and 
+\textit{decoding} tasks. 
+Moreover, we show on which types of the selected tasks programming 
+languages with interpreter offers energy gains among them.
 
 \end{abstract}
 
