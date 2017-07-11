@@ -15,7 +15,7 @@ Van Heddeghem et al.~\shortcite{ICT_energy_impact_2} indicates a
 raising trend of the {\sc it}'s sector energy requirements, which are 
 expected to reach 15\% of the world's total energy consumption 
 by 2020. 
-Moreover, obtained results outline, also, raise of green house gas 
+Moreover, obtained  outline, also, raise of green house gas 
 emissions due to the {\sc it}-sector which are growing much faster 
 than initially predicted and are estimated around 2.3\% globally, as 
 claimed in {\sc smart}er2030\footnote{http://smarter2030.gesi.org/downloads.php} 
@@ -163,6 +163,7 @@ tools used to conduct this research.
 		\end{tabular}
 \end{table}
 
+
 \subsection{Dataset}
 %123456789123456789123456789123456789123456789123456789123456789
 In the context of this study, we used Rosetta 
@@ -241,21 +242,19 @@ In addition, we compared the compiled and semi-compiled implementations while
 using the available compiler optimization and without them, as showed in 
 Table~\ref{optimization flags}.
 
-
-
-\begin{figure*}
+\begin{figure}
 	\centering
-	\includegraphics[width=\textwidth,height=8cm]{"Graph_Experiment-Data-Sun-Jul-9-19:14:04-UTC-2017_compiled_Optimization_OFF"}
-	\caption{Results for Compiled Programming Languages without Optimization Option}
+	\includegraphics[width=9cm,height=10cm,keepaspectratio]{"Graph_Experiment-Data-Sun-Jul-9-19:14:04-UTC-2017_compiled_Optimization_OFF"}
+	\caption{Average Results for Compiled Programming Languages Optimization: OFF}
 	\label{Compiled with No Optimization}
-\end{figure*}
+\end{figure}
 
-\begin{figure*}
+\begin{figure}
 	\centering
-	\includegraphics[width=\textwidth,height=8cm]{"Graph_Experiment-Data-Mon-Jul-10-07:03:37-UTC-2017_compiled_Optimization_On"}
-	\caption{Results for Compiled Programming Languages with Optimization Option}
-	\label{Compiled with Optimization Option}
-\end{figure*}
+	\includegraphics[width=9cm,height=10cm,keepaspectratio]{"Graph_Graph-data-Total-Experiment-Data-Sun-Jul-9-19:14:04-UTC-2017_compiled_Optimization_OFF"}
+	\caption{Total Results for Compiled Programming Languages Optimization: OFF}
+	\label{Compiled with No Optimization Total}
+\end{figure}
 
 \subsection{Hardware and Software components}
 
@@ -280,6 +279,7 @@ Table~\ref{optimization flags}.
 		\end{tabular}
 	\end{threeparttable}
 \end{table}
+
 
 \subsubsection{Hardware Components}
 %123456789123456789123456789123456789123456789123456789123456789 
@@ -314,13 +314,6 @@ In order to avoid additional overhead in our measurements, we
 used a Raspberry Pi\footnote{https://www.raspberrypi.org/products/raspberry-pi-3-model-b/} 
 to retrieve power consumption from our test-bed.  
 
-
-\begin{figure*}
-	\centering
-	\includegraphics[width=\textwidth,height=8cm]{"Graph_Experiment-Data-Mon-Jul-10-07:03:37-UTC-2017_interpreted-1"}
-	\caption{Results for Interpreted Programming Languages}
-	\label{Interpreted}
-\end{figure*}
 
 \subsubsection{Software Components} \label{software_components}
 %123456789123456789123456789123456789123456789123456789123456789 
@@ -373,6 +366,34 @@ locations since it will alter the correct sequence of the
 execution. 
 
 
+\begin{figure}
+	\centering
+	\includegraphics[width=9cm,height=10cm,keepaspectratio]{"Graph_Experiment-Data-Mon-Jul-10-07:03:37-UTC-2017_compiled_Optimization_On"}
+	\caption{Average Results for Compiled Programming Languages Optimization: On}
+	\label{Compiled with Optimization Option}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=9cm,height=10cm,keepaspectratio]{"Graph_Graph-data-Total-Experiment-Data-Mon-Jul-10-07:03:37-UTC-2017_compiled_Optimization_On"}
+	\caption{Total Results for Compiled Programming Languages Optimization: On}
+	\label{Compiled with Optimization Total}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=9cm,height=10cm,keepaspectratio]{"Graph_Experiment-Data-Mon-Jul-10-07:03:37-UTC-2017_interpreted-1"}
+	\caption{Average Results for Interpreted Programming Languages}
+	\label{Interpreted}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=9cm,height=10cm,keepaspectratio]{"Graph_Graph-data-Total-Experiment-Data-Mon-Jul-10-07:03:37-UTC-2017_interpreted"}
+	\caption{Total Results for Interpreted Programming Languages}
+	\label{Interpreted Total}
+\end{figure}
+
 \subsection{Retrieving Energy Measurements} 
 %123456789123456789123456789123456789123456789123456789123456789 
 As an initial step for our experiment, we shut down background 
@@ -413,30 +434,34 @@ and the fan is no longer consuming more power.
 
 \section{Results and Discussion} \label{results_and_discussion}
 %123456789123456789123456789123456789123456789123456789123456789 
-For this Section, we analyze and discuss the collected data after 
-running our experiments. 
-The results in Figure~\ref{Compiled with No Optimization} shows 
-a relatively small diverge in energy usage without the use of 
-compiler optimization. 
-The obtained results shows that Java introduced the highest 
-energy consumption among the compiled programming languages. 
+The collected results in Figure~\ref{Compiled with No Optimization} 
+and ~\ref{Compiled with No Optimization Total} illustrate the 
+average energy consumption per second and the total, respectively.
+Both Figures depict that Java and Rust contributes to the highest 
+energy consumption among the compiled programming languages without 
+the optimization option. 
 In the case of Java, we used the \textit{-Xint} flag that runs 
 the byte-code as interpreted and avoids the use of 
 Just-in-Time\footnote{https://docs.oracle.com/cd/E15289\_01/doc.40/e15058/underst\_jit.htm} 
-compiler.
+compiler. 
 
 %123456789123456789123456789123456789123456789123456789123456789 
-Figure~\ref{Compiled with Optimization Option} depicts the average 
-energy-related results with the option of compiler's optimization. 
-The results illustrate energy reduction, in most cases, after 
+Figure~\ref{Compiled with Optimization Option} and 
+~\ref{Compiled with Optimization Total} show the average energy 
+dissipation per second and the total energy consumed till the 
+task is done, respectively, while making use of the compilers 
+optimization.
+The results illustrate energy reduction, apart from Java, after 
 applying the optimization option it exhibits energy savings. 
+Moreover, in the case of Rust, the energy reduction after applying 
+the compiler optimization option is significant 
 In many cases, the results in Figure~\ref{Compiled with Optimization Option} 
 tend to zero energy consumption.
 A fact that stems from the short tasks' execution time, \textit{i.e.,} 
 less than a second, which makes in impossible for the {\sc wup} analyzer 
 to retrieve energy measurements at this time interval.
 Also, C and C++ are the programming languages that offer the most 
-of energy gains after the \textit{-O3} optimization flag 
+of energy gains in average after the \textit{-O3} optimization flag 
 is applied. 
 Moreover, Java, {\sc vb.net}, and C\# offers the most inefficient 
 energy measurements, in average, for almost all tasks with the 
@@ -447,13 +472,10 @@ run the byte-code, memory management, and the garbage collector.
 %123456789123456789123456789123456789123456789123456789123456789 
 For the interpreted programming languages, we can see the energy 
 consumption scales similarly for all the tasks. 
-On one hand, we see that R and Python results to the highest energy 
+On one hand, we see that Swift and Python results to the highest energy 
 dissipation for all tasks except from \textit{Classes}. 
-On the other hand, JavaScript and Swift contributes to the lowest 
-energy usage except for the \textit{Classes} task. 
-Moreover, Ruby's execution time is less than a second for the 
-\textit{array-concatenation} task, thus, it's energy usage is 
-depicted as zero.
+On the other hand, JavaScript offers the lowest 
+energy usage in total. 
 
 
 \section{Threats to validity} \label{threats_of_validity}
@@ -481,17 +503,19 @@ impossible for {\sc wup} to capture such measurements.
 To this end we conclude as follows. 
 The average energy consumption of compiled programming languages is 
 much lower compared to the interpreted ones for the tested tasks. 
-Except for a single case, were JavaScript consumes less energy for 
-the \textit{Selection-Sort} algorithm. 
 In addition, optimization option shows significant results are 
-available for almost all the test cases.
+available for almost all the test cases. 
+Our current results shows Java and Swift are the most inefficient 
+programming languages among the compiled and interpreted, 
+respectively.
 
-More specifically, Swift and Ruby offers the most energy gains 
-for \textit{sorting} tasks and \textit{url encoding} and 
-\textit{decoding}.
 In respect to compiled programming languages with the optimization 
-option C and  C++ contributes the lowest energy usage for tasks 
-such as sorting algorithms.
+option C and C++ contributes the lowest average energy usage while 
+Go has the lowest total energy consumption for tasks such as sorting 
+algorithms. 
+For interpreted programming languages, JavaScript offers 
+the highest level on energy-efficiency and Swift consumed the most 
+energy in total.
 
 %123456789123456789123456789123456789123456789123456789123456789 
 As for future work, we would like to test all the 29 collected 

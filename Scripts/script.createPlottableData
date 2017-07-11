@@ -48,8 +48,8 @@ do
 	do
 
 		#Before getting the file modify it
-		tail -n+3 $fullPath/$i/$j > $fullPath/$i/temp_$j
-		mv $fullPath/$i/temp_$j $fullPath/$i/$j
+		#tail -n+3 $fullPath/$i/$j > $fullPath/$i/temp_$j
+		#mv $fullPath/$i/temp_$j $fullPath/$i/$j
 
 		counter=0
 		toDivideWith=0
@@ -66,7 +66,8 @@ do
 		
 		average=0
 		if [ $toDivideWith -ne 0 ]; then
-			average=$(echo "scale=2; $sum/$toDivideWith" | bc)
+			#average=$(echo "scale=2; $sum/$toDivideWith" | bc)
+			average=$sum
 		else
 			average=0
 		fi
@@ -77,6 +78,7 @@ do
 	
 done
 
+
 for each in "${array[@]}"
 do
  	echo "$each" >> temp.txt
@@ -85,14 +87,17 @@ done
 #When done replace the instances of -- in file 
 sed -i 's/--/\t/g' temp.txt
 graphDataDir=$pathWithoutEnergyResults"/GraphData"
-mkdir -p $graphDataDir
-mv temp.txt Graph_data_$experimentName.txt
-mv Graph_data_$experimentName.txt $graphDataDir
+#The line below was commented
+#mkdir -p $graphDataDir
+#The lines below were both modified (Total) 
+mv temp.txt Graph_data_Total_$experimentName.txt
+mv Graph_data_Total_$experimentName.txt $graphDataDir
 
 #When data is created move them run script to plot graphs
-graphDataLocation=$graphDataDir"/Graph_data_"$experimentName.txt
-
-./script.plotGraphs $graphDataLocation $experimentName $graphDataDir compiled optimize
-./script.plotGraphs $graphDataLocation $experimentName $graphDataDir interpreted
+graphDataLocation=$graphDataDir"/Graph_data_Total"$experimentName.txt
+#The line below was added 
+experimentName=$experimentName"_Total_"
+#./script.plotGraphs $graphDataLocation $experimentName $graphDataDir compiled optimize
+#./script.plotGraphs $graphDataLocation $experimentName $graphDataDir interpreted
 
 exit
