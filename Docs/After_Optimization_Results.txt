@@ -1,0 +1,33 @@
+After applying Compiler Optimizations 
+=====================================
+
+C-Sharp
+=======
+increased energy for sorting algorithms quick, insertion, bubble, decode from 1-10%
+reduce energy for merge, selection, classes, url-encode and decode from 3,8-36,3%
+
+C
+=
+reduced energy usage for all sorting algorithms from 43,36--99,6%
+reduced energy usage for encoding 25,2%
+increased energy usage for decoding 14,7%
+
+C++
+===
+saved energy for sorting and classes from 0,9--85,71%
+saved energy for encoding 31,76%
+increased energy for decoding 33,33%
+
+Go
+==
+reduced energy for sorting 14,39--21,4% apart from insertion which increase 15,38%
+savings for decoding 31,35%
+increased for encoding 62%
+
+Java
+====
+saved energy for all tasks ranging from 6--98,4%
+
+Rust
+====
+saved energy for all tasks ranging from 15,8--97,9% apart from classes, increased to 15,4%
