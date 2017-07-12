@@ -1,7 +1,7 @@
 %!PS-Adobe-2.0
-%%Title: Graph_Graph-data-Total-Experiment-Data-Mon-Jul-10-07:03:37-UTC-2017_compiled_Optimization_On
+%%Title: Graph_Graph-data-Experiment-Data-Mon-Jul-10-07:03:37-UTC-2017_compiled_Optimization_OFF
 %%Creator: gnuplot 5.0 patchlevel 5
-%%CreationDate: Wed Jul 12 12:12:34 2017
+%%CreationDate: Wed Jul 12 11:53:46 2017
 %%DocumentFonts: (atend)
 %%BoundingBox: 50 50 554 770
 %%Orientation: Landscape
@@ -466,13 +466,13 @@ systemdict /pdfmark known not {
   userdict /pdfmark systemdict /cleartomark get put
 } if
 SDict begin [
-  /Title (Graph_Graph-data-Total-Experiment-Data-Mon-Jul-10-07:03:37-UTC-2017_compiled_Optimization_On)
+  /Title (Graph_Graph-data-Experiment-Data-Mon-Jul-10-07:03:37-UTC-2017_compiled_Optimization_OFF)
   /Subject (gnuplot plot)
   /Creator (gnuplot 5.0 patchlevel 5)
   /Author (sgeorgiou)
 %  /Producer (gnuplot)
 %  /Keywords ()
-  /CreationDate (Wed Jul 12 12:12:34 2017)
+  /CreationDate (Wed Jul 12 11:53:46 2017)
   /DOCINFO pdfmark
 end
 } ifelse
@@ -524,17 +524,17 @@ LCb setrgbcolor
 1.000 UL
 LTa
 LCa setrgbcolor
-490 420 M
-5686 0 V
+430 420 M
+5746 0 V
 stroke
 LTb
 LCb setrgbcolor
-490 420 M
+430 420 M
 63 0 V
-5623 0 R
+5683 0 R
 -63 0 V
 stroke
-430 420 M
+370 420 M
 [ [(Times-Roman) 100.0 0.0 true true 0 ( 0)]
 ] -33.3 MRshow
 1.000 UL
@@ -543,18 +543,18 @@ LCb setrgbcolor
 1.000 UL
 LTa
 LCa setrgbcolor
-490 1284 M
-5686 0 V
+430 1140 M
+5746 0 V
 stroke
 LTb
 LCb setrgbcolor
-490 1284 M
+430 1140 M
 63 0 V
-5623 0 R
+5683 0 R
 -63 0 V
 stroke
-430 1284 M
-[ [(Times-Roman) 100.0 0.0 true true 0 ( 100)]
+370 1140 M
+[ [(Times-Roman) 100.0 0.0 true true 0 ( 5)]
 ] -33.3 MRshow
 1.000 UL
 LTb
@@ -562,18 +562,18 @@ LCb setrgbcolor
 1.000 UL
 LTa
 LCa setrgbcolor
-490 2148 M
-5686 0 V
+430 1860 M
+5746 0 V
 stroke
 LTb
 LCb setrgbcolor
-490 2148 M
+430 1860 M
 63 0 V
-5623 0 R
+5683 0 R
 -63 0 V
 stroke
-430 2148 M
-[ [(Times-Roman) 100.0 0.0 true true 0 ( 200)]
+370 1860 M
+[ [(Times-Roman) 100.0 0.0 true true 0 ( 10)]
 ] -33.3 MRshow
 1.000 UL
 LTb
@@ -581,18 +581,18 @@ LCb setrgbcolor
 1.000 UL
 LTa
 LCa setrgbcolor
-490 3011 M
-5686 0 V
+430 2580 M
+5746 0 V
 stroke
 LTb
 LCb setrgbcolor
-490 3011 M
+430 2580 M
 63 0 V
-5623 0 R
+5683 0 R
 -63 0 V
 stroke
-430 3011 M
-[ [(Times-Roman) 100.0 0.0 true true 0 ( 300)]
+370 2580 M
+[ [(Times-Roman) 100.0 0.0 true true 0 ( 15)]
 ] -33.3 MRshow
 1.000 UL
 LTb
@@ -600,18 +600,18 @@ LCb setrgbcolor
 1.000 UL
 LTa
 LCa setrgbcolor
-490 3875 M
-5686 0 V
+430 3299 M
+5746 0 V
 stroke
 LTb
 LCb setrgbcolor
-490 3875 M
+430 3299 M
 63 0 V
-5623 0 R
+5683 0 R
 -63 0 V
 stroke
-430 3875 M
-[ [(Times-Roman) 100.0 0.0 true true 0 ( 400)]
+370 3299 M
+[ [(Times-Roman) 100.0 0.0 true true 0 ( 20)]
 ] -33.3 MRshow
 1.000 UL
 LTb
@@ -619,18 +619,37 @@ LCb setrgbcolor
 1.000 UL
 LTa
 LCa setrgbcolor
-490 4739 M
-5686 0 V
+430 4019 M
+5746 0 V
 stroke
 LTb
 LCb setrgbcolor
-490 4739 M
+430 4019 M
 63 0 V
-5623 0 R
+5683 0 R
 -63 0 V
 stroke
+370 4019 M
+[ [(Times-Roman) 100.0 0.0 true true 0 ( 25)]
+] -33.3 MRshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTa
+LCa setrgbcolor
 430 4739 M
-[ [(Times-Roman) 100.0 0.0 true true 0 ( 500)]
+5746 0 V
+stroke
+LTb
+LCb setrgbcolor
+430 4739 M
+63 0 V
+5683 0 R
+-63 0 V
+stroke
+370 4739 M
+[ [(Times-Roman) 100.0 0.0 true true 0 ( 30)]
 ] -33.3 MRshow
 1.000 UL
 LTb
@@ -638,18 +657,18 @@ LCb setrgbcolor
 1.000 UL
 LTa
 LCa setrgbcolor
-490 420 M
+430 420 M
 0 4319 V
 stroke
 LTb
 LCb setrgbcolor
-490 420 M
+430 420 M
 0 63 V
 0 4256 R
 0 -63 V
 stroke
-490 320 M
-[ [(Times-Roman) 100.0 0.0 true true 0 (array-concat)]
+430 320 M
+[ [(Times-Roman) 100.0 0.0 true true 0 (array-concatenation)]
 ] -33.3 MCshow
 1.000 UL
 LTb
@@ -657,17 +676,17 @@ LCb setrgbcolor
 1.000 UL
 LTa
 LCa setrgbcolor
-1201 420 M
+1148 420 M
 0 4319 V
 stroke
 LTb
 LCb setrgbcolor
-1201 420 M
+1148 420 M
 0 63 V
 0 4256 R
 0 -63 V
 stroke
-1201 320 M
+1148 320 M
 [ [(Times-Roman) 100.0 0.0 true true 0 (classes)]
 ] -33.3 MCshow
 1.000 UL
@@ -676,18 +695,18 @@ LCb setrgbcolor
 1.000 UL
 LTa
 LCa setrgbcolor
-1912 420 M
+1867 420 M
 0 4319 V
 stroke
 LTb
 LCb setrgbcolor
-1912 420 M
+1867 420 M
 0 63 V
 0 4256 R
 0 -63 V
 stroke
-1912 320 M
-[ [(Times-Roman) 100.0 0.0 true true 0 (bubble-sort)]
+1867 320 M
+[ [(Times-Roman) 100.0 0.0 true true 0 (sorting-algorithms-bubble-sort)]
 ] -33.3 MCshow
 1.000 UL
 LTb
@@ -695,18 +714,18 @@ LCb setrgbcolor
 1.000 UL
 LTa
 LCa setrgbcolor
-2622 420 M
+2585 420 M
 0 4319 V
 stroke
 LTb
 LCb setrgbcolor
-2622 420 M
+2585 420 M
 0 63 V
 0 4256 R
 0 -63 V
 stroke
-2622 320 M
-[ [(Times-Roman) 100.0 0.0 true true 0 (insertion-sort)]
+2585 320 M
+[ [(Times-Roman) 100.0 0.0 true true 0 (sorting-algorithms-insertion-sort)]
 ] -33.3 MCshow
 1.000 UL
 LTb
@@ -714,18 +733,18 @@ LCb setrgbcolor
 1.000 UL
 LTa
 LCa setrgbcolor
-3333 420 M
+3303 420 M
 0 4319 V
 stroke
 LTb
 LCb setrgbcolor
-3333 420 M
+3303 420 M
 0 63 V
 0 4256 R
 0 -63 V
 stroke
-3333 320 M
-[ [(Times-Roman) 100.0 0.0 true true 0 (merge-sort)]
+3303 320 M
+[ [(Times-Roman) 100.0 0.0 true true 0 (sorting-algorithms-merge-sort)]
 ] -33.3 MCshow
 1.000 UL
 LTb
@@ -733,18 +752,18 @@ LCb setrgbcolor
 1.000 UL
 LTa
 LCa setrgbcolor
-4044 420 M
+4021 420 M
 0 4319 V
 stroke
 LTb
 LCb setrgbcolor
-4044 420 M
+4021 420 M
 0 63 V
 0 4256 R
 0 -63 V
 stroke
-4044 320 M
-[ [(Times-Roman) 100.0 0.0 true true 0 (quick-sort)]
+4021 320 M
+[ [(Times-Roman) 100.0 0.0 true true 0 (sorting-algorithms-quicksort)]
 ] -33.3 MCshow
 1.000 UL
 LTb
@@ -752,18 +771,18 @@ LCb setrgbcolor
 1.000 UL
 LTa
 LCa setrgbcolor
-4755 420 M
+4740 420 M
 0 4319 V
 stroke
 LTb
 LCb setrgbcolor
-4755 420 M
+4740 420 M
 0 63 V
 0 4256 R
 0 -63 V
 stroke
-4755 320 M
-[ [(Times-Roman) 100.0 0.0 true true 0 (selection-sort)]
+4740 320 M
+[ [(Times-Roman) 100.0 0.0 true true 0 (sorting-algorithms-selection-sort)]
 ] -33.3 MCshow
 1.000 UL
 LTb
@@ -771,17 +790,17 @@ LCb setrgbcolor
 1.000 UL
 LTa
 LCa setrgbcolor
-5465 420 M
+5458 420 M
 0 4319 V
 stroke
 LTb
 LCb setrgbcolor
-5465 420 M
+5458 420 M
 0 63 V
 0 4256 R
 0 -63 V
 stroke
-5465 320 M
+5458 320 M
 [ [(Times-Roman) 100.0 0.0 true true 0 (url-decoding)]
 ] -33.3 MCshow
 1.000 UL
@@ -809,11 +828,11 @@ LCb setrgbcolor
 1.000 UL
 LTB
 LCb setrgbcolor
-490 4739 N
-490 420 L
-5686 0 V
+430 4739 N
+430 420 L
+5746 0 V
 0 4319 V
--5686 0 V
+-5746 0 V
 Z stroke
 1.000 UP
 1.000 UL
@@ -827,17 +846,17 @@ currentpoint gsave translate -270 rotate 0 0 moveto
 grestore
 LTb
 LCb setrgbcolor
-3333 170 M
+3303 170 M
 [ [(Times-Roman) 100.0 0.0 true true 0 (Executed Tasks)]
 ] -33.3 MCshow
 LTb
 LCb setrgbcolor
-3333 4889 M
-[ [(Times-Roman) 100.0 0.0 true true 0 (Plot Graphs Graph-data-Total-Experiment-Data-Mon-Jul-10-07:03:37-UTC-2017 for compiled Programming Languages Optimization: ON)]
+3303 4889 M
+[ [(Times-Roman) 100.0 0.0 true true 0 (Plot Graphs Graph-data-Experiment-Data-Mon-Jul-10-07:03:37-UTC-2017 for compiled Programming Languages Optimization: OFF)]
 ] -33.3 MCshow
 LCb setrgbcolor
 130 50 M
-[ [(Times-Roman) 100.0 0.0 true true 0 (12/07/17 12:12)]
+[ [(Times-Roman) 100.0 0.0 true true 0 (12/07/17 11:53)]
 ] -33.3 MLshow
 % Begin plot #1
 1.000 UP
@@ -852,24 +871,24 @@ LTb
 LTb
 0.58 0.00 0.83 C 6776 4689 M
 303 0 V
-490 420 M
-711 472 V
-711 1340 V
-710 -653 V
-711 -95 V
-4044 569 L
-711 585 V
-710 5 V
-711 288 V
-490 420 Pls
-1201 892 Pls
-1912 2232 Pls
-2622 1579 Pls
-3333 1484 Pls
-4044 569 Pls
-4755 1154 Pls
-5465 1159 Pls
-6176 1447 Pls
+430 420 M
+718 2620 V
+719 -298 V
+718 -175 V
+718 387 V
+718 -58 V
+719 -437 V
+718 1042 V
+718 -229 V
+430 420 Pls
+1148 3040 Pls
+1867 2742 Pls
+2585 2567 Pls
+3303 2954 Pls
+4021 2896 Pls
+4740 2459 Pls
+5458 3501 Pls
+6176 3272 Pls
 6927 4689 Pls
 % End plot #1
 % Begin plot #2
@@ -885,24 +904,24 @@ LTb
 LTb
 0.00 0.62 0.45 C 6776 4589 M
 303 0 V
-490 420 M
-711 947 V
-711 389 V
-2622 420 L
-711 589 V
-4044 420 L
-711 0 V
-710 1293 V
-711 -183 V
-490 420 Crs
-1201 1367 Crs
-1912 1756 Crs
-2622 420 Crs
-3333 1009 Crs
-4044 420 Crs
-4755 420 Crs
-5465 1713 Crs
-6176 1530 Crs
+430 420 M
+718 1578 V
+719 649 V
+2585 420 L
+718 2455 V
+4021 420 L
+719 0 V
+718 3078 V
+718 4 V
+430 420 Crs
+1148 1998 Crs
+1867 2647 Crs
+2585 420 Crs
+3303 2875 Crs
+4021 420 Crs
+4740 420 Crs
+5458 3498 Crs
+6176 3502 Crs
 6927 4589 Crs
 % End plot #2
 % Begin plot #3
@@ -918,24 +937,24 @@ LTb
 LTb
 0.34 0.71 0.91 C 6776 4489 M
 303 0 V
-490 420 M
-711 517 V
-711 308 V
-2622 563 L
-3333 420 L
-711 0 V
-711 0 V
-710 746 V
-711 -7 V
-490 420 Star
-1201 937 Star
-1912 1245 Star
-2622 563 Star
-3333 420 Star
-4044 420 Star
-4755 420 Star
-5465 1166 Star
-6176 1159 Star
+430 420 M
+718 2874 V
+719 -583 V
+718 99 V
+3303 420 L
+718 0 V
+719 0 V
+718 3110 V
+718 -648 V
+430 420 Star
+1148 3294 Star
+1867 2711 Star
+2585 2810 Star
+3303 420 Star
+4021 420 Star
+4740 420 Star
+5458 3530 Star
+6176 2882 Star
 6927 4489 Star
 % End plot #3
 % Begin plot #4
@@ -951,24 +970,24 @@ LTb
 LTb
 0.90 0.62 0.00 C 6776 4389 M
 303 0 V
-490 420 M
-711 387 V
-711 261 V
-2622 550 L
-3333 420 L
-711 0 V
-711 1166 V
-5465 880 L
-711 249 V
-490 420 Box
-1201 807 Box
-1912 1068 Box
-2622 550 Box
-3333 420 Box
-4044 420 Box
-4755 1586 Box
-5465 880 Box
-6176 1129 Box
+430 420 M
+718 3225 V
+1867 2580 L
+718 0 V
+3303 420 L
+718 0 V
+719 2160 V
+718 393 V
+718 401 V
+430 420 Box
+1148 3645 Box
+1867 2580 Box
+2585 2580 Box
+3303 420 Box
+4021 420 Box
+4740 2580 Box
+5458 2973 Box
+6176 3374 Box
 6927 4389 Box
 % End plot #4
 % Begin plot #5
@@ -984,24 +1003,24 @@ LTb
 LTb
 0.94 0.89 0.26 C 6776 4289 M
 303 0 V
-490 420 M
-711 914 V
-1912 969 L
-2622 518 L
-711 503 V
-4044 518 L
-711 11 V
-710 542 V
-711 149 V
-490 420 BoxF
-1201 1334 BoxF
-1912 969 BoxF
-2622 518 BoxF
-3333 1021 BoxF
-4044 518 BoxF
-4755 529 BoxF
-5465 1071 BoxF
-6176 1220 BoxF
+430 420 M
+718 3046 V
+1867 2251 L
+718 -204 V
+718 878 V
+718 -864 V
+719 173 V
+718 900 V
+718 -48 V
+430 420 BoxF
+1148 3466 BoxF
+1867 2251 BoxF
+2585 2047 BoxF
+3303 2925 BoxF
+4021 2061 BoxF
+4740 2234 BoxF
+5458 3134 BoxF
+6176 3086 BoxF
 6927 4289 BoxF
 % End plot #5
 % Begin plot #6
@@ -1017,24 +1036,24 @@ LTb
 LTb
 0.00 0.45 0.70 C 6776 4189 M
 303 0 V
-490 420 M
-711 914 V
-711 -67 V
-2622 842 L
-3333 717 L
-4044 420 L
-711 1151 V
-5465 420 L
-711 1899 V
-490 420 Circle
-1201 1334 Circle
-1912 1267 Circle
-2622 842 Circle
-3333 717 Circle
-4044 420 Circle
-4755 1571 Circle
-5465 420 Circle
-6176 2319 Circle
+430 420 M
+718 3046 V
+719 -695 V
+718 -4 V
+718 129 V
+4021 420 L
+719 1918 V
+5458 420 L
+718 2636 V
+430 420 Circle
+1148 3466 Circle
+1867 2771 Circle
+2585 2767 Circle
+3303 2896 Circle
+4021 420 Circle
+4740 2338 Circle
+5458 420 Circle
+6176 3056 Circle
 6927 4189 Circle
 % End plot #6
 % Begin plot #7
@@ -1050,20 +1069,20 @@ LTb
 LTb
 0.90 0.12 0.06 C 6776 4089 M
 303 0 V
-490 420 M
-1912 2817 L
-2622 1501 L
-711 518 V
-711 2325 V
-4755 2079 L
-710 -907 V
-490 420 CircleF
-1912 2817 CircleF
-2622 1501 CircleF
-3333 2019 CircleF
-4044 4344 CircleF
-4755 2079 CircleF
-5465 1172 CircleF
+430 420 M
+1867 2770 L
+718 -349 V
+718 421 V
+718 194 V
+719 -313 V
+718 828 V
+430 420 CircleF
+1867 2770 CircleF
+2585 2421 CircleF
+3303 2842 CircleF
+4021 3036 CircleF
+4740 2723 CircleF
+5458 3551 CircleF
 6927 4089 CircleF
 % End plot #7
 2.000 UL
@@ -1072,11 +1091,11 @@ LCb setrgbcolor
 1.000 UL
 LTB
 LCb setrgbcolor
-490 4739 N
-490 420 L
-5686 0 V
+430 4739 N
+430 420 L
+5746 0 V
 0 4319 V
--5686 0 V
+-5746 0 V
 Z stroke
 1.000 UP
 1.000 UL

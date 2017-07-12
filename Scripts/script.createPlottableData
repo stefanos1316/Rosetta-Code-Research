@@ -66,8 +66,8 @@ do
 		
 		average=0
 		if [ $toDivideWith -ne 0 ]; then
-			#average=$(echo "scale=2; $sum/$toDivideWith" | bc)
-			average=$sum
+			average=$(echo "scale=2; $sum/$toDivideWith" | bc)
+			#average=$sum
 		else
 			average=0
 		fi
@@ -90,13 +90,13 @@ graphDataDir=$pathWithoutEnergyResults"/GraphData"
 #The line below was commented
 #mkdir -p $graphDataDir
 #The lines below were both modified (Total) 
-mv temp.txt Graph_data_Total_$experimentName.txt
-mv Graph_data_Total_$experimentName.txt $graphDataDir
+mv temp.txt Graph_data_$experimentName.txt
+mv Graph_data_$experimentName.txt $graphDataDir
 
 #When data is created move them run script to plot graphs
-graphDataLocation=$graphDataDir"/Graph_data_Total"$experimentName.txt
+graphDataLocation=$graphDataDir"/Graph_data"$experimentName.txt
 #The line below was added 
-experimentName=$experimentName"_Total_"
+experimentName=$experimentName
 #./script.plotGraphs $graphDataLocation $experimentName $graphDataDir compiled optimize
 #./script.plotGraphs $graphDataLocation $experimentName $graphDataDir interpreted
 

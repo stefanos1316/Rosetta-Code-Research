@@ -44,7 +44,7 @@ if [ "$4" == "compiled" ]; then
 	set xlabel "Executed Tasks"
 	set ylabel "Energy Consumption (Joules)"
 	#set xtic rotate
-	set yrange [0:3900]
+	set yrange [0:500]
 	set output "$filename"
 	set title "$title"
 

@@ -1,7 +1,7 @@
 %!PS-Adobe-2.0
 %%Title: Graph_Graph-data-Total-Experiment-Data-Mon-Jul-10-07:03:37-UTC-2017_interpreted
 %%Creator: gnuplot 5.0 patchlevel 5
-%%CreationDate: Tue Jul 11 22:20:39 2017
+%%CreationDate: Wed Jul 12 11:46:27 2017
 %%DocumentFonts: (atend)
 %%BoundingBox: 50 50 554 770
 %%Orientation: Landscape
@@ -472,7 +472,7 @@ SDict begin [
   /Author (sgeorgiou)
 %  /Producer (gnuplot)
 %  /Keywords ()
-  /CreationDate (Tue Jul 11 22:20:39 2017)
+  /CreationDate (Wed Jul 12 11:46:27 2017)
   /DOCINFO pdfmark
 end
 } ifelse
@@ -894,7 +894,7 @@ LCb setrgbcolor
 ] -33.3 MCshow
 LCb setrgbcolor
 130 50 M
-[ [(Times-Roman) 100.0 0.0 true true 0 (11/07/17 22:20)]
+[ [(Times-Roman) 100.0 0.0 true true 0 (12/07/17 11:46)]
 ] -33.3 MLshow
 % Begin plot #1
 1.000 UP
@@ -909,24 +909,24 @@ LTb
 LTb
 0.58 0.00 0.83 C 6776 4689 M
 303 0 V
-610 424 M
-673 23 V
-674 7 V
-673 -27 V
-673 55 V
-673 55 V
-4650 431 L
-673 1 V
-673 9 V
-610 424 Pls
-1283 447 Pls
-1957 454 Pls
-2630 427 Pls
-3303 482 Pls
-3976 537 Pls
-4650 431 Pls
-5323 432 Pls
-5996 441 Pls
+610 420 M
+673 11 V
+674 -4 V
+673 -6 V
+673 6 V
+673 -6 V
+674 0 V
+673 7 V
+673 2 V
+610 420 Pls
+1283 431 Pls
+1957 427 Pls
+2630 421 Pls
+3303 427 Pls
+3976 421 Pls
+4650 421 Pls
+5323 428 Pls
+5996 430 Pls
 6927 4689 Pls
 % End plot #1
 % Begin plot #2
