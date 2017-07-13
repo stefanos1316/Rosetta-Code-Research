@@ -1,7 +1,7 @@
 \section{Introduction}
 %123456789123456789123456789123456789123456789123456789123456789
-The increasing demands on services and computational applications 
-from {\sc ict}-related products are major factors that contribute
+The increasing demands of services and computational applications 
+from {\sc ict}--related products significantly contribute
 to the increase of energy consumption.{\footnote{Although in the physical sense energy 
 		cannot be consumed, we will use the terms energy ``consumption'', 
 		``requirement'', and ``usage'' to refer to the conversion of 
@@ -12,8 +12,8 @@ to the increase of energy consumption.{\footnote{Although in the physical sense 
 		to reduced consumption}} 
 Recent research conducted by Gelenbe and Caseau~\shortcite{ICT_energy_impact_1} and 
 Van Heddeghem et al.~\shortcite{ICT_energy_impact_2} indicates a 
-rising trend of the {\sc it} sector energy requirements, which are 
-expected to reach 15\% of the world's total energy consumption 
+rising trend of the {\sc it} sector's energy requirements.
+It is expected that these requirements will reach 15\% of the world's total energy consumption 
 by 2020. 
 
 %Moreover, results in {\sc smart}er2030\footnote{http://smarter2030.gesi.org/downloads.php} report an increase of green house gas emissions due to the it-sector.  IT-related gas emissions are growing much faster than initially predicted and are estimated at around 2.3\% of total gas emissions globally. 
@@ -23,16 +23,16 @@ by 2020.
 %123456789123456789123456789123456789123456789123456789123456789
 % Why is importat for software engineering and what are the 
 % current trend and goal show the scale of a change...
-Traditionally, most of the studies, for energy efficiency, 
+Most of the studies on energy efficiency
 have considered energy consumption at hardware level. 
 However, there is much of evidence that software can also 
-alter energy dissipation significantly \cite{eder_energy_consumptions, 
+significantly alter energy dissipation~\cite{eder_energy_consumptions, 
 capra_is_2012, ferreira_seflab_2013}. 
 Therefore, many conference tracks (\textit{e.g.} {\sc greens},\footnote{http://greens.cs.vu.nl/} 
-eEnergy)\footnote{http://conferences.sigcomm.org/eenergy/2017/cfp.php} have identified the energy-efficiency 
-at the software level as an emerging research challenge aiming 
-to reduce energy consumption of a software through software development.
-
+eEnergy)\footnote{http://conferences.sigcomm.org/eenergy/2017/cfp.php}
+have recognized the energy--efficiency at the software level
+as an emerging research challenge
+regarding the implementation of modern systems.
 
 %In fact, some researchers showed by using inefficient data structures 
 %or design patterns can increase energy dissipation from 300\% to 700\% 
@@ -47,32 +47,33 @@ to reduce energy consumption of a software through software development.
 
 %123456789123456789123456789123456789123456789123456789123456789
 %How to achieve this and 
-Nowadays, the software development has shifted from traditional 
-monolithic architectures to a more agile one including micro-services. 
-The feature of this approach is the development of independent and 
+Nowadays, software has been shifted from traditional 
+monolithic architectures to more agile ones, including micro-services. 
+The main characteristic of this approach is the development of independent and 
 reusable small services in a variety of programming languages.
-However, the energy impact of different tasks implemented in different 
-programming languages is still new and unknown to researchers and
-developers.
+However, there is a limited number of research works
+that examine the energy impact of programming tasks implemented in different 
+programming languages.
 
 
 To identify trends and possible gains regarding the reduce of energy 
-consumption during software development, we conducted an empirical 
-study aiming at eliciting energy usage, starting from small 
-tasks implemented in a variety of well-known and most used 
-programming languages. 
+consumption, during software development, we conducted an empirical 
+study using data from the Rosetta Code Repository.
+Our goal is to elicitate energy usages from small 
+tasks implemented in a variety of popular
+programming languages.
 To this end, our results show \textit{which} of the interpreted and 
 compiled programming languages offer more energy efficient implementations 
 for specific tasks. 
-Moreover, we show the negative impact if choosing an inefficient implementation.
+Moreover, we show the negative impact of choosing an inefficient implementation.
 
 
 %123456789123456789123456789123456789123456789123456789123456789
 %Paper's remainder.
 The remainder of this paper is organized as follows.
-Section~\ref{experiment_setup} describes our experimental 
-setup; dataset refining, the software and hardware 
-tools, and our methodology for retrieving results. 
+Section~\ref{experiment_setup} describes: 1) our experimental 
+setup, 2) our dataset's cleaning method, 3) the software and hardware 
+tools we used, and 4) our analysis methodology. 
 In Section~\ref{results_and_discussion}, we present our preliminary 
 results and in Section~\ref{threats_of_validity} we discuss 
 potential threats to validity.
