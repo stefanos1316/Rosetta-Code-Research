@@ -1,8 +1,8 @@
 \section{Introduction}
 %123456789123456789123456789123456789123456789123456789123456789
 The increasing demands on services and computational applications 
-from {\sc ict}-related products are major factors contributing 
-to the increase energy consumption.{\footnote{Although in the physical sense energy 
+from {\sc ict}-related products are major factors that contribute
+to the increase of energy consumption.{\footnote{Although in the physical sense energy 
 		cannot be consumed, we will use the terms energy ``consumption'', 
 		``requirement'', and ``usage'' to refer to the conversion of 
 		electrical energy by {\sc ict} equipment into thermal energy 
@@ -10,7 +10,7 @@ to the increase energy consumption.{\footnote{Although in the physical sense ene
 		Correspondingly, we will use the term energy ``savings", 
 		``reduction", ``efficiency", and ``optimization" to refer 
 		to reduced consumption}} 
-Recent research by Gelenbe and Caseau~\shortcite{ICT_energy_impact_1} and 
+Recent research conducted by Gelenbe and Caseau~\shortcite{ICT_energy_impact_1} and 
 Van Heddeghem et al.~\shortcite{ICT_energy_impact_2} indicates a 
 rising trend of the {\sc it} sector energy requirements, which are 
 expected to reach 15\% of the world's total energy consumption 
@@ -23,15 +23,15 @@ by 2020.
 %123456789123456789123456789123456789123456789123456789123456789
 % Why is importat for software engineering and what are the 
 % current trend and goal show the scale of a change...
-Traditionally, most of the studies, regarding energy efficiency, 
-considered energy consumption at hardware level. 
+Traditionally, most of the studies, for energy efficiency, 
+have considered energy consumption at hardware level. 
 However, there is much of evidence that software can also 
 alter energy dissipation significantly \cite{eder_energy_consumptions, 
 capra_is_2012, ferreira_seflab_2013}. 
-Therefore, many conferences have identified the energy-efficiency 
-at the software level as an emerging research challenge in order 
-to reduce energy consumption of a software without compromising its 
-run-time performance.
+Therefore, many conference tracks (\textit{e.g.} {\sc greens},\footnote{http://greens.cs.vu.nl/} 
+eEnergy)\footnote{http://conferences.sigcomm.org/eenergy/2017/cfp.php} have identified the energy-efficiency 
+at the software level as an emerging research challenge aiming 
+to reduce energy consumption of a software through software development.
 
 
 %In fact, some researchers showed by using inefficient data structures 
@@ -47,9 +47,8 @@ run-time performance.
 
 %123456789123456789123456789123456789123456789123456789123456789
 %How to achieve this and 
-Nowadays, the development of a software has shifted from traditional 
-monolithic architectures and follows a more agile, cutting-edge 
-approach such as micro-services. 
+Nowadays, the software development has shifted from traditional 
+monolithic architectures to a more agile one including micro-services. 
 The feature of this approach is the development of independent and 
 reusable small services in a variety of programming languages.
 However, the energy impact of different tasks implemented in different 
@@ -57,38 +56,39 @@ programming languages is still new and unknown to researchers and
 developers.
 
 
-In order to identify trends and possible gains in reduce energy 
-consumption in software development, we conducted an empirical 
-study aiming to elicit energy usage results starting from small 
-tasks implemented in a variety of well-known and highly used 
+To identify trends and possible gains regarding the reduce of energy 
+consumption during software development, we conducted an empirical 
+study aiming at eliciting energy usage, starting from small 
+tasks implemented in a variety of well-known and most used 
 programming languages. 
-To this end, our aim in this research is to identify which 
-programming languages offer more energy efficient implementations 
-for different tasks.
+To this end, our results show \textit{which} of the interpreted and 
+compiled programming languages offer more energy efficient implementations 
+for specific tasks. 
+Moreover, we show the negative impact if choosing an inefficient implementation.
 
 
 %123456789123456789123456789123456789123456789123456789123456789
 %Paper's remainder.
 The remainder of this paper is organized as follows.
-Section~\ref{experiment_setup} describes in detail our experimental 
-platform, the software and hardware tools we used, how we 
-refined our dataset, and our methodology for retrieving our results. 
-In Section~\ref{results_and_discussion}, we present our preliminary results and in Section\ref{threats_of_validity} we discuss potential threats to validity.
-In Section~\ref{related_work}, we discuss prior work done in the 
+Section~\ref{experiment_setup} describes our experimental 
+setup; dataset refining, the software and hardware 
+tools, and our methodology for retrieving results. 
+In Section~\ref{results_and_discussion}, we present our preliminary 
+results and in Section~\ref{threats_of_validity} we discuss 
+potential threats to validity.
+In Section~\ref{related_work}, we list prior work done in the 
 field and compare it with ours.
 Finally, we conclude in Section~\ref{conclusiona_and_future_work} 
-and we discuss future work and possible directions for this 
-research.
+and we present future research directions.
 
-\section{Experiment Setup} \label{experiment_setup}
+\section{Experimental Setup} \label{experiment_setup}
 %123456789123456789123456789123456789123456789123456789123456789
-In this Section, we describe the experimental approach for conducting  
-our research and retrieving measurements. 
+In this Section, we describe our approach for conducting  
+our experiment and for retrieving measurements. 
 Initially, we provide information about the obtained dataset 
-and the way we decided to select our tasks and refine it. 
-Furthermore, we explain the setup up of our experimental 
-platform, the additional hardware tools, and the software 
-tools used to conduct this research. 
+and the way we selected our tasks and refine it. 
+Furthermore, we explain our experimental setup, the hardware and 
+software tools we used. 
 
 \begin{table}
 	\begin{threeparttable}
@@ -103,28 +103,22 @@ tools used to conduct this research.
 			&Go		& go version go1.7.5  \\
 			&Rust	& rustc version 1.18.0 \\
 			\midrule
-			Semi-&{\sc vb.net} & mono version 4.4.2.0 (vbnc)\tnote{a} \\
-			Compiled&C\#		& mono version 4.4.2.0 (mics)\tnote{b} \\
+			Semi-&{\sc vb.net} & mono version 4.4.2.0 (vbnc)\\
+			Compiled&C\#		& mono version 4.4.2.0 (mics)\\
 			&Java	& javac version 1.8.0\_131 \\
 			\midrule
 			Interpreted&JavaScript & node version 6.10.3 \\
 			&Perl	& perl version 5.24.1 \\
-			&Php		& php version 7.0.19 \\
+			&{\sc php}		& php version 7.0.19 \\
 			&Python	& python version 2.7.13 \\
 			&R		& Rscript version 3.3.3 \\
 			&Ruby	& ruby version 2.3.3p222 \\
 			
-			&Swift 	& swift version 3.0.2\tnote{c} \\
+			&Swift 	& swift version 3.0.2 \\
 			
 			\bottomrule
 		\end{tabular}
-		\begin{tablenotes}
-			\begin{small}
-				\item[a] {http://www.mono-project.com/docs/about-mono/languages/visualbasic/}
-				\item[b] {https://www.codetuts.tech/compile-c-sharp-command-line/}
-				\item[c] {https://github.com/FedoraSwift/fedora-swift2/releases/tag/v0.0.2}
-			\end{small}
-		\end{tablenotes}
+		
 	\end{threeparttable}
 \end{table}
 
@@ -154,79 +148,82 @@ tools used to conduct this research.
 
 \subsection{Dataset}
 %123456789123456789123456789123456789123456789123456789123456789
-In the context of this study, we used Rosetta 
-Code,\footnote{http://rosettacode.org/wiki/Rosetta\_Code} a 
+In the context of this study, we used the Rosetta 
+Code,\footnote{http://rosettacode.org/wiki/Rosetta\_Code} which is a 
 publicly available programming chrestomathy site that offers 
 851 tasks, 230 draft tasks, and a collection of 658 different 
 programming languages. In general, not all tasks are implemented, and not all tasks are possible to implement in all languages.  
-We found and downloaded a Github repository\footnote{https://github.com/acmeism/RosettaCodeData} 
-which contains all the currently implemented tasks introduced in 
-Rosetta Code website.
+For our study, we cloned a Github repository\footnote{https://github.com/acmeism/RosettaCodeData} 
+that contains all the currently implemented tasks introduced in 
+the Rosetta Code website.
 
 %123456789123456789123456789123456789123456789123456789123456789
-For selecting the highly used programming languages, we made use 
+To select popular programming languages, we consulted the website 
 of tiobe,\footnote{https://www.tiobe.com/tiobe-index/} a software 
 quality company.
-Tiobe uses a search query for index rating of the most popular programming languages around the web on a monthly basis. This query is based on a formula\footnote{https://www.tiobe.com/tiobe-index/programming-languages-definition/} that uses the highest ranked search engines (according to Alexa)\footnote{http://www.alexa.com/} and a number or requirements enlisted for programming languages.
-Initially, we decided to chose the top 15 programming languages 
-as enlisted for June 2017. 
+Tiobe uses a search query for index rating of the most popular 
+programming languages around the web on a monthly basis. 
+This query is based on a 
+formula\footnote{https://www.tiobe.com/tiobe-index/programming-languages-definition/} 
+that uses the highest ranked search engines 
+(according to Alexa)\footnote{http://www.alexa.com/} and a 
+number or requirements enlisted for the programming languages.
+We decided to chose the top 15 programming languages 
+enlisted for June 2017. 
 From the current list, we excluded programming languages such as 
-Delphi (not available for Linux) and Assembly (since it is architecture dependent). 
-In contrast, we included Rust in our dataset which is a memory safe 
+Delphi (not available for Linux OS we are using) and Assembly (different 
+implementations between processor architectures). 
+In contrast, we included Rust in our dataset that is a memory safe 
 programming language and is gaining vast popularity in the web. \
-Therefore, we ended up with 14 programming languages as illustrated 
+Therefore, we ended up with 14 programming languages as it is illustrated 
 in Table~\ref{Languages_Compilers_and_Interpreters}.
 
 %123456789123456789123456789123456789123456789123456789123456789 
-In terms of selecting tasks, we developed a shell script (more 
-details in Subsection~\ref{software_components}) to identify 
+To select the examined tasks, we developed a shell script (see 
+Subsection~\ref{software_components}) to identify 
 which of the 851 tasks offer the most implementations for the 
 programming languages of our selection.
 After launching our script, we obtained around 29 different tasks. 
 For the context of our preliminary study, we chose only 
 nine tasks implemented in the most of the programming languages 
 of our selection. 
-The selected tasks were \textit{array-concatenation, classes} 
+The selected tasks were: \textit{array-concatenation, classes} 
 (creating an object and calling a method to print a variable's value), 
 \textit{url-encoding and decoding, bubble-, quick-, insertion-, merge-, 
-	and selection- sorting algorithms}
+	and selection- sorting algorithms}.
 Moreover, to further refine our dataset we used the following steps: 
 
 \begin{enumerate}
 	\item [$\bullet$] Some of the tasks offered more than one implementation 
 	for the same programming language. 
 	Thus, we had to browse manually through each directory and remove 
-	them until we remained with only one that is consistent with the other 
+	them until we had only one that is consistent with the other 
 	implementation. 
-	For example, when most of the implemented tasks used iterative implementation 
+	For instance, when most of the implemented tasks used iterative implementation, 
 	we removed the ones using recursion. 
-	\item [$\bullet$] The Java file names were 
-	different from the public class names which results to compilation 
-	error if not changed accordingly. 
+	\item [$\bullet$] The Java file names and their public names where different 
+	which resulted in compilation error. 
+	Thus, we had to manually change them.
 	\item [$\bullet$] Some of the implementations did not have main 
 	classes, or the same data with other tasks. 
-	Therefore, we change the source code to offer consistency.
-	\item [$\bullet$] For some programming languages which do not offer 
-	the class option such as C and Go, we used structs. 
-	\item [$\bullet$] Some of the tasks are relatively small and may 
-	finish faster than a second which makes it impossible for our 
+	Therefore, we changed the source code to offer consistency.
+	\item [$\bullet$] For some programming languages that do not offer 
+	the class option such as C and Go, we used {\tt structs}. 
+	\item [$\bullet$] Some of the tasks were relatively small and 
+	finished faster than a second which makes it impossible for our 
 	power analyzer to capture those results. 
 	Therefore, we added all the selected tasks in an iteration loop of 
 	a million times. 
 \end{enumerate}
 
-After applying the above modification on our dataset, we categorized our 
-programming languages in three main categories, namely, compiled, semi-compiled, and interpreted, as illustrated in 
-Table~\ref{Languages_Compilers_and_Interpreters}. 
-Moreover, for the programming languages which offer a compiled approach 
+After applying the above modifications on our dataset, we categorized our 
+programming languages in three main categories, namely, compiled, 
+semi-compiled, and interpreted (see Table~\ref{Languages_Compilers_and_Interpreters}). 
+For the programming languages which offer a semi-compiled approach 
 such as Java, {\sc vb.net}, and C\#, we added them under the category of 
-compiled languages. 
+compiled languages for our experiments. 
 In addition, we compared the compiled and semi-compiled implementations while 
 having scenarios with and without compiler optimizations.
-%, as shown in 
-%Table~\ref{optimization flags}.
-
-
 
 
 \subsection{Hardware and Software components}
@@ -256,41 +253,40 @@ having scenarios with and without compiler optimizations.
 
 \subsubsection{Hardware Components}
 %123456789123456789123456789123456789123456789123456789123456789 
-The physical tools composed mainly from a portable personal 
+The physical tools we used comprise: 1) portable personal 
 computer (HP EliteBook 840 G3),\footnote{http://www8.hp.com/us/en/products/laptops/product-detail.html?oid=7815294\#!tab=specs} 
-a real-time electricity usage monitoring tool, and 
-an embedded device.
+2) real-time electricity usage monitoring tool, and 
+3) embedded device.
 The real-time power usage tools we used is the Watts Up 
 Pro ({\sc wup}).\footnote{https://www.wattsupmeters.com/secure/products.php?pn=0} 
 
 In general, there are two venues for retrieving energy consumption 
 from a computer-based system. 
-On one hand, it is achievable by indirect energy measurements 
+On the one hand, this is achievable by indirect energy measurements 
 through estimation models or performance counters, core component 
 of software monitoring tools. 
 On the other hand, via direct measurement, hardware power analyzers 
 and sensors.  
-Each of these approaches has its own pitfalls. The direct approach 
+However, each of these approaches has its own pitfalls. The direct approach 
 \textit{, i.e.,} hardware components,  offers coarse-grained 
 measurements for the whole systems' energy consumption and low sampling 
 rate. 
 The indirect approach \textit{, i.e.,} software components, suffers 
 from inaccuracy, lack of interoperability, and additional system 
-overhead while using indirect measurements. 
-In our research we decided to retrieve our energy consumption 
-measurements using direct approach such as {\sc wup} since our 
-tasks are relatively short in terms of source-code lines.
+overhead, while using indirect measurements. 
+In our research, we decided to use a direct approach such as {\sc wup} since it 
+does not have software constrains and is relatively cheap to buy.
 
 In regards to {\sc wup}, it offers accuracy of \textpm1.5\% and 
 as minimum sampling rate of a second. 
-In order to retrieve power-related measurements from the {\sc wup} 
+In order to retrieve power-related measurements from the {\sc wup}, 
 we used a Linux-based interface utility available in a Git 
 repository.\footnote{https://github.com/pyrovski/watts-up}
-This software helped us retrieve measurements such as timestamps, 
-watts, volts, amps, etc. through a mini {\sc usb} interface after 
+This software helped us to retrieve measurements such as timestamps, 
+watts, volts, amps, and so on through a mini {\sc usb} interface after 
 we integrated its code in our script that runs all the tasks. 
 In order to avoid additional overhead in our measurements, we 
-used a Raspberry Pi\footnote{https://www.raspberrypi.org/products/raspberry-pi-3-model-b/} 
+connected {\sc wup} mini-{\sc usb} on a Raspberry Pi\footnote{https://www.raspberrypi.org/products/raspberry-pi-3-model-b/} 
 to retrieve power consumption from our test-bed.  
 
 \begin{figure}
@@ -314,31 +310,31 @@ we developed a number of shell scripts as enlisted below, which are
 publicly available on our Git repository.\footnote{https://github.com/stefanos1316/Rosetta-Code-Research} 
 
 \begin{enumerate}
-	\item [$\bullet$] \textbf{script.cleanAll}, removes the current instance 
+	\item [$\bullet$] \textbf{script.cleanAll}: removes the current instance 
 	of tasks in the current working directory and copy the new one found 
 	from in the parent directory. 
-	\item [$\bullet$] \textbf{script.findCommonTasksInLanguages}, provides 
+	\item [$\bullet$] \textbf{script.findCommonTasksInLanguages}: provides 
 	a list of tasks with the number of existing implementations in different languages.
-	\item [$\bullet$] \textbf{script.createNewDataSet}, filters the Rosetta 
+	\item [$\bullet$] \textbf{script.createNewDataSet}: filters the Rosetta 
 	Code current dataset and removes programming languages and tasks not 
 	added as command line arguments.
-	\item [$\bullet$] \textbf{script.fromUpperToLower}, changes the current 
+	\item [$\bullet$] \textbf{script.fromUpperToLower}: changes the current 
 	instance of tasks directories and files from upper to lower 
 	case. 
-	\item [$\bullet$] \textbf{script.compileTasks}, compiles all tasks found 
+	\item [$\bullet$] \textbf{script.compileTasks}: compiles all tasks found 
 	under the tasks' directory and produces error reports if a task fails to 
 	compile.
-	\item [$\bullet$] \textbf{script.executeTasksRemotely}, executes all the tasks' 
-	implementations found in under tasks directory. 
+	\item [$\bullet$] \textbf{script.executeTasksRemotely}: executes all the tasks' 
+	implementations found under tasks directory. 
 	Moreover, it sends command to {\sc wup}, retrieves measurements and stores 
 	them on remote host, through \textit{ssh}, in order to start retrieving 
 	measurements for each test case. 
-	\item [$\bullet$] \textbf{script.createPlottableData}, creates a single file 
+	\item [$\bullet$] \textbf{script.createPlottableData}: creates a single file 
 	that enlists all the executed tasks with the energy consumption for each 
 	implementation. In addition, we used {\sc ntp}\footnote{http://www.ntp.org/} to 
 	synchronize both system clocks which helped us to map our results of 
 	run-time performance and energy consumption. 
-	\item [$\bullet$] \textbf{script.plotGraphs}, after retrieving our data 
+	\item [$\bullet$] \textbf{script.plotGraphs}: after retrieving our data 
 	we use this script to plot our graphs. 
 	For plotting our graphs we used Gnuplot,\footnote{http://www.gnuplot.info/} 
 	an open-source general purpose pipe-oriented plotting tool.
@@ -349,13 +345,7 @@ Note that most of the scripts offer the \textit{--help} option
 that shows a list of available command line arguments and options.
 In addition, we provide a {\sc readme.md} file, available in our 
 repository, as a guideline for using our scripts and reproducing 
-the obtained results. 
-We tried to automate the execution procedure as much as possible 
-in order to remove the burden from users who would like to use 
-our scripts.
-Moreover, we suggest for the users not to change the directory's names or 
-locations since it will alter the correct sequence of the 
-execution. 
+the obtained results.  
 
 \begin{figure}
 	\centering
@@ -381,7 +371,7 @@ execution.
 \begin{figure}
 	\centering
 	\includegraphics[width=9cm,height=10cm,keepaspectratio]{"Graph_Graph-RunTime-Performance_interpreted"}
-	\caption{Run-time Performance for Compiled Programming Languages Optimization: On}
+	\caption{Run-time Performance for Interpreted Programming Languages}
 	\label{Performance Interpreted Total}
 \end{figure}
 
@@ -391,17 +381,19 @@ As an initial step for our experiment, we shut down background
 processes, as suggested by Hindle~\shortcite{hindle_greenminer:_2014}, 
 found in modern {\sc os} (Operating System) such as disk defragmentation, virus 
 scanning software, {\sc cron} jobs, automatic updates, 
-disk indexing, document indexing, {\sc rss} feed updates, etc. to 
+disk indexing, document indexing, {\sc rss} feed updates, and so on to 
 minimize possible noise interferences in our measurements. 
-By making the following steps, we reduced our platform's idle 
+Making the following steps, we reduced our platform's idle 
 power consumption from 8,6 to 5.8 watts on average. 
 
-
 %123456789123456789123456789123456789123456789123456789123456789 
-We estimated when our {\sc os} is launched, 
-it is necessary to wait for a short period to reach a 
-\textit{stable condition} which is close to five minutes \cite{carroll_analysis_2010}.
-After reaching \textit{stable condition}, we launched our main 
+To prevent addition noise in our results, we estimated that is 
+necessary to wait for a short period to reach a 
+\textit{stable condition} (where the {\sc wup} shows a stable 
+idle time) which is close to five minutes \cite{carroll_analysis_2010}.
+
+
+After reaching the \textit{stable condition}, we launched our main 
 script \textit{i.e.,} \textbf{script.executeTasksRemotely}, 
 that executes all the tasks implemented in different programming 
 languages. 
@@ -428,20 +420,20 @@ and the fan is no longer consuming more power.
 	\begin{threeparttable}
 		\caption{Comparative Results show the percentage of increased energy usage while using the inefficient implementation in compare to the efficient}
 		\label{Interpreted Energy Results}
-		\begin{tabular}{lcll}
+		\begin{tabular}{llll}
 			\toprule
 			Tasks Name	& \multicolumn{2}{c}{Implementations} & Comparative\\
 						& Efficient	& Inefficient	& Results\\
 			\midrule
-			Array-Concat& Php, Ruby	& Swift			& 8882.5\% \\
-			Classes		& Php		& Python		& 1616.36\% \\
+			Array-Concat& {\sc php}, Ruby	& Swift			& 888.25\% \\
+			Classes		& {\sc php}		& Python		& 1616.36\% \\
 			Bubble		& JavaScript& Swift			& 12694\% \\
 			Insertion	& JavaScript& Perl			& 9430.25\% \\
 			Merge		& JavaScript& R 			& 2894.81\% \\
-			Quick 		& Php		& Swift			& 1212.23\% \\
+			Quick 		& {\sc php}		& Swift			& 1212.23\% \\
 			Selection	& JavaScript& R				& 6657.71\% \\
-			Url-Decode	& Php		& Python		& 2963.05\% \\
-			Url-Encode	& Php		& R				& 3239.79\% \\
+			Url-Decode	& {\sc php}		& Python		& 2963.05\% \\
+			Url-Encode	& {\sc php}		& R				& 3239.79\% \\
 			\bottomrule
 		\end{tabular}
 	\end{threeparttable}
@@ -450,85 +442,87 @@ and the fan is no longer consuming more power.
 
 \section{Results and Discussion} \label{results_and_discussion}
 %123456789123456789123456789123456789123456789123456789123456789 
-For some tasks, the execution time is less than a second, a fact
-that justify the zeros shown in our graphs since it is impossible 
-for {\sc wup} to collect measurements less than a second of time 
-interval.
+For some tasks, the execution time waas less than a second. This 
+fact explains the zeros shown in our graphs since it is impossible 
+for {\sc wup} to collect measurements that have duration less 
+than a second of time interval.
 Figure~\ref{Compiled with No Optimization Total} illustrates 
-the total energy required for each task implementation to execute.
+the total energy required for each task implementation to execute 
+with no compiler optimization.
 The results depict that Java and Rust have the highest 
 energy consumption among the compiled programming languages while 
-Go has the lowest when no compiler optimizations are used.  
+Go has the lowest.  
 Also, the results in Figure~\ref{Performance Compiled with No Optimization Total} 
 show that energy consumption is directly affected by the run-time 
-performance in all cases except from Rust. 
-For Rust while the energy consumption is kept relatively high 
-the run-time performance is not affected negatively like for 
+performance in all cases except for Rust. 
+In case of Rust, the energy consumption is kept relatively high 
+the run-time performance is not affected negatively like in 
 Java.
 
 
 %123456789123456789123456789123456789123456789123456789123456789 
 Figure~\ref{Compiled with Optimization Total} shows the total 
 energy dissipation from the beginning until the end of a task 
-while making use of the compiler optimizations.
+(while making use of the compiler optimizations).
 The obtained results show the use of compiler optimizations 
 reduces energy usage in most of the cases while it increases 
 it in others. 
 For C\#, the energy usage of \textit{quick-, 
-	insertion-, bubble- sort} and \textit{url-decode} increased from 
-1\% to 10\% while for \textit{merge-, selection-, classes- sort,} and 
-\textit{url-encode} reduced it from 3.8--36.6\%. 
+	insertion-, bubble- sort} and \textit{url-decode} increased in range of 
+1\% to 10\% whereas for \textit{merge-, selection- sort, classes} and 
+\textit{url-encode} reductions were between 3.8\% and 36.6\%. 
 C's \textit{gcc -O3} achieved energy reductions ranging from 43.36\% 
 to 99.6\% for the majority of tasks apart from \textit{url-decoding} 
 where the energy increased to 14.7\%.
 In the case of C++, the \textit{g++ -O3} resulted in energy savings 
-from 0.9\% to 84.71\% for all tasks except \textit{url-decoding} 
+between 0.9\% to 84.71\% for all tasks except for the \textit{url-decoding} 
 that introduced increased energy usage of 33.33\%.
 For Go most of sorting algorithms and \textit{url-decoding} energy 
-usage reduced from 14.39\% to 31.35\% while for \textit{insertion-sort} 
-and \textit{url-encoding} increased from 15.38\% to 62\%. 
-Java was the only programming language with energy reduction in 
-all tasks ranging from 6\% to 98.4\%.
-In the case of Rust all the tasks energy requirements reduced in 
+usage reductions were ranging from 14.39\% to 31.35\% while for \textit{insertion-sort} 
+and \textit{url-encoding} increased between 15.38\% to 62\%. 
+Java was the only programming language with energy reduction for 
+all tasks, in range of 6\% to 98.4\%.
+In the case of Rust, energy requirements for all tasks, reduced in 
 range of 15.8\% to 97.7\% apart from the \textit{classes} task 
-where the energy usage increase to 15.4\%. 
-In regard to {\sc vb.net} the compiler optimization had very small 
-impact on energy consumption, less than 10\%.
+where the energy usage increased to 15.4\%. 
+Regarding {\sc vb.net}, the compiler optimization had very small 
+impact on energy consumption; less than 10\%.
 
 
 %123456789123456789123456789123456789123456789123456789123456789 
-For the interpreted programming languages, we can see the energy 
-consumption among them diverge significantly as depicted in 
-Table~\ref{Interpreted Energy Results}. 
-For the most inefficient case, Swift consumes 12694\% more energy 
+For the interpreted programming languages, we can see that the 
+energy consumption among them is significantly different as 
+depicted in Table~\ref{Interpreted Energy Results}. 
+The most inefficient case is Swift that consumes 12694\% more energy 
 compares to JavaScript. 
-In general, Php and JavaScript achieved the most energy efficiency 
-compared to Swift, R, Perl, and Python which their implementations 
+In general, {\sc php}, Ruby, and JavaScript achieved the most energy efficiency 
+compared to Swift, R, Perl, and Python where their implementations 
 contributed to the highest energy consumption. 
 In terms of run-time performance, Figure~\ref{Performance Interpreted Total} 
-results show the energy consumed by the interpreted tasks (Figure~\ref{Interpreted Energy Results}) 
-have a correlation with the execution time.
+results show the energy consumed by the interpreted tasks (see Figure~\ref{Interpreted Total}) 
+have a relationship with the execution time.
 
 
 \section{Threats to validity} \label{threats_of_validity}
 %123456789123456789123456789123456789123456789123456789123456789 
 \noindent\textbf{Internal:} In order to avoid additional overhead 
-on our experimental platform, we used a remote host to collect our 
+in our experimental platform, we used a remote host to collect our 
 results. 
-Therefore, the need of wireless connection was necessary, which 
-might incur in additional energy requirements by making use of 
-the {\sc ssh} to start and stop the {\sc wup}. 
+Therefore, the need of a wireless connection was necessary, which 
+might result on additional energy requirements (by making use of 
+the {\sc ssh} to start and stop the {\sc wup}). 
 Moreover, we cannot have full control of our {\sc os} workloads 
-and background operations, therefore, is possible that some 
-daemons might start running while test our experiment. 
+and background operations. 
+Therefore, is possible that some daemons might start running 
+while testing our experiment. 
 
 %123456789123456789123456789123456789123456789123456789123456789
 \noindent\textbf{External:} Our real-time power analyzer offers 
 minimum sampling interval of a second. 
-Therefore, in Figures~\ref{Compiled with No Optimization Total}, 
+In Figures~\ref{Compiled with No Optimization Total}, 
 ~\ref{Compiled with Optimization Total}, and ~\ref{Interpreted Total}  
-the energy dissipation resulting to zero are interpreted 
-as the tasks execution to be less than a seconds, which makes in 
+the energy dissipation results to zero can be interpreted as follows.
+When the tasks execution is less than a seconds, this makes it 
 impossible for {\sc wup} to capture such measurements. 
 %In addition, during the time duration of a second (required from the 
 %{\sc wup} to collect measurements) many events may appear that 
@@ -544,10 +538,10 @@ impossible for {\sc wup} to capture such measurements.
 Most empirical studies evaluate software projects
 from particular programming language families.
 Here, we count the energy consumption of programming tasks across 
-more than ten programming languages.
-To the best of our knowledge, this is the first study that assess
+14 programming languages.
+To the best of our knowledge, this is the first study that assesses 
 the energy consumption in different programming languages using 
-the Rosetta Code.
+the Rosetta Code Repository.
 In the following, we present related work to our topic and compare 
 our results with the results from previous studies.
 
@@ -566,11 +560,11 @@ modularity, they use object-oriented programming languages.
 
 %123456789123456789123456789123456789123456789123456789123456789
 Closest to our paper is the empirical study that Nanz and Furia
-conducted on the Rosetta Code repository to compare the efficiency 
+conducted on the Rosetta Code Repository to compare the efficiency 
 of eight popular programming languages, including C, Go, C\#, Java, 
 F\#, Haskell, Python, and  Ruby~\cite{NF15}.
 Contrary to this work, we used a power analyzer to run programming 
-tasks on different programming languages in order to compare the 
+tasks on 14 different programming languages in order to compare the 
 energy consumption at runtime.
 
 %123456789123456789123456789123456789123456789123456789123456789
@@ -589,25 +583,25 @@ performed in several programming languages.
 \subsection{Energy Consumption and Performance}
 %123456789123456789123456789123456789123456789123456789123456789
 Several researchers have investigated the energy efficiency and 
-run-time performance impact over programming languages.
-Also, a significant amount of works have compared the execution
-environment where the programs can run efficiently.
+run-time performance impact over different programming languages.
+Also, a significant amount of works have taken into account the 
+execution environment where the programs can run efficiently.
 
 In particular, Abdulsalam et al. conducted experiments on 
-workstations~\cite{ALG14}, whereas Rashid et al. used an embedded 
-system~\cite{RAT15} and
-Chen and Zong used smart-phones~\cite{CZ16}.
+workstations~\cite{ALG14}, whereas Rashid et al. on an embedded 
+system~\cite{RAT15} and Chen and Zong on 
+smart-phones~\cite{chen_android_2016}.
 Abdulsalam et al. evaluated the energy effect of four memory
 allocation choices ({\tt malloc}, {\tt new}, {\tt array}, and 
 {\tt vector}) and they showed that {\tt malloc} is the most 
 efficient in terms of energy and performance~\cite{ALG14}.
-Chen and Zong showed by using Android Run Time environment instead 
+Chen and Zong showed by using the Android Run Time environment instead 
 of Dalvik, that the energy and performance implications of Java
-are similar to C and C++~\cite{CZ16}.
-Rashid et al. compared the energy and performance impact of four 
+are similar to C and C++~\cite{chen_android_2016}.
+Finally, Rashid et al. compared the energy and performance impact of four 
 sorting algorithms written in three different programming 
-languages ({\sc arm} assembly, C/C++, and Java) and they found that 
-Java consumes the most energy~\cite{RAT15}.
+languages ({\sc arm} assembly, C/C++, and Java). 
+They found that Java consumes the most energy~\cite{RAT15}.
 From all these studies it seems that Java and Python consume a 
 lot of energy and perform slowly in comparison with C/C++ and 
 Assembly.
@@ -628,20 +622,23 @@ analysis over 55 Android applications from various domains
 and they reported the most energy consuming {\sc api} 
 methods~\cite{LBB14}.
 For instance, they found that the 60\% of the energy-greedy 
-{\sc api}s, 37\% were related to graphical user interface and
-image manipulation while the remaining 23\% were associated 
+{\sc api}s, 37\% were related to the graphical user interface and
+image manipulation, while the remaining 23\% were associated 
 with the database.
 
 Contrary to previous works, here we compare energy consuming 
-programming tasks in more than ten programming languages.
+programming tasks in more than 14 programming languages.
 Our results show that significant diverge with respect to 
 energy consumption exist for interpreted programming languages. 
 Moreover, we provide comparison in programming languages such 
 as Go, Rust, {\sc vb.net}, and C\# which is not available in 
-prior work.
+prior works.
 
 
 \section{Conclusions and Future Work} \label{conclusiona_and_future_work}
+%123456789123456789123456789123456789123456789123456789123456789 
+
+
 Nowadays, software development has been shifted from
 monolithic to more agile architectures, such as micro-services.
 This imposes the {\emph energy efficient} development of independent and reusable
@@ -654,20 +651,23 @@ using a power analyzer to measure the energy consumption
 of several programming tasks found in the Rosetta Code Repository,
 for 14 popular programming languages.
 
+%123456789123456789123456789123456789123456789123456789123456789 
 According to our findings,
-the average energy consumption---for the tested tasks---of compiled programming languages
+the average energy consumption---for the tested tasks---of 
+compiled programming languages
 seems to be much lower compared to this of the interpreted ones.
-Overall, our experiments revealed that Java and Swift are the most inefficient 
-programming languages among the compiled and interpreted, respectively.
-In particular, compiled programming languages, such as C and C++ ,
-that have the optimization  option enabled,
-record low average energy usage,
-whereas Go presents the lowest total energy consumption
-for sorting algorithms. 
+Overall, our experiments revealed that {\sc vb.net} and Swift are 
+the most inefficient programming languages among the compiled 
+and interpreted, respectively.
+In particular, compiled programming languages, such as 
+C and C++ ,that have the optimization option enabled,
+record low average energy usage, whereas Go presents the lowest 
+total energy consumption for sorting algorithms. 
 Regarding interpreted programming languages,
 JavaScript indicates the highest level of energy--efficiency.
 On the other hand, Swift seems to consume the most energy in total.
 
+%123456789123456789123456789123456789123456789123456789123456789 
 As far as future work is concerned,
 we would like to test all the 29 collected 
 tasks and, furthermore, to implement and evaluate additional ones,
@@ -679,3 +679,10 @@ We, also, plan to collect resource usages to identify
 possible relationships between programming  languages and resources. 
 To this end, we expect that the obtained results can shed light
 on how to efficiently develop larger and more complex applications.
+
+\begin{acks}
+	The authors would like to thank Dr. Vasiliki Efstathiou for her 
+	valuable help to complete this paper.
+\end{acks}
+
+
