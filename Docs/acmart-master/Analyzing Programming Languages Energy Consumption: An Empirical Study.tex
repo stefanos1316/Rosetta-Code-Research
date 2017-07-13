@@ -33,16 +33,10 @@
 
 
 \begin{document}
-\title{Analyzing Programming Languages' Energy Consumption: An Empirical Study}
-\titlenote{Produces the permission block, and
-  copyright information}
-\subtitle{Extended Abstract}
-\subtitlenote{The full version of the author's guide is available as
-  \texttt{acmart.pdf} document}
+\title{Analyzing Programming Languages Energy Consumption: \\ An Empirical Study}
 
 
 \author{Stefanos Georgiou}
-\authornote{Dr.~Trovato insisted his name be first.}
 \orcid{1234-5678-9012}
 \affiliation{%
   \institution{Athens University of Economics and Business}
@@ -54,7 +48,6 @@
 \email{sgeorgiou@aueb.gr}
 
 \author{Maria Kechagia}
-\authornote{The secretary disavows any knowledge of this author's actions.}
 \affiliation{%
 	\institution{Delft University of Technology}
 	\streetaddress{Mekelweg 2}
@@ -65,7 +58,6 @@
 \email{m.kechagia@tudelft.nl}
 
 \author{Diomidis Spinellis}
-\authornote{The secretary disavows any knowledge of this author's actions.}
 \affiliation{%
   \institution{Athens University of Economics and Business}
   \streetaddress{Patision 76}
@@ -82,12 +74,14 @@
 
 \begin{abstract}
 %123456789123456789123456789123456789123456789123456789123456789
-\noindent \textbf{Motivation:} Swifting from a traditional 
-monolithic approach towards a more cutting-edge such as micro-services 
-implies new challenges in terms of energy usage.
+\noindent \textbf{Motivation:} Shifted from traditional 
+monolithic approaches to more cutting edge ones such as micro-services, 
+where different services can be implemented and communicate in 
+different programming languages, implies new challenges in terms 
+of energy usage.
 
 %123456789123456789123456789123456789123456789123456789123456789
-\noindent \textbf{Goal:} In the preliminary study, we aim is to 
+\noindent \textbf{Goal:} In this preliminary study, we aim to 
 identify energy implications of small, independent tasks developed 
 in different programming languages, compiled, semi-compiled, and 
 interpreted ones.
@@ -98,13 +92,14 @@ refined, compared, and analyzed a number of available tasks from Rosetta
 Code, a publicly open repository for programming chrestomathy. 
 
 %123456789123456789123456789123456789123456789123456789123456789
-\noindent \textbf{Results:} Our analysis shows a the majority of 
-compiled and semi-compiled programming languages achieve higher 
-energy efficiency after applying the optimization options for 
-\textit{sorting, object generation, url-encoding} and 
-\textit{decoding} tasks. 
-Moreover, we show which of the interpreted programming languages 
-offers more energy gains than others.
+\noindent \textbf{Results:} Our analysis shows the programming 
+languages such as C, C++, Java, and Rust offers the highest 
+energy efficiency for all our tested tasks compared to C\#, 
+{\sc vb.net}, and Go among the compiled programming languages. 
+In terms of interpreted programming language, Php and JavaScript 
+exhibit the most energy savings compared to Swift, R, Perl, and 
+Python. 
+
 
 \end{abstract}
 

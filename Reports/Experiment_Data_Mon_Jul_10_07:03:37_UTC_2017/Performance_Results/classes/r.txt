@@ -1,25 +1,5 @@
-Error in (function (file = if (onefile) "Rplots.pdf" else "Rplot%03d.pdf",  : 
-  cannot open file 'Rplots.pdf'
-Calls: plot ... plot.circle -> plot -> plot.default -> dev.hold -> <Anonymous>
-Execution halted
-
-real	0m0.108s
-user	0m0.087s
-sys	0m0.019s
-Error in setClass("circle", representation(radius = "numeric", centre = "numeric"),  : 
-  could not find function "setClass"
-Execution halted
-
-real	0m0.073s
-user	0m0.056s
-sys	0m0.017s
 
 real	0m30.499s
 user	0m26.598s
 sys	0m3.670s
-Error: unexpected input in "%PDF-1.4"
-Execution halted
 
-real	0m0.072s
-user	0m0.051s
-sys	0m0.021s

@@ -2,8 +2,4 @@
 real	0m3.884s
 user	0m0.391s
 sys	0m1.511s
-./script.executeTasksRemotely: line 577: ./temp//classes/rust/classes.rs: Permission denied
 
-real	0m0.002s
-user	0m0.000s
-sys	0m0.001s
