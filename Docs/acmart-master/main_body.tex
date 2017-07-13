@@ -458,7 +458,13 @@ Figure~\ref{Compiled with No Optimization Total} illustrates
 the total energy required for each task implementation to execute.
 The results depict that Java and Rust have the highest 
 energy consumption among the compiled programming languages while 
-Go has the lowest when no compiler optimizations are used. 
+Go has the lowest when no compiler optimizations are used.  
+Also, the results in Figure~\ref{Performance Compiled with No Optimization Total} 
+show that energy consumption is directly affected by the run-time 
+performance in all cases except from Rust. 
+For Rust while the energy consumption is kept relatively high 
+the run-time performance is not affected negatively like for 
+Java.
 
 
 %123456789123456789123456789123456789123456789123456789123456789 
@@ -478,7 +484,7 @@ where the energy increased to 14.7\%.
 In the case of C++, the \textit{g++ -O3} resulted in energy savings 
 from 0.9\% to 84.71\% for all tasks except \textit{url-decoding} 
 that introduced increased energy usage of 33.33\%.
-For Go most of sorting algorithms' and \textit{url-decoding}'s energy 
+For Go most of sorting algorithms and \textit{url-decoding} energy 
 usage reduced from 14.39\% to 31.35\% while for \textit{insertion-sort} 
 and \textit{url-encoding} increased from 15.38\% to 62\%. 
 Java was the only programming language with energy reduction in 
@@ -495,10 +501,13 @@ For the interpreted programming languages, we can see the energy
 consumption among them diverge significantly as depicted in 
 Table~\ref{Interpreted Energy Results}. 
 For the most inefficient case, Swift consumes 12694\% more energy 
-compare to JavaScript. 
+compares to JavaScript. 
 In general, Php and JavaScript achieved the most energy efficiency 
 compared to Swift, R, Perl, and Python which their implementations 
-contributed to the highest energy consumption.
+contributed to the highest energy consumption. 
+In terms of run-time performance, Figure~\ref{Performance Interpreted Total} 
+results show the energy consumed by the interpreted tasks (Figure~\ref{Interpreted Energy Results}) 
+have a correlation with the execution time.
 
 
 \section{Threats to validity} \label{threats_of_validity}
@@ -636,19 +645,17 @@ prior work.
 %123456789123456789123456789123456789123456789123456789123456789 
 
 
-
 To this end, we conclude as follows. 
-The total energy consumption for the compiled programming languages 
-with compiler optimizations provide greater gains for the tasks 
-we tested. 
+Compiler optimizations provides gains, in terms of energy 
+consumption, for the tasks we tested. 
 However, for most the programming languages such as C, C++, C\#, 
-Rust, and {\sc vb.net} optimization is not applied by default, 
+Rust, and {\sc vb.net} optimization are not applied by default, 
 therefore it is the user must set it.  
 Prior work \cite{abdulsalam_program_2014, chen_android_2016} 
 also evaluated the energy efficiency of compiled programming languages 
 and showed that C and C++ were the most energy efficient compared 
 to Java. 
-However, in our research, the tasks we compared show that Java's 
+In contrast, the tasks we compared show that Java's 
 energy consumption does not diverge significantly from C and C++ 
 results. 
 Moreover, in tasks \textit{url -decode} and \textit{-encode}, Java 
@@ -663,22 +670,27 @@ energy for sorting tasks while Php does it for \textit{classes}
 (object creation with method call), \textit{array-concatenation}, 
 \textit{url -decode}, and \textit{-encode}. 
 In addition, our results show a huge difference among the interpreted 
-programming languages. 
-Therefore, a developer is suggested to be careful while choosing 
-among them.
+programming languages energy dissipation. 
+
+%123456789123456789123456789123456789123456789123456789123456789 
+For the selected tasks, we see a correlation between the execution 
+time and the energy consumption of the interpreted programming 
+languages, which is not the case for all the compiled and 
+semi-compiled languages. 
+In specific case, such as Rust and {\sc vb.net}, while the energy 
+is increased the run-time performance is not affected. 
+Therefore, the reasons for such a trend are still unknown to us 
+and further investigation is necessary.
 
 %123456789123456789123456789123456789123456789123456789123456789 
 As for future work, we would like to test all the 29 collected 
-tasks and, furthermore, to developed more such as exception 
+tasks and, furthermore, to develop more such as exception 
 and task for functional programming. 
 Moreover, we will test the collected tasks in different {\sc cpu} 
 architectures such as {\sc amd} and {\sc arm}. 
 In addition, we plan to collect resource usage to identify 
-possible relationship between programming languages resource 
-usage and energy consumption. 
-To this end, we expected the obtained results to shed light 
-and provide further understanding on developing in an energy 
-efficient manner for larger and  more complex applications.
+a possible relationship between programming languages and energy consumption. 
+
 
 
 
