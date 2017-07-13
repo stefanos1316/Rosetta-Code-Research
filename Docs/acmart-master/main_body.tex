@@ -642,55 +642,40 @@ prior work.
 
 
 \section{Conclusions and Future Work} \label{conclusiona_and_future_work}
-%123456789123456789123456789123456789123456789123456789123456789 
+Nowadays, software development has been shifted from
+monolithic to more agile architectures, such as micro-services.
+This imposes the {\emph energy efficient} development of independent and reusable
+small services in a variety of programming languages.
+Goal of this paper is to compare the energy consumption
+of specific programming tasks in different programming languages
+and identify {\emph which} languages are appropriate to be used in modern services.
+In brief, we conducted an empirical study
+using a power analyzer to measure the energy consumption
+of several programming tasks found in the Rosetta Code Repository,
+for 14 popular programming languages.
 
+According to our findings,
+the average energy consumption---for the tested tasks---of compiled programming languages
+seems to be much lower compared to this of the interpreted ones.
+Overall, our experiments revealed that Java and Swift are the most inefficient 
+programming languages among the compiled and interpreted, respectively.
+In particular, compiled programming languages, such as C and C++ ,
+that have the optimization  option enabled,
+record low average energy usage,
+whereas Go presents the lowest total energy consumption
+for sorting algorithms. 
+Regarding interpreted programming languages,
+JavaScript indicates the highest level of energy--efficiency.
+On the other hand, Swift seems to consume the most energy in total.
 
-To this end, we conclude as follows. 
-Compiler optimizations provides gains, in terms of energy 
-consumption, for the tasks we tested. 
-However, for most the programming languages such as C, C++, C\#, 
-Rust, and {\sc vb.net} optimization are not applied by default, 
-therefore it is the user must set it.  
-Prior work \cite{abdulsalam_program_2014, chen_android_2016} 
-also evaluated the energy efficiency of compiled programming languages 
-and showed that C and C++ were the most energy efficient compared 
-to Java. 
-In contrast, the tasks we compared show that Java's 
-energy consumption does not diverge significantly from C and C++ 
-results. 
-Moreover, in tasks \textit{url -decode} and \textit{-encode}, Java 
-achieves more energy efficiency than C and C++.
-In addition, we also compared Go which results to higher energy 
-savings compared to C and C++ for all tasks apart from 
-\textit{insertion-sort}.
-
-%123456789123456789123456789123456789123456789123456789123456789 
-For interpreted programming languages, JavaScript consumes less 
-energy for sorting tasks while Php does it for \textit{classes} 
-(object creation with method call), \textit{array-concatenation}, 
-\textit{url -decode}, and \textit{-encode}. 
-In addition, our results show a huge difference among the interpreted 
-programming languages energy dissipation. 
-
-%123456789123456789123456789123456789123456789123456789123456789 
-For the selected tasks, we see a correlation between the execution 
-time and the energy consumption of the interpreted programming 
-languages, which is not the case for all the compiled and 
-semi-compiled languages. 
-In specific case, such as Rust and {\sc vb.net}, while the energy 
-is increased the run-time performance is not affected. 
-Therefore, the reasons for such a trend are still unknown to us 
-and further investigation is necessary.
-
-%123456789123456789123456789123456789123456789123456789123456789 
-As for future work, we would like to test all the 29 collected 
-tasks and, furthermore, to develop more such as exception 
-and task for functional programming. 
+As far as future work is concerned,
+we would like to test all the 29 collected 
+tasks and, furthermore, to implement and evaluate additional ones,
+including exception handling,
+and particular tasks for functional programming. 
 Moreover, we will test the collected tasks in different {\sc cpu} 
-architectures such as {\sc amd} and {\sc arm}. 
-In addition, we plan to collect resource usage to identify 
-a possible relationship between programming languages and energy consumption. 
-
-
-
-
+architectures, such as {\sc amd} and {\sc arm}. 
+We, also, plan to collect resource usages to identify 
+possible relationships between programming  languages and resources. 
+To this end, we expect that the obtained results can shed light
+on how to efficiently develop larger and more complex applications.
