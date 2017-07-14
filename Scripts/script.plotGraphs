@@ -7,25 +7,26 @@
 #\$3 -> Where th graphs will be stored
 #\$4 -> Compiled or Interpreted programming language
 #\$5 -> Optimization Flags ON/OFF
-
+#\$6 -> Points size
 
 #Set it up metadate
 dataLocation=$1
 experimentName=$2
+pointSize=$6
 
 if [ "$4" == "compiled" ]; then
 	if [ "$5" == "optimize" ]; then
-		title="$experimentName for $4 Programming Languages Optimization: ON"
+		#title="$experimentName for $4 Programming Languages Optimization: ON"
 		filename=""$experimentName"_"$4"_Optimization_On"
 		pdf="Graph_"$experimentName"_"$4"_Optimization_On.pdf"
 	else
-		title="$experimentName for $4 Programming Languages Optimization: OFF"
+		#title="$experimentName for $4 Programming Languages Optimization: OFF"
 		filename="Graph_"$experimentName"_"$4"_Optimization_OFF"
 		pdf="Graph_"$experimentName"_"$4"_Optimization_OFF.pdf"
 	fi
 #Case of Interpreted languages
 else
-	title="$experimentName for $4 Programming Languages"
+	#title="$experimentName for $4 Programming Languages"
 	filename="Graph_"$experimentName"_"$4
 	pdf="Graph_"$experimentName"_"$4".pdf"
 fi
@@ -41,14 +42,14 @@ if [ "$4" == "compiled" ]; then
 	#set key right top Right noreverse enhanced box linetype -1 linewidth 1.000 sample 4 spacing 1 width 0 height 0 autotitles
 	set key outside noreverse enhanced box linetype -1 linewidth 1.000 
 	set grid back lt 0 lw 1
-	set xlabel "Executed Tasks"
+	#set xlabel "Executed Tasks"
 	set ylabel "Energy Consumption (Joules)"
 	set xtic rotate by 315
 	set yrange [0:500]
 	set output "$filename"
 	set title "$title"
 
-	plot '$dataLocation' using 2:xticlabel(1) title 'C-sharp' with points, '$dataLocation' using 3:xticlabel(1) title 'C' with points, '$dataLocation' using 4:xticlabel(1) title 'C++' with points, '$dataLocation' using 5:xticlabel(1) title 'Go' with points, '$dataLocation' using 7:xticlabel(1) title 'Java' with points, '$dataLocation' using 13:xticlabel(1) title 'Rust' with points, '$dataLocation' using 15:xticlabel(1) title 'VB.NET' with points
+	plot '$dataLocation' using 2:xticlabel(1) ps $pointSize title 'C#' with points, '$dataLocation' using 3:xticlabel(1) ps $pointSize title 'C' with points, '$dataLocation' using 4:xticlabel(1) ps $pointSize title 'C++' with points, '$dataLocation' using 5:xticlabel(1) ps $pointSize title 'Go' with points, '$dataLocation' using 7:xticlabel(1) ps $pointSize lc 4 title 'Java' with points, '$dataLocation' using 13:xticlabel(1) ps $pointSize title 'Rust' with points, '$dataLocation' using 15:xticlabel(1) ps $pointSize title 'VB.NET' with points
 
 EOF
 
@@ -61,14 +62,14 @@ else
 	#set key right top Right noreverse enhanced box linetype -1 linewidth 1.000 sample 4 spacing 1 width 0 height 0 autotitles
 	set key outside noreverse enhanced box linetype -1 linewidth 1.000
 	set grid back lt 0 lw 1
-	set xlabel "Executed Tasks"
+	#set xlabel "Executed Tasks"
 	set ylabel "Energy Consumption (Joules)"
 	set xtic rotate by 315
 	set yrange [0:40150]
 	set output "$filename"
 	set title "$title"
 
-	plot '$dataLocation' using 6:xticlabel(1) title 'JavaScript' with points, '$dataLocation' using 8:xticlabel(1) title 'Perl' with points, '$dataLocation' using 9:xticlabel(1) title 'Php' with points, '$dataLocation' using 10:xticlabel(1) title 'Python' with points, '$dataLocation' using 11:xticlabel(1) title 'R' with points, '$dataLocation' using 12:xticlabel(1) title 'Ruby' with points, '$dataLocation' using 14:xticlabel(1) title 'Swift' with points
+	plot '$dataLocation' using 6:xticlabel(1) ps $pointSize title 'JavaScript' with points, '$dataLocation' using 8:xticlabel(1) ps $pointSize title 'Perl' with points, '$dataLocation' using 9:xticlabel(1)  ps $pointSize title 'PHP' with points, '$dataLocation' using 10:xticlabel(1) ps $pointSize title 'Python' with points, '$dataLocation' using 11:xticlabel(1) ps $pointSize lc 4 title 'R' with points, '$dataLocation' using 12:xticlabel(1) ps $pointSize title 'Ruby' with points, '$dataLocation' using 14:xticlabel(1) ps $pointSize title 'Swift' with points
 
 EOF
 

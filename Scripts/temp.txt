@@ -1,8 +1,0 @@
-array-concatenation	0
-classes	87.9
-sorting-algorithms-bubble-sort	239.2
-sorting-algorithms-insertion-sort	155.4
-sorting-algorithms-merge-sort	176.0
-sorting-algorithms-quicksort	414.2
-url-decoding	231.7
-url-encoding	127.3
