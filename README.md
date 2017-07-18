@@ -20,6 +20,11 @@ Since we are using a submodule in this repository we suggest the use of the foll
 
 $ git clone --recursive https://github.com/stefanos1316/Rosetta-Code-Research.git
 
+In case you used simple clone command, add the submdodules using the following commands inside the cloned repo.
+
+$ git submodule init
+$ git submodule update
+
 # How to Execute
 First drive to [Scripts](https://github.com/stefanos1316/Rosetta-Code-Research/tree/master/Scripts) directory and proceed as follows:
 
