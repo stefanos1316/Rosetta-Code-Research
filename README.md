@@ -23,6 +23,7 @@ $ git clone --recursive https://github.com/stefanos1316/Rosetta-Code-Research.gi
 In case you used simple clone command, add the submdodules using the following commands inside the cloned repo.
 
 $ git submodule init
+
 $ git submodule update
 
 # How to Execute
