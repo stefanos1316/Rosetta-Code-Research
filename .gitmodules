@@ -3,4 +3,4 @@
 	url = https://github.com/acmeism/RosettaCodeData.git
 [submodule "watts-up"]
 	path = watts-up
-	url = https://github.com/pyrovski/watts-up
+	url = https://github.com/pyrovski/watts-up.git
