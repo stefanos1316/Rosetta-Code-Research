@@ -36,8 +36,9 @@ First drive to [Scripts](https://github.com/stefanos1316/Rosetta-Code-Research/t
 4) Afterwards, we had to add additional code inside each file in order to force a task to run around a million of times (some tasks  are so small and are 
    finishing faster than 1 second, thus our power analyzer cannot capture those results).
 5) Execute the **script.compileTasks** in order to compile all tasks.
-6) Execute the **script.executeTasks** in order to execute the tasks and collect results (in our case we used [Watts Up Pro](https://www.wattsupmeters.com/secure/products.php?pn=0)).
-7) Collect results and added them in a single file.
-8) Execute the **script.plotGraphs** to plot graphs.
+6) Execute the **script.executeTasks[Remotly|Locally]** in order to execute the tasks and collect results (in our case we used [Watts Up Pro](https://www.wattsupmeters.com/secure/products.php?pn=0)).
+   On running the **script.executeTasksRemotly**, it is necessary to have a remote host with ssh where the Watts Up Pro is connected, otherwise the **script.executeTasksLocally** can be executed without the need of the remote host.
+7) Execute the **script.createPlottableData** that creates the file with all the results from all the measurements. In the end, this script will call the **script.plotGrpahs** that is responsible to create plot the graphs.
+8) The **script.plotGraphs** is executed by the **script.createPlottableData** and can provide graphs for both performance and energy consumption. Moreover, there are some default setting found in the end of **script.createPlottableData**, if anyone would like to change them and plot using different configuration parameters.
 
 **Note**: For more information for executing scripts add the --help command line argument.
