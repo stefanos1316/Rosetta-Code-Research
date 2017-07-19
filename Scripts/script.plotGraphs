@@ -1,40 +1,153 @@
 #!/bin/bash
 
-#this script will create the graphs for the user automatically
-#Commandline arguments
-#\$1 -> Absolute path where GraphData dir is located (passed from createPlottableData script)
-#\$2 -> The name of the current experiment
-#\$3 -> Where th graphs will be stored
-#\$4 -> Compiled or Interpreted programming language
-#\$5 -> Optimization Flags ON/OFF
-#\$6 -> Points size
+#Make it using --parameters
+if [ "$1" == "--help" ]; then
 
-#Set it up metadate
-dataLocation=$1
-experimentName=$2
-pointSize=$6
+	echo ""
+	echo "Usage of script.plotGraphs"
+	echo "=========================="
+	echo ""
+	echo "--resultsFile	  Provide the abolute path where the collected energy/performance data"
+	echo "		  are located."
+	echo "--experimetName   Provide the experiment's name."
+	echo "--storeGraph	  Add the absolute path to store the graph."
+	echo "--dataType	  Select if the plotted data are for Energy or Performance."
+	echo "--languageType	  Select if the graph is going to use data from compiled or interpreted"
+	echo "		  programming languages."
+	echo "--optimization	  Select ON of OFF option."
+	echo "--graphPointsSzie Select the number for graph points size, e.g., 1, 2, 3, 4."
+	echo ""
+	echo "NOTE: Command line arguments (apart from the options '--') are case insensitive"
+	echo "		  for the arguments dataType, languageType, and optimization" 
+	echo ""
+	exit
+fi
 
-if [ "$4" == "compiled" ]; then
-	if [ "$5" == "optimize" ]; then
-		#title="$experimentName for $4 Programming Languages Optimization: ON"
-		filename=""$experimentName"_"$4"_Optimization_On"
-		pdf="Graph_"$experimentName"_"$4"_Optimization_On.pdf"
+if [ "$#" -eq 0 ]; then
+	echo "Illegal number of command line arguments."
+	echo "Please try --help option for more information."
+	echo ""
+	exit
+fi
+
+#Initiallize variable
+dataLocation=0
+experimentName=0
+storeGraph=0
+dataType=0
+languageType=0
+optimization=0
+graphPointsSize=0
+
+#Break the array of command line arguments and set the program variables accordingly.
+args=("$@")
+
+#Get number of elements
+ELEMENTS=${#args[@]}
+
+for ((i=0;i<$ELEMENTS;++i)); 
+do  
+	case "${args[${i}]}" in 
+	("--resultsFile") dataLocation=${args[i+1]} ;;
+	("--experimentName") experimentName="${args[i+1]}" ;;
+	("--storeGraph") storeGraph="${args[i+1]}" ;;
+	("--dataType") dataType="$(echo ${args[i+1]} | tr '[A-Z]' '[a-z]')" ;;
+	("--languageType") languageType="$(echo ${args[i+1]} | tr '[A-Z]' '[a-z]')" ;;
+	("--optimization") optimization="$(echo ${args[i+1]} | tr '[A-Z]' '[a-z]')" ;;
+	("--graphPointsSize") graphPointsSize="${args[i+1]}" ;;
+	esac
+done
+
+#sSetting Ylable
+ylabel=0
+
+if [ "$dataType" == "energy" ]; then
+	ylabel="Energy Consumption (in Joules)"
+else
+	if [ "$dataType" == "performance" ]; then
+		ylabel="Run-Time Performance (in seconds)"
 	else
-		#title="$experimentName for $4 Programming Languages Optimization: OFF"
-		filename="Graph_"$experimentName"_"$4"_Optimization_OFF"
-		pdf="Graph_"$experimentName"_"$4"_Optimization_OFF.pdf"
+		echo "Illegal arugment for dataType, please try again!"
+		exit
+	fi
+fi
+
+##########################################################################################################
+#				FUNCTIONS								 #
+##########################################################################################################
+#This function is receiving as a parameter the file where all the results are located
+#Its aim, is to identify the highest value of in the file in order to adjust the Y axis of the Graphs
+function findMaxForYaxis {
+
+maxOfTheMax=0
+
+if [ "$2" == "compiled" ]; then
+	while read p; do
+		results=$(echo $p | cut -d' ' -f2,3,4,5,7,13,15)
+		IFS=" " read -a arrayOfNumbers <<<  $results
+		max=${arrayOfNumbers[0]}
+		for n in "${arrayOfNumbers[@]}" ; do
+   			result=$(echo "$max < $n" | bc -l)
+			if [ $result -eq 1 ]; then
+				max=$n
+			fi
+		done  
+		max=$(echo ${max%%.*})
+		if [ $maxOfTheMax -lt $max ]; then
+			maxOfTheMax=$max
+		fi
+	done < $1
+else
+	if [ "$2" == "interpreted" ]; then
+	while read p; do
+		results=$(echo $p | cut -d' ' -f6,8,9,10,11,12,14)
+		IFS=" " read -a arrayOfNumbers <<<  $results
+		max=${arrayOfNumbers[0]}
+		for n in "${arrayOfNumbers[@]}" ; do
+   			result=$(echo "$max < $n" | bc -l)
+			if [ $result -eq 1 ]; then
+				max=$n
+			fi
+		done  
+		max=$(echo ${max%%.*})
+		if [ $maxOfTheMax -lt $max ]; then
+			maxOfTheMax=$max
+		fi
+	done < $1
+	fi
+fi
+
+echo $maxOfTheMax
+}
+##########################################################################################################
+
+
+#call function
+#maxYAxis variable has the max value to plot the garphs now
+#this value is for interpreted programming languages
+maxYAxis=$(findMaxForYaxis $dataLocation $languageType) 
+maxYAxis=$((maxYAxis+50))
+
+if [ "$languageType" == "compiled" ]; then
+	if [ "$optimization" == "optimize" ]; then
+		#title="$experimentName for $languageType Programming Languages Optimization: ON"
+		filename=$experimentName"_"$languageType"_Optimization_On"
+		pdf=$experimentName"_"$languageType"_Optimization_On.pdf"
+	else
+		#title="$experimentName for $languageType Programming Languages Optimization: OFF"
+		filename=$experimentName"_"$languageType"_Optimization_OFF"
+		pdf=$experimentName"_"$languageType"_Optimization_OFF.pdf"
 	fi
 #Case of Interpreted languages
 else
-	#title="$experimentName for $4 Programming Languages"
-	filename="Graph_"$experimentName"_"$4
-	pdf="Graph_"$experimentName"_"$4".pdf"
+	#title="$experimentName for $languageType Programming Languages"
+	filename=$experimentName"_"$languageType
+	pdf=$experimentName"_"$languageType".pdf"
 fi
 
 
-
 #This section will generate the graphs for the compiled programming languages
-if [ "$4" == "compiled" ]; then
+if [ "$languageType" == "compiled" ]; then
 	gnuplot<<EOF
 	set size 1.0,1.0;
 	set terminal postscript landscape color "Times-Roman" 20 linewidth 2
@@ -45,11 +158,11 @@ if [ "$4" == "compiled" ]; then
 	#set xlabel "Executed Tasks"
 	set ylabel "Energy Consumption (Joules)"
 	set xtic rotate by 315
-	set yrange [0:500]
+	set yrange [0:$maxYAxis]
 	set output "$filename"
 	set title "$title"
 
-	plot '$dataLocation' using 2:xticlabel(1) ps $pointSize title 'C#' with points, '$dataLocation' using 3:xticlabel(1) ps $pointSize title 'C' with points, '$dataLocation' using 4:xticlabel(1) ps $pointSize title 'C++' with points, '$dataLocation' using 5:xticlabel(1) ps $pointSize title 'Go' with points, '$dataLocation' using 7:xticlabel(1) ps $pointSize lc 4 title 'Java' with points, '$dataLocation' using 13:xticlabel(1) ps $pointSize title 'Rust' with points, '$dataLocation' using 15:xticlabel(1) ps $pointSize title 'VB.NET' with points
+	plot '$dataLocation' using 2:xticlabel(1) ps $graphPointsSize title 'C#' with points, '$dataLocation' using 3:xticlabel(1) ps $graphPointsSize title 'C' with points, '$dataLocation' using 4:xticlabel(1) ps $graphPointsSize title 'C++' with points, '$dataLocation' using 5:xticlabel(1) ps $graphPointsSize title 'Go' with points, '$dataLocation' using 7:xticlabel(1) ps $graphPointsSize lc 4 title 'Java' with points, '$dataLocation' using 13:xticlabel(1) ps $graphPointsSize title 'Rust' with points, '$dataLocation' using 15:xticlabel(1) ps $graphPointsSize title 'VB.NET' with points
 
 EOF
 
@@ -65,11 +178,11 @@ else
 	#set xlabel "Executed Tasks"
 	set ylabel "Energy Consumption (Joules)"
 	set xtic rotate by 315
-	set yrange [0:40150]
+	set yrange [0:$maxYAxis]
 	set output "$filename"
 	set title "$title"
 
-	plot '$dataLocation' using 6:xticlabel(1) ps $pointSize title 'JavaScript' with points, '$dataLocation' using 8:xticlabel(1) ps $pointSize title 'Perl' with points, '$dataLocation' using 9:xticlabel(1)  ps $pointSize title 'PHP' with points, '$dataLocation' using 10:xticlabel(1) ps $pointSize title 'Python' with points, '$dataLocation' using 11:xticlabel(1) ps $pointSize lc 4 title 'R' with points, '$dataLocation' using 12:xticlabel(1) ps $pointSize title 'Ruby' with points, '$dataLocation' using 14:xticlabel(1) ps $pointSize title 'Swift' with points
+	plot '$dataLocation' using 6:xticlabel(1) ps $graphPointsSize title 'JavaScript' with points, '$dataLocation' using 8:xticlabel(1) ps $graphPointsSize title 'Perl' with points, '$dataLocation' using 9:xticlabel(1)  ps $graphPointsSize title 'PHP' with points, '$dataLocation' using 10:xticlabel(1) ps $graphPointsSize title 'Python' with points, '$dataLocation' using 11:xticlabel(1) ps $graphPointsSize lc 4 title 'R' with points, '$dataLocation' using 12:xticlabel(1) ps $graphPointsSize title 'Ruby' with points, '$dataLocation' using 14:xticlabel(1) ps $graphPointsSize title 'Swift' with points
 
 EOF
 
@@ -81,7 +194,7 @@ createpdf="$(ps2pdf $filename $pdf)"
 eval=$createpdf 
 
 #Move them all in Reports Dir
-mv $filename $3
-mv $pdf $3
+mv $filename $storeGraph
+mv $pdf $storeGraph
 
 exit
