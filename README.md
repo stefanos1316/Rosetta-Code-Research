@@ -12,7 +12,7 @@ In order to achieve our aim we used a dataset publicly available from [Rosetta C
 We found all the collected tasks implemented in different langauges from a [Git repo](https://github.com/acmeism/RosettaCodeData). 
 Since Rosetta Code contains the amount of 655 programming languages we decicde to limit our scope and include only the most used 
 ones.  
-For this puropose we collected the 20 most used ones found from [tiobe](https://www.tiobe.com/tiobe-index/) index June 2017. 
+For this puropose we collected the 14 most used ones found from [tiobe](https://www.tiobe.com/tiobe-index/) index June 2017. 
 Thus we implemented a number of shell scripts in order to manage and limit our dataset.
 
 # Downloading
@@ -27,7 +27,7 @@ $ git submodule init
 $ git submodule update
 
 # How to Execute
-First drive to [Scripts](https://github.com/stefanos1316/Rosetta-Code-Research/tree/master/Scripts) directory and proceed as follows:
+First browse to [Scripts](https://github.com/stefanos1316/Rosetta-Code-Research/tree/master/Scripts) directory and proceed as follows:
 
 1) Execute the **script.cleanAll** in order to prepare the existing dataset and make it case insensitive by chaning all files from upper to lower case.
 2) Execute the **script.createNewDataSet** to have a filtered dataset with all the selected tasks and programming languages that we will examine for this research.
