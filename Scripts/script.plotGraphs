@@ -9,7 +9,7 @@ if [ "$1" == "--help" ]; then
 	echo ""
 	echo "--resultsFile	  Provide the abolute path where the collected energy/performance data"
 	echo "		  are located."
-	echo "--experimetName   Provide the experiment's name."
+	echo "--experimentName   Provide the experiment's name."
 	echo "--storeGraph	  Add the absolute path to store the graph."
 	echo "--dataType	  Select if the plotted data are for Energy or Performance."
 	echo "--languageType	  Select if the graph is going to use data from compiled or interpreted"
