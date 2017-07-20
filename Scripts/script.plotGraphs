@@ -62,10 +62,10 @@ done
 ylabel=0
 
 if [ "$dataType" == "energy" ]; then
-	ylabel="Energy Consumption (in Joules)"
+	ylabel="Energy Consumption (Joules)"
 else
 	if [ "$dataType" == "performance" ]; then
-		ylabel="Run-Time Performance (in seconds)"
+		ylabel="Run-Time Performance (Seconds)"
 	else
 		echo "Illegal arugment for dataType, please try again!"
 		exit
@@ -156,7 +156,7 @@ if [ "$languageType" == "compiled" ]; then
 	set key outside noreverse enhanced box linetype -1 linewidth 1.000 
 	set grid back lt 0 lw 1
 	#set xlabel "Executed Tasks"
-	set ylabel "Energy Consumption (Joules)"
+	set ylabel "$ylabel"
 	set xtic rotate by 315
 	set yrange [0:$maxYAxis]
 	set output "$filename"
@@ -176,7 +176,7 @@ else
 	set key outside noreverse enhanced box linetype -1 linewidth 1.000
 	set grid back lt 0 lw 1
 	#set xlabel "Executed Tasks"
-	set ylabel "Energy Consumption (Joules)"
+	set ylabel "$ylabel"
 	set xtic rotate by 315
 	set yrange [0:$maxYAxis]
 	set output "$filename"

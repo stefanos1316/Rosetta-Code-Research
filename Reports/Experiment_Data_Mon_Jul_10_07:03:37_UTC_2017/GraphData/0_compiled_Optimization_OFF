@@ -1,7 +1,7 @@
 %!PS-Adobe-2.0
 %%Title: 0_compiled_Optimization_OFF
 %%Creator: gnuplot 5.0 patchlevel 5
-%%CreationDate: Wed Jul 19 16:01:25 2017
+%%CreationDate: Thu Jul 20 14:25:20 2017
 %%DocumentFonts: (atend)
 %%BoundingBox: 50 50 554 770
 %%Orientation: Landscape
@@ -472,7 +472,7 @@ SDict begin [
   /Author (sgeorgiou)
 %  /Producer (gnuplot)
 %  /Keywords ()
-  /CreationDate (Wed Jul 19 16:01:25 2017)
+  /CreationDate (Thu Jul 20 14:25:20 2017)
   /DOCINFO pdfmark
 end
 } ifelse
@@ -524,17 +524,17 @@ LCb setrgbcolor
 1.000 UL
 LTa
 LCa setrgbcolor
-980 3000 M
-4356 0 V
+860 3000 M
+4476 0 V
 stroke
 LTb
 LCb setrgbcolor
-980 3000 M
+860 3000 M
 63 0 V
-4293 0 R
+4413 0 R
 -63 0 V
 stroke
-860 3000 M
+740 3000 M
 [ [(Times-Roman) 200.0 0.0 true true 0 ( 0)]
 ] -66.7 MRshow
 1.000 UL
@@ -543,18 +543,18 @@ LCb setrgbcolor
 1.000 UL
 LTa
 LCa setrgbcolor
-980 3357 M
-4356 0 V
+860 3240 M
+4476 0 V
 stroke
 LTb
 LCb setrgbcolor
-980 3357 M
+860 3240 M
 63 0 V
-4293 0 R
+4413 0 R
 -63 0 V
 stroke
-860 3357 M
-[ [(Times-Roman) 200.0 0.0 true true 0 ( 100)]
+740 3240 M
+[ [(Times-Roman) 200.0 0.0 true true 0 ( 10)]
 ] -66.7 MRshow
 1.000 UL
 LTb
@@ -562,18 +562,18 @@ LCb setrgbcolor
 1.000 UL
 LTa
 LCa setrgbcolor
-980 3714 M
-4356 0 V
+860 3480 M
+4476 0 V
 stroke
 LTb
 LCb setrgbcolor
-980 3714 M
+860 3480 M
 63 0 V
-4293 0 R
+4413 0 R
 -63 0 V
 stroke
-860 3714 M
-[ [(Times-Roman) 200.0 0.0 true true 0 ( 200)]
+740 3480 M
+[ [(Times-Roman) 200.0 0.0 true true 0 ( 20)]
 ] -66.7 MRshow
 1.000 UL
 LTb
@@ -581,18 +581,18 @@ LCb setrgbcolor
 1.000 UL
 LTa
 LCa setrgbcolor
-980 4071 M
-4356 0 V
+860 3720 M
+4476 0 V
 stroke
 LTb
 LCb setrgbcolor
-980 4071 M
+860 3720 M
 63 0 V
-4293 0 R
+4413 0 R
 -63 0 V
 stroke
-860 4071 M
-[ [(Times-Roman) 200.0 0.0 true true 0 ( 300)]
+740 3720 M
+[ [(Times-Roman) 200.0 0.0 true true 0 ( 30)]
 ] -66.7 MRshow
 1.000 UL
 LTb
@@ -600,18 +600,18 @@ LCb setrgbcolor
 1.000 UL
 LTa
 LCa setrgbcolor
-980 4428 M
-4356 0 V
+860 3959 M
+4476 0 V
 stroke
 LTb
 LCb setrgbcolor
-980 4428 M
+860 3959 M
 63 0 V
-4293 0 R
+4413 0 R
 -63 0 V
 stroke
-860 4428 M
-[ [(Times-Roman) 200.0 0.0 true true 0 ( 400)]
+740 3959 M
+[ [(Times-Roman) 200.0 0.0 true true 0 ( 40)]
 ] -66.7 MRshow
 1.000 UL
 LTb
@@ -619,18 +619,18 @@ LCb setrgbcolor
 1.000 UL
 LTa
 LCa setrgbcolor
-980 4785 M
-4356 0 V
+860 4199 M
+4476 0 V
 stroke
 LTb
 LCb setrgbcolor
-980 4785 M
+860 4199 M
 63 0 V
-4293 0 R
+4413 0 R
 -63 0 V
 stroke
-860 4785 M
-[ [(Times-Roman) 200.0 0.0 true true 0 ( 500)]
+740 4199 M
+[ [(Times-Roman) 200.0 0.0 true true 0 ( 50)]
 ] -66.7 MRshow
 1.000 UL
 LTb
@@ -638,17 +638,55 @@ LCb setrgbcolor
 1.000 UL
 LTa
 LCa setrgbcolor
-980 3000 M
+860 4439 M
+4476 0 V
+stroke
+LTb
+LCb setrgbcolor
+860 4439 M
+63 0 V
+4413 0 R
+-63 0 V
+stroke
+740 4439 M
+[ [(Times-Roman) 200.0 0.0 true true 0 ( 60)]
+] -66.7 MRshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTa
+LCa setrgbcolor
+860 4679 M
+4476 0 V
+stroke
+LTb
+LCb setrgbcolor
+860 4679 M
+63 0 V
+4413 0 R
+-63 0 V
+stroke
+740 4679 M
+[ [(Times-Roman) 200.0 0.0 true true 0 ( 70)]
+] -66.7 MRshow
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTa
+LCa setrgbcolor
+860 3000 M
 0 1799 V
 stroke
 LTb
 LCb setrgbcolor
-980 3000 M
+860 3000 M
 0 63 V
 0 1736 R
 0 -63 V
 stroke
-980 2880 M
+860 2880 M
 currentpoint gsave translate 315 rotate 0 0 moveto
 [ [(Times-Roman) 200.0 0.0 true true 0 (array-concatenation)]
 ] -66.7 MLshow
@@ -659,17 +697,17 @@ LCb setrgbcolor
 1.000 UL
 LTa
 LCa setrgbcolor
-1525 3000 M
+1420 3000 M
 0 1799 V
 stroke
 LTb
 LCb setrgbcolor
-1525 3000 M
+1420 3000 M
 0 63 V
 0 1736 R
 0 -63 V
 stroke
-1525 2880 M
+1420 2880 M
 currentpoint gsave translate 315 rotate 0 0 moveto
 [ [(Times-Roman) 200.0 0.0 true true 0 (classes)]
 ] -66.7 MLshow
@@ -680,17 +718,17 @@ LCb setrgbcolor
 1.000 UL
 LTa
 LCa setrgbcolor
-2069 3000 M
+1979 3000 M
 0 1799 V
 stroke
 LTb
 LCb setrgbcolor
-2069 3000 M
+1979 3000 M
 0 63 V
 0 1736 R
 0 -63 V
 stroke
-2069 2880 M
+1979 2880 M
 currentpoint gsave translate 315 rotate 0 0 moveto
 [ [(Times-Roman) 200.0 0.0 true true 0 (sorting-algorithms-bubble-sort)]
 ] -66.7 MLshow
@@ -701,17 +739,17 @@ LCb setrgbcolor
 1.000 UL
 LTa
 LCa setrgbcolor
-2614 3000 M
+2539 3000 M
 0 1799 V
 stroke
 LTb
 LCb setrgbcolor
-2614 3000 M
+2539 3000 M
 0 63 V
 0 1736 R
 0 -63 V
 stroke
-2614 2880 M
+2539 2880 M
 currentpoint gsave translate 315 rotate 0 0 moveto
 [ [(Times-Roman) 200.0 0.0 true true 0 (sorting-algorithms-insertion-sort)]
 ] -66.7 MLshow
@@ -722,17 +760,17 @@ LCb setrgbcolor
 1.000 UL
 LTa
 LCa setrgbcolor
-3158 3000 M
+3098 3000 M
 0 1799 V
 stroke
 LTb
 LCb setrgbcolor
-3158 3000 M
+3098 3000 M
 0 63 V
 0 1736 R
 0 -63 V
 stroke
-3158 2880 M
+3098 2880 M
 currentpoint gsave translate 315 rotate 0 0 moveto
 [ [(Times-Roman) 200.0 0.0 true true 0 (sorting-algorithms-merge-sort)]
 ] -66.7 MLshow
@@ -743,19 +781,19 @@ LCb setrgbcolor
 1.000 UL
 LTa
 LCa setrgbcolor
-3703 3000 M
+3658 3000 M
 0 1799 V
 stroke
 LTb
 LCb setrgbcolor
-3703 3000 M
+3658 3000 M
 0 63 V
 0 1736 R
 0 -63 V
 stroke
-3703 2880 M
+3658 2880 M
 currentpoint gsave translate 315 rotate 0 0 moveto
-[ [(Times-Roman) 200.0 0.0 true true 0 (sorting-algorithms-quicksort)]
+[ [(Times-Roman) 200.0 0.0 true true 0 (sorting-algorithms-quick-sort)]
 ] -66.7 MLshow
 grestore
 1.000 UL
@@ -764,17 +802,17 @@ LCb setrgbcolor
 1.000 UL
 LTa
 LCa setrgbcolor
-4247 3000 M
+4217 3000 M
 0 1799 V
 stroke
 LTb
 LCb setrgbcolor
-4247 3000 M
+4217 3000 M
 0 63 V
 0 1736 R
 0 -63 V
 stroke
-4247 2880 M
+4217 2880 M
 currentpoint gsave translate 315 rotate 0 0 moveto
 [ [(Times-Roman) 200.0 0.0 true true 0 (sorting-algorithms-selection-sort)]
 ] -66.7 MLshow
@@ -785,17 +823,17 @@ LCb setrgbcolor
 1.000 UL
 LTa
 LCa setrgbcolor
-4792 3000 M
+4777 3000 M
 0 1799 V
 stroke
 LTb
 LCb setrgbcolor
-4792 3000 M
+4777 3000 M
 0 63 V
 0 1736 R
 0 -63 V
 stroke
-4792 2880 M
+4777 2880 M
 currentpoint gsave translate 315 rotate 0 0 moveto
 [ [(Times-Roman) 200.0 0.0 true true 0 (url-decoding)]
 ] -66.7 MLshow
@@ -827,11 +865,11 @@ LCb setrgbcolor
 1.000 UL
 LTB
 LCb setrgbcolor
-980 4799 N
+860 4799 N
 0 -1799 V
-4356 0 V
+4476 0 V
 0 1799 V
--4356 0 V
+-4476 0 V
 Z stroke
 1.000 UP
 1.000 UL
@@ -840,7 +878,7 @@ LCb setrgbcolor
 LCb setrgbcolor
 160 3899 M
 currentpoint gsave translate -270 rotate 0 0 moveto
-[ [(Times-Roman) 200.0 0.0 true true 0 (Energy Consumption \(Joules\))]
+[ [(Times-Roman) 200.0 0.0 true true 0 (Run-Time Performance \(Seconds\))]
 ] -66.7 MCshow
 grestore
 LTb
@@ -865,15 +903,15 @@ LTb
 1.500 UP
 1.000 UL
 LTb
-0.58 0.00 0.83 C 980 3000 Pls
-1525 3195 Pls
-2069 3749 Pls
-2614 3479 Pls
-3158 3440 Pls
-3703 3061 Pls
-4247 3303 Pls
-4792 3306 Pls
-5336 3424 Pls
+0.58 0.00 0.83 C 860 3000 Pls
+1420 3024 Pls
+1979 3312 Pls
+2539 3240 Pls
+3098 3168 Pls
+3658 3024 Pls
+4217 3168 Pls
+4777 3048 Pls
+5336 3072 Pls
 6687 4699 Pls
 % End plot #1
 % Begin plot #2
@@ -887,15 +925,15 @@ LTb
 1.500 UP
 1.000 UL
 LTb
-0.00 0.62 0.45 C 980 3000 Crs
-1525 3391 Crs
-2069 3552 Crs
-2614 3000 Crs
-3158 3243 Crs
-3703 3000 Crs
-4247 3000 Crs
-4792 3534 Crs
-5336 3459 Crs
+0.00 0.62 0.45 C 860 3000 Crs
+1420 3000 Crs
+1979 3264 Crs
+2539 3000 Crs
+3098 3096 Crs
+3658 3000 Crs
+4217 3000 Crs
+4777 3024 Crs
+5336 3048 Crs
 6687 4499 Crs
 % End plot #2
 % Begin plot #3
@@ -909,15 +947,15 @@ LTb
 1.500 UP
 1.000 UL
 LTb
-0.34 0.71 0.91 C 980 3000 Star
-1525 3214 Star
-2069 3341 Star
-2614 3059 Star
-3158 3000 Star
-3703 3000 Star
-4247 3000 Star
-4792 3308 Star
-5336 3305 Star
+0.34 0.71 0.91 C 860 3000 Star
+1420 3000 Star
+1979 3144 Star
+2539 3024 Star
+3098 3024 Star
+3658 3000 Star
+4217 3000 Star
+4777 3024 Star
+5336 3048 Star
 6687 4299 Star
 % End plot #3
 % Begin plot #4
@@ -931,15 +969,15 @@ LTb
 1.500 UP
 1.000 UL
 LTb
-0.90 0.62 0.00 C 980 3000 Box
-1525 3160 Box
-2069 3268 Box
-2614 3054 Box
-3158 3000 Box
-3703 3000 Box
-4247 3482 Box
-4792 3190 Box
-5336 3293 Box
+0.90 0.62 0.00 C 860 3000 Box
+1420 3000 Box
+1979 3144 Box
+2539 3048 Box
+3098 3000 Box
+3658 3000 Box
+4217 3240 Box
+4777 3000 Box
+5336 3024 Box
 6687 4099 Box
 % End plot #4
 % Begin plot #5
@@ -953,15 +991,15 @@ LTb
 1.500 UP
 1.000 UL
 LTb
-0.90 0.62 0.00 C 980 3000 BoxF
-1525 3378 BoxF
-2069 3227 BoxF
-2614 3040 BoxF
-3158 3248 BoxF
-3703 3041 BoxF
-4247 3045 BoxF
-4792 3269 BoxF
-5336 3331 BoxF
+0.90 0.62 0.00 C 860 3000 BoxF
+1420 3024 BoxF
+1979 3144 BoxF
+2539 3024 BoxF
+3098 3144 BoxF
+3658 3024 BoxF
+4217 3048 BoxF
+4777 3048 BoxF
+5336 3048 BoxF
 6687 3899 BoxF
 % End plot #5
 % Begin plot #6
@@ -975,15 +1013,15 @@ LTb
 1.500 UP
 1.000 UL
 LTb
-0.00 0.45 0.70 C 980 3000 Circle
-1525 3378 Circle
-2069 3350 Circle
-2614 3175 Circle
-3158 3123 Circle
-3703 3000 Circle
-4247 3475 Circle
-4792 3000 Circle
-5336 3785 Circle
+0.00 0.45 0.70 C 860 3000 Circle
+1420 3000 Circle
+1979 3144 Circle
+2539 3072 Circle
+3098 3048 Circle
+3658 3000 Circle
+4217 3264 Circle
+4777 3000 Circle
+5336 3240 Circle
 6687 3699 Circle
 % End plot #6
 % Begin plot #7
@@ -997,13 +1035,14 @@ LTb
 1.500 UP
 1.000 UL
 LTb
-0.90 0.12 0.06 C 980 3000 CircleF
-2069 3991 CircleF
-2614 3447 CircleF
-3158 3661 CircleF
-3703 4622 CircleF
-4247 3686 CircleF
-4792 3311 CircleF
+0.90 0.12 0.06 C 860 3000 CircleF
+1420 3024 CircleF
+1979 3408 CircleF
+2539 3240 CircleF
+3098 3288 CircleF
+3658 3600 CircleF
+4217 3288 CircleF
+4777 3024 CircleF
 6687 3499 CircleF
 % End plot #7
 2.000 UL
@@ -1012,11 +1051,11 @@ LCb setrgbcolor
 1.000 UL
 LTB
 LCb setrgbcolor
-980 4799 N
+860 4799 N
 0 -1799 V
-4356 0 V
+4476 0 V
 0 1799 V
--4356 0 V
+-4476 0 V
 Z stroke
 1.000 UP
 1.000 UL

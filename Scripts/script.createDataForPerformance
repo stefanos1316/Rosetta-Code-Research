@@ -1,6 +1,12 @@
 #!/bin/bash
 
 #\$1 -> Give the absolute path where the Performance_Results are located
+if [ "$1" == "--help" ]; then
+	echo ""
+	echo "Usage for script.createDataForPerformance"
+	exit
+fi
+
 array=()
 for i in `ls $1`
 do 
