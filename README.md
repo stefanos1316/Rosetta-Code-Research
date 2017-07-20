@@ -38,7 +38,7 @@ First browse to [Scripts](https://github.com/stefanos1316/Rosetta-Code-Research/
 5) Execute the **script.compileTasks** in order to compile all tasks.
 6) Execute the **script.executeTasks[Remotly|Locally]** in order to execute the tasks and collect results (in our case we used [Watts Up Pro](https://www.wattsupmeters.com/secure/products.php?pn=0)).
    On running the **script.executeTasksRemotly**, it is necessary to have a remote host with ssh where the Watts Up Pro is connected, otherwise the **script.executeTasksLocally** can be executed without the need of the remote host.
-7) Execute the **script.createPlottableData** that creates the file with all the results from all the measurements. In the end, this script will call the **script.plotGrpahs** that is responsible to create plot the graphs.
+7) Execute the **script.createPlottableData** that creates the file with all the results from all the measurements (Energy/Performance). In the end, this script will call the **script.plotGrpahs** that is responsible to create plot the graphs.
 8) The **script.plotGraphs** is executed by the **script.createPlottableData** and can provide graphs for both performance and energy consumption. Moreover, there are some default setting found in the end of **script.createPlottableData**, if anyone would like to change them and plot using different configuration parameters.
 
 **Note**: For more information for executing scripts add the --help command line argument.
