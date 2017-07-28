@@ -49,9 +49,11 @@
 * Data Strucutres
 	* pattern-matching
 	* array-concatentation (14/14)
-	* json (13/14)
+	* json (13/14) -> Stefanos works on this currently
 * Encryption
 	* rsa-code (4/14)
+*File Handling
+	*File input/output (?)
 * Mathematic Operations
 	* polynomial-regression (7/14)
 * Recursion

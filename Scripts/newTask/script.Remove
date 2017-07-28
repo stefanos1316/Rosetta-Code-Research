@@ -3,6 +3,11 @@
 # use this command for our current data set
 # sudo ./script.Remove "c c++ c-sharp go java javascript perl php python r ruby rust swift visual-basic-.net script.Remove README.md"
 
+if [ "$1" == "--help" ]; then 
+	echo "Add a string of programming languages not to exlude form the dataset, e.g., 'c c++ java'"
+	exit
+fi	
+
 
 IFS=" " read -a doNotRemove <<< "$1"
 for k in `ls`; do	

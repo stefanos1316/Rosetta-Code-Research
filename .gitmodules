@@ -4,3 +4,6 @@
 [submodule "watts-up"]
 	path = watts-up
 	url = https://github.com/pyrovski/watts-up.git
+[submodule "ExternalLibraries/C/yajl"]
+	path = ExternalLibraries/C/yajl
+	url = https://github.com/lloyd/yajl.git
