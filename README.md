@@ -18,13 +18,13 @@ Thus we implemented a number of shell scripts in order to manage and limit our d
 # Downloading
 Since we are using a submodule in this repository we suggest the use of the following command:
 
-   $ git clone --recursive https://github.com/stefanos1316/Rosetta-Code-Research.git
+      $ git clone --recursive https://github.com/stefanos1316/Rosetta-Code-Research.git
 
 In case you used simple clone command, add the submdodules using the following commands inside the cloned repo.
 
-   $ git submodule init
+      $ git submodule init
 
-   $ git submodule update
+      $ git submodule update
 
 # How to Execute
 First browse to [Scripts](https://github.com/stefanos1316/Rosetta-Code-Research/tree/master/Scripts) directory and proceed as follows:
