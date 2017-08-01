@@ -1,0 +1,6 @@
+JSON
+-> http://linuxbrew.sh/
+-> brew install cpanm
+-> sudo cpan JSON
+
+

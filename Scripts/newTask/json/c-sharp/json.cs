@@ -1,12 +1,17 @@
 using System;
 using System.Collections.Generic;
-using System.Web.Script.Serialization;
+//using System.Web.Script.Serialization;
+using System.Runtime.Serialization.Json;
+
+
 
 class Program
 {
     static void Main()
     {
-        var people = new Dictionary<string, object> {{"1", "John"}, {"2", "Susan"}};
+	Console.WriteLine("Trying to run a small JSON program");
+		
+  /*      var people = new Dictionary<string, object> {{"1", "John"}, {"2", "Susan"}};
         var serializer = new JavaScriptSerializer();
 
         var json = serializer.Serialize(people);
@@ -18,6 +23,6 @@ class Program
         var jsonObject = serializer.DeserializeObject(@"{ ""foo"": 1, ""bar"": [10, ""apples""] }");
         var data = jsonObject as Dictionary<string, object>;
         var array = data["bar"] as object[];
-        Console.WriteLine(array[1]);
+        Console.WriteLine(array[1]); */
     }
 }
