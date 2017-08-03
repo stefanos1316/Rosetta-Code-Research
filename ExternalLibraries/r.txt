@@ -1,0 +1,2 @@
+JSON: open R console and type 'install.packages("rjson")' to install rjson package
+

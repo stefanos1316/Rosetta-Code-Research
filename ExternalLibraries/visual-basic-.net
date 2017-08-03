@@ -1,0 +1,1 @@
+JSON: after installing newtonsoft rpm compile as follows: vbnc json.visual -r:/usr/lib/mono/newtonsoft-json/Newtonsoft.Json.dll 

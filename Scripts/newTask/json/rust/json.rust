@@ -1,16 +1,24 @@
-extern crate rustc_serialize;
+#![feature(rustc_private)]
 
+extern crate rustc_serialize;
 use rustc_serialize::json;
 
 #[derive(RustcDecodable, RustcEncodable)]
-struct Penguin {
-    name : String,
-    born : i16
+pub struct TestStruct  {
+    foo: u8,
+    bar: Vec<String>,
 }
+
 fn main() {
-    let pengu = Penguin { name : "pengu".to_string(), born : 1999 };
-    println!("{}", json::encode(&pengu).unwrap());
-    let pingu : Penguin = json::decode(r##"{"name":"pingu","born":2001}"##).unwrap();
-    assert_eq!(&pingu.name, "pingu");
-    assert_eq!(pingu.born, 2001);
+
+    for  i in 0..10000000 {
+    let object = TestStruct {
+        foo: 1,
+        bar: vec!["10".to_string(),"apples".to_string()],
+    };
+
+    // Serialize using `json::encode`
+    let encoded = json::encode(&object).unwrap();
+    }
+
 }

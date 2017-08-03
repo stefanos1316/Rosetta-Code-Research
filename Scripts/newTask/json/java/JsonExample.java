@@ -3,11 +3,11 @@ import com.google.gson.Gson;
 public class JsonExample {
 
 	public static void main(String[] args) {
+		for (int i = 0; i < 10000000; ++i) {
+
 		Gson gson = new Gson();
 		String json = "{ \"foo\": 1, \"bar\": [ \"10\", \"apples\"] }";
 		
-		for (int i = 0; i < 1000000; ++i) {
-
 		MyJsonObject obj = gson.fromJson(json, MyJsonObject.class);
 		
 		//System.out.println(obj.getFoo());
@@ -16,8 +16,8 @@ public class JsonExample {
 	//		System.out.println(bar);
 	//	}
 		
-		obj = new MyJsonObject(2, new String[] { "20", "oranges" });
-		json = gson.toJson(obj);
+	//	obj = new MyJsonObject(2, new String[] { "20", "oranges" });
+	//	json = gson.toJson(obj);
 	
 		//System.out.println(json);
 		}

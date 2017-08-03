@@ -1,19 +1,19 @@
 import Foundation
 
+
+for i in 1...10000000 {
+
 let jsonString = "{ \"foo\": 1, \"bar\": [10, \"apples\"] }"
-if let jsonData = jsonString.dataUsingEncoding(NSUTF8StringEncoding) {
-  if let jsonObject : AnyObject = NSJSONSerialization.JSONObjectWithData(jsonData, options: .AllowFragments, error: nil) {
-    println("NSDictionary: \(jsonObject)")
-  }
+if let jsonData = jsonString.data(using: .utf8) {
+	if let jsonObject: Any = try? JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) {
+//		print("Dictionary: \(jsonObject)")
+	}
 }
+ 
+//let obj = ["foo": [1, "Orange"],"bar": 1] as [String : Any]
+ 
+//if let objData = try? JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted) {
+//	let jsonString2 = String(data: objData, encoding: .utf8)
+//}
 
-let obj = [
-  "foo": [1, "Orange"],
-  "bar": 1
-]
-
-if let objData = NSJSONSerialization.dataWithJSONObject(obj, options: .PrettyPrinted, error: nil) {
-  if let jsonString2 = NSString(data: objData, encoding: NSUTF8StringEncoding) {
-    println("JSON: \(jsonString2)")
-  }
 }

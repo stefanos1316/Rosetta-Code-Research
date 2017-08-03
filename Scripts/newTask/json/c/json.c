@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "yajl_tree.h"
-#include "yajl_gen.h"
+#include <yajl/yajl_tree.h>
+#include <yajl/yajl_gen.h>
 
 static void print_callback (void *ctx, const char *str, size_t len)
 {

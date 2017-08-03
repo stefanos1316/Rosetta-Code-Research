@@ -10,7 +10,6 @@ def main():
 		# store a data structure into JSON
 		sample = { "blue": [1,2], "ocean": "water" }
 		json_string = json.dumps(sample)
-		print json_string
 
 if __name__ == "__main__":
     main()

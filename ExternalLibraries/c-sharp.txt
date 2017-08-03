@@ -1,1 +1,3 @@
-JSON: Install Json.NET newtonsoft
+JSON: Install Json.NET newtonsoft rpm and compile like:  mcs json.cs -r:/usr/lib/mono/newtonsoft-json/Newtonsoft.Json.dll (if Newtonsoft.Json is not install in lib find it using rpm -ql "Newtonsoft")
+
+
