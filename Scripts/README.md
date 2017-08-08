@@ -53,7 +53,7 @@
 * Encryption
 	* rsa-code (4/14)
 * File Handling
-	* File input/output (?)
+	* File input/output (12/14)
 * Mathematic Operations
 	* polynomial-regression (7/14)
 * Recursion
