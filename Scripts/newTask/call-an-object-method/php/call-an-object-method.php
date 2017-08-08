@@ -1,9 +1,17 @@
-// Static method
-MyClass::method($someParameter);
-// In PHP 5.3+, static method can be called on a string of the class name
-$foo = 'MyClass';
-$foo::method($someParameter);
+<?php
 
+class CallAnObjectMethod {
+	public static $classVar;
+    	function __construct() {
+    	}
+   
+	function someMethod($a) {
+        	self::$classVar = $a;
+    	}
+}
 
-// Instance method
-$myInstance->method($someParameter);
+	$myObj = new CallAnObjectMethod();
+	for ( $i = 0; $i < 1000000000; $i++) {
+		$myObj->someMethod(1);
+	}
+?>

@@ -49,7 +49,7 @@
 * Data Strucutres
 	* pattern-matching
 	* array-concatentation (14/14)
-	* json (13/14) -> Stefanos works on this currently
+	* json (13/14) -> Have some difficulties with C's implementation (Stefanos)
 * Encryption
 	* rsa-code (4/14)
 * File Handling
@@ -73,7 +73,7 @@
 * Object Oriented
 	* inheritance-multiple (7/14)
 	* inheritance-single (11/14)
-	* call-an-object-method (10/14)
+	* call-an-object-method (14/14)
 	* classes (14/14)
 
 * Functional Programming (Still not found in Rosetta Code)

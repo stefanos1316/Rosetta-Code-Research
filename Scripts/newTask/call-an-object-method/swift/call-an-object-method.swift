@@ -1,11 +1,24 @@
-// Class
-MyClass.method(someParameter)
-// or equivalently:
-let foo = MyClass.self
-foo.method(someParameter)
+class CallAnObjectMethod{
 
-// Instance
-myInstance.method(someParameter)
+  // stored property
+  var variable : Int
 
-// Method with multiple arguments
-myInstance.method(red:arg1, green:arg2, blue:arg3)
+  /**
+  * The constructor
+  */
+  init() {
+    self.variable = 42
+  }
+
+  /**
+  * A method
+  */
+  func someMethod(a: Int) {
+    self.variable = a
+  }
+}
+
+let value = CallAnObjectMethod()
+for i in 0...1000000000 {
+	value.someMethod(a: 1)
+}

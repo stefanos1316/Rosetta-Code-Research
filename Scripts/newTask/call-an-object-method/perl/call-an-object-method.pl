@@ -1,17 +1,20 @@
-# Class method
-MyClass->classMethod($someParameter);
-# Equivalently using a class name
-my $foo = 'MyClass';
-$foo->classMethod($someParameter);
+package SampleObject;
 
+use strict;
+use warnings;
 
-# Instance method
-$myInstance->method($someParameter);
+sub new {
+    my ($class, %args) = @_;
+    return bless { %args }, $class;
+}
 
-# Calling a method with no parameters
-$myInstance->anotherMethod;
+sub sample_method {
+    my ($self) = @_;
+}
 
-# Class and instance method calls are made behind the scenes by getting the function from
-# the package and calling it on the class name or object reference explicitly
-MyClass::classMethod('MyClass', $someParameter);
-MyClass::method($myInstance, $someParameter);
+	my $obj = SampleObject->new( sample_data => 'Variable value is ', more_data   => "1\n" );
+
+	for( $a=0; $a < 1000000000; $a = $a + 1) {
+		$obj->sample_method();
+	}
+

@@ -1,16 +1,12 @@
-# Class method
-MyClass.some_method(some_parameter)
+class CallAnObjectMethod
 
-# Class may be computed at runtime
-foo = MyClass
-foo.some_method(some_parameter)
+  def setVariable (a)
+    @instance_var = @a
+  end
 
+end
 
-# Instance method
-my_instance.method(some_parameter)
-
-# The parentheses are optional
-my_instance.method some_parameter
-
-# Calling a method with no parameters
-my_instance.another_method
+my_class = CallAnObjectMethod.new 
+for i in 0..1000000000
+	my_class.setVariable(1)
+end
