@@ -22,9 +22,11 @@ int main(void)
 {
   unsigned int i;
 
-  for (int j = 0; j < 10000000; ++j) {
   int *c = ARRAY_CONCAT(int, a, 5, b, 5);
 
+  for(i = 0; i < 10; i++)
+    printf("%d\n", c[i]);
+
   free(c);
-  }
+  return EXIT_SUCCCESS;
 }

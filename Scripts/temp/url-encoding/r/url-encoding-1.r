@@ -1,3 +1,1 @@
-for(i in 0:1000000) {
-print(URLencode("http://foo bar/"))
-}
+URLencode("http://foo bar/")

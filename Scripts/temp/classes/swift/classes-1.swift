@@ -14,12 +14,6 @@ class MyClass{
   * A method
   */
   func someMethod() {
-    self.variable = 123456 
-    print("Variable value is ",self.variable)
+    self.variable = 1
   }
-}
-
-for i in 0...1000000 {
-let value = MyClass()
-value.someMethod()
 }

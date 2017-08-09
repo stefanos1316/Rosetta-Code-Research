@@ -16,8 +16,6 @@ void encode(const char *s, char *enc, char *tb)
 
 int main()
 {
-
-    for (int i = 0; i < 1000000; ++i) {
 	const char url[] = "http://foo bar/";
 	char enc[(strlen(url) * 3) + 1];
 
@@ -31,6 +29,6 @@ int main()
 
 	encode(url, enc, rfc3986);
 	puts(enc);
-	}
+
 	return 0;
 }

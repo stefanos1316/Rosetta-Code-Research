@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int ishex(int x)
+inline int ishex(int x)
 {
 	return	(x >= '0' && x <= '9')	||
 		(x >= 'a' && x <= 'f')	||
@@ -30,13 +30,11 @@ int decode(const char *s, char *dec)
 
 int main()
 {
-
-  for ( int i = 0; i < 1000000; ++i) {	
 	const char *url = "http%3A%2F%2ffoo+bar%2fabcd";
 	char out[strlen(url) + 1];
 
 	printf("length: %d\n", decode(url, 0));
 	puts(decode(url, out) < 0 ? "bad string" : out);
-	}
+
 	return 0;
 }

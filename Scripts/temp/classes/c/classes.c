@@ -24,16 +24,8 @@ void MyClass_delete(MyClass* pthis)
 void MyClass_someMethod(MyClass pthis)
 {
   pthis->variable = 1;
-  printf("Variable value is %d\n", &pthis->variable);
 }
 
-int main() {
-
-for (int i = 0; i < 1000000; ++i) {
-	MyClass obj = MyClass_new();
-	MyClass_someMethod(obj);
-	MyClass_delete(&obj);
-}
-
-return 0;
-}
+MyClass obj = MyClass_new();
+MyClass_someMethod(obj);
+MyClass_delete(&obj);

@@ -11,5 +11,3 @@ plot.circle <- function(x, ...)
       type="l", ...)
 }
 plot(circS3)
-
-

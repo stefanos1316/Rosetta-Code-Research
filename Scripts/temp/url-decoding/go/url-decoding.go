@@ -7,14 +7,14 @@ import (
 )
 
 func main() {
-
-	for i := 0; i < 1000000; i++ {
-		var urlString = "http%3A%2F%2Ffoo%20bar%2F"
-	
-		u, err := url.QueryUnescape(urlString)
+	for _, escaped := range []string{
+		"http%3A%2F%2Ffoo%20bar%2F",
+		"google.com/search?q=%60Abdu%27l-Bah%C3%A1",
+	} {
+		u, err := url.QueryUnescape(escaped)
 		if err != nil {
 			log.Println(err)
-		
+			continue
 		}
 		fmt.Println(u)
 	}

@@ -1,37 +1,14 @@
+#include <vector>
 #include <iostream>
 
-using namespace std;
- 
-template <typename T1, typename T2>
-int* concatArrays( T1& array_1, T2& array_2) {
-  int arrayCount_1 = sizeof(array_1) / sizeof(array_1[0]);
-  int arrayCount_2 = sizeof(array_2) / sizeof(array_2[0]);
-  int newArraySize = arrayCount_1 + arrayCount_2;
- 
-  int *p = new int[newArraySize];
- 
-  for (int i = 0; i < arrayCount_1; i++) {
-  	p[i] = array_1[i];
-  }
- 
-  for (int i = arrayCount_1; i < newArraySize; i++) {
-	int newIndex = i-arrayCount_2;
-	p[i] = array_2[--newIndex];
-  }
- 
-  return p;
-}
- 
-int main() {
-  int ary[5] = {1, 2, 3, 4, 5};
-  int anotherAry[5] = {6, 7, 8, 9, 10};
- 
-  for ( int j=0; j < 10000000; ++j) {
+int main()
+{
+  std::vector<int> a(3), b(4);
+  a[0] = 11; a[1] = 12; a[2] = 13;
+  b[0] = 21; b[1] = 22; b[2] = 23; b[3] = 24;
 
-  int *r = concatArrays(ary, anotherAry);
- 
-  delete r;
-  }
+  a.insert(a.end(), b.begin(), b.end());
 
-  return 0;
+  for (int i = 0; i < a.size(); ++i)
+    std::cout << "a[" << i << "] = " << a[i] << "\n";
 }
