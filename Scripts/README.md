@@ -1,4 +1,5 @@
-
+# Tasks Progress
+Fully done with 12 out of 33.
 
 # Used Programming Languages
 * C
