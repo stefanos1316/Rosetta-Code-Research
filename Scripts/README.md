@@ -53,13 +53,13 @@
 * Encryption
 	* rsa-code (4/14)
 * File Handling
-	* File input/output (12/14)
+	* File input/output (14/14)
 * Mathematic Operations
 	* polynomial-regression (7/14)
 * Recursion
 	* factorial (14/14)
 	* ackermann-function (13/14)
-	* palidrome-detection (12/14)
+	* palidrome-detection (12/14) -> Stefanos works on this now
 * Regular-expressions (12/14)
 * Sorting
 	* sorting-algorithms-merge-sort (14/14)
