@@ -32,6 +32,9 @@ Simpson's method is defined by the following pseudo-code:
 Demonstrate your function by showing the results for:
 
 ƒ(x) = x3,   where     x     is   [0,1],   with 100 approximations.   The exact result is   1/4,   or   0.25.
+
 ƒ(x) = 1/x,   where   x   is   [1,100],   with 1,000 approximations.   The exact result is the natural log of 100,   or about   4.605170
+
 ƒ(x) = x,     where   x   is   [0,5000],   with 5,000,000 approximations.   The exact result is   12,500,000.
+
 ƒ(x) = x,     where   x   is   [0,6000],   with 6,000,000 approximations.   The exact result is   18,000,000.
