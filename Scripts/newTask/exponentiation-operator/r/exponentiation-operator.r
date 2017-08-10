@@ -8,5 +8,8 @@ pow <- function(x, y)
 #Operator
 "%pow%" <- function(x,y) pow(x,y)
 
-pow(3, 4)    # 81
-2.5 %pow% 2  # 6.25
+
+for(i in 0:1000000000) {
+pow(2017, 12)    # 81
+19.88 %pow% 12  # 6.25
+}

@@ -1,0 +1,7 @@
+[package]
+name = "exponentiation-operator"
+version = "0.1.0"
+authors = ["sgeorgiou"]
+
+[dependencies]
+num = "0.1.40"

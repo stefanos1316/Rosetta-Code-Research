@@ -38,8 +38,8 @@ Fully done with 13 out of 33.
 	* draw-a-cuboid (7/ 14)
 	* draw-a-sphere (8/14)
 * Arithmetic
-	* exponentiation-operator (9/14) -> Stefanos currently working on this
-	* numerical-integration (8/14)
+	* exponentiation-operator (14/14) 
+	* numerical-integration (8/14) -> Stefanos currently working on this
 * Compression
 	* huffman-coding (11/14)
 	* lzw-compression (11/14)

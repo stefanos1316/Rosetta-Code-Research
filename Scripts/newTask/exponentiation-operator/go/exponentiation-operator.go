@@ -2,7 +2,6 @@ package main
 
 import (
     "errors"
-    "fmt"
 )
 
 func expI(b, p int) (int, error) {
@@ -36,42 +35,10 @@ func expF(b float32, p int) float32 {
 }
 
 func main() {
-    ti := func(b, p int) {
-        fmt.Printf("%d^%d: ", b, p)
-        e, err := expI(b, p)
-        if err != nil {
-            fmt.Println(err)
-        } else {
-            fmt.Println(e)
-        }
-    }
 
-    fmt.Println("expI tests")
-    ti(2, 10)
-    ti(2, -10)
-    ti(-2, 10)
-    ti(-2, 11)
-    ti(11, 0)
+for i := 0; i < 1000000000; i++ {
+    expI(2017, 12)
+    expF(19.88, 12)
+}
 
-    fmt.Println("overflow undetected")
-    ti(10, 10)
-
-    tf := func(b float32, p int) {
-        fmt.Printf("%g^%d: %g\n", b, p, expF(b, p))
-    }
-
-    fmt.Println("\nexpF tests:")
-    tf(2, 10)
-    tf(2, -10)
-    tf(-2, 10)
-    tf(-2, 11)
-    tf(11, 0)
-
-    fmt.Println("disallowed in expI, allowed here")
-    tf(0, -1)
-
-    fmt.Println("other interesting cases for 32 bit float type")
-    tf(10, 39)
-    tf(10, -39)
-    tf(-10, 39)
 }

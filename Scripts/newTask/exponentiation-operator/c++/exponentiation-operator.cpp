@@ -1,3 +1,5 @@
+#include <iostream>
+
 template<typename Number>
  Number power(Number base, int exponent)
 {
@@ -29,4 +31,15 @@ template<typename Number>
     }
   }
   return result;
+}
+
+
+
+int main() {
+
+for ( int i = 0; i < 1000000000; ++i ) {
+	power(2017,12);
+	power(19.88,12);
+}
+
 }
