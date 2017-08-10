@@ -1,6 +1,6 @@
 # Array concatenation 
 
-Explanation is this [link](http://rosettacode.org/wiki/Array_concatenation)
+Explanation in this [link](http://rosettacode.org/wiki/Array_concatenation)
 
 **Task**
 
