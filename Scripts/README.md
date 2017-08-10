@@ -1,5 +1,5 @@
 # Tasks Progress
-Fully done with 12 out of 33.
+Fully done with 13 out of 33.
 
 # Used Programming Languages
 * C
@@ -38,7 +38,7 @@ Fully done with 12 out of 33.
 	* draw-a-cuboid (7/ 14)
 	* draw-a-sphere (8/14)
 * Arithmetic
-	* exponentiation-operator (9/14)
+	* exponentiation-operator (9/14) -> Stefanos currently working on this
 	* numerical-integration (8/14)
 * Compression
 	* huffman-coding (11/14)
@@ -60,7 +60,7 @@ Fully done with 12 out of 33.
 * Recursion
 	* factorial (14/14)
 	* ackermann-function (13/14)
-	* palidrome-detection (12/14) -> Stefanos works on this now
+	* palidrome-detection (14/14)
 * Regular-expressions (12/14)
 * Sorting
 	* sorting-algorithms-merge-sort (14/14)

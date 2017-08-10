@@ -1,0 +1,14 @@
+fn is_palindrome(string: &str) -> bool {
+    string.chars().zip(string.chars().rev()).all(|(x, y)| x == y)
+}
+
+macro_rules! test {
+    ( $( $x:tt ),* ) => { $( is_palindrome($x); )* };
+}
+
+fn main() {
+
+for i in 0..1000000000 {
+    test!("saippuakivikauppias");
+}
+}

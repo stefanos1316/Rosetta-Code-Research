@@ -9,3 +9,5 @@ selection: c#, rust, vb.net
 url-decode: rust, vb.net
 url-encode: rust, swift, vb.net
 json: vb.net
+palindrome-detection: swift to 3, vb.net
+
