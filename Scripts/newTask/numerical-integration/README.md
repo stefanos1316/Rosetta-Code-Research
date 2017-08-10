@@ -1,6 +1,6 @@
 # Numerical integration
 
-Explanation in this (link)[http://rosettacode.org/wiki/Numerical_integration]
+Explanation in this [link](http://rosettacode.org/wiki/Numerical_integration)
 
 **Task**
 
