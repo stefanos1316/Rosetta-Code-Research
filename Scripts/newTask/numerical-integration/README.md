@@ -38,3 +38,5 @@ Demonstrate your function by showing the results for:
 ƒ(x) = x,     where   x   is   [0,5000],   with 5,000,000 approximations.   The exact result is   12,500,000.
 
 ƒ(x) = x,     where   x   is   [0,6000],   with 6,000,000 approximations.   The exact result is   18,000,000.
+
+**Note** 1000 times
