@@ -78,18 +78,28 @@ class NumericalIntegration
 
   private static void testFunction(String fname, double a, double b, int n, FPFunction f)
   {
-    System.out.println("Testing function \"" + fname + "\", a=" + a + ", b=" + b + ", n=" + n);
+   /* System.out.println("Testing function \"" + fname + "\", a=" + a + ", b=" + b + ", n=" + n);
     System.out.println("rectangularLeft: " + rectangularLeft(a, b, n, f));
     System.out.println("rectangularMidpoint: " + rectangularMidpoint(a, b, n, f));
     System.out.println("rectangularRight: " + rectangularRight(a, b, n, f));
     System.out.println("trapezium: " + trapezium(a, b, n, f));
     System.out.println("simpsons: " + simpsons(a, b, n, f));
-    System.out.println();
+    System.out.println(); */
+ 
+    rectangularLeft(a,b,n,f);
+    rectangularMidpoint(a,b,n,f);
+    rectangularRight(a,b,n,f);
+    trapezium(a,b,n,f);	
+    simpsons(a,b,n,f);
+
     return;
   }
 
   public static void main(String[] args)
   {
+
+  for (int i = 0; i < 1000; i++) {
+
     testFunction("x^3", 0.0, 1.0, 100, new FPFunction() {
         public double eval(double n) {
           return n * n * n;
@@ -118,6 +128,7 @@ class NumericalIntegration
       }
     );
 
+  }
     return;
   }
 }

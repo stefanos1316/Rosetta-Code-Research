@@ -55,9 +55,17 @@ public:
 // sample usage
 double f(double x) { return x*x; }
 
+int main() {
+
+for ( int i = 0; i < 1000; ++i ) {
+
 // inside a function somewhere:
 double rl = integrate(f, 0.0, 1.0, 10, rectangular(rectangular::left));
 double rm = integrate(f, 0.0, 1.0, 10, rectangular(rectangular::middle));
 double rr = integrate(f, 0.0, 1.0, 10, rectangular(rectangular::right));
 double t  = integrate(f, 0.0, 1.0, 10, trapezium());
 double s  = integrate(f, 0.0, 1.0, 10, simpson());
+}
+
+return 0;
+}

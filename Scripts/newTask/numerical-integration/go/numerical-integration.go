@@ -1,7 +1,7 @@
 package main
 
 import (
-    "fmt"
+   // "fmt"
     "math"
 )
 
@@ -146,19 +146,22 @@ func (a *adder) add(x float64) {
 }
 
 func main() {
+
+for i := 0; i < 1000; i++ {
+
     for _, t := range data {
-        fmt.Println("Test case: f(x) =", t.fs)
-        fmt.Println("Integration from", t.lower, "to", t.upper,
-            "in", t.n, "parts")
-        fmt.Printf("Exact result            %.7e     Error\n", t.exact)
+        //fmt.Println("Test case: f(x) =", t.fs)
+        //fmt.Println("Integration from", t.lower, "to", t.upper,"in", t.n, "parts")
+        //fmt.Printf("Exact result            %.7e     Error\n", t.exact)
         for _, m := range methods {
             a := m.integrate(t)
             e := a - t.exact
             if e < 0 {
                 e = -e
             }
-            fmt.Printf("%s  %.7e  %.7e\n", m.name, a, e)
+            //fmt.Printf("%s  %.7e  %.7e\n", m.name, a, e)
         }
-        fmt.Println("")
+      //  fmt.Println("")
     }
+}
 }
