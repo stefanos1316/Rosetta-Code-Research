@@ -5,7 +5,7 @@ func main() {
   str := "this is a matching string"
 
   // Test
-  for i := 0; i < 1000000; i++ {
+  for i := 0; i < 10000000; i++ {
   matched, _ := regexp.MatchString(".*string$", str)
   if matched { }
 

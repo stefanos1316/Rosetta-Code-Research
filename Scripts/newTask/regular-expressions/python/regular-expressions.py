@@ -1,9 +1,7 @@
 import re
 
-string = "This is a string"
+string = "This is a matching string"
 
-if re.search('string$', string):
-    print("Ends with string.")
-
-string = re.sub(" a ", " another ", string)
-print(string)
+for i in range(10000000):
+    re.search('string$', string)
+    string = re.sub("string", "istyfied", string)

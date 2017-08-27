@@ -1,9 +1,13 @@
-$string = 'I am a string';
+
+
+<?php
+$string = 'this is a matching string';
+
+for ( $i = 0; $i < 10000000; $i++) {
 # Test
 if (preg_match('/string$/', $string))
-{
-    echo "Ends with 'string'\n";
-}
+{}
 # Replace
-$string = preg_replace('/\ba\b/', 'another', $string);
-echo "Found 'a' and replace it with 'another', resulting in this string: $string\n";
+$string = preg_replace('/\bstring\b/', 'istyfied', $string);
+}
+?>
