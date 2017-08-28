@@ -1,6 +1,3 @@
-# Tasks Progress
-Fully done with 13 out of 31.
-
 # Used Programming Languages
 * C
 * C++
@@ -34,31 +31,8 @@ Fully done with 13 out of 31.
 
 # Selected Tasks
 
-* Arithmetic
-	* exponentiation-operator (14/14) 
-	* numerical-integration (8/14) -> Stefanos currently working on this
-* Compression
-	* huffman-coding (11/14)
-	* lzw-compression (11/14)
-* Cocurrency
-	* concurrent-computing (11/14)
-	* events (4/14)
-	* synchronous-concurrency (11/14)
 * Data Strucutres
-	* pattern-matching
 	* array-concatentation (14/14)
-	* json (13/14) -> Have some difficulties with C's implementation (Stefanos)
-* Encryption
-	* rsa-code (4/14)
-* File Handling
-	* File input/output (14/14)
-* Mathematic Operations
-	* polynomial-regression (7/14)
-* Recursion
-	* factorial (14/14)
-	* ackermann-function (13/14)
-	* palidrome-detection (14/14)
-* Regular-expressions (12/14) -> Stefanos currently working on this
 * Sorting
 	* sorting-algorithms-merge-sort (14/14)
 	* sorting-algorithms-insertion-sort (14/14)
@@ -69,13 +43,5 @@ Fully done with 13 out of 31.
 	* url-decoding (14/14)
 	* url-encoding (14/14)
 * Object Oriented
-	* inheritance-multiple (7/14)
-	* inheritance-single (11/14)
-	* call-an-object-method (14/14)
 	* classes (14/14)
 
-* Functional Programming (Still not found in Rosetta Code)
-	* Function application
-	* List Processing 	
-
-* Execptions (suggested from Maria but not found in Rosetta Code)
